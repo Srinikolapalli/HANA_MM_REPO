@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur::ZHV_PUR_CHG_LOG_IR" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_PUR_CHG_LOG"/>
+  <metadata changedAt="2021-03-21 11:21:22.182" createdAt="2021-03-21 11:21:22.182"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="31"/>
+  <dataSources>
+    <DataSource id="CDHDR">
+      <resourceUri>algoma.mm::CDHDR</resourceUri>
+    </DataSource>
+    <DataSource id="CDPOS">
+      <resourceUri>algoma.mm::CDPOS</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="CHANGENR"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="rownum_cdhdr" expressionLanguage="COLUMN_ENGINE">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="CDHDR"/>
+    <filter>&quot;OBJECTCLAS&quot;='BANF'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="CHANGENR"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="rownum_cdpos" expressionLanguage="COLUMN_ENGINE">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="CDPOS"/>
+    <filter>&quot;TABNAME&quot;='EBAN' and &quot;FNAME&quot;='FRGKZ' and &quot;VALUE_NEW&quot;='Y'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="rownum_cdpos"/>
+        <viewAttribute id="rownum_cdhdr"/>
+      <viewAttribute hidden="true" id="JOIN$CHANGENR$CHANGENR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="CAL_DATEDIFF_UDATE_TODAY" expressionLanguage="COLUMN_ENGINE">
+          <formula>daysbetween(now(),  daydate(&quot;UDATE&quot;)) </formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="DATE" id="CAL_UDATE" expressionLanguage="COLUMN_ENGINE">
+          <formula>daydate(&quot;UDATE&quot;)</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UDATE" source="UDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="rownum_cdhdr" source="rownum_cdhdr"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CHANGENR$CHANGENR" source="CHANGENR"/>
+      </input>
+      <input node="Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="TABNAME" source="TABNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FNAME" source="FNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_NEW" source="VALUE_NEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="rownum_cdpos" source="rownum_cdpos"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CHANGENR$CHANGENR" source="CHANGENR"/>
+      </input>
+    <joinAttribute name="MANDANT"/>
+    <joinAttribute name="OBJECTID"/>
+    <joinAttribute name="OBJECTCLAS"/>
+    <joinAttribute name="JOIN$CHANGENR$CHANGENR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:RankView" id="Rank_1">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="rownum_cdpos"/>
+        <viewAttribute id="rownum_cdhdr"/>
+        <viewAttribute id="CAL_DATEDIFF_UDATE_TODAY"/>
+        <viewAttribute id="CAL_UDATE"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_1"/>
+    <windowFunction dynamicPartitionAttributes="false">
+      <partitionViewAttributeName>OBJECTID</partitionViewAttributeName>
+      <order byViewAttributeName="CAL_UDATE" direction="ASC"/>
+      <rankThreshold>
+        <value>1</value>
+      </rankThreshold>
+      <rankViewAttributeName>Rank_Min_UDATE</rankViewAttributeName>
+    </windowFunction>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Rank_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="MANDANT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="Rank_1" columnName="MANDANT"/>
+      </attribute>
+      <attribute id="OBJECTCLAS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Object class"/>
+        <keyMapping columnObjectName="Rank_1" columnName="OBJECTCLAS"/>
+      </attribute>
+      <attribute id="UDATE" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Creation date of the change document"/>
+        <keyMapping columnObjectName="Rank_1" columnName="UDATE"/>
+      </attribute>
+      <attribute id="OBJECTID" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Object Value"/>
+        <keyMapping columnObjectName="Rank_1" columnName="OBJECTID"/>
+      </attribute>
+      <attribute id="TABNAME" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Table Name"/>
+        <keyMapping columnObjectName="Rank_1" columnName="TABNAME"/>
+      </attribute>
+      <attribute id="FNAME" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Field Name"/>
+        <keyMapping columnObjectName="Rank_1" columnName="FNAME"/>
+      </attribute>
+      <attribute id="VALUE_NEW" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="New contents of changed field"/>
+        <keyMapping columnObjectName="Rank_1" columnName="VALUE_NEW"/>
+      </attribute>
+      <attribute id="CAL_UDATE" order="10" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping columnObjectName="Rank_1" columnName="CAL_UDATE"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="CAL_DATEDIFF_UDATE_TODAY" order="8" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="CAL_DATEDIFF_UDATE_TODAY"/>
+        <measureMapping columnObjectName="Rank_1" columnName="CAL_DATEDIFF_UDATE_TODAY"/>
+      </measure>
+      <measure id="Rank_Min_UDATE" order="9" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Rank_Min_UDATE"/>
+        <measureMapping columnObjectName="Rank_1" columnName="Rank_Min_UDATE"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="339"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="339"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="243"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Rank_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_PO_RPT1" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_QV_PUR_PO_RPT1"/>
+  <metadata changedAt="2021-04-06 19:23:14.002"/>
+  <localVariables>
+    <variable id="VAR_EKKO_BSTYP_Doc_Category">
+      <descriptions defaultDescription="VAR_EKKO_BSTYP_Doc_Category"/>
+      <variableProperties datatype="NVARCHAR" defaultValue="F" mandatory="false" length="1" scale="NaN">
+        <valueDomain type="AttributeValue">
+          <attribute name="EKKO_BSTYP_Doc_Category"/>
+        </valueDomain>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_EKPO_LOEKZ_Deletion_ind_">
+      <descriptions defaultDescription="VAR_EKPO_LOEKZ_Deletion_ind_"/>
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+        <valueDomain type="AttributeValue">
+          <attribute name="EKPO_LOEKZ_Deletion_ind_"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+        <defaultRange including="true"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_EKPO_ELIKZ_Deliv_Compl_">
+      <descriptions defaultDescription="VAR_EKPO_ELIKZ_Deliv_Compl_"/>
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+        <valueDomain type="AttributeValue">
+          <attribute name="EKPO_ELIKZ_Deliv_Compl_"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+        <defaultRange including="true"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_EKPO_MATNR_Material">
+      <descriptions defaultDescription="VAR_EKPO_MATNR_Material"/>
+      <variableProperties datatype="VARCHAR" mandatory="false">
+        <valueDomain type="AttributeValue">
+          <attribute name="EKPO_MATNR_Material"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+        <defaultRange operator="NL"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_EKPO_PSTYP_Item_category">
+      <descriptions defaultDescription="VAR_EKPO_PSTYP_Item_category"/>
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+        <valueDomain type="AttributeValue">
+          <attribute name="EKPO_PSTYP_Item_category"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+        <defaultRange lowValue="3" operator="EQ"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_PO_DATE">
+      <descriptions defaultDescription="VAR_PO_DATE"/>
+      <variableProperties datatype="VARCHAR" mandatory="true">
+        <valueDomain type="AttributeValue">
+          <attribute name="CAL_PO_DATE"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+      </variableProperties>
+    </variable>
+    <variable id="IP_PO_START_DATE" parameter="true">
+      <descriptions defaultDescription="IP_PO_START_DATE"/>
+      <variableProperties datatype="DATE" mandatory="true" defaultValue="undefined">
+        <valueDomain type="Date"/>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+    <variable id="IP_PO_END_DATE" parameter="true">
+      <descriptions defaultDescription="IP_PO_END_DATE"/>
+      <variableProperties datatype="DATE" mandatory="true" defaultValue="undefined">
+        <valueDomain type="Date"/>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+    <variable id="VAR_CAL_STILL_TOBE_DELIVERED">
+      <descriptions defaultDescription="VAR_CAL_STILL_TOBE_DELIVERED"/>
+      <variableProperties datatype="VARCHAR" mandatory="false">
+        <valueDomain type="AttributeValue">
+          <attribute name="CAL_STILL_TOBE_DELIVERED"/>
+        </valueDomain>
+        <selection multiLine="false" type="Range"/>
+        <defaultRange lowValue="0" operator="GT" including="true"/>
+      </variableProperties>
+    </variable>
+  </localVariables>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="ZHV_PUR_PO_DATA">
+      <resourceUri>algoma.mm.pur.po::ZHV_PUR_PO_DATA</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKET_EINDT_Delivery_date"/>
+        <viewAttribute id="EBAN_BANFN_Purch_Req_"/>
+        <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+        <viewAttribute id="EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <viewAttribute id="EKKO_ERNAM_Created_By"/>
+        <viewAttribute id="EBAN_ERNAM_Created_By"/>
+        <viewAttribute id="EBKN_AUFNR_Order"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="EBAN_BSMNG_Order_quantity"/>
+        <viewAttribute id="EKBE_MENGE_Quantity"/>
+        <viewAttribute id="EKKO_BSTYP_Doc_Category"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_ELIKZ_Deliv_Compl_"/>
+        <viewAttribute id="EKPO_PSTYP_Item_category"/>
+        <viewAttribute id="FUNDCENTER_ID_EBAN"/>
+        <viewAttribute id="FUNDCENTER_NAME_EBAN"/>
+        <viewAttribute id="FUNDCENTER_ID_EBKN"/>
+        <viewAttribute id="FUNDCENTER_NAME_EBKN"/>
+        <viewAttribute id="EBKN_FISTL_Funds_center"/>
+        <viewAttribute id="EKBE_MENGE_Quantity_Max"/>
+        <viewAttribute id="EBAN_MFRNR_Manufacturer"/>
+        <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="DECIMAL" id="CAL_STILL_TOBE_ORD_QTY" length="34" scale="6" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;EKPO_MENGE_PO_Quantity&quot; - &quot;EBAN_BSMNG_Order_quantity&quot;</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="DECIMAL" id="CAL_STILL_TOBE_DELIV_QTY" length="34" scale="6" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;EKPO_MENGE_PO_Quantity&quot; - &quot;EKBE_MENGE_Quantity_Max&quot;</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="INTEGER" id="CAL_DELIV_DATE_CHK" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(daydate(&quot;EKET_EINDT_Delivery_date&quot;) &lt; now(),1,0)</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="CAL_PAST_DUE" length="20" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;CAL_DELIV_DATE_CHK&quot;=1,'po is past due','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="CAL_FUNDCENTER_CHK" length="60" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(isNull(if(isNull(&quot;FUNDCENTER_ID_EBAN&quot;),&quot;FUNDCENTER_ID_EBKN&quot;,&quot;FUNDCENTER_ID_EBAN&quot;)),&quot;EBKN_FISTL_Funds_center&quot;,if(isNull(&quot;FUNDCENTER_ID_EBAN&quot;),&quot;FUNDCENTER_ID_EBKN&quot;,&quot;FUNDCENTER_ID_EBAN&quot;))</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="CAL_FUNDCENTER_NAME_CHK" length="60" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(isNull(if(isNull(&quot;FUNDCENTER_NAME_EBAN&quot;),&quot;FUNDCENTER_NAME_EBKN&quot;,&quot;FUNDCENTER_NAME_EBAN&quot;)),'chng-fund-center',if(isNull(&quot;FUNDCENTER_NAME_EBAN&quot;),&quot;FUNDCENTER_NAME_EBKN&quot;,&quot;FUNDCENTER_NAME_EBAN&quot;))</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="DATE" id="CAL_PO_DATE" expressionLanguage="COLUMN_ENGINE">
+          <formula>daydate(&quot;EKKO_BEDAT_Document_Date&quot;)</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="ZHV_PUR_PO_DATA"/>
+    <filter>&quot;EKKO_BSTYP_Doc_Category&quot; = 'F' and
+&quot;EKPO_LOEKZ_Deletion_ind_&quot; = '' and
+&quot;EKPO_ELIKZ_Deliv_Compl_&quot; = '' and
+&quot;EKPO_PSTYP_Item_category&quot; != '3' and
+&quot;EKPO_MATNR_Material&quot; != '' 
+and &quot;CAL_STILL_TOBE_DELIV_QTY&quot; &gt; 0</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="EKKO_BEDAT_Document_Date" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date of Purchasing Document"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_BEDAT_Document_Date"/>
+      </attribute>
+      <attribute id="EKKO_EBELN_Purchasing_Doc_" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Document Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="EKPO_EBELP_Item" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_EBELP_Item"/>
+      </attribute>
+      <attribute id="EKET_EINDT_Delivery_date" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Delivery date of the item"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKET_EINDT_Delivery_date"/>
+      </attribute>
+      <attribute id="EBAN_BANFN_Purch_Req_" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Requisition Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_BANFN_Purch_Req_"/>
+      </attribute>
+      <attribute id="EBAN_BNFPO_Requisn_item" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchase Requisition"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_BNFPO_Requisn_item"/>
+      </attribute>
+      <attribute id="EKPO_MATNR_Material" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Matrial Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_MATNR_Material"/>
+      </attribute>
+      <attribute id="EKKO_LIFNR_Vendor" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor’s Account Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_LIFNR_Vendor"/>
+      </attribute>
+      <attribute id="LFA1_NAME1_Name" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor Name"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LFA1_NAME1_Name"/>
+      </attribute>
+      <attribute id="EKKO_EKGRP_Purch_Group" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_EKGRP_Purch_Group"/>
+      </attribute>
+      <attribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Current Buyer"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+      </attribute>
+      <attribute id="EKKO_ERNAM_Created_By" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Created by"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_ERNAM_Created_By"/>
+      </attribute>
+      <attribute id="EBAN_ERNAM_Created_By" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PR Created by"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_ERNAM_Created_By"/>
+      </attribute>
+      <attribute id="EBKN_AUFNR_Order" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription=" Order Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBKN_AUFNR_Order"/>
+      </attribute>
+      <attribute id="CAL_PAST_DUE" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Past Due"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_PAST_DUE"/>
+      </attribute>
+      <attribute id="CAL_FUNDCENTER_CHK" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fund Center Chk"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_FUNDCENTER_CHK"/>
+      </attribute>
+      <attribute id="CAL_FUNDCENTER_NAME_CHK" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Func Center Name Chk"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_FUNDCENTER_NAME_CHK"/>
+      </attribute>
+      <attribute id="CAL_PO_DATE" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CAL_PO_DATE"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_PO_DATE"/>
+      </attribute>
+      <attribute id="EBAN_MFRNR_Manufacturer" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer #"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_MFRNR_Manufacturer"/>
+      </attribute>
+      <attribute id="LFA1_MNFR_MCOD1_Name" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer Name"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LFA1_MNFR_MCOD1_Name"/>
+      </attribute>
+    
+      <attribute id="EKKO_BSTYP_Doc_Category" order="28" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKKO_BSTYP_Doc_Category"/>
+        <localVariable>VAR_EKKO_BSTYP_Doc_Category</localVariable>
+    
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_BSTYP_Doc_Category"/>
+    
+      </attribute>
+      <attribute id="EKPO_LOEKZ_Deletion_ind_" order="29" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKPO_LOEKZ_Deletion_ind_"/>
+        <localVariable>VAR_EKPO_LOEKZ_Deletion_ind_</localVariable>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_LOEKZ_Deletion_ind_"/>
+      </attribute>
+      <attribute id="EKPO_ELIKZ_Deliv_Compl_" order="30" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKPO_ELIKZ_Deliv_Compl_"/>
+        <localVariable>VAR_EKPO_ELIKZ_Deliv_Compl_</localVariable>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_ELIKZ_Deliv_Compl_"/>
+      </attribute>
+      <attribute id="EKPO_PSTYP_Item_category" order="31" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKPO_PSTYP_Item_category"/>
+        <localVariable>VAR_EKPO_PSTYP_Item_category</localVariable>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_PSTYP_Item_category"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes>
+      <calculatedAttribute id="CAL_STILL_TOBE_DELIVERED" hidden="false" order="25" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CAL_STILL_TOBE_DELIVERED"/>
+        <keyCalculation datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+          <formula>min(&quot;CAL_STILL_TOBE_DELIV_QTY&quot;)</formula>
+        </keyCalculation>
+      </calculatedAttribute>
+    </calculatedAttributes>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="EKPO_MENGE_PO_Quantity" order="15" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="PO Quantity"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EKPO_MENGE_PO_Quantity"/>
+      </measure>
+      <measure id="EBAN_BSMNG_Order_quantity" order="16" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Quantity Ordered"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EBAN_BSMNG_Order_quantity"/>
+      </measure>
+      <measure id="EKBE_MENGE_Quantity" order="17" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Quantity Received"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EKBE_MENGE_Quantity"/>
+      </measure>
+      <measure id="CAL_STILL_TOBE_ORD_QTY" order="18" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Still to be Ordered Qty"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_STILL_TOBE_ORD_QTY"/>
+      </measure>
+      <measure id="CAL_STILL_TOBE_DELIV_QTY" order="19" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Still to be Deliv Qty"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_STILL_TOBE_DELIV_QTY"/>
+      </measure>
+      <measure id="CAL_DELIV_DATE_CHK" order="20" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Delivery Date Check"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_DELIV_DATE_CHK"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="130" y="260"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

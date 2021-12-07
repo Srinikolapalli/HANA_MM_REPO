@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_PUR_PO_RPT4" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_PUR_PO_RPT4"/>
+  <metadata changedAt="2021-04-06 12:38:01.573"/>
+  <localVariables>
+    <variable id="IP_Year" parameter="true">
+      <descriptions defaultDescription="Year"/>
+      <variableProperties datatype="INTEGER" mandatory="false">
+        <valueDomain type="empty"/>
+        <selection multiLine="false" type="SingleValue"/>
+        <defaultRange/>
+      </variableProperties>
+    </variable>
+  </localVariables>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="55"/>
+  <dataSources>
+    <DataSource id="EBAN">
+      <resourceUri>algoma.mm::EBAN</resourceUri>
+    </DataSource>
+    <DataSource id="ZHV_PUR_CHG_LOG">
+      <resourceUri>algoma.mm.pur::ZHV_PUR_CHG_LOG</resourceUri>
+    </DataSource>
+    <DataSource id="ZTBL_WORDAYS_CALENDAR">
+      <resourceUri>algoma.mm::ZTBL_WORDAYS_CALENDAR</resourceUri>
+    </DataSource>
+    <DataSource id="EKPO">
+      <resourceUri>algoma.mm::EKPO</resourceUri>
+    </DataSource>
+    <DataSource id="EKKO">
+      <resourceUri>algoma.mm::EKKO</resourceUri>
+    </DataSource>
+    <DataSource id="CopyOfProjection_4$$$$ZTBL_WORDAYS_CALENDAR$$">
+      <resourceUri>algoma.mm::ZTBL_WORDAYS_CALENDAR</resourceUri>
+    </DataSource>
+    <DataSource id="Projection_7$$$$EKKO$$">
+      <resourceUri>algoma.mm::EKKO</resourceUri>
+    </DataSource>
+    <DataSource id="Projection_8$$$$EKPO$$">
+      <resourceUri>algoma.mm::EKPO</resourceUri>
+    </DataSource>
+    <DataSource id="ZMM_PLANT_PUR_CO">
+      <resourceUri>algoma.mm::ZMM_PLANT_PUR_CO</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBAN_BANFN_Purch_Req_"/>
+        <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKKO_EKGRP_Purch_Group"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EBAN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req_" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="BNFPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP_Purch_Group" source="EKGRP"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PR_Document_Number"/>
+        <viewAttribute id="Recent_Release_Date"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ZHV_PUR_CHG_LOG">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PR_Document_Number" source="OBJECTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Recent_Release_Date" source="UDATE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBAN_BANFN_Purch_Req_"/>
+        <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="Recent_Release_Date"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req_" source="EBAN_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP_Purch_Group" source="EKKO_EKGRP_Purch_Group"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="Recent_Release_Date" source="Recent_Release_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req_" source="PR_Document_Number"/>
+      </input>
+      <joinAttribute name="EBAN_BANFN_Purch_Req_"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DATE"/>
+        <viewAttribute id="WORKDAYS_PR_RELEASE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ZTBL_WORDAYS_CALENDAR">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATE" source="DATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PR_RELEASE" source="WORKDAYS"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="BNFPO"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_AEDAT_Created_On"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_Created_On" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="BEDAT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DATE"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#CopyOfProjection_4$$$$ZTBL_WORDAYS_CALENDAR$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATE" source="DATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+        <viewAttribute hidden="true" id="JOIN$EKKO_AEDAT_Created_On$DATE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKKO_AEDAT_Created_On$DATE" source="EKKO_AEDAT_Created_On"/>
+      </input>
+      <input node="#CopyOfProjection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKKO_AEDAT_Created_On$DATE" source="DATE"/>
+      </input>
+      <joinAttribute name="JOIN$EKKO_AEDAT_Created_On$DATE"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+        <viewAttribute hidden="true" id="JOIN$EKPO_EBELN_Purchasing_Doc_$EKKO_EBELN_Purchasing_Doc_"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKPO_EBELN_Purchasing_Doc_$EKKO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+      </input>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKPO_EBELN_Purchasing_Doc_$EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+      </input>
+      <joinAttribute name="JOIN$EKPO_EBELN_Purchasing_Doc_$EKKO_EBELN_Purchasing_Doc_"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBAN_BANFN_Purch_Req_"/>
+        <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="WORKDAYS_PR_RELEASE"/>
+        <viewAttribute hidden="true" id="JOIN$Recent_Release_Date$DATE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req_" source="EBAN_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP_Purch_Group" source="EKKO_EKGRP_Purch_Group"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Recent_Release_Date$DATE" source="Recent_Release_Date"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PR_RELEASE" source="WORKDAYS_PR_RELEASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Recent_Release_Date$DATE" source="DATE"/>
+      </input>
+      <joinAttribute name="JOIN$Recent_Release_Date$DATE"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_7">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBELN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_7$$$$EKKO$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_8">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBELN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_8$$$$EKPO$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBELN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_7">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
+      <input node="#Projection_8">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
+      <joinAttribute name="EBELN"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+      </input>
+      <input node="#Join_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EBELN"/>
+      </input>
+      <joinAttribute name="EKKO_EBELN_Purchasing_Doc_"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="WORKDAYS_PR_RELEASE"/>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+        <viewAttribute hidden="true" id="JOIN$EBAN_BNFPO_Requisn_item$EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute hidden="true" id="JOIN$EBAN_BANFN_Purch_Req_$EKPO_BANFN_Purch_Req_"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP_Purch_Group" source="EKKO_EKGRP_Purch_Group"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PR_RELEASE" source="WORKDAYS_PR_RELEASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_BANFN_Purch_Req_$EKPO_BANFN_Purch_Req_" source="EBAN_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_BNFPO_Requisn_item$EKPO_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
+      </input>
+      <input node="#Join_6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_BANFN_Purch_Req_$EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_BNFPO_Requisn_item$EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+      </input>
+      <joinAttribute name="JOIN$EBAN_BANFN_Purch_Req_$EKPO_BANFN_Purch_Req_"/>
+      <joinAttribute name="JOIN$EBAN_BNFPO_Requisn_item$EKPO_BNFPO_Requisn_item"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_9">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ZMM_PLANT_PUR_CO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" source="ZCONT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="WORKDAYS_PR_RELEASE"/>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <viewAttribute hidden="true" id="JOIN$EKKO_EKGRP_Purch_Group$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_7">
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PR_RELEASE" source="WORKDAYS_PR_RELEASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKKO_EKGRP_Purch_Group$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group" source="EKKO_EKGRP_Purch_Group"/>
+      </input>
+      <input node="#Projection_9">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" source="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKKO_EKGRP_Purch_Group$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group" source="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
+      </input>
+      <joinAttribute name="JOIN$EKKO_EKGRP_Purch_Group$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <viewAttribute id="EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="WORKDAYS_PR_RELEASE"/>
+        <viewAttribute id="WORKDAYS_PO_CREATION"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="CAL_YEAR" expressionLanguage="SQL">
+          <formula>Year(To_date(&quot;EKKO_BEDAT_Document_Date&quot;))</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="INTEGER" id="CAL_MONTH" expressionLanguage="SQL">
+          <formula>Month(To_Date(&quot;EKKO_BEDAT_Document_Date&quot;))</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="DECIMAL" id="CAL_WORKING_DAYS_PR_PO" length="20" scale="6" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;WORKDAYS_PO_CREATION&quot; - &quot;WORKDAYS_PR_RELEASE&quot;</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#Join_8">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" source="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT_Document_Date" source="EKKO_BEDAT_Document_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PR_RELEASE" source="WORKDAYS_PR_RELEASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WORKDAYS_PO_CREATION" source="WORKDAYS_PO_CREATION"/>
+      </input>
+      <filter>&quot;CAL_YEAR&quot; = $$IP_Year$$</filter>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Buyer"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+      </attribute>
+      <attribute id="CAL_YEAR" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Year"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_YEAR"/>
+      </attribute>
+      <attribute id="CAL_MONTH" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Month"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_MONTH"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="CAL_WORKING_DAYS_PR_PO" order="4" aggregationType="avg" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="PR PO Cycle Time Average"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_WORKING_DAYS_PR_PO"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="329" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="531"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="531"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="723"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="CopyOfProjection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="407" y="723"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="531"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="435"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="792" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="531"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="435"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="406" y="339"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_9" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="252" y="339"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="243"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
