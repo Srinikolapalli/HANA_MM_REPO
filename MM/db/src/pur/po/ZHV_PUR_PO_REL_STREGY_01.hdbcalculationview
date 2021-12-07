@@ -1,0 +1,1662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_PUR_PO_REL_STREGY_01" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_CO_REL_STREGY_01"/>
+  <metadata changedAt="2021-05-11 14:56:33.621"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="70"/>
+  <dataSources>
+    <DataSource id="T16FS">
+      <resourceUri>algoma.mm::T16FS</resourceUri>
+    </DataSource>
+    <DataSource id="T16FT">
+      <resourceUri>algoma.mm::T16FT</resourceUri>
+    </DataSource>
+    <DataSource id="T16FK">
+      <resourceUri>algoma.mm::T16FK</resourceUri>
+    </DataSource>
+    <DataSource id="CABN">
+      <resourceUri>algoma.mm::CABN</resourceUri>
+    </DataSource>
+    <DataSource id="AUSP">
+      <resourceUri>algoma.mm::AUSP</resourceUri>
+    </DataSource>
+    <DataSource id="T16FV">
+      <resourceUri>algoma.mm::T16FV</resourceUri>
+    </DataSource>
+    <DataSource id="AGR_1251">
+      <resourceUri>algoma.mm::AGR_1251</resourceUri>
+    </DataSource>
+    <DataSource id="AGR_USERS">
+      <resourceUri>algoma.mm::AGR_USERS</resourceUri>
+    </DataSource>
+    <DataSource id="USR21">
+      <resourceUri>algoma.mm::USR21</resourceUri>
+    </DataSource>
+    <DataSource id="ADRP">
+      <resourceUri>algoma.mm::ADRP</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FS" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T16FS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+      </input>
+      <filter>in(&quot;FRGGR&quot;,'PA')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FT" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T16FT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+      </input>
+      <filter>&quot;SPRAS&quot;='E'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_T16FS_Data" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="NVARCHAR" id="FRGGR_FRGSX" length="4" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;FRGGR&quot;+&quot;FRGSX&quot;</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#Projn_T16FS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+      </input>
+      <input node="#Projn_T16FT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="FRGGR"/>
+      <joinAttribute name="FRGSX"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FK">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+        <viewAttribute id="FRGKX"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T16FK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGKX" source="FRGKX"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATNAM"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#CABN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATNAM" source="ATNAM"/>
+      </input>
+      <filter>(in (&quot;ATNAM&quot;,'MM-PO-PUR-GRP','MM-PO-TOTAL_VALUE_CAD','MM-CONTRACT-TOTAL_VALUE_CAD'))</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="OBJEK"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="ATFLB"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AUSP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK" source="OBJEK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATFLB" source="ATFLB"/>
+      </input>
+      <filter>(&quot;ATWRT&quot; !='')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="OBJEK"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="ATFLB"/>
+        <viewAttribute hidden="true" id="JOIN$ATINN$ATINN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN$ATINN" source="ATINN"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK" source="OBJEK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATFLB" source="ATFLB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN$ATINN" source="ATINN"/>
+      </input>
+      <joinAttribute name="JOIN$ATINN$ATINN"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_T16FS_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+      </input>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="OBJEK"/>
+      </input>
+      <joinAttribute name="FRGGR_FRGSX"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_T16FS_Data_T16FK" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+        <viewAttribute id="FRGKX"/>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      </input>
+      <input node="#Projn_T16FK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGKX" source="FRGKX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="FRGGR"/>
+      <joinAttribute name="FRGSX"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggrn_T16FS_Data_T16FK">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+        <viewAttribute id="FRGKX"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P1" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA1&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P2" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA2&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P3" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA3&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P4" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA4&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P5" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA5&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P6" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA6&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P7" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA7&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_P8" length="1" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGA8&quot;='X','X','')</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#Join_T16FS_Data_T16FK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGKX" source="FRGKX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FV">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_T16FS_Data_T16FK_T16FV" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="FRGCO_P1"/>
+        <viewAttribute id="FRGCO_P2"/>
+        <viewAttribute id="FRGCO_P3"/>
+        <viewAttribute id="FRGCO_P4"/>
+        <viewAttribute id="FRGCO_P5"/>
+        <viewAttribute id="FRGCO_P6"/>
+        <viewAttribute id="FRGCO_P7"/>
+        <viewAttribute id="FRGCO_P8"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Aggrn_T16FS_Data_T16FK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P1" source="FRGCO_P1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P2" source="FRGCO_P2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P3" source="FRGCO_P3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P4" source="FRGCO_P4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P5" source="FRGCO_P5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P6" source="FRGCO_P6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P7" source="FRGCO_P7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P8" source="FRGCO_P8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      </input>
+      <input node="#Projn_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="FRGGR"/>
+      <joinAttribute name="FRGSX"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggrn_T16FS_Data_T16FK_T16FV">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="FRGCO_P8"/>
+        <viewAttribute id="FRGCO_P7"/>
+        <viewAttribute id="FRGCO_P6"/>
+        <viewAttribute id="FRGCO_P5"/>
+        <viewAttribute id="FRGCO_P4"/>
+        <viewAttribute id="FRGCO_P3"/>
+        <viewAttribute id="FRGCO_P2"/>
+        <viewAttribute id="FRGCO_P1"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGA1"/>
+        <viewAttribute id="FRGA2"/>
+        <viewAttribute id="FRGA3"/>
+        <viewAttribute id="FRGA4"/>
+        <viewAttribute id="FRGA5"/>
+        <viewAttribute id="FRGA6"/>
+        <viewAttribute id="FRGA7"/>
+        <viewAttribute id="FRGA8"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_1" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P1&quot;='X' AND &quot;FRGA1&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_2" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P2&quot;='X' AND &quot;FRGA2&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_3" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P3&quot;='X' AND &quot;FRGA3&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_4" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P4&quot;='X' AND &quot;FRGA4&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_5" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P5&quot;='X' AND &quot;FRGA5&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_6" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P6&quot;='X' AND &quot;FRGA6&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_7" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P7&quot;='X' AND &quot;FRGA7&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="FRGCO_8" length="2" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_P8&quot;='X' AND &quot;FRGA8&quot;='X',&quot;FRGCO&quot;,'')</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#Join_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P8" source="FRGCO_P8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P7" source="FRGCO_P7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P6" source="FRGCO_P6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P5" source="FRGCO_P5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P4" source="FRGCO_P4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P3" source="FRGCO_P3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P2" source="FRGCO_P2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P1" source="FRGCO_P1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA1" source="FRGA1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA2" source="FRGA2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA3" source="FRGA3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA4" source="FRGA4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA5" source="FRGA5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA6" source="FRGA6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA7" source="FRGA7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGA8" source="FRGA8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_AGR_1251" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="FIELD"/>
+        <viewAttribute id="LOW"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AGR_1251">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FIELD" source="FIELD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+      </input>
+      <filter>match(&quot;AGR_NAME&quot;,'ZMM004_2800_2810*') and (&quot;FIELD&quot; = 'FRGCO')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="TO_DAT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AGR_USERS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TO_DAT" source="TO_DAT"/>
+      </input>
+      <filter>(&quot;TO_DAT&quot; ='99991231')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#USR21">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="BNAME"/>
+      </input>
+      <joinAttribute name="UNAME"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADRP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="NAME_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+      </input>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+      </input>
+      <joinAttribute name="PERSNUMBER"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="LOW"/>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projn_AGR_1251">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      </input>
+      <input node="#Join_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+      </input>
+      <joinAttribute name="AGR_NAME"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGGR_FRGSX"/>
+        <viewAttribute id="FRGCO_P1"/>
+        <viewAttribute id="FRGCO_P2"/>
+        <viewAttribute id="FRGCO_P3"/>
+        <viewAttribute id="FRGCO_P4"/>
+        <viewAttribute id="FRGCO_P5"/>
+        <viewAttribute id="FRGCO_P6"/>
+        <viewAttribute id="FRGCO_P7"/>
+        <viewAttribute id="FRGCO_P8"/>
+        <viewAttribute id="FRGCO_1"/>
+        <viewAttribute id="FRGCO_2"/>
+        <viewAttribute id="FRGCO_3"/>
+        <viewAttribute id="FRGCO_4"/>
+        <viewAttribute id="FRGCO_5"/>
+        <viewAttribute id="FRGCO_6"/>
+        <viewAttribute id="FRGCO_7"/>
+        <viewAttribute id="FRGCO_8"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="LOW"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_1"/>
+        <viewAttribute id="BNAME_1"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="NVARCHAR" id="REL_USR_AGR1" length="45" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_1&quot; = &quot;LOW&quot;,&quot;AGR_NAME&quot;,'')</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="NVARCHAR" id="REL_USR_AGR2" length="45" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(&quot;FRGCO_2&quot; = &quot;LOW&quot;,&quot;AGR_NAME&quot;,'')</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_FRGSX" source="FRGGR_FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P1" source="FRGCO_P1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P2" source="FRGCO_P2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P3" source="FRGCO_P3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P4" source="FRGCO_P4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P5" source="FRGCO_P5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P6" source="FRGCO_P6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P7" source="FRGCO_P7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_P8" source="FRGCO_P8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_1" source="FRGCO_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_2" source="FRGCO_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_3" source="FRGCO_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_4" source="FRGCO_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_5" source="FRGCO_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_6" source="FRGCO_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_7" source="FRGCO_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_8" source="FRGCO_8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      </input>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_1" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_1" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_1" source="LOW"/>
+      </input>
+      <joinAttribute name="FRGCO_1"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_2"/>
+        <viewAttribute id="LOW_2"/>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="UNAME_2"/>
+        <viewAttribute id="PERSNUMBER_2"/>
+        <viewAttribute id="FRGGR_2"/>
+        <viewAttribute id="FRGSX_2"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_2"/>
+        <viewAttribute id="BNAME_2"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_2" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_2" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME_2" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER_2" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_2" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_2" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR_2" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX_2" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_2" source="FRGCO_2"/>
+      </input>
+      <joinAttribute name="LOW_2"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_3"/>
+        <viewAttribute id="LOW_3"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_3"/>
+        <viewAttribute id="BNAME_3"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_3" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_3" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_3" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_3" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_3" source="FRGCO_3"/>
+      </input>
+      <joinAttribute name="LOW_3"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_4" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_4"/>
+        <viewAttribute id="LOW_4"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_4"/>
+        <viewAttribute id="BNAME_4"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_4" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_4" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_4" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_4" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_4" source="FRGCO_4"/>
+      </input>
+      <joinAttribute name="LOW_4"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_5"/>
+        <viewAttribute id="LOW_5"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_5"/>
+        <viewAttribute id="BNAME_5"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_5" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_5" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_5" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_5" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_5" source="FRGCO_5"/>
+      </input>
+      <joinAttribute name="LOW_5"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_6" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_6"/>
+        <viewAttribute id="LOW_6"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="NAME_TEXT_6"/>
+        <viewAttribute id="BNAME_6"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_6" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_6" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_6" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_6" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_6" source="FRGCO_6"/>
+      </input>
+      <joinAttribute name="LOW_6"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_7" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_7"/>
+        <viewAttribute id="LOW_7"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="FRGCO_7"/>
+        <viewAttribute id="NAME_TEXT_7"/>
+        <viewAttribute id="BNAME_7"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_7" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_7" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_7" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_7" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO_7" source="FRGCO_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_7" source="FRGCO_7"/>
+      </input>
+      <joinAttribute name="LOW_7"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="FRGCO_8" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AGR_NAME_8"/>
+        <viewAttribute id="LOW_8"/>
+        <viewAttribute id="FRGXT"/>
+        <viewAttribute id="FRGSX"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="ATINN"/>
+        <viewAttribute id="ATWRT"/>
+        <viewAttribute id="NAME_TEXT_8"/>
+        <viewAttribute id="BNAME_8"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_8" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_8" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_8" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_8" source="BNAME"/>
+      </input>
+      <input node="#Aggrn_T16FS_Data_T16FK_T16FV">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_8" source="FRGCO_8"/>
+      </input>
+      <joinAttribute name="LOW_8"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="FRGGR" transparentFilter="false"/>
+        <viewAttribute id="FRGSX" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME" transparentFilter="false"/>
+        <viewAttribute id="LOW" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_2" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_3" transparentFilter="false"/>
+        <viewAttribute id="LOW_3" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_4" transparentFilter="false"/>
+        <viewAttribute id="LOW_4" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_5" transparentFilter="false"/>
+        <viewAttribute id="LOW_5" transparentFilter="false"/>
+        <viewAttribute id="LOW_2" transparentFilter="false"/>
+        <viewAttribute id="FRGXT" transparentFilter="false"/>
+        <viewAttribute id="ATINN" transparentFilter="false"/>
+        <viewAttribute id="ATWRT" transparentFilter="false"/>
+        <viewAttribute id="LOW_7" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_7" transparentFilter="false"/>
+        <viewAttribute id="LOW_6" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_6" transparentFilter="false"/>
+        <viewAttribute id="LOW_8" transparentFilter="false"/>
+        <viewAttribute id="AGR_NAME_8" transparentFilter="false"/>
+        <viewAttribute id="BNAME_1" transparentFilter="false"/>
+        <viewAttribute id="BNAME_2" transparentFilter="false"/>
+        <viewAttribute id="BNAME_3" transparentFilter="false"/>
+        <viewAttribute id="BNAME_4" transparentFilter="false"/>
+        <viewAttribute id="BNAME_5" transparentFilter="false"/>
+        <viewAttribute id="BNAME_6" transparentFilter="false"/>
+        <viewAttribute id="BNAME_7" transparentFilter="false"/>
+        <viewAttribute id="BNAME_8" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_1" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_2" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_3" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_4" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_5" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_6" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_7" transparentFilter="false"/>
+        <viewAttribute id="NAME_TEXT_8" transparentFilter="false"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_1" source="BNAME_1"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_1" source="NAME_TEXT_1"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX_2"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_2" source="AGR_NAME_2"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_2" source="LOW_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_2" source="BNAME_2"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_2" source="NAME_TEXT_2"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_3" source="AGR_NAME_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_3" source="LOW_3"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_3" source="BNAME_3"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_3" source="NAME_TEXT_3"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_4" source="AGR_NAME_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_4" source="LOW_4"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_4" source="BNAME_4"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_4" source="NAME_TEXT_4"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_5" source="AGR_NAME_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_5" source="LOW_5"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_5" source="BNAME_5"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_5" source="NAME_TEXT_5"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_6" source="LOW_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_6" source="AGR_NAME_6"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_6" source="BNAME_6"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_6" source="NAME_TEXT_6"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_7">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_7" source="LOW_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_7" source="AGR_NAME_7"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_7" source="BNAME_7"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_8" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_7" source="NAME_TEXT_7"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_8" null="true" value=""/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="#FRGCO_8">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LOW_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AGR_NAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_8" source="LOW_8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_8" source="AGR_NAME_8"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BNAME_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_8" source="BNAME_8"/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_1" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_2" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_3" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_4" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_5" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_6" null="true" value=""/>
+        <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME_TEXT_7" null="true" value=""/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_8" source="NAME_TEXT_8"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggrn_MAX">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="FRGGR" transparentFilter="false"/>
+        <viewAttribute id="FRGSX" transparentFilter="false"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME"/>
+        <viewAttribute aggregationType="max" id="LOW"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_2"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_3"/>
+        <viewAttribute aggregationType="max" id="LOW_3"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_4"/>
+        <viewAttribute aggregationType="max" id="LOW_4"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_5"/>
+        <viewAttribute aggregationType="max" id="LOW_5"/>
+        <viewAttribute aggregationType="max" id="LOW_2"/>
+        <viewAttribute id="FRGXT" transparentFilter="false"/>
+        <viewAttribute id="ATINN" transparentFilter="false"/>
+        <viewAttribute id="ATWRT" transparentFilter="false"/>
+        <viewAttribute aggregationType="max" id="LOW_7"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_7"/>
+        <viewAttribute aggregationType="max" id="LOW_6"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_6"/>
+        <viewAttribute aggregationType="max" id="LOW_8"/>
+        <viewAttribute aggregationType="max" id="AGR_NAME_8"/>
+        <viewAttribute aggregationType="max" id="BNAME_1"/>
+        <viewAttribute aggregationType="max" id="BNAME_2"/>
+        <viewAttribute aggregationType="max" id="BNAME_3"/>
+        <viewAttribute aggregationType="max" id="BNAME_4"/>
+        <viewAttribute aggregationType="max" id="BNAME_5"/>
+        <viewAttribute aggregationType="max" id="BNAME_6"/>
+        <viewAttribute aggregationType="max" id="BNAME_7"/>
+        <viewAttribute aggregationType="max" id="BNAME_8"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_1"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_2"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_3"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_4"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_5"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_6"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_7"/>
+        <viewAttribute aggregationType="max" id="NAME_TEXT_8"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Union_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGSX" source="FRGSX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_2" source="AGR_NAME_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_3" source="AGR_NAME_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_3" source="LOW_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_4" source="AGR_NAME_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_4" source="LOW_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_5" source="AGR_NAME_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_5" source="LOW_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_2" source="LOW_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGXT" source="FRGXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_7" source="LOW_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_7" source="AGR_NAME_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_6" source="LOW_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_6" source="AGR_NAME_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW_8" source="LOW_8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME_8" source="AGR_NAME_8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_1" source="BNAME_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_2" source="BNAME_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_3" source="BNAME_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_4" source="BNAME_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_5" source="BNAME_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_6" source="BNAME_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_7" source="BNAME_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME_8" source="BNAME_8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_1" source="NAME_TEXT_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_2" source="NAME_TEXT_2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_3" source="NAME_TEXT_3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_4" source="NAME_TEXT_4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_5" source="NAME_TEXT_5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_6" source="NAME_TEXT_6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_7" source="NAME_TEXT_7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT_8" source="NAME_TEXT_8"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Aggrn_MAX">
+    <descriptions/>
+    <attributes>
+      <attribute id="FRGGR" order="2" attributeHierarchyActive="false" displayAttribute="false" transparentFilter="false">
+        <descriptions defaultDescription="Release group"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="FRGGR"/>
+      </attribute>
+      <attribute id="FRGSX" order="3" attributeHierarchyActive="false" displayAttribute="false" transparentFilter="false">
+        <descriptions defaultDescription="Release Strategy"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="FRGSX"/>
+      </attribute>
+      <attribute id="AGR_NAME" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 1"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME"/>
+      </attribute>
+      <attribute id="LOW" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 1"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW"/>
+      </attribute>
+      <attribute id="AGR_NAME_2" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 2"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_2"/>
+      </attribute>
+      <attribute id="AGR_NAME_3" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 3"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_3"/>
+      </attribute>
+      <attribute id="LOW_3" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 3"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_3"/>
+      </attribute>
+      <attribute id="AGR_NAME_4" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 4"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_4"/>
+      </attribute>
+      <attribute id="LOW_4" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 4"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_4"/>
+      </attribute>
+      <attribute id="AGR_NAME_5" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 5"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_5"/>
+      </attribute>
+      <attribute id="LOW_5" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 5"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_5"/>
+      </attribute>
+      <attribute id="LOW_2" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 2"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_2"/>
+      </attribute>
+      <attribute id="FRGXT" order="14" attributeHierarchyActive="false" displayAttribute="false" transparentFilter="false">
+        <descriptions defaultDescription="Rel Strat Descr"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="FRGXT"/>
+      </attribute>
+      <attribute id="ATINN" order="15" attributeHierarchyActive="false" displayAttribute="false" transparentFilter="false">
+        <descriptions defaultDescription="Internal characteristic"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="ATINN"/>
+      </attribute>
+      <attribute id="ATWRT" order="16" attributeHierarchyActive="false" displayAttribute="false" transparentFilter="false">
+        <descriptions defaultDescription="Value"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="ATWRT"/>
+      </attribute>
+      <attribute id="LOW_7" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 7"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_7"/>
+      </attribute>
+      <attribute id="AGR_NAME_7" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 7"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_7"/>
+      </attribute>
+      <attribute id="LOW_6" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 6"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_6"/>
+      </attribute>
+      <attribute id="AGR_NAME_6" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 6"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_6"/>
+      </attribute>
+      <attribute id="LOW_8" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release Code 8"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="LOW_8"/>
+      </attribute>
+      <attribute id="AGR_NAME_8" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name 8"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="AGR_NAME_8"/>
+      </attribute>
+      <attribute id="BNAME_1" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 1"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_1"/>
+      </attribute>
+      <attribute id="BNAME_2" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 2"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_2"/>
+      </attribute>
+      <attribute id="BNAME_3" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 3"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_3"/>
+      </attribute>
+      <attribute id="BNAME_4" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 4"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_4"/>
+      </attribute>
+      <attribute id="BNAME_5" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 5"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_5"/>
+      </attribute>
+      <attribute id="BNAME_6" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 6"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_6"/>
+      </attribute>
+      <attribute id="BNAME_7" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 7"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_7"/>
+      </attribute>
+      <attribute id="BNAME_8" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name 8"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="BNAME_8"/>
+      </attribute>
+      <attribute id="NAME_TEXT_1" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 1"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_1"/>
+      </attribute>
+      <attribute id="NAME_TEXT_2" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 2"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_2"/>
+      </attribute>
+      <attribute id="NAME_TEXT_3" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 3"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_3"/>
+      </attribute>
+      <attribute id="NAME_TEXT_4" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 4"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_4"/>
+      </attribute>
+      <attribute id="NAME_TEXT_5" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 5"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_5"/>
+      </attribute>
+      <attribute id="NAME_TEXT_6" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 6"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_6"/>
+      </attribute>
+      <attribute id="NAME_TEXT_7" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 7"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_7"/>
+      </attribute>
+      <attribute id="NAME_TEXT_8" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release User 8"/>
+        <keyMapping columnObjectName="Aggrn_MAX" columnName="NAME_TEXT_8"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures>
+      <measure id="fx_Count_No_Of_Records" hidden="false" order="1" aggregationType="sum" engineAggregation="sum" measureType="simple" aggregatable="true" calculatedMeasureType="counter" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="fx_Count_No_Of_Records"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="FRGGR"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="561" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="321" y="1139"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FT" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="475" y="1139"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_T16FS_Data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="475" y="1043"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="710" y="947"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="629" y="1139"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="783" y="1139"/>
+        <rectangleSize height="119" width="140"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="629" y="1043"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="556" y="947"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_T16FS_Data_T16FK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="851"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Aggrn_T16FS_Data_T16FK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="755"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FV" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="792" y="755"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_T16FS_Data_T16FK_T16FV" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="659"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Aggrn_T16FS_Data_T16FK_T16FV" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="563"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_AGR_1251" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="659"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="851"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="407" y="851"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="755"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="755"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="659"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="563"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="467"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="946" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="792" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="638" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="FRGCO_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="1100" y="467"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="561" y="243"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Aggrn_MAX" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="561" y="165"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

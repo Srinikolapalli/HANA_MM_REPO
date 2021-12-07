@@ -1,0 +1,343 @@
+{
+    "role": {
+        "name": "algoma.mm::PublicAccessObjects",
+        "object_privileges": [
+            {
+                "name": "algoma.mm::ZHV_BV_CHNG_LOG",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm::ZHV_BV_MATERIAL_MASTER",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm::ZHV_MM_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm::ZHV_MM_MBEW_HIS_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm::ZHV_MM_MSEG_02",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm::ZHV_PHY_INV_MAT_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.im::ZHV_BV_MAT_MOV_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.im::ZHV_IM_PHY_INV_MAT_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.im::ZHV_IM_STORE_DAILY_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur::ZHV_PUR_CHG_LOG",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur::ZHV_PUR_CHG_LOG_IR",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur::ZHV_VENDOR_MAS",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::COPYOFZHV_PUR_ME5A_PO",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_LATEST_PO_FOR_MATERIALS",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO2",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO_WITH_RFQ",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_RPT1",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_RPT2",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_PUR_MOST_RECENT_RFQ_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_QV_ME5A_LAST_PO_AND_MOST_RECENT_RFQ_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_QV_ME5A_LAST_PO_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_RV_LATEST_PO_FOR_MATERIALS",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_RV_ME5A_PO",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_RV_ME5A_PO_WITH_RFQ",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.me5a::ZHV_RV_MOST_RECENT_RFQ_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_CHANGE_LOG_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_CHANGE_LOG_INITIAL_PR_RELEASE",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_MNFR_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_PO_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_PO_GRN_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_PO_REPORT",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_PR_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_BV_VENDOR_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_ADV_PO_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_CHNG_LOG",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_CYCLE",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_REL_CODE_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_REL_STREGY_01",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RFQ_DATA",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RPT1",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RPT2",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RPT2_V2",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RPT3",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_RPT4",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_VENDORS_BY_MANF",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_RFQ_MANUF_PART_VENDOR_HISTORY",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            }
+        ]
+    }
+}

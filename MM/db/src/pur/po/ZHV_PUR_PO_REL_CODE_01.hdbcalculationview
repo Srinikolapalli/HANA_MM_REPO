@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_PO_REL_CODE_01" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_CO_REL_CODE_01"/>
+  <metadata changedAt="2021-05-11 15:21:46.062"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="58"/>
+  <dataSources>
+    <DataSource id="T16FC">
+      <resourceUri>algoma.mm::T16FC</resourceUri>
+    </DataSource>
+    <DataSource id="T16FD">
+      <resourceUri>algoma.mm::T16FD</resourceUri>
+    </DataSource>
+    <DataSource id="AGR_USERS">
+      <resourceUri>algoma.mm::AGR_USERS</resourceUri>
+    </DataSource>
+    <DataSource id="USR21">
+      <resourceUri>algoma.mm::USR21</resourceUri>
+    </DataSource>
+    <DataSource id="ADRP">
+      <resourceUri>algoma.mm::ADRP</resourceUri>
+    </DataSource>
+    <DataSource id="AGR_1251">
+      <resourceUri>algoma.mm::AGR_1251</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FC" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGWF"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="T16FC"/>
+    <filter>(in (&quot;FRGGR&quot;,'PA'))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_T16FD" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGCT"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="T16FD"/>
+    <filter>&quot;SPRAS&quot;='E'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_T16FC_D" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="FRGCT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGWF"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Projn_T16FC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGWF" source="FRGWF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      </input>
+      <input node="Projn_T16FD">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCT" source="FRGCT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+      </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="FRGGR"/>
+    <joinAttribute name="FRGCO"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_AGR_USERS" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="FROM_DAT"/>
+        <viewAttribute id="TO_DAT"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="DATE" id="fx_TO_DAT" expressionLanguage="COLUMN_ENGINE">
+          <formula>daydate(&quot;TO_DAT&quot;)</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="AGR_USERS"/>
+    <filter>&quot;fx_TO_DAT&quot; &gt;= daydate(now())</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_USR21">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="USR21"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_AGR_USERS" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="FROM_DAT"/>
+        <viewAttribute id="TO_DAT"/>
+        <viewAttribute id="fx_TO_DAT"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Projn_AGR_USERS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FROM_DAT" source="FROM_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TO_DAT" source="TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="fx_TO_DAT" source="fx_TO_DAT"/>
+      </input>
+      <input node="Projn_USR21">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="BNAME"/>
+      </input>
+    <joinAttribute name="UNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_ADRP">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_TEXT"/>
+        <viewAttribute id="NAME_FIRST"/>
+        <viewAttribute id="NAME_LAST"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="ADRP"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_USERS_21" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_TEXT"/>
+        <viewAttribute id="NAME_FIRST"/>
+        <viewAttribute id="NAME_LAST"/>
+        <viewAttribute id="FROM_DAT"/>
+        <viewAttribute id="TO_DAT"/>
+        <viewAttribute id="fx_TO_DAT"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_AGR_USERS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FROM_DAT" source="FROM_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TO_DAT" source="TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="fx_TO_DAT" source="fx_TO_DAT"/>
+      </input>
+      <input node="Projn_ADRP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+      </input>
+    <joinAttribute name="PERSNUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_AGR_1251" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="FIELD"/>
+        <viewAttribute id="LOW"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="AGR_1251"/>
+    <filter>match(&quot;AGR_NAME&quot;,'ZMM004_2800_2810*') and (&quot;FIELD&quot; = 'FRGCO')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_USR_1251" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="LOW"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_FIRST"/>
+        <viewAttribute id="NAME_LAST"/>
+        <viewAttribute id="NAME_TEXT"/>
+        <viewAttribute id="FROM_DAT"/>
+        <viewAttribute id="TO_DAT"/>
+        <viewAttribute id="fx_TO_DAT"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Projn_AGR_1251">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOW" source="LOW"/>
+      </input>
+      <input node="Join_USERS_21">
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FROM_DAT" source="FROM_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TO_DAT" source="TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="fx_TO_DAT" source="fx_TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+      </input>
+    <joinAttribute name="AGR_NAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_T16FC_USERS" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="FRGCT"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGCO"/>
+        <viewAttribute id="FRGWF"/>
+        <viewAttribute id="AGR_NAME"/>
+        <viewAttribute id="UNAME"/>
+        <viewAttribute id="BNAME"/>
+        <viewAttribute id="PERSNUMBER"/>
+        <viewAttribute id="NAME_FIRST"/>
+        <viewAttribute id="NAME_LAST"/>
+        <viewAttribute id="NAME_TEXT"/>
+        <viewAttribute id="FROM_DAT"/>
+        <viewAttribute id="TO_DAT"/>
+        <viewAttribute id="fx_TO_DAT"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_T16FC_D">
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCT" source="FRGCT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="FRGCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGWF" source="FRGWF"/>
+      </input>
+      <input node="Join_USR_1251">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AGR_NAME" source="AGR_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNAME" source="UNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNAME" source="BNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERSNUMBER" source="PERSNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEXT" source="NAME_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FROM_DAT" source="FROM_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TO_DAT" source="TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="fx_TO_DAT" source="fx_TO_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGCO" source="LOW"/>
+      </input>
+    <joinAttribute name="FRGCO"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Join_T16FC_USERS">
+    <descriptions/>
+    <attributes>
+      <attribute id="FRGCT" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Description of release code"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="FRGCT"/>
+      </attribute>
+      <attribute id="FRGGR" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release group"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="FRGGR"/>
+      </attribute>
+      <attribute id="FRGCO" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Release code"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="FRGCO"/>
+      </attribute>
+      <attribute id="FRGWF" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role resolution for workflow"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="FRGWF"/>
+      </attribute>
+      <attribute id="AGR_NAME" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Role Name"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="AGR_NAME"/>
+      </attribute>
+      <attribute id="UNAME" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name in User Master Record"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="UNAME"/>
+      </attribute>
+      <attribute id="BNAME" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Name in User Master Record"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="BNAME"/>
+      </attribute>
+      <attribute id="PERSNUMBER" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Person number"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="PERSNUMBER"/>
+      </attribute>
+      <attribute id="NAME_FIRST" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First name"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="NAME_FIRST"/>
+      </attribute>
+      <attribute id="NAME_LAST" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last name"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="NAME_LAST"/>
+      </attribute>
+      <attribute id="NAME_TEXT" order="12" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Full Name"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="NAME_TEXT"/>
+      </attribute>
+      <attribute id="FROM_DAT" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid From"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="FROM_DAT"/>
+      </attribute>
+      <attribute id="TO_DAT" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid To"/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="TO_DAT"/>
+      </attribute>
+      <attribute id="fx_TO_DAT" order="15" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping columnObjectName="Join_T16FC_USERS" columnName="fx_TO_DAT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures>
+      <measure id="fx_Count" hidden="false" order="1" aggregationType="sum" measureType="simple" aggregatable="true" calculatedMeasureType="counter" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="fx_Count"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="AGR_NAME"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="253" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_T16FD" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_T16FC_D" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Projn_T16FC" modelObjectNameSpace="Join_T16FC_D" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projn_T16FD" modelObjectNameSpace="Join_T16FC_D" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Projn_AGR_USERS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="175" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_USR21" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_AGR_USERS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="252" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Projn_AGR_USERS" modelObjectNameSpace="Join_AGR_USERS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projn_USR21" modelObjectNameSpace="Join_AGR_USERS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Projn_ADRP" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="406" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_USERS_21" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Join_AGR_USERS" modelObjectNameSpace="Join_USERS_21" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projn_ADRP" modelObjectNameSpace="Join_USERS_21" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Projn_AGR_1251" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="484" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_USR_1251" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="330" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Projn_AGR_1251" modelObjectNameSpace="Join_USR_1251" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Join_USERS_21" modelObjectNameSpace="Join_USR_1251" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Join_T16FC_USERS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    
+    <shape modelObjectName="Join_T16FC_D" modelObjectNameSpace="Join_T16FC_USERS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Join_USR_1251" modelObjectNameSpace="Join_T16FC_USERS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

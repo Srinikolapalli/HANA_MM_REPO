@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm::ZHV_MM_MBEW_HIS_01" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_MM_MBEW_HIS_01"/>
+  <metadata changedAt="2021-03-07 12:27:12.793"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="34"/>
+  <dataSources>
+    <DataSource id="MBEW_HISTORY">
+      <resourceUri>algoma.mm::MBEW_HISTORY</resourceUri>
+    </DataSource>
+    <DataSource id="MARC">
+      <resourceUri>algoma.mm::MARC</resourceUri>
+    </DataSource>
+    <DataSource id="ZTBL_MRP_CONTROLLERS">
+      <resourceUri>algoma.mm::ZTBL_MRP_CONTROLLERS</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MBEW_HIS_MANDT"/>
+        <viewAttribute id="MBEW_HIS_MATNR"/>
+        <viewAttribute id="MBEW_HIS_BWTAR"/>
+        <viewAttribute id="MBEW_HIS_LBKUM"/>
+        <viewAttribute id="MBEW_HIS_SALK3"/>
+        <viewAttribute id="MBEW_HIS_VERPR"/>
+        <viewAttribute id="MBEW_HIS_BKLAS"/>
+        <viewAttribute id="MBEW_HIS_SNAPSHOT_DATE"/>
+        <viewAttribute id="MBEW_HIS_SHIP_WEEK"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="MBEW_HISTORY">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BWTAR" source="BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_LBKUM" source="LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SALK3" source="SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_VERPR" source="VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BKLAS" source="BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SNAPSHOT_DATE" source="SNAPSHOT_DATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SHIP_WEEK" source="SHIP_WEEK"/>
+      </input>
+    <filter>&quot;MBEW_HIS_BWTAR&quot; = ''  and (&quot;MBEW_HIS_BKLAS&quot; = '3042' or &quot;MBEW_HIS_BKLAS&quot; = '3408'or &quot;MBEW_HIS_BKLAS&quot; = '3412'or &quot;MBEW_HIS_BKLAS&quot; = '3420'or &quot;MBEW_HIS_BKLAS&quot; = '3500'or &quot;MBEW_HIS_BKLAS&quot; = '3501'or &quot;MBEW_HIS_BKLAS&quot; = '3505'or &quot;MBEW_HIS_BKLAS&quot; = '3511'or &quot;MBEW_HIS_BKLAS&quot; = '3604'or &quot;MBEW_HIS_BKLAS&quot; = '3612')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MARC_MANDT"/>
+        <viewAttribute id="MARC_MATNR"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MARC_MABST"/>
+        <viewAttribute id="MARC_MINBE"/>
+        <viewAttribute id="MARC_EKGRP"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="MARC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MABST" source="MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MINBE" source="MINBE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_EKGRP" source="EKGRP"/>
+      </input>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MBEW_HIS_MANDT"/>
+        <viewAttribute id="MBEW_HIS_MATNR"/>
+        <viewAttribute id="MBEW_HIS_BWTAR"/>
+        <viewAttribute id="MBEW_HIS_LBKUM"/>
+        <viewAttribute id="MBEW_HIS_SALK3"/>
+        <viewAttribute id="MBEW_HIS_VERPR"/>
+        <viewAttribute id="MBEW_HIS_BKLAS"/>
+        <viewAttribute id="MBEW_HIS_SNAPSHOT_DATE"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MARC_MABST"/>
+        <viewAttribute id="MARC_MINBE"/>
+        <viewAttribute id="MBEW_HIS_SHIP_WEEK"/>
+        <viewAttribute id="MARC_EKGRP"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MANDT" source="MBEW_HIS_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MATNR" source="MBEW_HIS_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BWTAR" source="MBEW_HIS_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_LBKUM" source="MBEW_HIS_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SALK3" source="MBEW_HIS_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_VERPR" source="MBEW_HIS_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BKLAS" source="MBEW_HIS_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SNAPSHOT_DATE" source="MBEW_HIS_SNAPSHOT_DATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SHIP_WEEK" source="MBEW_HIS_SHIP_WEEK"/>
+      </input>
+      <input node="Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="MARC_DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MARC_DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MABST" source="MARC_MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MINBE" source="MARC_MINBE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_EKGRP" source="MARC_EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MANDT" source="MARC_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MATNR" source="MARC_MATNR"/>
+      </input>
+    <joinAttribute name="MBEW_HIS_MANDT"/>
+    <joinAttribute name="MBEW_HIS_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MRP_CONTROLLER"/>
+        <viewAttribute id="MRP_CONTROLLER_DESCR"/>
+        <viewAttribute id="MRP_CONTROLLER_ID"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="ZTBL_MRP_CONTROLLERS"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MBEW_HIS_MANDT"/>
+        <viewAttribute id="MBEW_HIS_MATNR"/>
+        <viewAttribute id="MBEW_HIS_BWTAR"/>
+        <viewAttribute id="MBEW_HIS_LBKUM"/>
+        <viewAttribute id="MBEW_HIS_SALK3"/>
+        <viewAttribute id="MBEW_HIS_VERPR"/>
+        <viewAttribute id="MBEW_HIS_BKLAS"/>
+        <viewAttribute id="MBEW_HIS_SNAPSHOT_DATE"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MARC_MABST"/>
+        <viewAttribute id="MARC_MINBE"/>
+        <viewAttribute id="MRP_CONTROLLER"/>
+        <viewAttribute id="MRP_CONTROLLER_DESCR"/>
+        <viewAttribute id="MBEW_HIS_SHIP_WEEK"/>
+        <viewAttribute id="MARC_EKGRP"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MANDT" source="MBEW_HIS_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MATNR" source="MBEW_HIS_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BWTAR" source="MBEW_HIS_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_LBKUM" source="MBEW_HIS_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SALK3" source="MBEW_HIS_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_VERPR" source="MBEW_HIS_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_BKLAS" source="MBEW_HIS_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SNAPSHOT_DATE" source="MBEW_HIS_SNAPSHOT_DATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="MARC_DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MARC_DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MABST" source="MARC_MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MINBE" source="MARC_MINBE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_SHIP_WEEK" source="MBEW_HIS_SHIP_WEEK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_EKGRP" source="MARC_EKGRP"/>
+      </input>
+      <input node="Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER" source="MRP_CONTROLLER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_DESCR" source="MRP_CONTROLLER_DESCR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MRP_CONTROLLER_ID"/>
+      </input>
+    <joinAttribute name="MARC_DISPO"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Join_2">
+    <descriptions/>
+    <attributes>
+      <attribute id="MBEW_HIS_MANDT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_MANDT"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_MANDT"/>
+      </attribute>
+      <attribute id="MBEW_HIS_MATNR" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_MATNR"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_MATNR"/>
+      </attribute>
+      <attribute id="MBEW_HIS_BWTAR" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_BWTAR"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_BWTAR"/>
+      </attribute>
+      <attribute id="MBEW_HIS_BKLAS" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_BKLAS"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_BKLAS"/>
+      </attribute>
+      <attribute id="MBEW_HIS_SNAPSHOT_DATE" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_SNAPSHOT_DATE"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_SNAPSHOT_DATE"/>
+      </attribute>
+      <attribute id="MARC_DISMM" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Type"/>
+        <keyMapping columnObjectName="Join_2" columnName="MARC_DISMM"/>
+      </attribute>
+      <attribute id="MARC_DISPO" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Controller"/>
+        <keyMapping columnObjectName="Join_2" columnName="MARC_DISPO"/>
+      </attribute>
+      <attribute id="MRP_CONTROLLER" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP_CONTROLLER"/>
+        <keyMapping columnObjectName="Join_2" columnName="MRP_CONTROLLER"/>
+      </attribute>
+      <attribute id="MRP_CONTROLLER_DESCR" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP_CONTROLLER_DESCR"/>
+        <keyMapping columnObjectName="Join_2" columnName="MRP_CONTROLLER_DESCR"/>
+      </attribute>
+      <attribute id="MBEW_HIS_SHIP_WEEK" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MBEW_HIS_SHIP_WEEK"/>
+        <keyMapping columnObjectName="Join_2" columnName="MBEW_HIS_SHIP_WEEK"/>
+      </attribute>
+      <attribute id="MARC_EKGRP" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Join_2" columnName="MARC_EKGRP"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="MBEW_HIS_LBKUM" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="MBEW_HIS_LBKUM"/>
+        <measureMapping columnObjectName="Join_2" columnName="MBEW_HIS_LBKUM"/>
+      </measure>
+      <measure id="MBEW_HIS_SALK3" order="5" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="MBEW_HIS_SALK3"/>
+        <measureMapping columnObjectName="Join_2" columnName="MBEW_HIS_SALK3"/>
+      </measure>
+      <measure id="MBEW_HIS_VERPR" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="MBEW_HIS_VERPR"/>
+        <measureMapping columnObjectName="Join_2" columnName="MBEW_HIS_VERPR"/>
+      </measure>
+      <measure id="MARC_MABST" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Maximum stock level"/>
+        <measureMapping columnObjectName="Join_2" columnName="MARC_MABST"/>
+      </measure>
+      <measure id="MARC_MINBE" order="12" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Reorder Point"/>
+        <measureMapping columnObjectName="Join_2" columnName="MARC_MINBE"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="176" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

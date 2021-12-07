@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.me5a::ZHV_PUR_LATEST_PO_FOR_MATERIALS" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_RV_PO_LATEST"/>
+  <metadata changedAt="2021-03-26 08:34:29.51"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="32"/>
+  <dataSources>
+    <DataSource id="EKKO">
+      <resourceUri>algoma.mm::EKKO</resourceUri>
+    </DataSource>
+    <DataSource id="EKPO">
+      <resourceUri>algoma.mm::EKPO</resourceUri>
+    </DataSource>
+    <DataSource id="LFA1">
+      <resourceUri>algoma.mm::LFA1</resourceUri>
+    </DataSource>
+    <DataSource id="EBAN">
+      <resourceUri>algoma.mm::EBAN</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKKO_BSART_Purchasing_Doc_Type"/>
+        <viewAttribute id="EKKO_AEDAT_PO_Date"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ_Deletion_ind_" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART_Purchasing_Doc_Type" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_PO_Date" source="AEDAT"/>
+      </input>
+      <filter>(in (&quot;EKKO_BSART_Purchasing_Doc_Type&quot;,'ZCON','ZCPX','ZOPX','ZREL'))</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_FISTL_Fund_Center"/>
+        <viewAttribute id="EKPO_MEINS_Order_Unit"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_PEINH_Price_unit"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP_Item" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ_Deletion_ind_" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_FISTL_Fund_Center" source="FISTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH_Price_unit" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="BNFPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE_PO_Quantity" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/>
+      </input>
+      <filter>(&quot;EKPO_LOEKZ_Deletion_ind_&quot; ='') AND (&quot;EKPO_MATNR_Material&quot; !='')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKKO_BSART_Purchasing_Doc_Type"/>
+        <viewAttribute id="EKKO_AEDAT_PO_Date"/>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_FISTL_Fund_Center"/>
+        <viewAttribute id="EKPO_MEINS_Order_Unit"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_PEINH_Price_unit"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="EKKO_LIFNR_Vendor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ_Deletion_ind_" source="EKKO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART_Purchasing_Doc_Type" source="EKKO_BSART_Purchasing_Doc_Type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_PO_Date" source="EKKO_AEDAT_PO_Date"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP_Item" source="EKPO_EBELP_Item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ_Deletion_ind_" source="EKPO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_FISTL_Fund_Center" source="EKPO_FISTL_Fund_Center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit" source="EKPO_MEINS_Order_Unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price" source="EKPO_NETPR_Net_Price"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH_Price_unit" source="EKPO_PEINH_Price_unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE_PO_Quantity" source="EKPO_MENGE_PO_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+      </input>
+      <joinAttribute name="EKKO_EBELN_Purchasing_Doc_"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LFA1_LIFNR_Vendor"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#LFA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="NAME1"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKKO_BSART_Purchasing_Doc_Type"/>
+        <viewAttribute id="EKKO_AEDAT_PO_Date"/>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_FISTL_Fund_Center"/>
+        <viewAttribute id="EKPO_MEINS_Order_Unit"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_PEINH_Price_unit"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="EKKO_LIFNR_Vendor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ_Deletion_ind_" source="EKKO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART_Purchasing_Doc_Type" source="EKKO_BSART_Purchasing_Doc_Type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_PO_Date" source="EKKO_AEDAT_PO_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP_Item" source="EKPO_EBELP_Item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ_Deletion_ind_" source="EKPO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_FISTL_Fund_Center" source="EKPO_FISTL_Fund_Center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit" source="EKPO_MEINS_Order_Unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price" source="EKPO_NETPR_Net_Price"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH_Price_unit" source="EKPO_PEINH_Price_unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE_PO_Quantity" source="EKPO_MENGE_PO_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="LFA1_NAME1_Name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="LFA1_LIFNR_Vendor"/>
+      </input>
+      <joinAttribute name="EKKO_LIFNR_Vendor"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="BANFN"/>
+        <viewAttribute id="BNFPO"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EBAN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKKO_BSART_Purchasing_Doc_Type"/>
+        <viewAttribute id="EKKO_AEDAT_PO_Date"/>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_FISTL_Fund_Center"/>
+        <viewAttribute id="EKPO_MEINS_Order_Unit"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_PEINH_Price_unit"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="EKKO_LIFNR_Vendor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ_Deletion_ind_" source="EKKO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART_Purchasing_Doc_Type" source="EKKO_BSART_Purchasing_Doc_Type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_PO_Date" source="EKKO_AEDAT_PO_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP_Item" source="EKPO_EBELP_Item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ_Deletion_ind_" source="EKPO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_FISTL_Fund_Center" source="EKPO_FISTL_Fund_Center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit" source="EKPO_MEINS_Order_Unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price" source="EKPO_NETPR_Net_Price"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH_Price_unit" source="EKPO_PEINH_Price_unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE_PO_Quantity" source="EKPO_MENGE_PO_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="LFA1_NAME1_Name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="BNFPO"/>
+      </input>
+      <joinAttribute name="EKPO_BANFN_Purch_Req_"/>
+      <joinAttribute name="EKPO_BNFPO_Requisn_item"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:RankView" id="Rank_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKKO_BSART_Purchasing_Doc_Type"/>
+        <viewAttribute id="EKKO_AEDAT_PO_Date"/>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EKPO_EBELP_Item"/>
+        <viewAttribute id="EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="EKPO_FISTL_Fund_Center"/>
+        <viewAttribute id="EKPO_MEINS_Order_Unit"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_PEINH_Price_unit"/>
+        <viewAttribute id="EKPO_MATNR_Material"/>
+        <viewAttribute id="EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_" source="EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor" source="EKKO_LIFNR_Vendor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ_Deletion_ind_" source="EKKO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART_Purchasing_Doc_Type" source="EKKO_BSART_Purchasing_Doc_Type"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT_PO_Date" source="EKKO_AEDAT_PO_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN_Purchasing_Doc_" source="EKPO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP_Item" source="EKPO_EBELP_Item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ_Deletion_ind_" source="EKPO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_FISTL_Fund_Center" source="EKPO_FISTL_Fund_Center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit" source="EKPO_MEINS_Order_Unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price" source="EKPO_NETPR_Net_Price"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH_Price_unit" source="EKPO_PEINH_Price_unit"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BANFN_Purch_Req_" source="EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BNFPO_Requisn_item" source="EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE_PO_Quantity" source="EKPO_MENGE_PO_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="LFA1_NAME1_Name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
+      </input>
+      <windowFunction>
+        <partitionViewAttributeName>EKPO_MATNR_Material</partitionViewAttributeName>
+        <order byViewAttributeName="EKKO_AEDAT_PO_Date" direction="DESC"/>
+        <rankThreshold>
+          <value>1</value>
+        </rankThreshold>
+      </windowFunction>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Rank_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="EKKO_EBELN_Purchasing_Doc_" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKKO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="EKKO_LIFNR_Vendor" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor's account number"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKKO_LIFNR_Vendor"/>
+      </attribute>
+      <attribute id="EKKO_LOEKZ_Deletion_ind_" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion indicator in purchasing document"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKKO_LOEKZ_Deletion_ind_"/>
+      </attribute>
+      <attribute id="EKKO_BSART_Purchasing_Doc_Type" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Type"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKKO_BSART_Purchasing_Doc_Type"/>
+      </attribute>
+      <attribute id="EKKO_AEDAT_PO_Date" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on Which Record Was Created"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKKO_AEDAT_PO_Date"/>
+      </attribute>
+      <attribute id="EKPO_EBELN_Purchasing_Doc_" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="EKPO_EBELP_Item" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_EBELP_Item"/>
+      </attribute>
+      <attribute id="EKPO_LOEKZ_Deletion_ind_" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion indicator in purchasing document"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_LOEKZ_Deletion_ind_"/>
+      </attribute>
+      <attribute id="EKPO_FISTL_Fund_Center" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Funds Center"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_FISTL_Fund_Center"/>
+      </attribute>
+      <attribute id="EKPO_MEINS_Order_Unit" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_MEINS_Order_Unit"/>
+      </attribute>
+      <attribute id="EKPO_MATNR_Material" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_MATNR_Material"/>
+      </attribute>
+      <attribute id="EKPO_BANFN_Purch_Req_" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Requisition Number"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_BANFN_Purch_Req_"/>
+      </attribute>
+      <attribute id="EKPO_BNFPO_Requisn_item" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item number of purchase requisition"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_BNFPO_Requisn_item"/>
+      </attribute>
+      <attribute id="LFA1_NAME1_Name" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="Rank_1" columnName="LFA1_NAME1_Name"/>
+      </attribute>
+      <attribute id="EKPO_ELIKZ" order="18" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&quot;Delivery Completed&quot; Indicator"/>
+        <keyMapping columnObjectName="Rank_1" columnName="EKPO_ELIKZ"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="EKPO_NETPR_Net_Price" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Net Price in Purchasing Document (in Document Currency)"/>
+        <measureMapping columnObjectName="Rank_1" columnName="EKPO_NETPR_Net_Price"/>
+      </measure>
+      <measure id="EKPO_PEINH_Price_unit" order="12" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Price unit"/>
+        <measureMapping columnObjectName="Rank_1" columnName="EKPO_PEINH_Price_unit"/>
+      </measure>
+      <measure id="EKPO_MENGE_PO_Quantity" order="16" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Purchase Order Quantity"/>
+        <measureMapping columnObjectName="Rank_1" columnName="EKPO_MENGE_PO_Quantity"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="495"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="495"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="399"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="399"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="303"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="303"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="false" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="243"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Rank_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
