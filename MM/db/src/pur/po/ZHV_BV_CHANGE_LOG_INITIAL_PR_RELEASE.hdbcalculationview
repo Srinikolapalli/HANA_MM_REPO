@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_BV_CHANGE_LOG_INITIAL_PR_RELEASE" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_BV_CHANGE_LOG_INITIAL_PR_RELEASE"/>
+  <metadata activatedAt="2021-04-28 20:48:48.0" changedAt="2021-05-14 09:09:11.15" createdAt="2021-05-14 09:09:11.149"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="ZHV_BV_CHANGE_LOG_DATA">
+      <resourceUri>algoma.mm.pur.po::ZHV_BV_CHANGE_LOG_DATA</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="CHANGENR"/>
+        <viewAttribute id="USERNAME"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="UTIME"/>
+        <viewAttribute id="TCODE"/>
+        <viewAttribute id="PLANCHNGNR"/>
+        <viewAttribute id="ACT_CHNGNO"/>
+        <viewAttribute id="WAS_PLANND"/>
+        <viewAttribute id="CHANGE_IND"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="VERSION"/>
+        <viewAttribute id="CDHDR_DATAAGING"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="CHNGIND"/>
+        <viewAttribute id="TEXT_CASE"/>
+        <viewAttribute id="UNIT_OLD"/>
+        <viewAttribute id="UNIT_NEW"/>
+        <viewAttribute id="CUKY_OLD"/>
+        <viewAttribute id="CUKY_NEW"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="VALUE_OLD"/>
+        <viewAttribute id="CDPOS_DATAAGING"/>
+        <viewAttribute id="CAL_DATE_DS_TODAY"/>
+        <viewAttribute id="fx_count"/>
+        <viewAttribute id="TABKEY"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="DATE" id="CAL_TODAY" expressionLanguage="COLUMN_ENGINE">
+          <formula>now()</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="DATE" id="CAL_UDATE" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;UDATE&quot;</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="ZHV_BV_CHANGE_LOG_DATA"/>
+    <filter>(&quot;OBJECTCLAS&quot; ='BANF') AND (&quot;TABNAME&quot; ='EBAN') AND (&quot;FNAME&quot; ='FRGKZ') AND (&quot;VALUE_NEW&quot; ='Y')</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_2">
+    <descriptions/>
+    <attributes>
+      <attribute id="OBJECTID" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Object Value"/>
+        <keyMapping columnObjectName="Projection_2" columnName="OBJECTID"/>
+      </attribute>
+      <attribute id="TABKEY" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Changed table record key"/>
+        <keyMapping columnObjectName="Projection_2" columnName="TABKEY"/>
+      </attribute>
+      <attribute id="CAL_TODAY" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TODAY"/>
+        <keyMapping columnObjectName="Projection_2" columnName="CAL_TODAY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes>
+      <calculatedAttribute id="CAL_PR_ITEM_FROM_CHANGE_LOG" hidden="false" order="4" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PR Item # From Change Log Initial Release View"/>
+        <keyCalculation datatype="NVARCHAR" expressionLanguage="COLUMN_ENGINE" length="50">
+          <formula>rightstr(&quot;TABKEY&quot;,5)</formula>
+        </keyCalculation>
+      </calculatedAttribute>
+    </calculatedAttributes>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="UDATE" hidden="true" order="2" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Creation date of the change document"/>
+        <measureMapping columnObjectName="Projection_2" columnName="UDATE"/>
+      </measure>
+      <measure id="MIN_CAL_DATE_DS_TODAY" order="5" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Minimum Date Distance from today"/>
+        <measureMapping columnObjectName="Projection_2" columnName="CAL_DATE_DS_TODAY"/>
+      </measure>
+      <measure id="MAX_CAL_DATE_DS_TODAY" order="6" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Maximum Date Distance from today"/>
+        <measureMapping columnObjectName="Projection_2" columnName="CAL_DATE_DS_TODAY"/>
+      </measure>
+      <measure id="CAL_UDATE" order="8" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Creation date of the change document"/>
+        <measureMapping columnObjectName="Projection_2" columnName="CAL_UDATE"/>
+      </measure>
+      <measure id="fx_count" order="9" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="fx_count"/>
+        <measureMapping columnObjectName="Projection_2" columnName="fx_count"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="CAL_TOTAL_DISTANCE_FR_TODAY" hidden="false" order="10" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="CAL_TOTAL_DISTANCE_FR_TODAY"/>
+        <formula>daysbetween(now(),daydate(&quot;UDATE&quot;))</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="359"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

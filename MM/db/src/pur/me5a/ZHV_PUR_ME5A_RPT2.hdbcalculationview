@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.me5a::ZHV_PUR_ME5A_RPT2" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_QV_ME5A_LAST_PO_AND_MOST_RECENT_RFQ_DATA"/>
+  <metadata changedAt="2021-04-12 11:47:33.425"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="39"/>
+  <dataSources>
+    <DataSource id="ZHV_PUR_ME5A_PO_WITH_RFQ">
+      <resourceUri>algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO_WITH_RFQ</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="EBAN_BANPR_Proc_state"/>
+        <viewAttribute id="EBAN_STATU_Processing_stat"/>
+        <viewAttribute id="EBAN_EKGRP_Purch_Group"/>
+        <viewAttribute id="EBAN_MFRPN_Mfr_Part_Number"/>
+        <viewAttribute id="EKKO_LIFNR_Vendor_Last_PO_View"/>
+        <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
+        <viewAttribute id="PO_DATE_LAST_PO_VIEW"/>
+        <viewAttribute id="RFQ_EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="RFQ_EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_EKKO_SUBMI_Collective_No_"/>
+        <viewAttribute id="RFQ_EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="RFQ_LFA1_NAME1_Name"/>
+        <viewAttribute id="VENDOR_NAME_LAST_PO_VIEW"/>
+        <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+        <viewAttribute id="EBAN_BSMNG_Order_quantity"/>
+        <viewAttribute id="EBAN_MENGE_Quantity"/>
+        <viewAttribute id="EBAN_MATNR_Material"/>
+        <viewAttribute id="CAL_PR_Rel_WorkDays"/>
+        <viewAttribute id="RFQ_EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="EKPO_NETPR_Net_Price_Last_PO_View"/>
+        <viewAttribute id="EBAN_BANFN_Purch_Req"/>
+        <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
+        <viewAttribute id="CAL_PARTIAL_ODR_FILL"/>
+        <viewAttribute id="EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
+        <viewAttribute id="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="INTEGER" id="CAL_PENDING_QUANTITY" expressionLanguage="COLUMN_ENGINE">
+          <formula>&quot;EBAN_MENGE_Quantity&quot; - &quot;EBAN_BSMNG_Order_quantity&quot;</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="CAL_QUOTES_NEEDED" length="10" expressionLanguage="COLUMN_ENGINE">
+          <formula>if(daysbetween(daydate(&quot;RFQ_EKKO_BEDAT_Document_Date&quot;),now()) &gt; 365 or 
+(isnull(&quot;EKKO_EBELN_Purchasing_Doc_Last_PO_View&quot;) or &quot;EKKO_EBELN_Purchasing_Doc_Last_PO_View&quot; = '' )  AND 
+(&quot;EBAN_MATNR_Material&quot; != '' or not isNull(&quot;EBAN_MATNR_Material&quot;)),
+'quotes reqd','')</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="ZHV_PUR_ME5A_PO_WITH_RFQ"/>
+    <filter>in(&quot;EBAN_STATU_Processing_stat&quot;,'A','B','N')
+and &quot;EBAN_BANPR_Proc_state&quot; = '05'
+and &quot;EBAN_ZRFQ_STATUS_RFQREQ_Status&quot; != 'QUOTED'
+and &quot;CAL_PENDING_QUANTITY&quot; &gt; 0.001</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="EBAN_STATU_Processing_stat" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Processing status of purchase requisition"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_STATU_Processing_stat"/>
+      </attribute>
+      <attribute id="EBAN_EKGRP_Purch_Group" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_EKGRP_Purch_Group"/>
+      </attribute>
+      <attribute id="EBAN_MFRPN_Mfr_Part_Number" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer Part Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_MFRPN_Mfr_Part_Number"/>
+      </attribute>
+      <attribute id="EKKO_LIFNR_Vendor_Last_PO_View" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last PO Vendor"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_LIFNR_Vendor_Last_PO_View"/>
+      </attribute>
+      <attribute id="LFA1_MNFR_MCOD1_Name" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer Name"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LFA1_MNFR_MCOD1_Name"/>
+      </attribute>
+      <attribute id="PO_DATE_LAST_PO_VIEW" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last PO Date"/>
+        <keyMapping columnObjectName="Projection_1" columnName="PO_DATE_LAST_PO_VIEW"/>
+      </attribute>
+      <attribute id="RFQ_EKKO_BEDAT_Document_Date" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last RFQ Date"/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFQ_EKKO_BEDAT_Document_Date"/>
+      </attribute>
+      <attribute id="RFQ_EKKO_EBELN_Purchasing_Doc_" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last RFQ #"/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFQ_EKKO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="RFQ_EKKO_SUBMI_Collective_No_" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last RFQ Collective #"/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFQ_EKKO_SUBMI_Collective_No_"/>
+      </attribute>
+      <attribute id="RFQ_EKKO_LIFNR_Vendor" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RFQ Vendor #"/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFQ_EKKO_LIFNR_Vendor"/>
+      </attribute>
+      <attribute id="RFQ_LFA1_NAME1_Name" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RFQ Vendor Name"/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFQ_LFA1_NAME1_Name"/>
+      </attribute>
+      <attribute id="VENDOR_NAME_LAST_PO_VIEW" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last PO Vendor Name"/>
+        <keyMapping columnObjectName="Projection_1" columnName="VENDOR_NAME_LAST_PO_VIEW"/>
+      </attribute>
+      <attribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Current Buyer"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
+      </attribute>
+      <attribute id="EBAN_MATNR_Material" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_MATNR_Material"/>
+      </attribute>
+      <attribute id="EBAN_BANFN_Purch_Req" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Requisition Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_BANFN_Purch_Req"/>
+      </attribute>
+      <attribute id="EBAN_BNFPO_Requisn_item" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchase Requisition"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EBAN_BNFPO_Requisn_item"/>
+      </attribute>
+      <attribute id="EKPO_EBELN_Purchasing_Doc_" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKPO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="EKKO_EBELN_Purchasing_Doc_Last_PO_View" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last PO #"/>
+        <keyMapping columnObjectName="Projection_1" columnName="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
+      </attribute>
+      <attribute id="CAL_QUOTES_NEEDED" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Quotes Needed Test"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CAL_QUOTES_NEEDED"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="EBAN_BSMNG_Order_quantity" order="14" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Total EBAN_BSMNG_Order_quantity"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EBAN_BSMNG_Order_quantity"/>
+      </measure>
+      <measure id="EBAN_MENGE_Quantity" order="15" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Total EBAN_MENGE_Quantity"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EBAN_MENGE_Quantity"/>
+      </measure>
+      <measure id="CAL_PR_Rel_WorkDays" order="17" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="PR Age Work Days"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_PR_Rel_WorkDays"/>
+      </measure>
+      <measure id="RFQ_EKPO_NETPR_Net_Price" order="18" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Last RFQ Price"/>
+        <measureMapping columnObjectName="Projection_1" columnName="RFQ_EKPO_NETPR_Net_Price"/>
+      </measure>
+      <measure id="EKPO_NETPR_Net_Price_Last_PO_View" order="19" aggregationType="min" measureType="simple">
+        <descriptions defaultDescription="Last PO Price"/>
+        <measureMapping columnObjectName="Projection_1" columnName="EKPO_NETPR_Net_Price_Last_PO_View"/>
+      </measure>
+      <measure id="CAL_PARTIAL_ODR_FILL" order="22" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Partial Order Filter"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_PARTIAL_ODR_FILL"/>
+      </measure>
+      <measure id="CAL_PENDING_QUANTITY" order="25" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Total Pending Qty"/>
+        <measureMapping columnObjectName="Projection_1" columnName="CAL_PENDING_QUANTITY"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="40" y="560"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

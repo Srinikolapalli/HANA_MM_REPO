@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_PO_CHNG_LOG" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
+  <descriptions defaultDescription="ZHV_QV_PO_CHNG_LOG"/>
+  <metadata changedAt="2021-11-29 10:41:12.147"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="39"/>
+  <dataSources>
+    <DataSource id="ZHV_BV_PO_DATA">
+      <resourceUri>algoma.mm.pur.po::ZHV_BV_PO_DATA</resourceUri>
+    </DataSource>
+    <DataSource id="ZHV_BV_CHNG_LOG">
+      <resourceUri>algoma.mm::ZHV_BV_CHNG_LOG</resourceUri>
+    </DataSource>
+  </dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="EKKO_EBELN"/>
+        <viewAttribute id="EKKO_BUKRS"/>
+        <viewAttribute id="EKKO_BSTYP"/>
+        <viewAttribute id="EKKO_BSART"/>
+        <viewAttribute id="EKKO_BSAKZ"/>
+        <viewAttribute id="EKKO_LOEKZ"/>
+        <viewAttribute id="EKKO_AEDAT"/>
+        <viewAttribute id="EKKO_ERNAM"/>
+        <viewAttribute id="EKPO_EBELP"/>
+        <viewAttribute id="EKPO_MATNR"/>
+        <viewAttribute id="EKPO_MENGE"/>
+        <viewAttribute id="EKPO_MEINS"/>
+        <viewAttribute id="EKPO_BRTWR"/>
+        <viewAttribute id="EKPO_NETWR"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="ZHV_BV_PO_DATA"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="_DATAAGING"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="CHANGENR"/>
+        <viewAttribute id="USERNAME"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="UTIME"/>
+        <viewAttribute id="TCODE"/>
+        <viewAttribute id="PLANCHNGNR"/>
+        <viewAttribute id="ACT_CHNGNO"/>
+        <viewAttribute id="WAS_PLANND"/>
+        <viewAttribute id="CHANGE_IND"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="VERSION"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="TABKEY"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="CHNGIND"/>
+        <viewAttribute id="TEXT_CASE"/>
+        <viewAttribute id="UNIT_OLD"/>
+        <viewAttribute id="UNIT_NEW"/>
+        <viewAttribute id="CUKY_OLD"/>
+        <viewAttribute id="CUKY_NEW"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="VALUE_OLD"/>
+        <viewAttribute id="Count_ObjectID"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="ZHV_BV_CHNG_LOG"/>
+    <filter>&quot;OBJECTCLAS&quot; = 'EINKBELEG' and in(&quot;TCODE&quot;, 'ME21',
+'ME21N',
+'ME22',
+'ME22N',
+'ME23N',
+'ME31K',
+'ME31L',
+'ME32K',
+'ME33K',
+'ME33L',
+'ME32L',
+'ME34K',
+'ME38',
+'ME41',
+'ME42',
+'ME43',
+'ME47',
+'ME51N',
+'ME52N',
+'ME53N',
+'ME59N'
+)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" dynamic="false" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="EKKO_EBELN"/>
+        <viewAttribute id="EKKO_BUKRS"/>
+        <viewAttribute id="EKKO_BSTYP"/>
+        <viewAttribute id="EKKO_BSART"/>
+        <viewAttribute id="EKKO_BSAKZ"/>
+        <viewAttribute id="EKKO_LOEKZ"/>
+        <viewAttribute id="EKKO_AEDAT"/>
+        <viewAttribute id="EKKO_ERNAM"/>
+        <viewAttribute id="EKPO_EBELP"/>
+        <viewAttribute id="EKPO_MATNR"/>
+        <viewAttribute id="EKPO_MENGE"/>
+        <viewAttribute id="EKPO_MEINS"/>
+        <viewAttribute id="EKPO_BRTWR"/>
+        <viewAttribute id="EKPO_NETWR"/>
+        <viewAttribute id="MANDANT"/>
+        <viewAttribute id="_DATAAGING"/>
+        <viewAttribute id="OBJECTCLAS"/>
+        <viewAttribute id="OBJECTID"/>
+        <viewAttribute id="CHANGENR"/>
+        <viewAttribute id="USERNAME"/>
+        <viewAttribute id="UDATE"/>
+        <viewAttribute id="UTIME"/>
+        <viewAttribute id="TCODE"/>
+        <viewAttribute id="PLANCHNGNR"/>
+        <viewAttribute id="ACT_CHNGNO"/>
+        <viewAttribute id="WAS_PLANND"/>
+        <viewAttribute id="CHANGE_IND"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="VERSION"/>
+        <viewAttribute id="TABNAME"/>
+        <viewAttribute id="TABKEY"/>
+        <viewAttribute id="FNAME"/>
+        <viewAttribute id="CHNGIND"/>
+        <viewAttribute id="TEXT_CASE"/>
+        <viewAttribute id="UNIT_OLD"/>
+        <viewAttribute id="UNIT_NEW"/>
+        <viewAttribute id="CUKY_OLD"/>
+        <viewAttribute id="CUKY_NEW"/>
+        <viewAttribute id="VALUE_NEW"/>
+        <viewAttribute id="VALUE_OLD"/>
+        <viewAttribute id="Count_ObjectID"/>
+      </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN" source="EKKO_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BUKRS" source="EKKO_BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP" source="EKKO_BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART" source="EKKO_BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSAKZ" source="EKKO_BSAKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LOEKZ" source="EKKO_LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT" source="EKKO_AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ERNAM" source="EKKO_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="EKPO_EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR" source="EKPO_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE" source="EKPO_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS" source="EKPO_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BRTWR" source="EKPO_BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETWR" source="EKPO_NETWR"/>
+      </input>
+      <input node="Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="Count_ObjectID" source="Count_ObjectID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_OLD" source="VALUE_OLD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_NEW" source="VALUE_NEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_NEW" source="CUKY_NEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_OLD" source="CUKY_OLD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_NEW" source="UNIT_NEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_OLD" source="UNIT_OLD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_CASE" source="TEXT_CASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHNGIND" source="CHNGIND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FNAME" source="FNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TABKEY" source="TABKEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TABNAME" source="TABNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGE_IND" source="CHANGE_IND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAS_PLANND" source="WAS_PLANND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHNGNO" source="ACT_CHNGNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLANCHNGNR" source="PLANCHNGNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE" source="TCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UTIME" source="UTIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UDATE" source="UDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="USERNAME" source="USERNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN" source="OBJECTID"/>
+      </input>
+    <joinAttribute name="EKKO_EBELN"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Join_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="EKKO_EBELN" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_EBELN"/>
+      </attribute>
+      <attribute id="EKKO_BUKRS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Code"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_BUKRS"/>
+      </attribute>
+      <attribute id="EKKO_BSTYP" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Category"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_BSTYP"/>
+      </attribute>
+      <attribute id="EKKO_BSART" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Type"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_BSART"/>
+      </attribute>
+      <attribute id="EKKO_BSAKZ" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Control indicator for purchasing document type"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_BSAKZ"/>
+      </attribute>
+      <attribute id="EKKO_LOEKZ" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion indicator in purchasing document"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_LOEKZ"/>
+      </attribute>
+      <attribute id="EKKO_AEDAT" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on Which Record Was Created"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_AEDAT"/>
+      </attribute>
+      <attribute id="EKKO_ERNAM" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Person Who Created the Object"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKKO_ERNAM"/>
+      </attribute>
+      <attribute id="EKPO_EBELP" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKPO_EBELP"/>
+      </attribute>
+      <attribute id="EKPO_MATNR" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKPO_MATNR"/>
+      </attribute>
+      <attribute id="MANDANT" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="Join_1" columnName="MANDANT"/>
+      </attribute>
+      <attribute id="_DATAAGING" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Data Filter Value for Data Aging"/>
+        <keyMapping columnObjectName="Join_1" columnName="_DATAAGING"/>
+      </attribute>
+      <attribute id="OBJECTCLAS" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Object class"/>
+        <keyMapping columnObjectName="Join_1" columnName="OBJECTCLAS"/>
+      </attribute>
+      <attribute id="OBJECTID" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Object Value"/>
+        <keyMapping columnObjectName="Join_1" columnName="OBJECTID"/>
+      </attribute>
+      <attribute id="CHANGENR" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change Number of Document"/>
+        <keyMapping columnObjectName="Join_1" columnName="CHANGENR"/>
+      </attribute>
+      <attribute id="USERNAME" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User name of the person responsible in change document"/>
+        <keyMapping columnObjectName="Join_1" columnName="USERNAME"/>
+      </attribute>
+      <attribute id="UDATE" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Creation date of the change document"/>
+        <keyMapping columnObjectName="Join_1" columnName="UDATE"/>
+      </attribute>
+      <attribute id="UTIME" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Time changed"/>
+        <keyMapping columnObjectName="Join_1" columnName="UTIME"/>
+      </attribute>
+      <attribute id="TCODE" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transaction in which a change was made"/>
+        <keyMapping columnObjectName="Join_1" columnName="TCODE"/>
+      </attribute>
+      <attribute id="PLANCHNGNR" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Planned change number"/>
+        <keyMapping columnObjectName="Join_1" columnName="PLANCHNGNR"/>
+      </attribute>
+      <attribute id="ACT_CHNGNO" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change number of the document created by this change"/>
+        <keyMapping columnObjectName="Join_1" columnName="ACT_CHNGNO"/>
+      </attribute>
+      <attribute id="WAS_PLANND" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Flag: Change created from planned changes"/>
+        <keyMapping columnObjectName="Join_1" columnName="WAS_PLANND"/>
+      </attribute>
+      <attribute id="CHANGE_IND" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Application object change type (U, I, E, D)"/>
+        <keyMapping columnObjectName="Join_1" columnName="CHANGE_IND"/>
+      </attribute>
+      <attribute id="LANGU" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language Key"/>
+        <keyMapping columnObjectName="Join_1" columnName="LANGU"/>
+      </attribute>
+      <attribute id="VERSION" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="3-Byte field"/>
+        <keyMapping columnObjectName="Join_1" columnName="VERSION"/>
+      </attribute>
+      <attribute id="TABNAME" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Table Name"/>
+        <keyMapping columnObjectName="Join_1" columnName="TABNAME"/>
+      </attribute>
+      <attribute id="TABKEY" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Changed table record key"/>
+        <keyMapping columnObjectName="Join_1" columnName="TABKEY"/>
+      </attribute>
+      <attribute id="FNAME" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Field Name"/>
+        <keyMapping columnObjectName="Join_1" columnName="FNAME"/>
+      </attribute>
+      <attribute id="CHNGIND" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change Type (U, I, E, D)"/>
+        <keyMapping columnObjectName="Join_1" columnName="CHNGIND"/>
+      </attribute>
+      <attribute id="TEXT_CASE" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Flag: X=Text change"/>
+        <keyMapping columnObjectName="Join_1" columnName="TEXT_CASE"/>
+      </attribute>
+      <attribute id="UNIT_OLD" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change documents, unit referenced"/>
+        <keyMapping columnObjectName="Join_1" columnName="UNIT_OLD"/>
+      </attribute>
+      <attribute id="UNIT_NEW" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change documents, unit referenced"/>
+        <keyMapping columnObjectName="Join_1" columnName="UNIT_NEW"/>
+      </attribute>
+      <attribute id="CUKY_OLD" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change documents, referenced currency"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUKY_OLD"/>
+      </attribute>
+      <attribute id="CUKY_NEW" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Change documents, referenced currency"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUKY_NEW"/>
+      </attribute>
+      <attribute id="VALUE_NEW" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="New contents of changed field"/>
+        <keyMapping columnObjectName="Join_1" columnName="VALUE_NEW"/>
+      </attribute>
+      <attribute id="VALUE_OLD" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Old contents of changed field"/>
+        <keyMapping columnObjectName="Join_1" columnName="VALUE_OLD"/>
+      </attribute>
+      <attribute id="EKPO_MEINS" order="38" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+        <keyMapping columnObjectName="Join_1" columnName="EKPO_MEINS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="EKPO_MENGE" order="37" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Purchase Order Quantity"/>
+        <measureMapping columnObjectName="Join_1" columnName="EKPO_MENGE"/>
+      </measure>
+      <measure id="EKPO_BRTWR" order="39" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Gross order value in PO currency"/>
+        <measureMapping columnObjectName="Join_1" columnName="EKPO_BRTWR"/>
+      </measure>
+      <measure id="EKPO_NETWR" order="40" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Net Order Value in PO Currency"/>
+        <measureMapping columnObjectName="Join_1" columnName="EKPO_NETWR"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="PO_Doc_Change_Within_Business_Hours" hidden="false" order="41" aggregationType="sum" engineAggregation="sum" measureType="simple" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="PO_Doc_Change_Within_Business_Hours"/>
+        <formula>if (&quot;UTIME&quot; &gt;='070000' AND &quot;UTIME&quot;&lt;='170000' AND &quot;Day_of_Week&quot; &lt;= 4 ,1, 0)</formula>
+      </measure>
+      <measure id="PO_Doc_Change_Outside_of_Business_Hours" hidden="false" order="42" aggregationType="sum" engineAggregation="sum" measureType="simple" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="PO_Doc_Change_Outside_of_Business_Hours"/>
+        <formula>if (&quot;UTIME&quot; &lt;'070000' OR &quot;UTIME&quot; &gt;'170000' OR &quot;Day_of_Week&quot;=5 OR &quot;Day_of_Week&quot; = 6,1,0)</formula>
+      </measure>
+      <measure id="Day_of_Week" hidden="false" order="43" aggregationType="sum" engineAggregation="sum" measureType="simple" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="Day_of_Week"/>
+        <formula>weekday(daydate(&quot;UDATE&quot;))</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

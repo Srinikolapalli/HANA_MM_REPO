@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_PUR_ADV_PO_01" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_PUR_ADV_PO_01"/>
+  <metadata changedAt="2021-04-12 11:47:33.678"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="37"/>
+  <dataSources>
+    <DataSource id="EKPO">
+      <resourceUri>algoma.mm::EKPO</resourceUri>
+    </DataSource>
+    <DataSource id="EKKO">
+      <resourceUri>algoma.mm::EKKO</resourceUri>
+    </DataSource>
+    <DataSource id="EKKN">
+      <resourceUri>algoma.mm::EKKN</resourceUri>
+    </DataSource>
+    <DataSource id="EKET">
+      <resourceUri>algoma.mm::EKET</resourceUri>
+    </DataSource>
+    <DataSource id="EKBE">
+      <resourceUri>algoma.mm::EKBE</resourceUri>
+    </DataSource>
+    <DataSource id="LFA1">
+      <resourceUri>algoma.mm::LFA1</resourceUri>
+    </DataSource>
+    <DataSource id="T052U">
+      <resourceUri>algoma.mm::T052U</resourceUri>
+    </DataSource>
+    <DataSource id="MARC">
+      <resourceUri>algoma.mm::MARC</resourceUri>
+    </DataSource>
+    <DataSource id="MSEG">
+      <resourceUri>algoma.mm::MSEG</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKPO_MANDT"/>
+        <viewAttribute id="EKPO_EBELN"/>
+        <viewAttribute id="EKPO_EBELP"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+        <viewAttribute id="EKPO_KNTTP"/>
+        <viewAttribute id="EKPO_LOEKZ"/>
+        <viewAttribute id="EKPO_MATKL"/>
+        <viewAttribute id="EKPO_MATNR"/>
+        <viewAttribute id="EKPO_MEINS"/>
+        <viewAttribute id="EKPO_AFNAM"/>
+        <viewAttribute id="EKPO_PRIO_URG"/>
+        <viewAttribute id="EKPO_PRIO_REQ"/>
+        <viewAttribute id="EKPO_PSTYP"/>
+        <viewAttribute id="EKPO_TXZ01"/>
+        <viewAttribute id="EKPO_MENGE"/>
+        <viewAttribute id="EKPO_NETPR"/>
+        <viewAttribute id="EKPO_NETWR"/>
+        <viewAttribute id="EKPO_PEINH"/>
+        <viewAttribute id="EKPO_BPRME"/>
+        <viewAttribute id="EKPO_BRTWR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BRTWR" source="BRTWR"/>
+      </input>
+      <filter>&quot;EKPO_ELIKZ&quot; = '' and &quot;EKPO_LOEKZ&quot; = ''</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKO_MANDT"/>
+        <viewAttribute id="EKKO_EBELN"/>
+        <viewAttribute id="EKKO_BEDAT"/>
+        <viewAttribute id="EKKO_AEDAT"/>
+        <viewAttribute id="EKKO_ERNAM"/>
+        <viewAttribute id="EKKO_BSART"/>
+        <viewAttribute id="EKKO_BSTYP"/>
+        <viewAttribute id="EKKO_EKGRP"/>
+        <viewAttribute id="EKKO_LIFNR"/>
+        <viewAttribute id="EKKO_ZBD1P"/>
+        <viewAttribute id="EKKO_ZBD2P"/>
+        <viewAttribute id="EKKO_ZBD3T"/>
+        <viewAttribute id="EKKO_ZTERM"/>
+        <viewAttribute id="EKKO_WKURS"/>
+        <viewAttribute id="EKKO_WAERS"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WAERS" source="WAERS"/>
+      </input>
+      <filter>&quot;EKKO_BSTYP&quot;='F' and (&quot;EKKO_ZTERM&quot; = 'A999' or &quot;EKKO_ZTERM&quot; = 'A998' or &quot;EKKO_ZTERM&quot; = 'A997'or &quot;EKKO_ZTERM&quot; = 'A996'or &quot;EKKO_ZTERM&quot; = 'A995')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="BSTYP_1"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="EKPO_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EKPO_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EKPO_EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="EKPO_ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="EKPO_KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="EKPO_LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="EKPO_MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="EKPO_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="EKPO_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="EKPO_AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="EKPO_PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="EKPO_PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="EKPO_PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="EKPO_TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="EKPO_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="EKPO_NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="EKPO_NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="EKPO_PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="EKPO_BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="EKPO_BRTWR"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="EKKO_BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="EKKO_AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="EKKO_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="EKKO_BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="EKKO_BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP_1" source="EKKO_BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKKO_EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="EKKO_LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="EKKO_ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="EKKO_ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="EKKO_ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="EKKO_ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="EKKO_WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="EKKO_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="EKKO_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EKKO_EBELN"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="EBELN"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKKN_MANDT"/>
+        <viewAttribute id="EKKN_EBELN"/>
+        <viewAttribute id="EKKN_EBELP"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKKN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="KSTRG"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKET_MANDT"/>
+        <viewAttribute id="EKET_EBELN"/>
+        <viewAttribute id="EKET_EBELP"/>
+        <viewAttribute id="EKET_EINDT"/>
+        <viewAttribute id="EKET_LPEIN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKET">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EINDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="LPEIN"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKBE_MANDT"/>
+        <viewAttribute id="EKBE_EBELN"/>
+        <viewAttribute id="EKBE_EBELP"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKBE">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="WRBTR"/>
+      </input>
+      <filter>&quot;EKBE_VGABE&quot;='4'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKPO_MANDT"/>
+        <viewAttribute id="EKPO_EBELN"/>
+        <viewAttribute id="EKPO_EBELP"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+        <viewAttribute id="EKPO_KNTTP"/>
+        <viewAttribute id="EKPO_LOEKZ"/>
+        <viewAttribute id="EKPO_MATKL"/>
+        <viewAttribute id="EKPO_MATNR"/>
+        <viewAttribute id="EKPO_MEINS"/>
+        <viewAttribute id="EKPO_AFNAM"/>
+        <viewAttribute id="EKPO_PRIO_URG"/>
+        <viewAttribute id="EKPO_PRIO_REQ"/>
+        <viewAttribute id="EKPO_PSTYP"/>
+        <viewAttribute id="EKPO_TXZ01"/>
+        <viewAttribute id="EKPO_MENGE"/>
+        <viewAttribute id="EKPO_NETPR"/>
+        <viewAttribute id="EKPO_NETWR"/>
+        <viewAttribute id="EKPO_PEINH"/>
+        <viewAttribute id="EKPO_BPRME"/>
+        <viewAttribute id="EKPO_BRTWR"/>
+        <viewAttribute id="EKKO_BEDAT"/>
+        <viewAttribute id="EKKO_AEDAT"/>
+        <viewAttribute id="EKKO_ERNAM"/>
+        <viewAttribute id="EKKO_BSART"/>
+        <viewAttribute id="EKKO_BSTYP"/>
+        <viewAttribute id="EKKO_EKGRP"/>
+        <viewAttribute id="EKKO_LIFNR"/>
+        <viewAttribute id="EKKO_ZBD1P"/>
+        <viewAttribute id="EKKO_ZBD2P"/>
+        <viewAttribute id="EKKO_ZBD3T"/>
+        <viewAttribute id="EKKO_ZTERM"/>
+        <viewAttribute id="EKKO_WKURS"/>
+        <viewAttribute id="EKKO_WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WAERS" source="WAERS"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MANDT" source="EKKN_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN" source="EKKN_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="EKKN_EBELP"/>
+      </input>
+      <joinAttribute name="EKPO_MANDT"/>
+      <joinAttribute name="EKPO_EBELN"/>
+      <joinAttribute name="EKPO_EBELP"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="EKPO_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EKPO_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EKPO_EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="EKPO_ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="EKPO_KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="EKPO_LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="EKPO_MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="EKPO_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="EKPO_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="EKPO_AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="EKPO_PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="EKPO_PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="EKPO_PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="EKPO_TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="EKPO_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="EKPO_NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="EKPO_NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="EKPO_PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="EKPO_BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="EKPO_BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="EKKO_BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="EKKO_AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="EKKO_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="EKKO_BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="EKKO_BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKKO_EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="EKKO_LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="EKKO_ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="EKKO_ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="EKKO_ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="EKKO_ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="EKKO_WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="EKKO_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="EKET_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EKET_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EKET_EBELP"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="EBELN"/>
+      <joinAttribute name="EBELP"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+      </input>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="EKBE_BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="EKBE_CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="EKBE_GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="EKBE_AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="EKBE_BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="EKBE_BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="EKBE_BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="EKBE_BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="EKBE_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="EKBE_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="EKBE_LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="EKBE_VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="EKBE_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="EKBE_XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="EKBE_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="EKBE_WRBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="EKBE_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EKBE_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EKBE_EBELP"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="EBELN"/>
+      <joinAttribute name="EBELP"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LFA1_LIFNR"/>
+        <viewAttribute id="LFA1_KTOKK"/>
+        <viewAttribute id="LFA1_LAND1"/>
+        <viewAttribute id="LFA1_NAME1"/>
+        <viewAttribute id="LFA1_NODEL"/>
+        <viewAttribute id="LFA1_SPERR"/>
+        <viewAttribute id="LFA1_SPERM"/>
+        <viewAttribute id="LFA1_SPERQ"/>
+        <viewAttribute id="LFA1_SPERZ"/>
+        <viewAttribute id="LFA1_MANDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#LFA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MANDT" source="MANDT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+        <viewAttribute id="LFA1_KTOKK"/>
+        <viewAttribute id="LFA1_KTOKK_1"/>
+        <viewAttribute id="LFA1_LAND1"/>
+        <viewAttribute id="LFA1_NAME1"/>
+        <viewAttribute id="LFA1_NODEL"/>
+        <viewAttribute id="LFA1_SPERR"/>
+        <viewAttribute id="LFA1_SPERM"/>
+        <viewAttribute id="LFA1_SPERQ"/>
+        <viewAttribute id="LFA1_SPERZ"/>
+        <viewAttribute id="LFA1_MANDT"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="EKBE_BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="EKBE_CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="EKBE_GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="EKBE_AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="EKBE_BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="EKBE_BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="EKBE_BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="EKBE_BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="EKBE_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="EKBE_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="EKBE_LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="EKBE_VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="EKBE_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="EKBE_XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="EKBE_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="EKBE_WRBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+      </input>
+      <input node="#Projection_6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="LFA1_KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK_1" source="LFA1_KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LFA1_LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="LFA1_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="LFA1_NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="LFA1_SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="LFA1_SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="LFA1_SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="LFA1_SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MANDT" source="LFA1_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="LFA1_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LFA1_LIFNR"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="LIFNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_7">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="T052U_MANDT"/>
+        <viewAttribute id="T052U_SPRAS"/>
+        <viewAttribute id="T052U_ZTERM"/>
+        <viewAttribute id="T052U_TEXT1"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T052U">
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_TEXT1" source="TEXT1"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+        <viewAttribute id="LFA1_KTOKK"/>
+        <viewAttribute id="LFA1_KTOKK_1"/>
+        <viewAttribute id="LFA1_LAND1"/>
+        <viewAttribute id="LFA1_NAME1"/>
+        <viewAttribute id="LFA1_NODEL"/>
+        <viewAttribute id="LFA1_SPERR"/>
+        <viewAttribute id="LFA1_SPERM"/>
+        <viewAttribute id="LFA1_SPERQ"/>
+        <viewAttribute id="LFA1_SPERZ"/>
+        <viewAttribute id="LFA1_MANDT"/>
+        <viewAttribute id="T052U_SPRAS"/>
+        <viewAttribute id="T052U_ZTERM"/>
+        <viewAttribute id="T052U_TEXT1"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="EKBE_BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="EKBE_CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="EKBE_GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="EKBE_AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="EKBE_BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="EKBE_BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="EKBE_BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="EKBE_BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="EKBE_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="EKBE_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="EKBE_LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="EKBE_VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="EKBE_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="EKBE_XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="EKBE_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="EKBE_WRBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="LFA1_KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK_1" source="LFA1_KTOKK_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LFA1_LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="LFA1_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="LFA1_NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="LFA1_SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="LFA1_SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="LFA1_SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="LFA1_SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MANDT" source="LFA1_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+      </input>
+      <input node="#Projection_7">
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_SPRAS" source="T052U_SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_ZTERM" source="T052U_ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_TEXT1" source="T052U_TEXT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="T052U_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="T052U_ZTERM"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="ZTERM"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_8">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MARC_MANDT"/>
+        <viewAttribute id="MARC_MATNR"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MARC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="DISPO"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="ELIKZ"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="NETPR"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="BPRME"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="ZBD1P"/>
+        <viewAttribute id="ZBD2P"/>
+        <viewAttribute id="ZBD3T"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="WKURS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+        <viewAttribute id="LFA1_KTOKK"/>
+        <viewAttribute id="LFA1_KTOKK_1"/>
+        <viewAttribute id="LFA1_LAND1"/>
+        <viewAttribute id="LFA1_NAME1"/>
+        <viewAttribute id="LFA1_NODEL"/>
+        <viewAttribute id="LFA1_SPERR"/>
+        <viewAttribute id="LFA1_SPERM"/>
+        <viewAttribute id="LFA1_SPERQ"/>
+        <viewAttribute id="LFA1_SPERZ"/>
+        <viewAttribute id="LFA1_MANDT"/>
+        <viewAttribute id="T052U_SPRAS"/>
+        <viewAttribute id="T052U_ZTERM"/>
+        <viewAttribute id="T052U_TEXT1"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="EKBE_BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="EKBE_CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="EKBE_GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="EKBE_AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="EKBE_BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="EKBE_BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="EKBE_BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="EKBE_BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="EKBE_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="EKBE_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="EKBE_LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="EKBE_VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="EKBE_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="EKBE_XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="EKBE_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="EKBE_WRBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="LFA1_KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK_1" source="LFA1_KTOKK_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LFA1_LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="LFA1_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="LFA1_NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="LFA1_SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="LFA1_SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="LFA1_SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="LFA1_SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MANDT" source="LFA1_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_SPRAS" source="T052U_SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_ZTERM" source="T052U_ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_TEXT1" source="T052U_TEXT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+      </input>
+      <input node="#Projection_8">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="MARC_DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MARC_DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MARC_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MARC_MANDT"/>
+      </input>
+      <joinAttribute name="MATNR"/>
+      <joinAttribute name="MANDT"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_9">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MSEG_MANDT"/>
+        <viewAttribute id="MSEG_MBLNR"/>
+        <viewAttribute id="MSEG_MJAHR"/>
+        <viewAttribute id="MSEG_ZEILE"/>
+        <viewAttribute id="MSEG_BWART"/>
+        <viewAttribute id="MSEG_MATNR"/>
+        <viewAttribute id="MSEG_LGORT"/>
+        <viewAttribute id="MSEG_CHARG"/>
+        <viewAttribute id="MSEG_MENGE"/>
+        <viewAttribute id="MSEG_MEINS"/>
+        <viewAttribute id="MSEG_EBELN"/>
+        <viewAttribute id="MSEG_EBELP"/>
+        <viewAttribute id="MSEG_DMBTR"/>
+        <viewAttribute id="MSEG_SOBKZ"/>
+        <viewAttribute id="MSEG_KZEAR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MSEG">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ZEILE" source="ZEILE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWART" source="BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_LGORT" source="LGORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_CHARG" source="CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_DMBTR" source="DMBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_SOBKZ" source="SOBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_KZEAR" source="KZEAR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="EKPO_EBELN"/>
+        <viewAttribute id="EKPO_EBELP"/>
+        <viewAttribute id="EKPO_ELIKZ"/>
+        <viewAttribute id="EKPO_KNTTP"/>
+        <viewAttribute id="EKPO_LOEKZ"/>
+        <viewAttribute id="EKPO_MATKL"/>
+        <viewAttribute id="EKPO_MATNR"/>
+        <viewAttribute id="EKPO_MEINS"/>
+        <viewAttribute id="EKPO_AFNAM"/>
+        <viewAttribute id="EKPO_PRIO_URG"/>
+        <viewAttribute id="EKPO_PRIO_REQ"/>
+        <viewAttribute id="EKPO_PSTYP"/>
+        <viewAttribute id="EKPO_TXZ01"/>
+        <viewAttribute id="EKPO_MENGE"/>
+        <viewAttribute id="EKPO_NETPR"/>
+        <viewAttribute id="EKPO_NETWR"/>
+        <viewAttribute id="EKPO_PEINH"/>
+        <viewAttribute id="EKPO_BPRME"/>
+        <viewAttribute id="EKPO_BRTWR"/>
+        <viewAttribute id="EKKO_BEDAT"/>
+        <viewAttribute id="EKKO_AEDAT"/>
+        <viewAttribute id="EKKO_ERNAM"/>
+        <viewAttribute id="EKKO_BSART"/>
+        <viewAttribute id="EKKO_BSTYP"/>
+        <viewAttribute id="EKKO_EKGRP"/>
+        <viewAttribute id="EKKO_LIFNR"/>
+        <viewAttribute id="EKKO_ZBD1P"/>
+        <viewAttribute id="EKKO_ZBD2P"/>
+        <viewAttribute id="EKKO_ZBD3T"/>
+        <viewAttribute id="EKKO_ZTERM"/>
+        <viewAttribute id="EKKO_WKURS"/>
+        <viewAttribute id="EKKO_WAERS"/>
+        <viewAttribute id="EKKN_AUFNR"/>
+        <viewAttribute id="EKKN_KOSTL"/>
+        <viewAttribute id="EKKN_KSTRG"/>
+        <viewAttribute id="EKET_LPEIN"/>
+        <viewAttribute id="EKBE_BUDAT"/>
+        <viewAttribute id="EKBE_CPUDT"/>
+        <viewAttribute id="EKBE_GJAHR"/>
+        <viewAttribute id="EKBE_AREWB"/>
+        <viewAttribute id="EKBE_BELNR"/>
+        <viewAttribute id="EKBE_BEWTP"/>
+        <viewAttribute id="EKBE_BLDAT"/>
+        <viewAttribute id="EKBE_BUZEI"/>
+        <viewAttribute id="EKBE_BWART"/>
+        <viewAttribute id="EKBE_ERNAM"/>
+        <viewAttribute id="EKBE_LFBNR"/>
+        <viewAttribute id="EKBE_VGABE"/>
+        <viewAttribute id="EKBE_WAERS"/>
+        <viewAttribute id="EKBE_XBLNR"/>
+        <viewAttribute id="EKBE_MENGE"/>
+        <viewAttribute id="EKBE_WRBTR"/>
+        <viewAttribute id="LFA1_KTOKK"/>
+        <viewAttribute id="LFA1_KTOKK_1"/>
+        <viewAttribute id="LFA1_LAND1"/>
+        <viewAttribute id="LFA1_NAME1"/>
+        <viewAttribute id="LFA1_NODEL"/>
+        <viewAttribute id="LFA1_SPERR"/>
+        <viewAttribute id="LFA1_SPERM"/>
+        <viewAttribute id="LFA1_SPERQ"/>
+        <viewAttribute id="LFA1_SPERZ"/>
+        <viewAttribute id="LFA1_MANDT"/>
+        <viewAttribute id="T052U_SPRAS"/>
+        <viewAttribute id="T052U_ZTERM"/>
+        <viewAttribute id="T052U_TEXT1"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MSEG_MBLNR"/>
+        <viewAttribute id="MSEG_MJAHR"/>
+        <viewAttribute id="MSEG_ZEILE"/>
+        <viewAttribute id="MSEG_BWART"/>
+        <viewAttribute id="MSEG_LGORT"/>
+        <viewAttribute id="MSEG_CHARG"/>
+        <viewAttribute id="MSEG_MENGE_1"/>
+        <viewAttribute id="MSEG_MEINS_1"/>
+        <viewAttribute id="MSEG_DMBTR"/>
+        <viewAttribute id="MSEG_SOBKZ"/>
+        <viewAttribute id="MSEG_KZEAR"/>
+        <viewAttribute id="EKET_EINDT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_7">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD1P" source="ZBD1P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD2P" source="ZBD2P"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZBD3T" source="ZBD3T"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WKURS" source="WKURS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_AUFNR" source="EKKN_AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KOSTL" source="EKKN_KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKN_KSTRG" source="EKKN_KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_LPEIN" source="EKET_LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUDAT" source="EKBE_BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_CPUDT" source="EKBE_CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_GJAHR" source="EKBE_GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_AREWB" source="EKBE_AREWB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BELNR" source="EKBE_BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BEWTP" source="EKBE_BEWTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BLDAT" source="EKBE_BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BUZEI" source="EKBE_BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_BWART" source="EKBE_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_ERNAM" source="EKBE_ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_LFBNR" source="EKBE_LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_VGABE" source="EKBE_VGABE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WAERS" source="EKBE_WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_XBLNR" source="EKBE_XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_MENGE" source="EKBE_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKBE_WRBTR" source="EKBE_WRBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="LFA1_KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK_1" source="LFA1_KTOKK_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LFA1_LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="LFA1_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="LFA1_NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="LFA1_SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="LFA1_SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="LFA1_SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="LFA1_SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MANDT" source="LFA1_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_SPRAS" source="T052U_SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_ZTERM" source="T052U_ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="T052U_TEXT1" source="T052U_TEXT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="MARC_DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MARC_DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKET_EINDT" source="EKET_EINDT"/>
+      </input>
+      <input node="#Projection_9">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MSEG_MBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MSEG_MJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ZEILE" source="MSEG_ZEILE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWART" source="MSEG_BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_LGORT" source="MSEG_LGORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_CHARG" source="MSEG_CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MENGE_1" source="MSEG_MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MEINS_1" source="MSEG_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_DMBTR" source="MSEG_DMBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_SOBKZ" source="MSEG_SOBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_KZEAR" source="MSEG_KZEAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MSEG_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELN" source="MSEG_EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_EBELP" source="MSEG_EBELP"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="EKPO_EBELN"/>
+      <joinAttribute name="EKPO_EBELP"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_8">
+    <descriptions/>
+    <attributes>
+      <attribute id="EKPO_MANDT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Client"/>
+        <keyMapping columnObjectName="Join_8" columnName="MANDT"/>
+      </attribute>
+      <attribute id="EKPO_EBELN" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Purchasing Document Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_EBELN"/>
+      </attribute>
+      <attribute id="EKPO_EBELP" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Item Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_EBELP"/>
+      </attribute>
+      <attribute id="EKPO_ELIKZ" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&quot;Delivery Completed&quot; Indicator"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_ELIKZ"/>
+      </attribute>
+      <attribute id="EKPO_KNTTP" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Account Assignment Category"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_KNTTP"/>
+      </attribute>
+      <attribute id="EKPO_LOEKZ" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion Indicator in Purchasing Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_LOEKZ"/>
+      </attribute>
+      <attribute id="EKPO_MATKL" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Group"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_MATKL"/>
+      </attribute>
+      <attribute id="EKPO_MATNR" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_MATNR"/>
+      </attribute>
+      <attribute id="EKPO_MEINS" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_MEINS"/>
+      </attribute>
+      <attribute id="EKPO_AFNAM" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Requisitioner/Requester"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_AFNAM"/>
+      </attribute>
+      <attribute id="EKPO_PRIO_URG" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Requirement Urgency"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_PRIO_URG"/>
+      </attribute>
+      <attribute id="EKPO_PRIO_REQ" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Requirement Priority"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_PRIO_REQ"/>
+      </attribute>
+      <attribute id="EKPO_PSTYP" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Category in Purchasing Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_PSTYP"/>
+      </attribute>
+      <attribute id="EKPO_TXZ01" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Short Text"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_TXZ01"/>
+      </attribute>
+      <attribute id="EKPO_BPRME" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Order Price Unit"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKPO_BPRME"/>
+      </attribute>
+      <attribute id="EKKO_BEDAT" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Date"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_BEDAT"/>
+      </attribute>
+      <attribute id="EKKO_AEDAT" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on Which Record Was Created"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_AEDAT"/>
+      </attribute>
+      <attribute id="EKKO_ERNAM" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Person who Created the Object"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_ERNAM"/>
+      </attribute>
+      <attribute id="EKKO_BSART" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Type"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_BSART"/>
+      </attribute>
+      <attribute id="EKKO_BSTYP" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Purchasing Document Category"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_BSTYP"/>
+      </attribute>
+      <attribute id="EKKO_EKGRP" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_EKGRP"/>
+      </attribute>
+      <attribute id="EKKO_LIFNR" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor Account Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_LIFNR"/>
+      </attribute>
+      <attribute id="EKKO_ZTERM" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Terms of Payment Key"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_ZTERM"/>
+      </attribute>
+      <attribute id="EKKO_WAERS" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Currency Key"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKO_WAERS"/>
+      </attribute>
+      <attribute id="EKKN_AUFNR" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Order Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKN_AUFNR"/>
+      </attribute>
+      <attribute id="EKKN_KOSTL" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Cost Center"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKN_KOSTL"/>
+      </attribute>
+      <attribute id="EKKN_KSTRG" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Cost Object"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKKN_KSTRG"/>
+      </attribute>
+      <attribute id="EKET_LPEIN" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Category of Delivery Date"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKET_LPEIN"/>
+      </attribute>
+      <attribute id="EKBE_BUDAT" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Posting Date in the Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BUDAT"/>
+      </attribute>
+      <attribute id="EKBE_CPUDT" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Day On Which Accounting Document Was Entered"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_CPUDT"/>
+      </attribute>
+      <attribute id="EKBE_GJAHR" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Document Year"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_GJAHR"/>
+      </attribute>
+      <attribute id="EKBE_BELNR" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Number of Material Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BELNR"/>
+      </attribute>
+      <attribute id="EKBE_BEWTP" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO history category"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BEWTP"/>
+      </attribute>
+      <attribute id="EKBE_BLDAT" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Document Date in Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BLDAT"/>
+      </attribute>
+      <attribute id="EKBE_BUZEI" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item in Material Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BUZEI"/>
+      </attribute>
+      <attribute id="EKBE_BWART" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Movement Type"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_BWART"/>
+      </attribute>
+      <attribute id="EKBE_ERNAM" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Person who Created the Objec"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_ERNAM"/>
+      </attribute>
+      <attribute id="EKBE_LFBNR" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Document No. of a Reference Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_LFBNR"/>
+      </attribute>
+      <attribute id="EKBE_VGABE" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Transaction/event type, purchase order history"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_VGABE"/>
+      </attribute>
+      <attribute id="EKBE_WAERS" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Currency Key"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_WAERS"/>
+      </attribute>
+      <attribute id="EKBE_XBLNR" order="51" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Reference Document Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKBE_XBLNR"/>
+      </attribute>
+      <attribute id="LFA1_KTOKK" order="54" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Vendor account group"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_KTOKK"/>
+      </attribute>
+      <attribute id="LFA1_KTOKK_1" order="55" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Vendor account group"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_KTOKK_1"/>
+      </attribute>
+      <attribute id="LFA1_LAND1" order="56" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country Key"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_LAND1"/>
+      </attribute>
+      <attribute id="LFA1_NAME1" order="57" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor Name"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_NAME1"/>
+      </attribute>
+      <attribute id="LFA1_NODEL" order="58" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Central deletion block for master record"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_NODEL"/>
+      </attribute>
+      <attribute id="LFA1_SPERR" order="59" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Central posting block"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_SPERR"/>
+      </attribute>
+      <attribute id="LFA1_SPERM" order="60" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Centrally imposed purchasing block"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_SPERM"/>
+      </attribute>
+      <attribute id="LFA1_SPERQ" order="61" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Function That Will Be Blocked"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_SPERQ"/>
+      </attribute>
+      <attribute id="LFA1_SPERZ" order="62" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Payment Block"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_SPERZ"/>
+      </attribute>
+      <attribute id="LFA1_MANDT" order="63" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="Join_8" columnName="LFA1_MANDT"/>
+      </attribute>
+      <attribute id="T052U_SPRAS" order="64" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language Ke"/>
+        <keyMapping columnObjectName="Join_8" columnName="T052U_SPRAS"/>
+      </attribute>
+      <attribute id="T052U_ZTERM" order="65" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Terms of Payment Key"/>
+        <keyMapping columnObjectName="Join_8" columnName="T052U_ZTERM"/>
+      </attribute>
+      <attribute id="T052U_TEXT1" order="66" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Own Explanation of Term of Payment"/>
+        <keyMapping columnObjectName="Join_8" columnName="T052U_TEXT1"/>
+      </attribute>
+      <attribute id="MARC_DISMM" order="67" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Type"/>
+        <keyMapping columnObjectName="Join_8" columnName="MARC_DISMM"/>
+      </attribute>
+      <attribute id="MARC_DISPO" order="68" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Controller"/>
+        <keyMapping columnObjectName="Join_8" columnName="MARC_DISPO"/>
+      </attribute>
+      <attribute id="MSEG_MBLNR" order="69" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Number of Material Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_MBLNR"/>
+      </attribute>
+      <attribute id="MSEG_MJAHR" order="70" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Document Year"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_MJAHR"/>
+      </attribute>
+      <attribute id="MSEG_ZEILE" order="71" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item in Material Document"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_ZEILE"/>
+      </attribute>
+      <attribute id="MSEG_BWART" order="72" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Movement Type"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_BWART"/>
+      </attribute>
+      <attribute id="MSEG_LGORT" order="73" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Storage Location"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_LGORT"/>
+      </attribute>
+      <attribute id="MSEG_CHARG" order="74" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Batch Number"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_CHARG"/>
+      </attribute>
+      <attribute id="MSEG_MEINS" order="76" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Base Unit of Measure"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_MEINS_1"/>
+      </attribute>
+      <attribute id="MSEG_SOBKZ" order="78" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Special Stock Indicator"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_SOBKZ"/>
+      </attribute>
+      <attribute id="MSEG_KZEAR" order="79" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Final Issue for This Reservation"/>
+        <keyMapping columnObjectName="Join_8" columnName="MSEG_KZEAR"/>
+      </attribute>
+      <attribute id="EKET_EINDT" order="80" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="&#x9;Item Delivery Date"/>
+        <keyMapping columnObjectName="Join_8" columnName="EKET_EINDT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes>
+      <calculatedAttribute id="Cost_Object" hidden="false" order="82" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Cost Object"/>
+        <keyCalculation datatype="NVARCHAR" expressionLanguage="COLUMN_ENGINE" length="12">
+          <formula>if (isnull(&quot;EKKN_KOSTL&quot;), &quot;EKKN_AUFNR&quot;, if (isnull(&quot;EKKN_AUFNR&quot;), &quot;EKKN_KOSTL&quot;,'') )</formula>
+        </keyCalculation>
+      </calculatedAttribute>
+    </calculatedAttributes>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="EKPO_MENGE" order="15" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Purchase Order Quantity"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKPO_MENGE"/>
+      </measure>
+      <measure id="EKPO_NETPR" order="16" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Net Price in Purchasing Document"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKPO_NETPR"/>
+      </measure>
+      <measure id="EKPO_NETWR" order="17" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Net Order Value"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKPO_NETWR"/>
+      </measure>
+      <measure id="EKPO_PEINH" order="18" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Price Unit"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKPO_PEINH"/>
+      </measure>
+      <measure id="EKPO_BRTWR" order="20" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Gross order value"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKPO_BRTWR"/>
+      </measure>
+      <measure id="EKKO_ZBD1P" order="28" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Cash Discount Percentage 1"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKKO_ZBD1P"/>
+      </measure>
+      <measure id="EKKO_ZBD2P" order="29" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Cash Discount Percentage 2"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKKO_ZBD2P"/>
+      </measure>
+      <measure id="EKKO_ZBD3T" order="30" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Cash (Prompt Payment) Discount Days"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKKO_ZBD3T"/>
+      </measure>
+      <measure id="EKKO_WKURS" order="32" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Exchange Rate"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKKO_WKURS"/>
+      </measure>
+      <measure id="EKBE_AREWB" order="41" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Clearing Value on GR/IR Account"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKBE_AREWB"/>
+      </measure>
+      <measure id="EKBE_MENGE" order="52" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="EKBE MENGE Quantity"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKBE_MENGE"/>
+      </measure>
+      <measure id="EKBE_WRBTR" order="53" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Amount in document currency"/>
+        <measureMapping columnObjectName="Join_8" columnName="EKBE_WRBTR"/>
+      </measure>
+      <measure id="MSEG_MENGE" order="75" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="&#x9;MSEG MENGE Quantity"/>
+        <measureMapping columnObjectName="Join_8" columnName="MSEG_MENGE_1"/>
+      </measure>
+      <measure id="MSEG_DMBTR" order="77" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Amount in Local Currency"/>
+        <measureMapping columnObjectName="Join_8" columnName="MSEG_DMBTR"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="Pending_Delivery" hidden="false" order="81" aggregationType="sum" engineAggregation="sum" measureType="simple" datatype="DOUBLE" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="Pending Delivery"/>
+        <formula>&quot;EKPO_MENGE&quot;-&quot;MSEG_MENGE&quot;</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="472" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="933"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="933"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="837"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="837"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="741"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="404" y="645"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="175" y="741"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="250" y="645"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="324" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="478" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="398" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="552" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="473" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="627" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="549" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_9" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="395" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_8" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="472" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

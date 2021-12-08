@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm::ZHV_MM_01" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_MM_MSEG_01"/>
+  <metadata activatedAt="2021-03-04 21:52:32.0" changedAt="2021-03-26 14:15:11.574" createdAt="2021-03-26 14:15:11.574"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="39"/>
+  <dataSources>
+    <DataSource id="MBEW">
+      <resourceUri>algoma.mm::MBEW</resourceUri>
+    </DataSource>
+    <DataSource id="MAKT">
+      <resourceUri>algoma.mm::MAKT</resourceUri>
+    </DataSource>
+    <DataSource id="MARA">
+      <resourceUri>algoma.mm::MARA</resourceUri>
+    </DataSource>
+    <DataSource id="MARC">
+      <resourceUri>algoma.mm::MARC</resourceUri>
+    </DataSource>
+    <DataSource id="ZTBL_MRP_CONTROLLERS">
+      <resourceUri>algoma.mm::ZTBL_MRP_CONTROLLERS</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MBEW_MANDT"/>
+        <viewAttribute id="MBEW_MATNR"/>
+        <viewAttribute id="MBEW_BWTAR"/>
+        <viewAttribute id="MBEW_LBKUM"/>
+        <viewAttribute id="MBEW_SALK3"/>
+        <viewAttribute id="MBEW_BKLAS"/>
+        <viewAttribute id="MBEW_BWTTY"/>
+        <viewAttribute id="MBEW_LFGJA"/>
+        <viewAttribute id="MBEW_LFMON"/>
+        <viewAttribute id="MBEW_STPRS"/>
+        <viewAttribute id="MBEW_VERPR"/>
+        <viewAttribute id="MBEW_VMKUM"/>
+        <viewAttribute id="MBEW_VMSAL"/>
+        <viewAttribute id="MBEW_VMVER"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MBEW">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="BWTTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="LFGJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="LFMON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="STPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="VMKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="VMSAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="VMVER"/>
+      </input>
+      <filter>&quot;MBEW_BWTAR&quot; = ''  and (&quot;MBEW_BKLAS&quot; = '3042' or &quot;MBEW_BKLAS&quot; = '3408'or &quot;MBEW_BKLAS&quot; = '3412'or &quot;MBEW_BKLAS&quot; = '3420'or &quot;MBEW_BKLAS&quot; = '3500'or &quot;MBEW_BKLAS&quot; = '3501'or &quot;MBEW_BKLAS&quot; = '3505'or &quot;MBEW_BKLAS&quot; = '3511'or &quot;MBEW_BKLAS&quot; = '3604'or &quot;MBEW_BKLAS&quot; = '3612')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MAKT_MANDT"/>
+        <viewAttribute id="MAKT_MATNR"/>
+        <viewAttribute id="MAKT_MAKTX"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MAKT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKTX"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MBEW_MANDT"/>
+        <viewAttribute id="MBEW_MATNR"/>
+        <viewAttribute id="MBEW_BWTAR"/>
+        <viewAttribute id="MBEW_LBKUM"/>
+        <viewAttribute id="MBEW_SALK3"/>
+        <viewAttribute id="MBEW_BKLAS"/>
+        <viewAttribute id="MBEW_BWTTY"/>
+        <viewAttribute id="MBEW_LFGJA"/>
+        <viewAttribute id="MBEW_LFMON"/>
+        <viewAttribute id="MBEW_STPRS"/>
+        <viewAttribute id="MBEW_VERPR"/>
+        <viewAttribute id="MBEW_VMKUM"/>
+        <viewAttribute id="MBEW_VMSAL"/>
+        <viewAttribute id="MBEW_VMVER"/>
+        <viewAttribute id="MAKT_MAKTX"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MBEW_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MAKT_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MAKT_MATNR"/>
+      </input>
+      <joinAttribute name="MBEW_MANDT"/>
+      <joinAttribute name="MBEW_MATNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="MTART"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="ERSDA"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MARA">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MBEW_MANDT"/>
+        <viewAttribute id="MBEW_MATNR"/>
+        <viewAttribute id="MBEW_BWTAR"/>
+        <viewAttribute id="MBEW_LBKUM"/>
+        <viewAttribute id="MBEW_SALK3"/>
+        <viewAttribute id="MBEW_BKLAS"/>
+        <viewAttribute id="MBEW_BWTTY"/>
+        <viewAttribute id="MBEW_LFGJA"/>
+        <viewAttribute id="MBEW_LFMON"/>
+        <viewAttribute id="MBEW_STPRS"/>
+        <viewAttribute id="MBEW_VERPR"/>
+        <viewAttribute id="MBEW_VMKUM"/>
+        <viewAttribute id="MBEW_VMSAL"/>
+        <viewAttribute id="MBEW_VMVER"/>
+        <viewAttribute id="MAKT_MAKTX"/>
+        <viewAttribute id="MARA_MTART"/>
+        <viewAttribute id="MARA_MATKL"/>
+        <viewAttribute id="MARA_MEINS"/>
+        <viewAttribute id="MARA_ERSDA"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MBEW_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MTART" source="MTART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_ERSDA" source="ERSDA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
+      </input>
+      <joinAttribute name="MBEW_MANDT"/>
+      <joinAttribute name="MBEW_MATNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="WERKS"/>
+        <viewAttribute id="DISMM"/>
+        <viewAttribute id="DISPO"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="MABST"/>
+        <viewAttribute id="MINBE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#MARC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISMM" source="DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MABST" source="MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MINBE" source="MINBE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MBEW_MANDT"/>
+        <viewAttribute id="MBEW_MATNR"/>
+        <viewAttribute id="MBEW_BWTAR"/>
+        <viewAttribute id="MBEW_LBKUM"/>
+        <viewAttribute id="MBEW_SALK3"/>
+        <viewAttribute id="MBEW_BKLAS"/>
+        <viewAttribute id="MBEW_BWTTY"/>
+        <viewAttribute id="MBEW_LFGJA"/>
+        <viewAttribute id="MBEW_LFMON"/>
+        <viewAttribute id="MBEW_STPRS"/>
+        <viewAttribute id="MBEW_VERPR"/>
+        <viewAttribute id="MBEW_VMKUM"/>
+        <viewAttribute id="MBEW_VMSAL"/>
+        <viewAttribute id="MBEW_VMVER"/>
+        <viewAttribute id="MAKT_MAKTX"/>
+        <viewAttribute id="MARA_MTART"/>
+        <viewAttribute id="MARA_MATKL"/>
+        <viewAttribute id="MARA_MEINS"/>
+        <viewAttribute id="MARA_ERSDA"/>
+        <viewAttribute id="MARC_WERKS"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MARC_EKGRP"/>
+        <viewAttribute id="MARC_MABST"/>
+        <viewAttribute id="MARC_MINBE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MBEW_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MTART" source="MARA_MTART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MATKL" source="MARA_MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MEINS" source="MARA_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_ERSDA" source="MARA_ERSDA"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MABST" source="MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MINBE" source="MINBE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
+      </input>
+      <joinAttribute name="MBEW_MANDT"/>
+      <joinAttribute name="MBEW_MATNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MRP_CONTROLLER_ID"/>
+        <viewAttribute id="MRP_CONTROLLER"/>
+        <viewAttribute id="MRP_CONTROLLER_DESCR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ZTBL_MRP_CONTROLLERS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_ID" source="MRP_CONTROLLER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER" source="MRP_CONTROLLER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_DESCR" source="MRP_CONTROLLER_DESCR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="MBEW_MANDT"/>
+        <viewAttribute id="MBEW_MATNR"/>
+        <viewAttribute id="MBEW_BWTAR"/>
+        <viewAttribute id="MBEW_LBKUM"/>
+        <viewAttribute id="MBEW_SALK3"/>
+        <viewAttribute id="MBEW_BKLAS"/>
+        <viewAttribute id="MBEW_BWTTY"/>
+        <viewAttribute id="MBEW_LFGJA"/>
+        <viewAttribute id="MBEW_LFMON"/>
+        <viewAttribute id="MBEW_STPRS"/>
+        <viewAttribute id="MBEW_VERPR"/>
+        <viewAttribute id="MBEW_VMKUM"/>
+        <viewAttribute id="MBEW_VMSAL"/>
+        <viewAttribute id="MBEW_VMVER"/>
+        <viewAttribute id="MAKT_MAKTX"/>
+        <viewAttribute id="MARA_MTART"/>
+        <viewAttribute id="MARA_MATKL"/>
+        <viewAttribute id="MARA_MEINS"/>
+        <viewAttribute id="MARA_ERSDA"/>
+        <viewAttribute id="MARC_WERKS"/>
+        <viewAttribute id="MARC_DISMM"/>
+        <viewAttribute id="MARC_DISPO"/>
+        <viewAttribute id="MARC_EKGRP"/>
+        <viewAttribute id="MARC_MABST"/>
+        <viewAttribute id="MARC_MINBE"/>
+        <viewAttribute id="MRP_CONTROLLER"/>
+        <viewAttribute id="MRP_CONTROLLER_DESCR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MBEW_MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MTART" source="MARA_MTART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MATKL" source="MARA_MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_MEINS" source="MARA_MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARA_ERSDA" source="MARA_ERSDA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_WERKS" source="MARC_WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISMM" source="MARC_DISMM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MARC_DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_EKGRP" source="MARC_EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MABST" source="MARC_MABST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_MINBE" source="MARC_MINBE"/>
+      </input>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER" source="MRP_CONTROLLER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_DESCR" source="MRP_CONTROLLER_DESCR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARC_DISPO" source="MRP_CONTROLLER_ID"/>
+      </input>
+      <joinAttribute name="MARC_DISPO"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_4">
+    <descriptions/>
+    <attributes>
+      <attribute id="MBEW_MANDT" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_MANDT"/>
+      </attribute>
+      <attribute id="MBEW_MATNR" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_MATNR"/>
+      </attribute>
+      <attribute id="MBEW_BWTAR" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valuation Type"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_BWTAR"/>
+      </attribute>
+      <attribute id="MBEW_BKLAS" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valuation Class"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_BKLAS"/>
+      </attribute>
+      <attribute id="MBEW_BWTTY" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valuation Category"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_BWTTY"/>
+      </attribute>
+      <attribute id="MBEW_LFGJA" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Year of Current Period"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_LFGJA"/>
+      </attribute>
+      <attribute id="MBEW_LFMON" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Current period (posting period)"/>
+        <keyMapping columnObjectName="Join_4" columnName="MBEW_LFMON"/>
+      </attribute>
+      <attribute id="MAKT_MAKTX" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Description"/>
+        <keyMapping columnObjectName="Join_4" columnName="MAKT_MAKTX"/>
+      </attribute>
+      <attribute id="MARA_MTART" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Type"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARA_MTART"/>
+      </attribute>
+      <attribute id="MARA_MATKL" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Group"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARA_MATKL"/>
+      </attribute>
+      <attribute id="MARA_MEINS" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Base Unit of Measure"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARA_MEINS"/>
+      </attribute>
+      <attribute id="MARA_ERSDA" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Created On"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARA_ERSDA"/>
+      </attribute>
+      <attribute id="MARC_WERKS" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Plant"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARC_WERKS"/>
+      </attribute>
+      <attribute id="MARC_DISMM" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Type"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARC_DISMM"/>
+      </attribute>
+      <attribute id="MARC_DISPO" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP Controller"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARC_DISPO"/>
+      </attribute>
+      <attribute id="MARC_EKGRP" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Join_4" columnName="MARC_EKGRP"/>
+      </attribute>
+      <attribute id="MRP_CONTROLLER" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP_CONTROLLER"/>
+        <keyMapping columnObjectName="Join_4" columnName="MRP_CONTROLLER"/>
+      </attribute>
+      <attribute id="MRP_CONTROLLER_DESCR" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MRP_CONTROLLER_DESCR"/>
+        <keyMapping columnObjectName="Join_4" columnName="MRP_CONTROLLER_DESCR"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes>
+      <calculatedAttribute id="CURRENT_DATE" hidden="false" order="1" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CURRENT_DATE"/>
+        <keyCalculation datatype="DATE" expressionLanguage="COLUMN_ENGINE">
+          <formula>now()</formula>
+        </keyCalculation>
+      </calculatedAttribute>
+    </calculatedAttributes>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="MBEW_LBKUM" order="5" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Total Valuated Stock"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_LBKUM"/>
+      </measure>
+      <measure id="MBEW_SALK3" order="6" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Value of Total Valuated Stock"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_SALK3"/>
+      </measure>
+      <measure id="MBEW_STPRS" order="11" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Standard price"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_STPRS"/>
+      </measure>
+      <measure id="MBEW_VERPR" order="12" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Moving Average Price/Periodic Unit Price"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_VERPR"/>
+      </measure>
+      <measure id="MBEW_VMKUM" order="13" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Total valuated stock in previous period"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_VMKUM"/>
+      </measure>
+      <measure id="MBEW_VMSAL" order="14" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Value of total valuated stock in previous period"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_VMSAL"/>
+      </measure>
+      <measure id="MBEW_VMVER" order="15" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Moving Average Price/Periodic Unit Price in Previous Period"/>
+        <measureMapping columnObjectName="Join_4" columnName="MBEW_VMVER"/>
+      </measure>
+      <measure id="MARC_MABST" order="25" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Maximum stock level"/>
+        <measureMapping columnObjectName="Join_4" columnName="MARC_MABST"/>
+      </measure>
+      <measure id="MARC_MINBE" order="26" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Reorder Point"/>
+        <measureMapping columnObjectName="Join_4" columnName="MARC_MINBE"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="174" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="175" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="251" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="97" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="174" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

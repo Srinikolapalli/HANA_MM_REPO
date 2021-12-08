@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur::ZHV_VENDOR_MAS" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_VENDOR_MAS"/>
+  <metadata changedAt="2021-08-25 09:14:39.4"/>
+  <localVariables>
+    <variable id="Vendor_ID">
+      <descriptions defaultDescription="Vendor ID"/>
+      <variableProperties datatype="VARCHAR" mandatory="false">
+        <valueDomain type="AttributeValue">
+          <attribute name="LIFNR"/>
+        </valueDomain>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+  </localVariables>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="42"/>
+  <dataSources>
+    <DataSource id="LFA1">
+      <resourceUri>algoma.mm::LFA1</resourceUri>
+    </DataSource>
+    <DataSource id="LFB1">
+      <resourceUri>algoma.mm::LFB1</resourceUri>
+    </DataSource>
+    <DataSource id="LFM1">
+      <resourceUri>algoma.mm::LFM1</resourceUri>
+    </DataSource>
+    <DataSource id="ADRCT">
+      <resourceUri>algoma.mm::ADRCT</resourceUri>
+    </DataSource>
+    <DataSource id="ADRC">
+      <resourceUri>algoma.mm::ADRC</resourceUri>
+    </DataSource>
+    <DataSource id="ADR6">
+      <resourceUri>algoma.mm::ADR6</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_LFA1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="BIGINT" id="CAL_VENDOR_COUNT" expressionLanguage="COLUMN_ENGINE">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#LFA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="ZTERM_FI"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#LFB1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_FI" source="ZTERM"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="CAL_VENDOR_COUNT"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projn_LFA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_VENDOR_COUNT" source="CAL_VENDOR_COUNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM_FI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      </input>
+      <joinAttribute name="LIFNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="ZTERM_PUR"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#LFM1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_PUR" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="CAL_VENDOR_COUNT"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ZTERM_FI"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_VENDOR_COUNT" source="CAL_VENDOR_COUNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_FI" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM_PUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      </input>
+      <joinAttribute name="LIFNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ADDRNUMBER"/>
+        <viewAttribute id="REMARK"/>
+        <viewAttribute id="LANGU"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADRCT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REMARK" source="REMARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
+      </input>
+      <filter>&quot;LANGU&quot; = 'E'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="ZTERM_PUR"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ZTERM_FI"/>
+        <viewAttribute id="CAL_VENDOR_COUNT"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="REMARK"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_PUR" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_FI" source="ZTERM_FI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_VENDOR_COUNT" source="CAL_VENDOR_COUNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="REMARK" source="REMARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADDRNUMBER"/>
+      </input>
+      <joinAttribute name="ADRNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ADDRNUMBER"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="POST_CODE2"/>
+        <viewAttribute id="POST_CODE3"/>
+        <viewAttribute id="STR_SUPPL1"/>
+        <viewAttribute id="STR_SUPPL2"/>
+        <viewAttribute id="STR_SUPPL3"/>
+        <viewAttribute id="COUNTY"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="SORT1"/>
+        <viewAttribute id="SORT2"/>
+        <viewAttribute id="TEL_NUMBER"/>
+        <viewAttribute id="FAX_NUMBER"/>
+        <viewAttribute id="MC_NAME1"/>
+        <viewAttribute id="MC_CITY1"/>
+        <viewAttribute id="TIME_ZONE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADRC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE2" source="POST_CODE2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE3" source="POST_CODE3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL2" source="STR_SUPPL2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL3" source="STR_SUPPL3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTY" source="COUNTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT1" source="SORT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT2" source="SORT2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEL_NUMBER" source="TEL_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAX_NUMBER" source="FAX_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_NAME1" source="MC_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_CITY1" source="MC_CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TIME_ZONE" source="TIME_ZONE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="ZTERM_PUR"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ZTERM_FI"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="REMARK"/>
+        <viewAttribute id="CAL_VENDOR_COUNT"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="POST_CODE2"/>
+        <viewAttribute id="POST_CODE3"/>
+        <viewAttribute id="STR_SUPPL1"/>
+        <viewAttribute id="STR_SUPPL2"/>
+        <viewAttribute id="STR_SUPPL3"/>
+        <viewAttribute id="COUNTY"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="SORT1"/>
+        <viewAttribute id="SORT2"/>
+        <viewAttribute id="TEL_NUMBER"/>
+        <viewAttribute id="FAX_NUMBER"/>
+        <viewAttribute id="MC_NAME1"/>
+        <viewAttribute id="MC_CITY1"/>
+        <viewAttribute id="TIME_ZONE"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_PUR" source="ZTERM_PUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_FI" source="ZTERM_FI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REMARK" source="REMARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_VENDOR_COUNT" source="CAL_VENDOR_COUNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE2" source="POST_CODE2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE3" source="POST_CODE3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL2" source="STR_SUPPL2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL3" source="STR_SUPPL3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTY" source="COUNTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT1" source="SORT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT2" source="SORT2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEL_NUMBER" source="TEL_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAX_NUMBER" source="FAX_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_NAME1" source="MC_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_CITY1" source="MC_CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TIME_ZONE" source="TIME_ZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADDRNUMBER"/>
+      </input>
+      <joinAttribute name="ADRNR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="ADDRNUMBER"/>
+        <viewAttribute id="SMTP_ADDR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADR6">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="CAL_VENDOR_COUNT"/>
+        <viewAttribute id="REMARK"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="ZTERM_FI"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="ZTERM_PUR"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="POST_CODE2"/>
+        <viewAttribute id="POST_CODE3"/>
+        <viewAttribute id="STR_SUPPL1"/>
+        <viewAttribute id="STR_SUPPL2"/>
+        <viewAttribute id="STR_SUPPL3"/>
+        <viewAttribute id="COUNTY"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="SORT1"/>
+        <viewAttribute id="SORT2"/>
+        <viewAttribute id="TEL_NUMBER"/>
+        <viewAttribute id="FAX_NUMBER"/>
+        <viewAttribute id="MC_NAME1"/>
+        <viewAttribute id="MC_CITY1"/>
+        <viewAttribute id="TIME_ZONE"/>
+        <viewAttribute id="SMTP_ADDR"/>
+        <viewAttribute id="KTOKK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_VENDOR_COUNT" source="CAL_VENDOR_COUNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REMARK" source="REMARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_FI" source="ZTERM_FI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM_PUR" source="ZTERM_PUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE2" source="POST_CODE2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE3" source="POST_CODE3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL2" source="STR_SUPPL2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL3" source="STR_SUPPL3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTY" source="COUNTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT1" source="SORT1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORT2" source="SORT2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEL_NUMBER" source="TEL_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAX_NUMBER" source="FAX_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_NAME1" source="MC_NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MC_CITY1" source="MC_CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TIME_ZONE" source="TIME_ZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADDRNUMBER"/>
+      </input>
+      <joinAttribute name="ADRNR"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_5">
+    <descriptions/>
+    <attributes>
+      <attribute id="REMARK" order="2" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address notes"/>
+        <keyMapping columnObjectName="Join_5" columnName="REMARK"/>
+      </attribute>
+      <attribute id="ADRNR" order="3" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address"/>
+        <keyMapping columnObjectName="Join_5" columnName="ADRNR"/>
+      </attribute>
+      <attribute id="ZTERM_FI" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Finance Terms of Payment Key"/>
+        <keyMapping columnObjectName="Join_5" columnName="ZTERM_FI"/>
+      </attribute>
+      <attribute id="DTAWS" order="5" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Instruction key for data medium exchange"/>
+        <keyMapping columnObjectName="Join_5" columnName="DTAWS"/>
+      </attribute>
+      <attribute id="REGIO" order="6" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region (State, Province, County)"/>
+        <keyMapping columnObjectName="Join_5" columnName="REGIO"/>
+      </attribute>
+      <attribute id="PSTLZ" order="7" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <keyMapping columnObjectName="Join_5" columnName="PSTLZ"/>
+      </attribute>
+      <attribute id="ORT02" order="8" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <keyMapping columnObjectName="Join_5" columnName="ORT02"/>
+      </attribute>
+      <attribute id="ORT01" order="9" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City"/>
+        <keyMapping columnObjectName="Join_5" columnName="ORT01"/>
+      </attribute>
+      <attribute id="LAND1" order="10" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country Key"/>
+        <keyMapping columnObjectName="Join_5" columnName="LAND1"/>
+      </attribute>
+      <attribute id="BUKRS" order="11" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Code"/>
+        <keyMapping columnObjectName="Join_5" columnName="BUKRS"/>
+      </attribute>
+      <attribute id="EKGRP" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Join_5" columnName="EKGRP"/>
+      </attribute>
+      <attribute id="INCO2" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Incoterms (Part 2)"/>
+        <keyMapping columnObjectName="Join_5" columnName="INCO2"/>
+      </attribute>
+      <attribute id="INCO1" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Incoterms (Part 1)"/>
+        <keyMapping columnObjectName="Join_5" columnName="INCO1"/>
+      </attribute>
+      <attribute id="ZTERM_PUR" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Terms of Payment Key "/>
+        <keyMapping columnObjectName="Join_5" columnName="ZTERM_PUR"/>
+      </attribute>
+      <attribute id="WAERS" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase order currency"/>
+        <keyMapping columnObjectName="Join_5" columnName="WAERS"/>
+      </attribute>
+      <attribute id="EKORG" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Organization"/>
+        <keyMapping columnObjectName="Join_5" columnName="EKORG"/>
+      </attribute>
+      <attribute id="NAME1" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="Join_5" columnName="NAME1"/>
+      </attribute>
+      <attribute id="LIFNR" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
+        <localVariable>#Vendor_ID</localVariable>
+        <keyMapping columnObjectName="Join_5" columnName="LIFNR"/>
+      </attribute>
+      <attribute id="POST_CODE1" order="20" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City postal code"/>
+        <keyMapping columnObjectName="Join_5" columnName="POST_CODE1"/>
+      </attribute>
+      <attribute id="POST_CODE2" order="21" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Box Postal Code"/>
+        <keyMapping columnObjectName="Join_5" columnName="POST_CODE2"/>
+      </attribute>
+      <attribute id="POST_CODE3" order="22" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Postal Code (for Large Customers)"/>
+        <keyMapping columnObjectName="Join_5" columnName="POST_CODE3"/>
+      </attribute>
+      <attribute id="STR_SUPPL1" order="23" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 2"/>
+        <keyMapping columnObjectName="Join_5" columnName="STR_SUPPL1"/>
+      </attribute>
+      <attribute id="STR_SUPPL2" order="24" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 3"/>
+        <keyMapping columnObjectName="Join_5" columnName="STR_SUPPL2"/>
+      </attribute>
+      <attribute id="STR_SUPPL3" order="25" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 4"/>
+        <keyMapping columnObjectName="Join_5" columnName="STR_SUPPL3"/>
+      </attribute>
+      <attribute id="COUNTY" order="26" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="County"/>
+        <keyMapping columnObjectName="Join_5" columnName="COUNTY"/>
+      </attribute>
+      <attribute id="REGION" order="27" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region (State, Province, County)"/>
+        <keyMapping columnObjectName="Join_5" columnName="REGION"/>
+      </attribute>
+      <attribute id="CITY1" order="28" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City"/>
+        <keyMapping columnObjectName="Join_5" columnName="CITY1"/>
+      </attribute>
+      <attribute id="CITY2" order="29" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <keyMapping columnObjectName="Join_5" columnName="CITY2"/>
+      </attribute>
+      <attribute id="SORT1" order="30" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Search Term 1"/>
+        <keyMapping columnObjectName="Join_5" columnName="SORT1"/>
+      </attribute>
+      <attribute id="SORT2" order="31" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Search Term 2"/>
+        <keyMapping columnObjectName="Join_5" columnName="SORT2"/>
+      </attribute>
+      <attribute id="TEL_NUMBER" order="32" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First telephone no.: dialling code+number"/>
+        <keyMapping columnObjectName="Join_5" columnName="TEL_NUMBER"/>
+      </attribute>
+      <attribute id="FAX_NUMBER" order="33" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First fax no.: dialling code+number"/>
+        <keyMapping columnObjectName="Join_5" columnName="FAX_NUMBER"/>
+      </attribute>
+      <attribute id="MC_NAME1" order="34" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name (Field NAME1) in Uppercase for Search Help"/>
+        <keyMapping columnObjectName="Join_5" columnName="MC_NAME1"/>
+      </attribute>
+      <attribute id="MC_CITY1" order="35" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City name in Uppercase for Search Help"/>
+        <keyMapping columnObjectName="Join_5" columnName="MC_CITY1"/>
+      </attribute>
+      <attribute id="TIME_ZONE" order="36" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address time zone"/>
+        <keyMapping columnObjectName="Join_5" columnName="TIME_ZONE"/>
+      </attribute>
+      <attribute id="SMTP_ADDR" order="37" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="E-Mail Address"/>
+        <keyMapping columnObjectName="Join_5" columnName="SMTP_ADDR"/>
+      </attribute>
+      <attribute id="KTOKK" order="38" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor account group"/>
+        <keyMapping columnObjectName="Join_5" columnName="KTOKK"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="CAL_VENDOR_COUNT" order="1" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="CAL_VENDOR_COUNT"/>
+        <measureMapping columnObjectName="Join_5" columnName="CAL_VENDOR_COUNT"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="249" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_LFA1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="645"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="645"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="549"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="175" y="453"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="329" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="250" y="357"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="404" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="326" y="261"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="172" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="249" y="165"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

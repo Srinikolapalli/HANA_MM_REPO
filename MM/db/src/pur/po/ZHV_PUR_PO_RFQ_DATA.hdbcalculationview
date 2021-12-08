@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_PUR_PO_RFQ_DATA" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_RV_RFQ_DATA"/>
+  <metadata activatedAt="2021-03-21 02:41:33.0" changedAt="2021-03-26 14:15:08.72" createdAt="2021-03-26 14:15:08.72"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="34"/>
+  <dataSources>
+    <DataSource id="EKKO">
+      <resourceUri>algoma.mm::EKKO</resourceUri>
+    </DataSource>
+    <DataSource id="EKPO">
+      <resourceUri>algoma.mm::EKPO</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BSTYP_Doc_Category"/>
+        <viewAttribute id="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_STATU_Status"/>
+        <viewAttribute id="RFQ_DATA_EKKO_AEDAT_Created_On"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ERNAM_Created_By"/>
+        <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="RFQ_DATA_EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="RFQ_DATA_EKKO_WAERS_Currency"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KDATB_Validity_Start"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KDATE_Validity_End"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ANGDT_Quot_Deadline"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BWBDT_Application_By"/>
+        <viewAttribute id="RFQ_DATA_EKKO_AUSNR_Bid_invitation"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ANGNR_Quotation"/>
+        <viewAttribute id="RFQ_DATA_EKKO_IHRAN_Quotation_Date"/>
+        <viewAttribute id="RFQ_DATA_EKKO_IHREZ_Your_Reference"/>
+        <viewAttribute id="RFQ_DATA_EKKO_SUBMI_Collective_No_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KTWRT_Target_Value"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BEDAT_Document_Date"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BSTYP_Doc_Category" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_STATU_Status" source="STATU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_AEDAT_Created_On" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ERNAM_Created_By" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EKGRP_Purch_Group" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_WAERS_Currency" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KDATB_Validity_Start" source="KDATB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KDATE_Validity_End" source="KDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ANGDT_Quot_Deadline" source="ANGDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BWBDT_Application_By" source="BWBDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_AUSNR_Bid_invitation" source="AUSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ANGNR_Quotation" source="ANGNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_IHRAN_Quotation_Date" source="IHRAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_IHREZ_Your_Reference" source="IHREZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_SUBMI_Collective_No_" source="SUBMI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KTWRT_Target_Value" source="KTWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BEDAT_Document_Date" source="BEDAT"/>
+      </input>
+      <filter>&quot;RFQ_DATA_EKKO_BSTYP_Doc_Category&quot; = 'A'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_EBELP_Item"/>
+        <viewAttribute id="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_STATU_RFQ_status"/>
+        <viewAttribute id="RFQ_DATA_EKPO_TXZ01_Short_Text"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
+        <viewAttribute id="RFQ_DATA_EKPO_INFNR_Info_record"/>
+        <viewAttribute id="RFQ_DATA_EKPO_KTMNG_Target_Quantity"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BPRME_Order_Price_Un_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="RFQ_DATA_EKPO_NETWR_Net_Value"/>
+        <viewAttribute id="RFQ_DATA_EKPO_AGDAT_Quot_Deadline"/>
+        <viewAttribute id="RFQ_DATA_EKPO_AGMEM_Quot_Comment"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MFRNR_Manufacturer"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_EBELP_Item" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_STATU_RFQ_status" source="STATU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_TXZ01_Short_Text" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_INFNR_Info_record" source="INFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_KTMNG_Target_Quantity" source="KTMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MENGE_PO_Quantity" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BPRME_Order_Price_Un_" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_NETPR_Net_Price" source="NETPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_NETWR_Net_Value" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_AGDAT_Quot_Deadline" source="AGDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_AGMEM_Quot_Comment" source="AGMEM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BANFN_Purch_Req_" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BNFPO_Requisn_item" source="BNFPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number" source="MFRPN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MFRNR_Manufacturer" source="MFRNR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BSTYP_Doc_Category"/>
+        <viewAttribute id="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_STATU_Status"/>
+        <viewAttribute id="RFQ_DATA_EKKO_AEDAT_Created_On"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ERNAM_Created_By"/>
+        <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+        <viewAttribute id="RFQ_DATA_EKKO_EKGRP_Purch_Group"/>
+        <viewAttribute id="RFQ_DATA_EKKO_WAERS_Currency"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KDATB_Validity_Start"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KDATE_Validity_End"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ANGDT_Quot_Deadline"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BWBDT_Application_By"/>
+        <viewAttribute id="RFQ_DATA_EKKO_AUSNR_Bid_invitation"/>
+        <viewAttribute id="RFQ_DATA_EKKO_ANGNR_Quotation"/>
+        <viewAttribute id="RFQ_DATA_EKKO_IHRAN_Quotation_Date"/>
+        <viewAttribute id="RFQ_DATA_EKKO_IHREZ_Your_Reference"/>
+        <viewAttribute id="RFQ_DATA_EKKO_SUBMI_Collective_No_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_KTWRT_Target_Value"/>
+        <viewAttribute id="RFQ_DATA_EKKO_BEDAT_Document_Date"/>
+        <viewAttribute id="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_EBELP_Item"/>
+        <viewAttribute id="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_STATU_RFQ_status"/>
+        <viewAttribute id="RFQ_DATA_EKPO_TXZ01_Short_Text"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
+        <viewAttribute id="RFQ_DATA_EKPO_INFNR_Info_record"/>
+        <viewAttribute id="RFQ_DATA_EKPO_KTMNG_Target_Quantity"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MENGE_PO_Quantity"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BPRME_Order_Price_Un_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_NETPR_Net_Price"/>
+        <viewAttribute id="RFQ_DATA_EKPO_NETWR_Net_Value"/>
+        <viewAttribute id="RFQ_DATA_EKPO_AGDAT_Quot_Deadline"/>
+        <viewAttribute id="RFQ_DATA_EKPO_AGMEM_Quot_Comment"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BANFN_Purch_Req_"/>
+        <viewAttribute id="RFQ_DATA_EKPO_BNFPO_Requisn_item"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number"/>
+        <viewAttribute id="RFQ_DATA_EKPO_MFRNR_Manufacturer"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BSTYP_Doc_Category" source="RFQ_DATA_EKKO_BSTYP_Doc_Category"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_" source="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_STATU_Status" source="RFQ_DATA_EKKO_STATU_Status"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_AEDAT_Created_On" source="RFQ_DATA_EKKO_AEDAT_Created_On"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ERNAM_Created_By" source="RFQ_DATA_EKKO_ERNAM_Created_By"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EKGRP_Purch_Group" source="RFQ_DATA_EKKO_EKGRP_Purch_Group"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_WAERS_Currency" source="RFQ_DATA_EKKO_WAERS_Currency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KDATB_Validity_Start" source="RFQ_DATA_EKKO_KDATB_Validity_Start"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KDATE_Validity_End" source="RFQ_DATA_EKKO_KDATE_Validity_End"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ANGDT_Quot_Deadline" source="RFQ_DATA_EKKO_ANGDT_Quot_Deadline"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BWBDT_Application_By" source="RFQ_DATA_EKKO_BWBDT_Application_By"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_AUSNR_Bid_invitation" source="RFQ_DATA_EKKO_AUSNR_Bid_invitation"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_ANGNR_Quotation" source="RFQ_DATA_EKKO_ANGNR_Quotation"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_IHRAN_Quotation_Date" source="RFQ_DATA_EKKO_IHRAN_Quotation_Date"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_IHREZ_Your_Reference" source="RFQ_DATA_EKKO_IHREZ_Your_Reference"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_SUBMI_Collective_No_" source="RFQ_DATA_EKKO_SUBMI_Collective_No_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_KTWRT_Target_Value" source="RFQ_DATA_EKKO_KTWRT_Target_Value"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_BEDAT_Document_Date" source="RFQ_DATA_EKKO_BEDAT_Document_Date"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_EBELP_Item" source="RFQ_DATA_EKPO_EBELP_Item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_" source="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_STATU_RFQ_status" source="RFQ_DATA_EKPO_STATU_RFQ_status"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_TXZ01_Short_Text" source="RFQ_DATA_EKPO_TXZ01_Short_Text"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_INFNR_Info_record" source="RFQ_DATA_EKPO_INFNR_Info_record"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_KTMNG_Target_Quantity" source="RFQ_DATA_EKPO_KTMNG_Target_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MENGE_PO_Quantity" source="RFQ_DATA_EKPO_MENGE_PO_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BPRME_Order_Price_Un_" source="RFQ_DATA_EKPO_BPRME_Order_Price_Un_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_NETPR_Net_Price" source="RFQ_DATA_EKPO_NETPR_Net_Price"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_NETWR_Net_Value" source="RFQ_DATA_EKPO_NETWR_Net_Value"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_AGDAT_Quot_Deadline" source="RFQ_DATA_EKPO_AGDAT_Quot_Deadline"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_AGMEM_Quot_Comment" source="RFQ_DATA_EKPO_AGMEM_Quot_Comment"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BANFN_Purch_Req_" source="RFQ_DATA_EKPO_BANFN_Purch_Req_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_BNFPO_Requisn_item" source="RFQ_DATA_EKPO_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number" source="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MFRNR_Manufacturer" source="RFQ_DATA_EKPO_MFRNR_Manufacturer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_"/>
+      </input>
+      <joinAttribute name="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_BSTYP_Doc_Category" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Category"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_BSTYP_Doc_Category"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion indicator in purchasing document"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_LOEKZ_Deletion_ind_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_STATU_Status" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Status of Purchasing Document"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_STATU_Status"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_AEDAT_Created_On" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on Which Record Was Created"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_AEDAT_Created_On"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_ERNAM_Created_By" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Person Who Created the Object"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_ERNAM_Created_By"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_LIFNR_Vendor" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor's account number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_EKGRP_Purch_Group" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Group"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_EKGRP_Purch_Group"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_WAERS_Currency" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Currency Key"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_WAERS_Currency"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_KDATB_Validity_Start" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Start of Validity Period"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_KDATB_Validity_Start"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_KDATE_Validity_End" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="End of Validity Period"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_KDATE_Validity_End"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_ANGDT_Quot_Deadline" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deadline for Submission of Bid/Quotation"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_ANGDT_Quot_Deadline"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_BWBDT_Application_By" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Closing Date for Applications"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_BWBDT_Application_By"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_AUSNR_Bid_invitation" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Bid invitation number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_AUSNR_Bid_invitation"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_ANGNR_Quotation" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Quotation Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_ANGNR_Quotation"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_IHRAN_Quotation_Date" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Quotation Submission Date"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_IHRAN_Quotation_Date"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_IHREZ_Your_Reference" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Your Reference"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_IHREZ_Your_Reference"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_SUBMI_Collective_No_" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Collective Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_SUBMI_Collective_No_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKKO_BEDAT_Document_Date" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Date"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_BEDAT_Document_Date"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchasing Document Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_EBELN_Purchasing_Doc_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_EBELP_Item" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item Number of Purchasing Document"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_EBELP_Item"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deletion indicator in purchasing document"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_LOEKZ_Deletion_ind_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_STATU_RFQ_status" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RFQ status"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_STATU_RFQ_status"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_TXZ01_Short_Text" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Short Text"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_TXZ01_Short_Text"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_MATNR_Material" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_MATNR_Material"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_INFNR_Info_record" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Number of purchasing info record"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_INFNR_Info_record"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_BPRME_Order_Price_Un_" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Order Price Unit (Purchasing)"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_BPRME_Order_Price_Un_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_AGDAT_Quot_Deadline" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Deadline for Submission of Bid/Quotation"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_AGDAT_Quot_Deadline"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_AGMEM_Quot_Comment" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Internal Comment on Quotation"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_AGMEM_Quot_Comment"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_BANFN_Purch_Req_" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Purchase Requisition Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_BANFN_Purch_Req_"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_BNFPO_Requisn_item" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Item number of purchase requisition"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_BNFPO_Requisn_item"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer Part Number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_MFRPN_Mfr_Part_Number"/>
+      </attribute>
+      <attribute id="RFQ_DATA_EKPO_MFRNR_Manufacturer" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Manufacturer number"/>
+        <keyMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_MFRNR_Manufacturer"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="RFQ_DATA_EKKO_KTWRT_Target_Value" order="19" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Target Value for Header Area per Distribution"/>
+        <measureMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKKO_KTWRT_Target_Value"/>
+      </measure>
+      <measure id="RFQ_DATA_EKPO_KTMNG_Target_Quantity" order="28" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Target Quantity"/>
+        <measureMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_KTMNG_Target_Quantity"/>
+      </measure>
+      <measure id="RFQ_DATA_EKPO_MENGE_PO_Quantity" order="29" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Purchase Order Quantity"/>
+        <measureMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_MENGE_PO_Quantity"/>
+      </measure>
+      <measure id="RFQ_DATA_EKPO_NETPR_Net_Price" order="31" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Net Price in Purchasing Document (in Document Currency)"/>
+        <measureMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_NETPR_Net_Price"/>
+      </measure>
+      <measure id="RFQ_DATA_EKPO_NETWR_Net_Value" order="32" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Net Order Value in PO Currency"/>
+        <measureMapping columnObjectName="Join_1" columnName="RFQ_DATA_EKPO_NETWR_Net_Value"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="20" y="350"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="200" y="340"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="90" y="220"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

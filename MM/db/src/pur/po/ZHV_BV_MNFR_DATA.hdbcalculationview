@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_BV_MNFR_DATA" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="ZHV_BV_MNFR_DATA"/>
+  <metadata activatedAt="2021-04-28 08:51:18.0" changedAt="2021-05-14 09:09:11.332" createdAt="2021-05-14 09:09:11.331"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="38"/>
+  <dataSources>
+    <DataSource id="LFA1">
+      <resourceUri>algoma.mm::LFA1</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_LFA1" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="NAME3"/>
+        <viewAttribute id="NAME4"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="PFACH"/>
+        <viewAttribute id="PSTL2"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="SORTL"/>
+        <viewAttribute id="STRAS"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="MCOD1"/>
+        <viewAttribute id="MCOD2"/>
+        <viewAttribute id="MCOD3"/>
+        <viewAttribute id="ANRED"/>
+        <viewAttribute id="BAHNS"/>
+        <viewAttribute id="BBBNR"/>
+        <viewAttribute id="BBSNR"/>
+        <viewAttribute id="BEGRU"/>
+        <viewAttribute id="BRSCH"/>
+        <viewAttribute id="BUBKZ"/>
+        <viewAttribute id="DATLT"/>
+        <viewAttribute id="DTAMS"/>
+        <viewAttribute id="DTAWS"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="ESRNR"/>
+        <viewAttribute id="KONZS"/>
+        <viewAttribute id="KTOKK"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="LNRZA"/>
+        <viewAttribute id="LOEVM"/>
+        <viewAttribute id="SPERR"/>
+        <viewAttribute id="SPERM"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="STCD1"/>
+        <viewAttribute id="STCD2"/>
+        <viewAttribute id="STKZA"/>
+        <viewAttribute id="STKZU"/>
+        <viewAttribute id="TELBX"/>
+        <viewAttribute id="TELF1"/>
+        <viewAttribute id="TELF2"/>
+        <viewAttribute id="TELFX"/>
+        <viewAttribute id="TELTX"/>
+        <viewAttribute id="TELX1"/>
+        <viewAttribute id="XCPDK"/>
+        <viewAttribute id="XZEMP"/>
+        <viewAttribute id="VBUND"/>
+        <viewAttribute id="FISKN"/>
+        <viewAttribute id="STCEG"/>
+        <viewAttribute id="STKZN"/>
+        <viewAttribute id="SPERQ"/>
+        <viewAttribute id="GBORT"/>
+        <viewAttribute id="GBDAT"/>
+        <viewAttribute id="SEXKZ"/>
+        <viewAttribute id="KRAUS"/>
+        <viewAttribute id="REVDB"/>
+        <viewAttribute id="QSSYS"/>
+        <viewAttribute id="KTOCK"/>
+        <viewAttribute id="PFORT"/>
+        <viewAttribute id="WERKS"/>
+        <viewAttribute id="LTSNA"/>
+        <viewAttribute id="WERKR"/>
+        <viewAttribute id="PLKAL"/>
+        <viewAttribute id="DUEFL"/>
+        <viewAttribute id="TXJCD"/>
+        <viewAttribute id="SPERZ"/>
+        <viewAttribute id="SCACD"/>
+        <viewAttribute id="SFRGR"/>
+        <viewAttribute id="LZONE"/>
+        <viewAttribute id="XLFZA"/>
+        <viewAttribute id="DLGRP"/>
+        <viewAttribute id="FITYP"/>
+        <viewAttribute id="STCDT"/>
+        <viewAttribute id="REGSS"/>
+        <viewAttribute id="ACTSS"/>
+        <viewAttribute id="STCD3"/>
+        <viewAttribute id="STCD4"/>
+        <viewAttribute id="STCD5"/>
+        <viewAttribute id="IPISP"/>
+        <viewAttribute id="TAXBS"/>
+        <viewAttribute id="PROFS"/>
+        <viewAttribute id="STGDL"/>
+        <viewAttribute id="EMNFR"/>
+        <viewAttribute id="LFURL"/>
+        <viewAttribute id="J_1KFREPRE"/>
+        <viewAttribute id="J_1KFTBUS"/>
+        <viewAttribute id="J_1KFTIND"/>
+        <viewAttribute id="CONFS"/>
+        <viewAttribute id="UPDAT"/>
+        <viewAttribute id="UPTIM"/>
+        <viewAttribute id="NODEL"/>
+        <viewAttribute id="QSSYSDAT"/>
+        <viewAttribute id="PODKZB"/>
+        <viewAttribute id="FISKU"/>
+        <viewAttribute id="STENR"/>
+        <viewAttribute id="CARRIER_CONF"/>
+        <viewAttribute id="MIN_COMP"/>
+        <viewAttribute id="TERM_LI"/>
+        <viewAttribute id="CRC_NUM"/>
+        <viewAttribute id="CVP_XBLCK"/>
+        <viewAttribute id="RG"/>
+        <viewAttribute id="EXP"/>
+        <viewAttribute id="UF"/>
+        <viewAttribute id="RGDATE"/>
+        <viewAttribute id="RIC"/>
+        <viewAttribute id="RNE"/>
+        <viewAttribute id="RNEDATE"/>
+        <viewAttribute id="CNAE"/>
+        <viewAttribute id="LEGALNAT"/>
+        <viewAttribute id="CRTN"/>
+        <viewAttribute id="ICMSTAXPAY"/>
+        <viewAttribute id="INDTYP"/>
+        <viewAttribute id="TDT"/>
+        <viewAttribute id="COMSIZE"/>
+        <viewAttribute id="DECREGPC"/>
+        <viewAttribute id="DUNSP4"/>
+        <viewAttribute id="J_SC_CAPITAL"/>
+        <viewAttribute id="J_SC_CURRENCY"/>
+        <viewAttribute id="ALC"/>
+        <viewAttribute id="PMT_OFFICE"/>
+        <viewAttribute id="PPA_RELEVANT"/>
+        <viewAttribute id="PSOFG"/>
+        <viewAttribute id="PSOIS"/>
+        <viewAttribute id="PSON1"/>
+        <viewAttribute id="PSON2"/>
+        <viewAttribute id="PSON3"/>
+        <viewAttribute id="PSOVN"/>
+        <viewAttribute id="PSOTL"/>
+        <viewAttribute id="PSOHS"/>
+        <viewAttribute id="PSOST"/>
+        <viewAttribute id="BORGR_DATUN"/>
+        <viewAttribute id="BORGR_YEAUN"/>
+        <viewAttribute id="TRANSPORT_CHAIN"/>
+        <viewAttribute id="STAGING_TIME"/>
+        <viewAttribute id="SCHEDULING_TYPE"/>
+        <viewAttribute id="SUBMI_RELEVANT"/>
+        <viewAttribute id="ZSTR_SUPPL3"/>
+        <viewAttribute id="ZSTR_SUPPL1"/>
+        <viewAttribute id="ZSTR_SUPPL2"/>
+        <viewAttribute id="ZLOCATION"/>
+        <viewAttribute id="ZTEL_NUMBER"/>
+        <viewAttribute id="ZTEL_EXTENS"/>
+        <viewAttribute id="ZMOB_NUMBER"/>
+        <viewAttribute id="ZSMTP_ADDR"/>
+        <viewAttribute id="ZFAX_NUMBER"/>
+        <viewAttribute id="ZFAX_EXTENS"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#LFA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MCOD2" source="MCOD2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MCOD3" source="MCOD3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BAHNS" source="BAHNS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BBBNR" source="BBBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BBSNR" source="BBSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUBKZ" source="BUBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATLT" source="DATLT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAMS" source="DTAMS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ESRNR" source="ESRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LNRZA" source="LNRZA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STKZA" source="STKZA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STKZU" source="STKZU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XCPDK" source="XCPDK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XZEMP" source="XZEMP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FISKN" source="FISKN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STKZN" source="STKZN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERQ" source="SPERQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GBORT" source="GBORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GBDAT" source="GBDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SEXKZ" source="SEXKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVDB" source="REVDB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="QSSYS" source="QSSYS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOCK" source="KTOCK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PFORT" source="PFORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LTSNA" source="LTSNA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKR" source="WERKR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLKAL" source="PLKAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DUEFL" source="DUEFL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERZ" source="SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SCACD" source="SCACD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SFRGR" source="SFRGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LZONE" source="LZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XLFZA" source="XLFZA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DLGRP" source="DLGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FITYP" source="FITYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCDT" source="STCDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGSS" source="REGSS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTSS" source="ACTSS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD3" source="STCD3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD4" source="STCD4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD5" source="STCD5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IPISP" source="IPISP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXBS" source="TAXBS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PROFS" source="PROFS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STGDL" source="STGDL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMNFR" source="EMNFR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFURL" source="LFURL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFREPRE" source="J_1KFREPRE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTIND" source="J_1KFTIND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONFS" source="CONFS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UPDAT" source="UPDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UPTIM" source="UPTIM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NODEL" source="NODEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="QSSYSDAT" source="QSSYSDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PODKZB" source="PODKZB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FISKU" source="FISKU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STENR" source="STENR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CARRIER_CONF" source="CARRIER_CONF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MIN_COMP" source="MIN_COMP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TERM_LI" source="TERM_LI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CRC_NUM" source="CRC_NUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CVP_XBLCK" source="CVP_XBLCK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RG" source="RG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXP" source="EXP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UF" source="UF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RGDATE" source="RGDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RIC" source="RIC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RNE" source="RNE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RNEDATE" source="RNEDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CNAE" source="CNAE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LEGALNAT" source="LEGALNAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CRTN" source="CRTN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ICMSTAXPAY" source="ICMSTAXPAY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDTYP" source="INDTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TDT" source="TDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMSIZE" source="COMSIZE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DECREGPC" source="DECREGPC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DUNSP4" source="DUNSP4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_SC_CAPITAL" source="J_SC_CAPITAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_SC_CURRENCY" source="J_SC_CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ALC" source="ALC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PMT_OFFICE" source="PMT_OFFICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PPA_RELEVANT" source="PPA_RELEVANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOFG" source="PSOFG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOIS" source="PSOIS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSON1" source="PSON1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSON2" source="PSON2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSON3" source="PSON3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOVN" source="PSOVN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOTL" source="PSOTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOHS" source="PSOHS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSOST" source="PSOST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BORGR_DATUN" source="BORGR_DATUN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BORGR_YEAUN" source="BORGR_YEAUN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPORT_CHAIN" source="TRANSPORT_CHAIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SCHEDULING_TYPE" source="SCHEDULING_TYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SUBMI_RELEVANT" source="SUBMI_RELEVANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZSTR_SUPPL3" source="ZSTR_SUPPL3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZSTR_SUPPL1" source="ZSTR_SUPPL1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZSTR_SUPPL2" source="ZSTR_SUPPL2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZLOCATION" source="ZLOCATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTEL_NUMBER" source="ZTEL_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTEL_EXTENS" source="ZTEL_EXTENS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZMOB_NUMBER" source="ZMOB_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZSMTP_ADDR" source="ZSMTP_ADDR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZFAX_NUMBER" source="ZFAX_NUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZFAX_EXTENS" source="ZFAX_EXTENS"/>
+      </input>
+      <filter>&quot;KTOKK&quot;='MNFR'</filter>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projn_LFA1">
+    <descriptions/>
+    <attributes>
+      <attribute id="LIFNR" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LIFNR"/>
+      </attribute>
+      <attribute id="LAND1" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country Key"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LAND1"/>
+      </attribute>
+      <attribute id="NAME1" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="NAME1"/>
+      </attribute>
+      <attribute id="NAME2" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 2"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="NAME2"/>
+      </attribute>
+      <attribute id="NAME3" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 3"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="NAME3"/>
+      </attribute>
+      <attribute id="NAME4" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 4"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="NAME4"/>
+      </attribute>
+      <attribute id="ORT01" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ORT01"/>
+      </attribute>
+      <attribute id="ORT02" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ORT02"/>
+      </attribute>
+      <attribute id="PFACH" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Box"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PFACH"/>
+      </attribute>
+      <attribute id="PSTL2" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="P.O. Box Postal Code"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSTL2"/>
+      </attribute>
+      <attribute id="PSTLZ" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSTLZ"/>
+      </attribute>
+      <attribute id="REGIO" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region (State, Province, County)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="REGIO"/>
+      </attribute>
+      <attribute id="SORTL" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sort field"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SORTL"/>
+      </attribute>
+      <attribute id="STRAS" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street and House Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STRAS"/>
+      </attribute>
+      <attribute id="ADRNR" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ADRNR"/>
+      </attribute>
+      <attribute id="MCOD1" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Search term for matchcode search"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="MCOD1"/>
+      </attribute>
+      <attribute id="MCOD2" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Search term for matchcode search"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="MCOD2"/>
+      </attribute>
+      <attribute id="MCOD3" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Search term for matchcode search"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="MCOD3"/>
+      </attribute>
+      <attribute id="ANRED" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Title"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ANRED"/>
+      </attribute>
+      <attribute id="BAHNS" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Train station"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BAHNS"/>
+      </attribute>
+      <attribute id="BBBNR" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="International location number (part 1)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BBBNR"/>
+      </attribute>
+      <attribute id="BBSNR" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="International location number (Part 2)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BBSNR"/>
+      </attribute>
+      <attribute id="BEGRU" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Authorization Group"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BEGRU"/>
+      </attribute>
+      <attribute id="BRSCH" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Industry key"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BRSCH"/>
+      </attribute>
+      <attribute id="BUBKZ" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Check digit for the international location number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BUBKZ"/>
+      </attribute>
+      <attribute id="DATLT" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Data communication line no."/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DATLT"/>
+      </attribute>
+      <attribute id="DTAMS" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Report key for data medium exchange"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DTAMS"/>
+      </attribute>
+      <attribute id="DTAWS" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Instruction key for data medium exchange"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DTAWS"/>
+      </attribute>
+      <attribute id="ERDAT" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on which the Record Was Created"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ERDAT"/>
+      </attribute>
+      <attribute id="ERNAM" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Person who Created the Object"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ERNAM"/>
+      </attribute>
+      <attribute id="ESRNR" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="POR subscriber number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ESRNR"/>
+      </attribute>
+      <attribute id="KONZS" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Group key"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="KONZS"/>
+      </attribute>
+      <attribute id="KTOKK" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor account group"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="KTOKK"/>
+      </attribute>
+      <attribute id="KUNNR" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="KUNNR"/>
+      </attribute>
+      <attribute id="LNRZA" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Account Number of the Alternative Payee"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LNRZA"/>
+      </attribute>
+      <attribute id="LOEVM" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Central Deletion Flag for Master Record"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LOEVM"/>
+      </attribute>
+      <attribute id="SPERR" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Central posting block"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SPERR"/>
+      </attribute>
+      <attribute id="SPERM" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Centrally imposed purchasing block"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SPERM"/>
+      </attribute>
+      <attribute id="SPRAS" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language Key"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SPRAS"/>
+      </attribute>
+      <attribute id="STCD1" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number 1"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCD1"/>
+      </attribute>
+      <attribute id="STCD2" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number 2"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCD2"/>
+      </attribute>
+      <attribute id="STKZA" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: Business Partner Subject to Equalization Tax?"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STKZA"/>
+      </attribute>
+      <attribute id="STKZU" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Liable for VAT"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STKZU"/>
+      </attribute>
+      <attribute id="TELBX" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telebox number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELBX"/>
+      </attribute>
+      <attribute id="TELF1" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First telephone number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELF1"/>
+      </attribute>
+      <attribute id="TELF2" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Second telephone number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELF2"/>
+      </attribute>
+      <attribute id="TELFX" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fax Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELFX"/>
+      </attribute>
+      <attribute id="TELTX" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Teletex number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELTX"/>
+      </attribute>
+      <attribute id="TELX1" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telex number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TELX1"/>
+      </attribute>
+      <attribute id="XCPDK" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: Is the account a one-time account?"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="XCPDK"/>
+      </attribute>
+      <attribute id="XZEMP" order="51" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: Alternative payee in document allowed ?"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="XZEMP"/>
+      </attribute>
+      <attribute id="VBUND" order="52" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company ID of trading partner"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="VBUND"/>
+      </attribute>
+      <attribute id="FISKN" order="53" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Account number of the master record with fiscal address"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="FISKN"/>
+      </attribute>
+      <attribute id="STCEG" order="54" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VAT Registration Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCEG"/>
+      </attribute>
+      <attribute id="STKZN" order="55" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Natural Person"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STKZN"/>
+      </attribute>
+      <attribute id="SPERQ" order="56" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Function That Will Be Blocked"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SPERQ"/>
+      </attribute>
+      <attribute id="GBORT" order="57" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Place of birth of the person subject to withholding tax"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="GBORT"/>
+      </attribute>
+      <attribute id="GBDAT" order="58" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date of birth of the person subject to withholding tax"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="GBDAT"/>
+      </attribute>
+      <attribute id="SEXKZ" order="59" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Key for the Sex of the Person Subject to Withholding Tax"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SEXKZ"/>
+      </attribute>
+      <attribute id="KRAUS" order="60" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Credit information number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="KRAUS"/>
+      </attribute>
+      <attribute id="REVDB" order="61" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Last review (external)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="REVDB"/>
+      </attribute>
+      <attribute id="QSSYS" order="62" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor's QM system"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="QSSYS"/>
+      </attribute>
+      <attribute id="KTOCK" order="63" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Reference Account Group for One-Time Account (Vendor)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="KTOCK"/>
+      </attribute>
+      <attribute id="PFORT" order="64" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Box city"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PFORT"/>
+      </attribute>
+      <attribute id="WERKS" order="65" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Plant (Own or External)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="WERKS"/>
+      </attribute>
+      <attribute id="LTSNA" order="66" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: vendor sub-range relevant"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LTSNA"/>
+      </attribute>
+      <attribute id="WERKR" order="67" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: plant level relevant"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="WERKR"/>
+      </attribute>
+      <attribute id="PLKAL" order="68" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Factory calendar key"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PLKAL"/>
+      </attribute>
+      <attribute id="DUEFL" order="69" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Status of Data Transfer into Subsequent Release"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DUEFL"/>
+      </attribute>
+      <attribute id="TXJCD" order="70" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Jurisdiction"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TXJCD"/>
+      </attribute>
+      <attribute id="SPERZ" order="71" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Payment Block"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SPERZ"/>
+      </attribute>
+      <attribute id="SCACD" order="72" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Standard carrier access code"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SCACD"/>
+      </attribute>
+      <attribute id="SFRGR" order="73" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Forwarding agent freight group"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SFRGR"/>
+      </attribute>
+      <attribute id="LZONE" order="74" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transportation zone to or from which the goods are delivered"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LZONE"/>
+      </attribute>
+      <attribute id="XLFZA" order="75" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Indicator: Alternative payee using account number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="XLFZA"/>
+      </attribute>
+      <attribute id="DLGRP" order="76" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Service agent procedure group"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DLGRP"/>
+      </attribute>
+      <attribute id="FITYP" order="77" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax type"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="FITYP"/>
+      </attribute>
+      <attribute id="STCDT" order="78" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number Type"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCDT"/>
+      </attribute>
+      <attribute id="REGSS" order="79" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Registered for Social Insurance"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="REGSS"/>
+      </attribute>
+      <attribute id="ACTSS" order="80" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Activity Code for Social Insurance"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ACTSS"/>
+      </attribute>
+      <attribute id="STCD3" order="81" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number 3"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCD3"/>
+      </attribute>
+      <attribute id="STCD4" order="82" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number 4"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCD4"/>
+      </attribute>
+      <attribute id="STCD5" order="83" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number 5"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STCD5"/>
+      </attribute>
+      <attribute id="IPISP" order="84" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Split"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="IPISP"/>
+      </attribute>
+      <attribute id="TAXBS" order="85" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Base in Percentage"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TAXBS"/>
+      </attribute>
+      <attribute id="PROFS" order="86" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Profession"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PROFS"/>
+      </attribute>
+      <attribute id="STGDL" order="87" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Shipment: statistics group, transportation service agent"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STGDL"/>
+      </attribute>
+      <attribute id="EMNFR" order="88" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="External manufacturer code name or number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="EMNFR"/>
+      </attribute>
+      <attribute id="LFURL" order="89" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Uniform resource locator"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LFURL"/>
+      </attribute>
+      <attribute id="J_1KFREPRE" order="90" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name of Representative"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="J_1KFREPRE"/>
+      </attribute>
+      <attribute id="J_1KFTBUS" order="91" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Type of Business"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="J_1KFTBUS"/>
+      </attribute>
+      <attribute id="J_1KFTIND" order="92" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Type of Industry"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="J_1KFTIND"/>
+      </attribute>
+      <attribute id="CONFS" order="93" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Status of Change Authorization (Central)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CONFS"/>
+      </attribute>
+      <attribute id="UPDAT" order="94" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date on Which the Changes Were Confirmed"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="UPDAT"/>
+      </attribute>
+      <attribute id="UPTIM" order="95" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Time of Last Change Confirmation"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="UPTIM"/>
+      </attribute>
+      <attribute id="NODEL" order="96" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Central deletion block for master record"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="NODEL"/>
+      </attribute>
+      <attribute id="QSSYSDAT" order="97" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Validity date of certification"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="QSSYSDAT"/>
+      </attribute>
+      <attribute id="PODKZB" order="98" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor indicator relevant for proof of delivery"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PODKZB"/>
+      </attribute>
+      <attribute id="FISKU" order="99" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Account Number of Master Record of Tax Office Responsible"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="FISKU"/>
+      </attribute>
+      <attribute id="STENR" order="100" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Number at Responsible Tax Authority"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="STENR"/>
+      </attribute>
+      <attribute id="CARRIER_CONF" order="101" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Carrier confirmation is expected"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CARRIER_CONF"/>
+      </attribute>
+      <attribute id="MIN_COMP" order="102" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Micro company indicator"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="MIN_COMP"/>
+      </attribute>
+      <attribute id="TERM_LI" order="103" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Terms of Liability"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TERM_LI"/>
+      </attribute>
+      <attribute id="CRC_NUM" order="104" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CRC number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CRC_NUM"/>
+      </attribute>
+      <attribute id="CVP_XBLCK" order="105" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Business Purpose Completed Flag"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CVP_XBLCK"/>
+      </attribute>
+      <attribute id="RG" order="106" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RG Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="RG"/>
+      </attribute>
+      <attribute id="EXP" order="107" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Issued by"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="EXP"/>
+      </attribute>
+      <attribute id="UF" order="108" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="State"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="UF"/>
+      </attribute>
+      <attribute id="RGDATE" order="109" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RG Issuing Date"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="RGDATE"/>
+      </attribute>
+      <attribute id="RIC" order="110" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RIC Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="RIC"/>
+      </attribute>
+      <attribute id="RNE" order="111" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Foreign National Registration"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="RNE"/>
+      </attribute>
+      <attribute id="RNEDATE" order="112" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RNE Issuing Date"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="RNEDATE"/>
+      </attribute>
+      <attribute id="CNAE" order="113" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CNAE"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CNAE"/>
+      </attribute>
+      <attribute id="LEGALNAT" order="114" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Legal Nature"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="LEGALNAT"/>
+      </attribute>
+      <attribute id="CRTN" order="115" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CRT Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="CRTN"/>
+      </attribute>
+      <attribute id="ICMSTAXPAY" order="116" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ICMS Taxpayer"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ICMSTAXPAY"/>
+      </attribute>
+      <attribute id="INDTYP" order="117" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Industry Main Type"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="INDTYP"/>
+      </attribute>
+      <attribute id="TDT" order="118" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Declaration Type"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TDT"/>
+      </attribute>
+      <attribute id="COMSIZE" order="119" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Size"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="COMSIZE"/>
+      </attribute>
+      <attribute id="DECREGPC" order="120" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Declaration Regimen for PIS/COFINS"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DECREGPC"/>
+      </attribute>
+      <attribute id="DUNSP4" order="121" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNS+4 number (the last four digit)"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="DUNSP4"/>
+      </attribute>
+      <attribute id="J_SC_CURRENCY" order="123" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Currency"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="J_SC_CURRENCY"/>
+      </attribute>
+      <attribute id="ALC" order="124" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Agency Location Code"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ALC"/>
+      </attribute>
+      <attribute id="PMT_OFFICE" order="125" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Payment Office"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PMT_OFFICE"/>
+      </attribute>
+      <attribute id="PPA_RELEVANT" order="126" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Vendor is PPA relevant"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PPA_RELEVANT"/>
+      </attribute>
+      <attribute id="PSOFG" order="127" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Processor group"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOFG"/>
+      </attribute>
+      <attribute id="PSOIS" order="128" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Subledger acct preprocessing procedure"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOIS"/>
+      </attribute>
+      <attribute id="PSON1" order="129" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSON1"/>
+      </attribute>
+      <attribute id="PSON2" order="130" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 2"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSON2"/>
+      </attribute>
+      <attribute id="PSON3" order="131" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 3"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSON3"/>
+      </attribute>
+      <attribute id="PSOVN" order="132" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First Name"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOVN"/>
+      </attribute>
+      <attribute id="PSOTL" order="133" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Title"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOTL"/>
+      </attribute>
+      <attribute id="PSOHS" order="134" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House number: is no longer used from Release 4.6B"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOHS"/>
+      </attribute>
+      <attribute id="PSOST" order="135" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street: No longer used from Release 4.6B"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="PSOST"/>
+      </attribute>
+      <attribute id="BORGR_DATUN" order="136" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date Limit for External Document Identification"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BORGR_DATUN"/>
+      </attribute>
+      <attribute id="BORGR_YEAUN" order="137" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Annual Repetition of Date Limit"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="BORGR_YEAUN"/>
+      </attribute>
+      <attribute id="TRANSPORT_CHAIN" order="138" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transportation Chain"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="TRANSPORT_CHAIN"/>
+      </attribute>
+      <attribute id="SCHEDULING_TYPE" order="140" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Scheduling Procedure"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SCHEDULING_TYPE"/>
+      </attribute>
+      <attribute id="SUBMI_RELEVANT" order="141" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Cross Docking: Relevant for Collective Numbering"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="SUBMI_RELEVANT"/>
+      </attribute>
+      <attribute id="ZSTR_SUPPL3" order="142" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 4"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZSTR_SUPPL3"/>
+      </attribute>
+      <attribute id="ZSTR_SUPPL1" order="143" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 2"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZSTR_SUPPL1"/>
+      </attribute>
+      <attribute id="ZSTR_SUPPL2" order="144" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 3"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZSTR_SUPPL2"/>
+      </attribute>
+      <attribute id="ZLOCATION" order="145" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street 5"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZLOCATION"/>
+      </attribute>
+      <attribute id="ZTEL_NUMBER" order="146" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First telephone no.: dialling code+number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZTEL_NUMBER"/>
+      </attribute>
+      <attribute id="ZTEL_EXTENS" order="147" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First Telephone No.: Extension"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZTEL_EXTENS"/>
+      </attribute>
+      <attribute id="ZMOB_NUMBER" order="148" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First Cell Phone Number: Dialing Code + Number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZMOB_NUMBER"/>
+      </attribute>
+      <attribute id="ZSMTP_ADDR" order="149" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="E-Mail Address"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZSMTP_ADDR"/>
+      </attribute>
+      <attribute id="ZFAX_NUMBER" order="150" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First fax no.: dialling code+number"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZFAX_NUMBER"/>
+      </attribute>
+      <attribute id="ZFAX_EXTENS" order="151" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First fax no.: extension"/>
+        <keyMapping columnObjectName="Projn_LFA1" columnName="ZFAX_EXTENS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="J_SC_CAPITAL" order="122" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Capital Amount"/>
+        <measureMapping columnObjectName="Projn_LFA1" columnName="J_SC_CAPITAL"/>
+      </measure>
+      <measure id="STAGING_TIME" order="139" aggregationType="sum" engineAggregation="sum" measureType="simple">
+        <descriptions defaultDescription="Staging Time in Days"/>
+        <measureMapping columnObjectName="Projn_LFA1" columnName="STAGING_TIME"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projn_LFA1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
