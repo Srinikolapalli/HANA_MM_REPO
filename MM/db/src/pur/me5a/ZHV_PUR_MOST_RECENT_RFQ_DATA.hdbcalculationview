@@ -2,7 +2,7 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.me5a::ZHV_PUR_MOST_RECENT_RFQ_DATA" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
 <origin/>
   <descriptions defaultDescription="ZHV_RV_MOST_RECENT_RFQ_DATA"/>
-  <metadata changedAt="2021-03-25 10:01:41.399"/>
+  <metadata activatedAt="2021-03-25 00:35:40.0" changedAt="2021-03-26 14:15:07.863" createdAt="2021-03-26 14:15:07.863"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="57"/>

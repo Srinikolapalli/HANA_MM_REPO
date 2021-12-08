@@ -2,7 +2,7 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_PO_DATA" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
 <origin/>
   <descriptions defaultDescription="ZHV_PUR_PO_DATA"/>
-  <metadata changedAt="2021-03-23 13:47:01.746"/>
+  <metadata activatedAt="2021-03-23 04:17:44.0" changedAt="2021-03-26 14:15:08.446" createdAt="2021-03-26 14:15:08.446"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="54"/>

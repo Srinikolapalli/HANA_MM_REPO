@@ -2,11 +2,11 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_PO_RPT1" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
 <origin/>
   <descriptions defaultDescription="ZHV_QV_PUR_PO_RPT1"/>
-  <metadata changedAt="2021-04-06 19:23:14.002"/>
+  <metadata changedAt="2021-04-12 11:47:34.039"/>
   <localVariables>
     <variable id="VAR_EKKO_BSTYP_Doc_Category">
       <descriptions defaultDescription="VAR_EKKO_BSTYP_Doc_Category"/>
-      <variableProperties datatype="NVARCHAR" defaultValue="F" mandatory="false" length="1" scale="NaN">
+      <variableProperties datatype="NVARCHAR" defaultValue="F" mandatory="false" length="1" scale="null">
         <valueDomain type="AttributeValue">
           <attribute name="EKKO_BSTYP_Doc_Category"/>
         </valueDomain>
@@ -15,7 +15,7 @@
     </variable>
     <variable id="VAR_EKPO_LOEKZ_Deletion_ind_">
       <descriptions defaultDescription="VAR_EKPO_LOEKZ_Deletion_ind_"/>
-      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="null">
         <valueDomain type="AttributeValue">
           <attribute name="EKPO_LOEKZ_Deletion_ind_"/>
         </valueDomain>
@@ -25,7 +25,7 @@
     </variable>
     <variable id="VAR_EKPO_ELIKZ_Deliv_Compl_">
       <descriptions defaultDescription="VAR_EKPO_ELIKZ_Deliv_Compl_"/>
-      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="null">
         <valueDomain type="AttributeValue">
           <attribute name="EKPO_ELIKZ_Deliv_Compl_"/>
         </valueDomain>
@@ -45,12 +45,12 @@
     </variable>
     <variable id="VAR_EKPO_PSTYP_Item_category">
       <descriptions defaultDescription="VAR_EKPO_PSTYP_Item_category"/>
-      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="NaN">
+      <variableProperties datatype="NVARCHAR" mandatory="false" length="1" scale="null">
         <valueDomain type="AttributeValue">
           <attribute name="EKPO_PSTYP_Item_category"/>
         </valueDomain>
         <selection multiLine="false" type="Range"/>
-        <defaultRange lowValue="3" operator="EQ"/>
+        <defaultRange lowValue="3"/>
       </variableProperties>
     </variable>
     <variable id="VAR_PO_DATE">
@@ -216,7 +216,7 @@ and &quot;CAL_STILL_TOBE_DELIV_QTY&quot; &gt; 0</filter>
         <keyMapping columnObjectName="Projection_1" columnName="EBAN_ERNAM_Created_By"/>
       </attribute>
       <attribute id="EBKN_AUFNR_Order" order="14" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription=" Order Number"/>
+        <descriptions defaultDescription="	Order Number"/>
         <keyMapping columnObjectName="Projection_1" columnName="EBKN_AUFNR_Order"/>
       </attribute>
       <attribute id="CAL_PAST_DUE" order="21" attributeHierarchyActive="false" displayAttribute="false">
@@ -247,9 +247,7 @@ and &quot;CAL_STILL_TOBE_DELIV_QTY&quot; &gt; 0</filter>
       <attribute id="EKKO_BSTYP_Doc_Category" order="28" displayAttribute="false" attributeHierarchyActive="false">
         <descriptions defaultDescription="EKKO_BSTYP_Doc_Category"/>
         <localVariable>VAR_EKKO_BSTYP_Doc_Category</localVariable>
-    
         <keyMapping columnObjectName="Projection_1" columnName="EKKO_BSTYP_Doc_Category"/>
-    
       </attribute>
       <attribute id="EKPO_LOEKZ_Deletion_ind_" order="29" displayAttribute="false" attributeHierarchyActive="false">
         <descriptions defaultDescription="EKPO_LOEKZ_Deletion_ind_"/>
@@ -273,7 +271,7 @@ and &quot;CAL_STILL_TOBE_DELIV_QTY&quot; &gt; 0</filter>
         <keyCalculation datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
           <formula>min(&quot;CAL_STILL_TOBE_DELIV_QTY&quot;)</formula>
         </keyCalculation>
-      </calculatedAttribute>
+        </calculatedAttribute>
     </calculatedAttributes>
     <privateDataFoundation>
       <tableProxies/>

@@ -2,7 +2,7 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_BV_CHANGE_LOG_DATA" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
 <origin/>
   <descriptions defaultDescription="ZHV_BV_CHANGE_LOG_DATA"/>
-  <metadata changedAt="2021-04-26 00:31:33.855" createdAt="2021-04-26 00:31:32.163"/>
+  <metadata activatedAt="2021-04-26 00:31:34.0" changedAt="2021-05-14 09:09:10.933" createdAt="2021-05-14 09:09:10.933"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="27"/>

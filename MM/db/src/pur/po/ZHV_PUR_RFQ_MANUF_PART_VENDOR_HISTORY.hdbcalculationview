@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_PUR_RFQ_MANUF_PART_VENDOR_HISTORY" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-<origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_PUR_RFQ_MANUF_PART_VENDOR_HISTORY" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
   <descriptions defaultDescription="ZHV_QV_RFQ_MANUF_PART_VENDOR_HISTORY"/>
-  <metadata changedAt="2021-04-06 12:54:43.67"/>
+  <metadata changedAt="2021-04-12 11:47:35.362"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="51"/>
@@ -16,7 +16,7 @@
     <DataSource id="EKKO">
       <resourceUri>algoma.mm::EKKO</resourceUri>
     </DataSource>
-    <DataSource id="algoma.mm::LFA1">
+    <DataSource id="Projection_3$$$$LFA1$$">
       <resourceUri>algoma.mm::LFA1</resourceUri>
     </DataSource>
     <DataSource id="EKPO">
@@ -25,120 +25,133 @@
     <DataSource id="ZHV_PUR_PO_RFQ_DATA">
       <resourceUri>algoma.mm.pur.po::ZHV_PUR_PO_RFQ_DATA</resourceUri>
     </DataSource>
-    <DataSource id="CopyOfProjection_3$$$$algoma.mm::LFA1$$">
+    <DataSource id="CopyOfProjection_3$$$$LFA1$$">
       <resourceUri>algoma.mm::LFA1</resourceUri>
     </DataSource>
   </dataSources>
-<calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <descriptions/>
-    <viewAttributes>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="MFRNR"/>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EBAN"/>
+      <calculatedViewAttributes/>
+      <input node="#EBAN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="LFA1_MNFR_Proj" filterExpressionLanguage="COLUMN_ENGINE">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="LFA1_MNFR_Proj" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="LFA1_MNFR_LIFNR_Vendor"/>
         <viewAttribute id="LFA1_MNFR_MCOD1_NAME"/>
         <viewAttribute id="KTOKK"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="LFA1">
+      <calculatedViewAttributes/>
+      <input node="#LFA1">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_LIFNR_Vendor" source="LIFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_NAME" source="MCOD1"/></input>
-    <filter>&quot;KTOKK&quot; = 'MNFR'</filter>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_NAME" source="MCOD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <filter>&quot;KTOKK&quot; = 'MNFR'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="LFA1_MNFR_MCOD1_NAME"/>
         <viewAttribute id="LFA1_MNFR_LIFNR_Vendor"/>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
-      <viewAttribute hidden="true" id="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_1">
+        <viewAttribute hidden="true" id="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor" source="MFRNR"/>
       </input>
-      <input node="LFA1_MNFR_Proj">
+      <input node="#LFA1_MNFR_Proj">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_NAME" source="LFA1_MNFR_MCOD1_NAME"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_LIFNR_Vendor" source="LFA1_MNFR_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor" source="LFA1_MNFR_LIFNR_Vendor"/>
       </input>
-    <joinAttribute name="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="JOIN$MFRNR$LFA1_MNFR_LIFNR_Vendor"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EKKO_LIFNR_VENDOR"/>
         <viewAttribute id="EKKO_BSTYP_Doc_Category"/>
         <viewAttribute id="EBELN"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EKKO">
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_VENDOR" source="LIFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP_Doc_Category" source="BSTYP"/></input>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP_Doc_Category" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="LFA1_LIFNR_Vendor"/>
         <viewAttribute id="LFA1_NAME1_Name"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="algoma.mm::LFA1">
+      <calculatedViewAttributes/>
+      <input node="#Projection_3$$$$LFA1$$">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LIFNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="NAME1"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EKKO_LIFNR_VENDOR"/>
         <viewAttribute id="EKKO_BSTYP_Doc_Category"/>
         <viewAttribute id="LFA1_LIFNR_Vendor"/>
         <viewAttribute id="LFA1_NAME1_Name"/>
         <viewAttribute id="EBELN"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_2">
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_VENDOR" source="EKKO_LIFNR_VENDOR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP_Doc_Category" source="EKKO_BSTYP_Doc_Category"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
       </input>
-      <input node="Projection_3">
+      <input node="#Projection_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LFA1_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="LFA1_NAME1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_VENDOR" source="LFA1_LIFNR_Vendor"/>
       </input>
-    <joinAttribute name="EKKO_LIFNR_VENDOR"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EKKO_LIFNR_VENDOR"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBELN"/>
         <viewAttribute id="EKPO_MFRPN_mfr_Part_Number"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EKPO">
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MFRPN_mfr_Part_Number" source="MFRPN"/></input>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MFRPN_mfr_Part_Number" source="MFRPN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EKKO_LIFNR_VENDOR"/>
         <viewAttribute id="EKKO_BSTYP_Doc_Category"/>
         <viewAttribute id="LFA1_LIFNR_Vendor"/>
@@ -146,67 +159,71 @@
         <viewAttribute id="EKPO_MFRPN_mfr_Part_Number"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
-      <viewAttribute hidden="true" id="JOIN$EBELN$EBELN"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_4">
+        <viewAttribute hidden="true" id="JOIN$EBELN$EBELN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_4">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MFRPN_mfr_Part_Number" source="EKPO_MFRPN_mfr_Part_Number"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBELN$EBELN" source="EBELN"/>
       </input>
-      <input node="Join_2">
+      <input node="#Join_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_VENDOR" source="EKKO_LIFNR_VENDOR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP_Doc_Category" source="EKKO_BSTYP_Doc_Category"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LFA1_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="LFA1_NAME1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBELN$EBELN" source="EBELN"/>
       </input>
-    <joinAttribute name="JOIN$EBELN$EBELN"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="JOIN$EBELN$EBELN"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
         <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZHV_PUR_PO_RFQ_DATA"/>
-    </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_3">
-    <descriptions/>
-    <viewAttributes>
-        <viewAttribute id="LFA1_LIFNR_Vendor"/>
-        <viewAttribute id="LFA1_NAME1_Name"/>
-      </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="CopyOfProjection_3$$$$algoma.mm::LFA1$$">
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LIFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="NAME1"/>
-      </input>
-    </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
-        <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
-        <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
-        <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
-      </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_5">
+      <calculatedViewAttributes/>
+      <input node="#ZHV_PUR_PO_RFQ_DATA">
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="RFQ_DATA_EKKO_LIFNR_Vendor"/>
       </input>
-      <input node="CopyOfProjection_3">
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="LFA1_LIFNR_Vendor"/>
+        <viewAttribute id="LFA1_NAME1_Name"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#CopyOfProjection_3$$$$LFA1$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1_Name" source="NAME1"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
+        <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+        <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_5">
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+      </input>
+      <input node="#CopyOfProjection_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="LFA1_LIFNR_Vendor"/>
       </input>
-    <joinAttribute name="RFQ_DATA_EKKO_LIFNR_Vendor"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="RFQ_DATA_EKKO_LIFNR_Vendor"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
         <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
@@ -214,27 +231,27 @@
         <viewAttribute id="LFA1_MNFR_LIFNR_Vendor"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
-      <viewAttribute hidden="true" id="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_1">
+        <viewAttribute hidden="true" id="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_NAME" source="LFA1_MNFR_MCOD1_NAME"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_LIFNR_Vendor" source="LFA1_MNFR_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material" source="MATNR"/>
       </input>
-      <input node="Join_4">
+      <input node="#Join_4">
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="RFQ_DATA_EKKO_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
       </input>
-    <joinAttribute name="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="JOIN$MATNR$RFQ_DATA_EKPO_MATNR_Material"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RFQ_DATA_EKPO_MATNR_Material"/>
         <viewAttribute id="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <viewAttribute id="RFQ_DATA_EKKO_LIFNR_Vendor"/>
@@ -245,11 +262,11 @@
         <viewAttribute id="LFA1_LIFNR_Vendor"/>
         <viewAttribute id="LFA1_NAME1_Name"/>
         <viewAttribute id="EKPO_MFRPN_mfr_Part_Number"/>
-      <viewAttribute hidden="true" id="JOIN$BANFN$BANFN"/>
-      <viewAttribute hidden="true" id="JOIN$BNFPO$BNFPO"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_5">
+        <viewAttribute hidden="true" id="JOIN$BANFN$BANFN"/>
+        <viewAttribute hidden="true" id="JOIN$BNFPO$BNFPO"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_5">
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKPO_MATNR_Material" source="RFQ_DATA_EKPO_MATNR_Material"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_" source="RFQ_DATA_EKKO_EBELN_Purchasing_Doc_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RFQ_DATA_EKKO_LIFNR_Vendor" source="RFQ_DATA_EKKO_LIFNR_Vendor"/>
@@ -258,7 +275,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANFN$BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BNFPO$BNFPO" source="BNFPO"/>
       </input>
-      <input node="Join_3">
+      <input node="#Join_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_VENDOR" source="EKKO_LIFNR_VENDOR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_BSTYP_Doc_Category" source="EKKO_BSTYP_Doc_Category"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR_Vendor" source="LFA1_LIFNR_Vendor"/>
@@ -267,10 +284,10 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANFN$BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BNFPO$BNFPO" source="BNFPO"/>
       </input>
-    <joinAttribute name="JOIN$BANFN$BANFN"/>
-    <joinAttribute name="JOIN$BNFPO$BNFPO"/>
-  </calculationView>
-</calculationViews>
+      <joinAttribute name="JOIN$BANFN$BANFN"/>
+      <joinAttribute name="JOIN$BNFPO$BNFPO"/>
+    </calculationView>
+  </calculationViews>
   <logicalModel id="Join_6">
     <descriptions/>
     <attributes>
@@ -325,7 +342,7 @@
     </privateDataFoundation>
     <baseMeasures/>
     <calculatedMeasures>
-      <measure id="Dummy_Measure" hidden="false" order="11" aggregationType="sum" measureType="simple" aggregatable="true" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+      <measure id="Dummy_Measure" hidden="false" order="11" aggregationType="sum" engineAggregation="sum" measureType="simple" aggregatable="true" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
         <descriptions defaultDescription="Dummy_Measure"/>
         <formula>1</formula>
       </measure>
@@ -333,8 +350,8 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-<layout>
-  <shapes>
+  <layout>
+    <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="407" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -351,14 +368,6 @@
         <upperLeftCorner x="176" y="357"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="LFA1_MNFR_Proj" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="638" y="453"/>
         <rectangleSize height="-1" width="-1"/>
@@ -371,14 +380,6 @@
         <upperLeftCorner x="638" y="357"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="484" y="357"/>
         <rectangleSize height="-1" width="-1"/>
@@ -387,14 +388,6 @@
         <upperLeftCorner x="484" y="261"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="330" y="453"/>
         <rectangleSize height="-1" width="-1"/>
@@ -407,39 +400,14 @@
         <upperLeftCorner x="330" y="357"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="CopyOfProjection_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="330" y="261"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="407" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    
-    <shape modelObjectName="Join_5" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-  </shapes>
-</layout>
+    </shapes>
+  </layout>
 </Calculation:scenario>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.po::ZHV_BV_PR_DATA" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-<origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_BV_PR_DATA" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
   <descriptions defaultDescription="ZHV_BV_PR_DATA"/>
-  <metadata changedAt="2021-04-21 13:08:28.809"/>
+  <metadata activatedAt="2021-04-21 13:08:31.0" changedAt="2021-05-14 09:09:16.093" createdAt="2021-05-14 09:09:16.093"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="38"/>
@@ -14,10 +14,10 @@
       <resourceUri>algoma.mm::EBKN</resourceUri>
     </DataSource>
   </dataSources>
-<calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <descriptions/>
-    <viewAttributes>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
         <viewAttribute id="BSART"/>
@@ -209,385 +209,8 @@
         <viewAttribute id="WRF_CHARSTC2"/>
         <viewAttribute id="WRF_CHARSTC3"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EBAN"/>
-    </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
-    <descriptions/>
-    <viewAttributes>
-        <viewAttribute id="EBKN_BANFN"/>
-        <viewAttribute id="EBKN_BNFPO"/>
-        <viewAttribute id="EBKN_ZEBKN"/>
-        <viewAttribute id="EBKN_LOEKZ"/>
-        <viewAttribute id="EBKN_ERDAT"/>
-        <viewAttribute id="EBKN_ERNAM"/>
-        <viewAttribute id="EBKN_MENGE"/>
-        <viewAttribute id="EBKN_VPROZ"/>
-        <viewAttribute id="EBKN_SAKTO"/>
-        <viewAttribute id="EBKN_GSBER"/>
-        <viewAttribute id="EBKN_KOSTL"/>
-        <viewAttribute id="EBKN_PROJN"/>
-        <viewAttribute id="EBKN_VBELN"/>
-        <viewAttribute id="EBKN_VBELP"/>
-        <viewAttribute id="EBKN_VETEN"/>
-        <viewAttribute id="EBKN_ANLN1"/>
-        <viewAttribute id="EBKN_ANLN2"/>
-        <viewAttribute id="EBKN_AUFNR"/>
-        <viewAttribute id="EBKN_WEMPF"/>
-        <viewAttribute id="EBKN_ABLAD"/>
-        <viewAttribute id="EBKN_KOKRS"/>
-        <viewAttribute id="EBKN_XBKST"/>
-        <viewAttribute id="EBKN_XBAUF"/>
-        <viewAttribute id="EBKN_XBPRO"/>
-        <viewAttribute id="EBKN_KSTRG"/>
-        <viewAttribute id="EBKN_PAOBJNR"/>
-        <viewAttribute id="EBKN_PRCTR"/>
-        <viewAttribute id="EBKN_PS_PSP_PNR"/>
-        <viewAttribute id="EBKN_NPLNR"/>
-        <viewAttribute id="EBKN_AUFPL"/>
-        <viewAttribute id="EBKN_IMKEY"/>
-        <viewAttribute id="EBKN_APLZL"/>
-        <viewAttribute id="EBKN_VPTNR"/>
-        <viewAttribute id="EBKN_FIPOS"/>
-        <viewAttribute id="EBKN_RECID"/>
-        <viewAttribute id="EBKN_FISTL"/>
-        <viewAttribute id="EBKN_GEBER"/>
-        <viewAttribute id="EBKN_FKBER"/>
-        <viewAttribute id="EBKN_DABRZ"/>
-        <viewAttribute id="EBKN_NETWR"/>
-        <viewAttribute id="EBKN_AUFPL_ORD"/>
-        <viewAttribute id="EBKN_APLZL_ORD"/>
-        <viewAttribute id="EBKN_KBLNR"/>
-        <viewAttribute id="EBKN_KBLPOS"/>
-        <viewAttribute id="EBKN_LSTAR"/>
-        <viewAttribute id="EBKN_PRZNR"/>
-        <viewAttribute id="EBKN_GRANT_NBR"/>
-        <viewAttribute id="EBKN_FM_SPLIT_BATCH"/>
-        <viewAttribute id="EBKN_FM_SPLIT_BEGRU"/>
-        <viewAttribute id="EBKN_BUDGET_PD"/>
-        <viewAttribute id="EBKN_FMFGUS_KEY"/>
-        <viewAttribute id="EBKN_EGRUP"/>
-        <viewAttribute id="EBKN_VNAME"/>
-        <viewAttribute id="EBKN_TCOBJNR"/>
-        <viewAttribute id="EBKN_DATEOFSERVICE"/>
-        <viewAttribute id="EBKN_NOTAXCORR"/>
-        <viewAttribute id="EBKN_DIFFOPTRATE"/>
-        <viewAttribute id="EBKN_HASDIFFOPTRATE"/>
-      </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EBKN">
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BANFN" source="BANFN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BNFPO" source="BNFPO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ZEBKN" source="ZEBKN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_LOEKZ" source="LOEKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ERDAT" source="ERDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ERNAM" source="ERNAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_MENGE" source="MENGE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VPROZ" source="VPROZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_SAKTO" source="SAKTO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GSBER" source="GSBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KOSTL" source="KOSTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PROJN" source="PROJN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VBELN" source="VBELN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VBELP" source="VBELP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VETEN" source="VETEN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ANLN1" source="ANLN1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ANLN2" source="ANLN2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFNR" source="AUFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_WEMPF" source="WEMPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ABLAD" source="ABLAD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KOKRS" source="KOKRS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBKST" source="XBKST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBAUF" source="XBAUF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBPRO" source="XBPRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KSTRG" source="KSTRG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PAOBJNR" source="PAOBJNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PRCTR" source="PRCTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PS_PSP_PNR" source="PS_PSP_PNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NPLNR" source="NPLNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFPL" source="AUFPL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_IMKEY" source="IMKEY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_APLZL" source="APLZL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VPTNR" source="VPTNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FIPOS" source="FIPOS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_RECID" source="RECID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL" source="FISTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GEBER" source="GEBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FKBER" source="FKBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DABRZ" source="DABRZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NETWR" source="NETWR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFPL_ORD" source="AUFPL_ORD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_APLZL_ORD" source="APLZL_ORD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KBLNR" source="KBLNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KBLPOS" source="KBLPOS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_LSTAR" source="LSTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PRZNR" source="PRZNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GRANT_NBR" source="GRANT_NBR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FM_SPLIT_BATCH" source="FM_SPLIT_BATCH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FM_SPLIT_BEGRU" source="FM_SPLIT_BEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BUDGET_PD" source="BUDGET_PD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FMFGUS_KEY" source="FMFGUS_KEY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_EGRUP" source="EGRUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VNAME" source="VNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_TCOBJNR" source="TCOBJNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DATEOFSERVICE" source="DATEOFSERVICE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NOTAXCORR" source="NOTAXCORR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DIFFOPTRATE" source="DIFFOPTRATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_HASDIFFOPTRATE" source="HASDIFFOPTRATE"/>
-      </input>
-    </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="leftOuter">
-    <descriptions/>
-    <viewAttributes>
-        <viewAttribute id="EBKN_ZEBKN"/>
-        <viewAttribute id="EBKN_LOEKZ"/>
-        <viewAttribute id="EBKN_ERDAT"/>
-        <viewAttribute id="EBKN_ERNAM"/>
-        <viewAttribute id="EBKN_MENGE"/>
-        <viewAttribute id="EBKN_VPROZ"/>
-        <viewAttribute id="EBKN_SAKTO"/>
-        <viewAttribute id="EBKN_GSBER"/>
-        <viewAttribute id="EBKN_KOSTL"/>
-        <viewAttribute id="EBKN_PROJN"/>
-        <viewAttribute id="EBKN_VBELN"/>
-        <viewAttribute id="EBKN_VBELP"/>
-        <viewAttribute id="EBKN_VETEN"/>
-        <viewAttribute id="EBKN_ANLN1"/>
-        <viewAttribute id="EBKN_ANLN2"/>
-        <viewAttribute id="EBKN_AUFNR"/>
-        <viewAttribute id="EBKN_WEMPF"/>
-        <viewAttribute id="EBKN_ABLAD"/>
-        <viewAttribute id="EBKN_KOKRS"/>
-        <viewAttribute id="EBKN_XBKST"/>
-        <viewAttribute id="EBKN_XBAUF"/>
-        <viewAttribute id="EBKN_XBPRO"/>
-        <viewAttribute id="EBKN_KSTRG"/>
-        <viewAttribute id="EBKN_PAOBJNR"/>
-        <viewAttribute id="EBKN_PRCTR"/>
-        <viewAttribute id="EBKN_PS_PSP_PNR"/>
-        <viewAttribute id="EBKN_NPLNR"/>
-        <viewAttribute id="EBKN_AUFPL"/>
-        <viewAttribute id="EBKN_IMKEY"/>
-        <viewAttribute id="EBKN_APLZL"/>
-        <viewAttribute id="EBKN_VPTNR"/>
-        <viewAttribute id="EBKN_FIPOS"/>
-        <viewAttribute id="EBKN_RECID"/>
-        <viewAttribute id="EBKN_FISTL"/>
-        <viewAttribute id="EBKN_GEBER"/>
-        <viewAttribute id="EBKN_FKBER"/>
-        <viewAttribute id="EBKN_DABRZ"/>
-        <viewAttribute id="EBKN_NETWR"/>
-        <viewAttribute id="EBKN_AUFPL_ORD"/>
-        <viewAttribute id="EBKN_APLZL_ORD"/>
-        <viewAttribute id="EBKN_KBLNR"/>
-        <viewAttribute id="EBKN_KBLPOS"/>
-        <viewAttribute id="EBKN_LSTAR"/>
-        <viewAttribute id="EBKN_PRZNR"/>
-        <viewAttribute id="EBKN_GRANT_NBR"/>
-        <viewAttribute id="EBKN_FM_SPLIT_BATCH"/>
-        <viewAttribute id="EBKN_FM_SPLIT_BEGRU"/>
-        <viewAttribute id="EBKN_BUDGET_PD"/>
-        <viewAttribute id="EBKN_FMFGUS_KEY"/>
-        <viewAttribute id="EBKN_EGRUP"/>
-        <viewAttribute id="EBKN_VNAME"/>
-        <viewAttribute id="EBKN_TCOBJNR"/>
-        <viewAttribute id="EBKN_DATEOFSERVICE"/>
-        <viewAttribute id="EBKN_NOTAXCORR"/>
-        <viewAttribute id="EBKN_DIFFOPTRATE"/>
-        <viewAttribute id="EBKN_HASDIFFOPTRATE"/>
-        <viewAttribute id="BANFN"/>
-        <viewAttribute id="BNFPO"/>
-        <viewAttribute id="BSART"/>
-        <viewAttribute id="BSTYP"/>
-        <viewAttribute id="BSAKZ"/>
-        <viewAttribute id="LOEKZ"/>
-        <viewAttribute id="STATU"/>
-        <viewAttribute id="ESTKZ"/>
-        <viewAttribute id="FRGKZ"/>
-        <viewAttribute id="FRGZU"/>
-        <viewAttribute id="FRGST"/>
-        <viewAttribute id="EKGRP"/>
-        <viewAttribute id="ERNAM"/>
-        <viewAttribute id="ERDAT"/>
-        <viewAttribute id="AFNAM"/>
-        <viewAttribute id="TXZ01"/>
-        <viewAttribute id="MATNR"/>
-        <viewAttribute id="EMATN"/>
-        <viewAttribute id="WERKS"/>
-        <viewAttribute id="LGORT"/>
-        <viewAttribute id="BEDNR"/>
-        <viewAttribute id="MATKL"/>
-        <viewAttribute id="RESWK"/>
-        <viewAttribute id="MENGE"/>
-        <viewAttribute id="MEINS"/>
-        <viewAttribute id="BUMNG"/>
-        <viewAttribute id="BADAT"/>
-        <viewAttribute id="LPEIN"/>
-        <viewAttribute id="LFDAT"/>
-        <viewAttribute id="FRGDT"/>
-        <viewAttribute id="WEBAZ"/>
-        <viewAttribute id="PREIS"/>
-        <viewAttribute id="PEINH"/>
-        <viewAttribute id="PSTYP"/>
-        <viewAttribute id="KNTTP"/>
-        <viewAttribute id="KZVBR"/>
-        <viewAttribute id="KFLAG"/>
-        <viewAttribute id="VRTKZ"/>
-        <viewAttribute id="TWRKZ"/>
-        <viewAttribute id="WEPOS"/>
-        <viewAttribute id="WEUNB"/>
-        <viewAttribute id="REPOS"/>
-        <viewAttribute id="LIFNR"/>
-        <viewAttribute id="FLIEF"/>
-        <viewAttribute id="EKORG"/>
-        <viewAttribute id="VRTYP"/>
-        <viewAttribute id="KONNR"/>
-        <viewAttribute id="KTPNR"/>
-        <viewAttribute id="INFNR"/>
-        <viewAttribute id="ZUGBA"/>
-        <viewAttribute id="QUNUM"/>
-        <viewAttribute id="QUPOS"/>
-        <viewAttribute id="DISPO"/>
-        <viewAttribute id="SERNR"/>
-        <viewAttribute id="BVDAT"/>
-        <viewAttribute id="BATOL"/>
-        <viewAttribute id="BVDRK"/>
-        <viewAttribute id="EBELN"/>
-        <viewAttribute id="EBELP"/>
-        <viewAttribute id="BEDAT"/>
-        <viewAttribute id="BSMNG"/>
-        <viewAttribute id="LBLNI"/>
-        <viewAttribute id="BWTAR"/>
-        <viewAttribute id="XOBLR"/>
-        <viewAttribute id="EBAKZ"/>
-        <viewAttribute id="RSNUM"/>
-        <viewAttribute id="SOBKZ"/>
-        <viewAttribute id="ARSNR"/>
-        <viewAttribute id="ARSPS"/>
-        <viewAttribute id="FIXKZ"/>
-        <viewAttribute id="BMEIN"/>
-        <viewAttribute id="REVLV"/>
-        <viewAttribute id="VORAB"/>
-        <viewAttribute id="PACKNO"/>
-        <viewAttribute id="KANBA"/>
-        <viewAttribute id="BPUEB"/>
-        <viewAttribute id="CUOBJ"/>
-        <viewAttribute id="FRGGR"/>
-        <viewAttribute id="FRGRL"/>
-        <viewAttribute id="AKTNR"/>
-        <viewAttribute id="CHARG"/>
-        <viewAttribute id="UMSOK"/>
-        <viewAttribute id="VERID"/>
-        <viewAttribute id="FIPOS"/>
-        <viewAttribute id="FISTL"/>
-        <viewAttribute id="GEBER"/>
-        <viewAttribute id="KZKFG"/>
-        <viewAttribute id="SATNR"/>
-        <viewAttribute id="MNG02"/>
-        <viewAttribute id="DAT01"/>
-        <viewAttribute id="ATTYP"/>
-        <viewAttribute id="ADRNR"/>
-        <viewAttribute id="ADRN2"/>
-        <viewAttribute id="KUNNR"/>
-        <viewAttribute id="EMLIF"/>
-        <viewAttribute id="LBLKZ"/>
-        <viewAttribute id="KZBWS"/>
-        <viewAttribute id="WAERS"/>
-        <viewAttribute id="IDNLF"/>
-        <viewAttribute id="GSFRG"/>
-        <viewAttribute id="MPROF"/>
-        <viewAttribute id="KZFME"/>
-        <viewAttribute id="SPRAS"/>
-        <viewAttribute id="TECHS"/>
-        <viewAttribute id="MFRPN"/>
-        <viewAttribute id="MFRNR"/>
-        <viewAttribute id="EMNFR"/>
-        <viewAttribute id="FORDN"/>
-        <viewAttribute id="FORDP"/>
-        <viewAttribute id="PLIFZ"/>
-        <viewAttribute id="BERID"/>
-        <viewAttribute id="UZEIT"/>
-        <viewAttribute id="FKBER"/>
-        <viewAttribute id="GRANT_NBR"/>
-        <viewAttribute id="MEMORY"/>
-        <viewAttribute id="BANPR"/>
-        <viewAttribute id="RLWRT"/>
-        <viewAttribute id="BLCKD"/>
-        <viewAttribute id="REVNO"/>
-        <viewAttribute id="BLCKT"/>
-        <viewAttribute id="BESWK"/>
-        <viewAttribute id="EPROFILE"/>
-        <viewAttribute id="EPREFDOC"/>
-        <viewAttribute id="EPREFITM"/>
-        <viewAttribute id="GMMNG"/>
-        <viewAttribute id="WRTKZ"/>
-        <viewAttribute id="RESLO"/>
-        <viewAttribute id="KBLNR"/>
-        <viewAttribute id="KBLPOS"/>
-        <viewAttribute id="PRIO_URG"/>
-        <viewAttribute id="PRIO_REQ"/>
-        <viewAttribute id="MEMORYTYPE"/>
-        <viewAttribute id="ANZSN"/>
-        <viewAttribute id="MHDRZ"/>
-        <viewAttribute id="IPRKZ"/>
-        <viewAttribute id="NODISP"/>
-        <viewAttribute id="SRM_CONTRACT_ID"/>
-        <viewAttribute id="SRM_CONTRACT_ITM"/>
-        <viewAttribute id="BUDGET_PD"/>
-        <viewAttribute id="ZREJ_CODE"/>
-        <viewAttribute id="ZREJ_REMARKS"/>
-        <viewAttribute id="ZREVIEWER"/>
-        <viewAttribute id="ZREV_STATUS"/>
-        <viewAttribute id="ZREV_REMARKS"/>
-        <viewAttribute id="ZRESUB_STATUS"/>
-        <viewAttribute id="ZRESUB_REMARKS"/>
-        <viewAttribute id="ZRFQ_STATUS"/>
-        <viewAttribute id="ZRFQ_QUOT_NO"/>
-        <viewAttribute id="ZRFQ_QUOT_ITEM"/>
-        <viewAttribute id="ZRFQ_QUOT_PRICE"/>
-        <viewAttribute id="ZRFQ_QUOT_PRICE_CUR"/>
-        <viewAttribute id="ZRFQ_QUOT_PRCUNIT"/>
-        <viewAttribute id="ZRFQ_QUOT_PRCUOM"/>
-        <viewAttribute id="ZRFQ_REASON_CODE"/>
-        <viewAttribute id="ZWRNTY_READ"/>
-        <viewAttribute id="ZWRNTY_REMARKS"/>
-        <viewAttribute id="ZCONT_READ"/>
-        <viewAttribute id="STORENETWORKID"/>
-        <viewAttribute id="STORESUPPLIERID"/>
-        <viewAttribute id="FMFGUS_KEY"/>
-        <viewAttribute id="ADVCODE"/>
-        <viewAttribute id="STACODE"/>
-        <viewAttribute id="BANFN_CS"/>
-        <viewAttribute id="BNFPO_CS"/>
-        <viewAttribute id="ITEM_CS"/>
-        <viewAttribute id="BSMNG_SND"/>
-        <viewAttribute id="NO_MARD_DATA"/>
-        <viewAttribute id="ADMOI"/>
-        <viewAttribute id="ADPRI"/>
-        <viewAttribute id="LPRIO"/>
-        <viewAttribute id="ADACN"/>
-        <viewAttribute id="ADDNS"/>
-        <viewAttribute id="SERRU"/>
-        <viewAttribute id="DISUB_SOBKZ"/>
-        <viewAttribute id="DISUB_PSPNR"/>
-        <viewAttribute id="DISUB_KUNNR"/>
-        <viewAttribute id="DISUB_VBELN"/>
-        <viewAttribute id="DISUB_POSNR"/>
-        <viewAttribute id="DISUB_OWNER"/>
-        <viewAttribute id="FSH_VAS_REL"/>
-        <viewAttribute id="FSH_VAS_PRNT_ID"/>
-        <viewAttribute id="FSH_TRANSACTION"/>
-        <viewAttribute id="FSH_ITEM_GROUP"/>
-        <viewAttribute id="FSH_ITEM"/>
-        <viewAttribute id="IUID_RELEVANT"/>
-        <viewAttribute id="SGT_SCAT"/>
-        <viewAttribute id="SGT_RCAT"/>
-        <viewAttribute id="WRF_CHARSTC1"/>
-        <viewAttribute id="WRF_CHARSTC2"/>
-        <viewAttribute id="WRF_CHARSTC3"/>
-      </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_1">
+      <calculatedViewAttributes/>
+      <input node="#EBAN">
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
@@ -779,7 +402,575 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC2" source="WRF_CHARSTC2"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC3" source="WRF_CHARSTC3"/>
       </input>
-      <input node="Projection_2">
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBKN_BANFN"/>
+        <viewAttribute id="EBKN_BNFPO"/>
+        <viewAttribute id="EBKN_ZEBKN"/>
+        <viewAttribute id="EBKN_LOEKZ"/>
+        <viewAttribute id="EBKN_ERDAT"/>
+        <viewAttribute id="EBKN_ERNAM"/>
+        <viewAttribute id="EBKN_MENGE"/>
+        <viewAttribute id="EBKN_VPROZ"/>
+        <viewAttribute id="EBKN_SAKTO"/>
+        <viewAttribute id="EBKN_GSBER"/>
+        <viewAttribute id="EBKN_KOSTL"/>
+        <viewAttribute id="EBKN_PROJN"/>
+        <viewAttribute id="EBKN_VBELN"/>
+        <viewAttribute id="EBKN_VBELP"/>
+        <viewAttribute id="EBKN_VETEN"/>
+        <viewAttribute id="EBKN_ANLN1"/>
+        <viewAttribute id="EBKN_ANLN2"/>
+        <viewAttribute id="EBKN_AUFNR"/>
+        <viewAttribute id="EBKN_WEMPF"/>
+        <viewAttribute id="EBKN_ABLAD"/>
+        <viewAttribute id="EBKN_KOKRS"/>
+        <viewAttribute id="EBKN_XBKST"/>
+        <viewAttribute id="EBKN_XBAUF"/>
+        <viewAttribute id="EBKN_XBPRO"/>
+        <viewAttribute id="EBKN_KSTRG"/>
+        <viewAttribute id="EBKN_PAOBJNR"/>
+        <viewAttribute id="EBKN_PRCTR"/>
+        <viewAttribute id="EBKN_PS_PSP_PNR"/>
+        <viewAttribute id="EBKN_NPLNR"/>
+        <viewAttribute id="EBKN_AUFPL"/>
+        <viewAttribute id="EBKN_IMKEY"/>
+        <viewAttribute id="EBKN_APLZL"/>
+        <viewAttribute id="EBKN_VPTNR"/>
+        <viewAttribute id="EBKN_FIPOS"/>
+        <viewAttribute id="EBKN_RECID"/>
+        <viewAttribute id="EBKN_FISTL"/>
+        <viewAttribute id="EBKN_GEBER"/>
+        <viewAttribute id="EBKN_FKBER"/>
+        <viewAttribute id="EBKN_DABRZ"/>
+        <viewAttribute id="EBKN_NETWR"/>
+        <viewAttribute id="EBKN_AUFPL_ORD"/>
+        <viewAttribute id="EBKN_APLZL_ORD"/>
+        <viewAttribute id="EBKN_KBLNR"/>
+        <viewAttribute id="EBKN_KBLPOS"/>
+        <viewAttribute id="EBKN_LSTAR"/>
+        <viewAttribute id="EBKN_PRZNR"/>
+        <viewAttribute id="EBKN_GRANT_NBR"/>
+        <viewAttribute id="EBKN_FM_SPLIT_BATCH"/>
+        <viewAttribute id="EBKN_FM_SPLIT_BEGRU"/>
+        <viewAttribute id="EBKN_BUDGET_PD"/>
+        <viewAttribute id="EBKN_FMFGUS_KEY"/>
+        <viewAttribute id="EBKN_EGRUP"/>
+        <viewAttribute id="EBKN_VNAME"/>
+        <viewAttribute id="EBKN_TCOBJNR"/>
+        <viewAttribute id="EBKN_DATEOFSERVICE"/>
+        <viewAttribute id="EBKN_NOTAXCORR"/>
+        <viewAttribute id="EBKN_DIFFOPTRATE"/>
+        <viewAttribute id="EBKN_HASDIFFOPTRATE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#EBKN">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BNFPO" source="BNFPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ZEBKN" source="ZEBKN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VPROZ" source="VPROZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_SAKTO" source="SAKTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GSBER" source="GSBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KOSTL" source="KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PROJN" source="PROJN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VBELN" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VBELP" source="VBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VETEN" source="VETEN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ANLN1" source="ANLN1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ANLN2" source="ANLN2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFNR" source="AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_WEMPF" source="WEMPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ABLAD" source="ABLAD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBKST" source="XBKST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBAUF" source="XBAUF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_XBPRO" source="XBPRO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KSTRG" source="KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PAOBJNR" source="PAOBJNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PS_PSP_PNR" source="PS_PSP_PNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NPLNR" source="NPLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFPL" source="AUFPL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_IMKEY" source="IMKEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_APLZL" source="APLZL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VPTNR" source="VPTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FIPOS" source="FIPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_RECID" source="RECID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL" source="FISTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GEBER" source="GEBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FKBER" source="FKBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DABRZ" source="DABRZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_AUFPL_ORD" source="AUFPL_ORD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_APLZL_ORD" source="APLZL_ORD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KBLNR" source="KBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_KBLPOS" source="KBLPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_LSTAR" source="LSTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_PRZNR" source="PRZNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_GRANT_NBR" source="GRANT_NBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FM_SPLIT_BATCH" source="FM_SPLIT_BATCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FM_SPLIT_BEGRU" source="FM_SPLIT_BEGRU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BUDGET_PD" source="BUDGET_PD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FMFGUS_KEY" source="FMFGUS_KEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_EGRUP" source="EGRUP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_VNAME" source="VNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_TCOBJNR" source="TCOBJNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DATEOFSERVICE" source="DATEOFSERVICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_NOTAXCORR" source="NOTAXCORR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_DIFFOPTRATE" source="DIFFOPTRATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_HASDIFFOPTRATE" source="HASDIFFOPTRATE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="EBKN_ZEBKN"/>
+        <viewAttribute id="EBKN_LOEKZ"/>
+        <viewAttribute id="EBKN_ERDAT"/>
+        <viewAttribute id="EBKN_ERNAM"/>
+        <viewAttribute id="EBKN_MENGE"/>
+        <viewAttribute id="EBKN_VPROZ"/>
+        <viewAttribute id="EBKN_SAKTO"/>
+        <viewAttribute id="EBKN_GSBER"/>
+        <viewAttribute id="EBKN_KOSTL"/>
+        <viewAttribute id="EBKN_PROJN"/>
+        <viewAttribute id="EBKN_VBELN"/>
+        <viewAttribute id="EBKN_VBELP"/>
+        <viewAttribute id="EBKN_VETEN"/>
+        <viewAttribute id="EBKN_ANLN1"/>
+        <viewAttribute id="EBKN_ANLN2"/>
+        <viewAttribute id="EBKN_AUFNR"/>
+        <viewAttribute id="EBKN_WEMPF"/>
+        <viewAttribute id="EBKN_ABLAD"/>
+        <viewAttribute id="EBKN_KOKRS"/>
+        <viewAttribute id="EBKN_XBKST"/>
+        <viewAttribute id="EBKN_XBAUF"/>
+        <viewAttribute id="EBKN_XBPRO"/>
+        <viewAttribute id="EBKN_KSTRG"/>
+        <viewAttribute id="EBKN_PAOBJNR"/>
+        <viewAttribute id="EBKN_PRCTR"/>
+        <viewAttribute id="EBKN_PS_PSP_PNR"/>
+        <viewAttribute id="EBKN_NPLNR"/>
+        <viewAttribute id="EBKN_AUFPL"/>
+        <viewAttribute id="EBKN_IMKEY"/>
+        <viewAttribute id="EBKN_APLZL"/>
+        <viewAttribute id="EBKN_VPTNR"/>
+        <viewAttribute id="EBKN_FIPOS"/>
+        <viewAttribute id="EBKN_RECID"/>
+        <viewAttribute id="EBKN_FISTL"/>
+        <viewAttribute id="EBKN_GEBER"/>
+        <viewAttribute id="EBKN_FKBER"/>
+        <viewAttribute id="EBKN_DABRZ"/>
+        <viewAttribute id="EBKN_NETWR"/>
+        <viewAttribute id="EBKN_AUFPL_ORD"/>
+        <viewAttribute id="EBKN_APLZL_ORD"/>
+        <viewAttribute id="EBKN_KBLNR"/>
+        <viewAttribute id="EBKN_KBLPOS"/>
+        <viewAttribute id="EBKN_LSTAR"/>
+        <viewAttribute id="EBKN_PRZNR"/>
+        <viewAttribute id="EBKN_GRANT_NBR"/>
+        <viewAttribute id="EBKN_FM_SPLIT_BATCH"/>
+        <viewAttribute id="EBKN_FM_SPLIT_BEGRU"/>
+        <viewAttribute id="EBKN_BUDGET_PD"/>
+        <viewAttribute id="EBKN_FMFGUS_KEY"/>
+        <viewAttribute id="EBKN_EGRUP"/>
+        <viewAttribute id="EBKN_VNAME"/>
+        <viewAttribute id="EBKN_TCOBJNR"/>
+        <viewAttribute id="EBKN_DATEOFSERVICE"/>
+        <viewAttribute id="EBKN_NOTAXCORR"/>
+        <viewAttribute id="EBKN_DIFFOPTRATE"/>
+        <viewAttribute id="EBKN_HASDIFFOPTRATE"/>
+        <viewAttribute id="BANFN"/>
+        <viewAttribute id="BNFPO"/>
+        <viewAttribute id="BSART"/>
+        <viewAttribute id="BSTYP"/>
+        <viewAttribute id="BSAKZ"/>
+        <viewAttribute id="LOEKZ"/>
+        <viewAttribute id="STATU"/>
+        <viewAttribute id="ESTKZ"/>
+        <viewAttribute id="FRGKZ"/>
+        <viewAttribute id="FRGZU"/>
+        <viewAttribute id="FRGST"/>
+        <viewAttribute id="EKGRP"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="AFNAM"/>
+        <viewAttribute id="TXZ01"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="EMATN"/>
+        <viewAttribute id="WERKS"/>
+        <viewAttribute id="LGORT"/>
+        <viewAttribute id="BEDNR"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="RESWK"/>
+        <viewAttribute id="MENGE"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="BUMNG"/>
+        <viewAttribute id="BADAT"/>
+        <viewAttribute id="LPEIN"/>
+        <viewAttribute id="LFDAT"/>
+        <viewAttribute id="FRGDT"/>
+        <viewAttribute id="WEBAZ"/>
+        <viewAttribute id="PREIS"/>
+        <viewAttribute id="PEINH"/>
+        <viewAttribute id="PSTYP"/>
+        <viewAttribute id="KNTTP"/>
+        <viewAttribute id="KZVBR"/>
+        <viewAttribute id="KFLAG"/>
+        <viewAttribute id="VRTKZ"/>
+        <viewAttribute id="TWRKZ"/>
+        <viewAttribute id="WEPOS"/>
+        <viewAttribute id="WEUNB"/>
+        <viewAttribute id="REPOS"/>
+        <viewAttribute id="LIFNR"/>
+        <viewAttribute id="FLIEF"/>
+        <viewAttribute id="EKORG"/>
+        <viewAttribute id="VRTYP"/>
+        <viewAttribute id="KONNR"/>
+        <viewAttribute id="KTPNR"/>
+        <viewAttribute id="INFNR"/>
+        <viewAttribute id="ZUGBA"/>
+        <viewAttribute id="QUNUM"/>
+        <viewAttribute id="QUPOS"/>
+        <viewAttribute id="DISPO"/>
+        <viewAttribute id="SERNR"/>
+        <viewAttribute id="BVDAT"/>
+        <viewAttribute id="BATOL"/>
+        <viewAttribute id="BVDRK"/>
+        <viewAttribute id="EBELN"/>
+        <viewAttribute id="EBELP"/>
+        <viewAttribute id="BEDAT"/>
+        <viewAttribute id="BSMNG"/>
+        <viewAttribute id="LBLNI"/>
+        <viewAttribute id="BWTAR"/>
+        <viewAttribute id="XOBLR"/>
+        <viewAttribute id="EBAKZ"/>
+        <viewAttribute id="RSNUM"/>
+        <viewAttribute id="SOBKZ"/>
+        <viewAttribute id="ARSNR"/>
+        <viewAttribute id="ARSPS"/>
+        <viewAttribute id="FIXKZ"/>
+        <viewAttribute id="BMEIN"/>
+        <viewAttribute id="REVLV"/>
+        <viewAttribute id="VORAB"/>
+        <viewAttribute id="PACKNO"/>
+        <viewAttribute id="KANBA"/>
+        <viewAttribute id="BPUEB"/>
+        <viewAttribute id="CUOBJ"/>
+        <viewAttribute id="FRGGR"/>
+        <viewAttribute id="FRGRL"/>
+        <viewAttribute id="AKTNR"/>
+        <viewAttribute id="CHARG"/>
+        <viewAttribute id="UMSOK"/>
+        <viewAttribute id="VERID"/>
+        <viewAttribute id="FIPOS"/>
+        <viewAttribute id="FISTL"/>
+        <viewAttribute id="GEBER"/>
+        <viewAttribute id="KZKFG"/>
+        <viewAttribute id="SATNR"/>
+        <viewAttribute id="MNG02"/>
+        <viewAttribute id="DAT01"/>
+        <viewAttribute id="ATTYP"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="ADRN2"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="EMLIF"/>
+        <viewAttribute id="LBLKZ"/>
+        <viewAttribute id="KZBWS"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="IDNLF"/>
+        <viewAttribute id="GSFRG"/>
+        <viewAttribute id="MPROF"/>
+        <viewAttribute id="KZFME"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="TECHS"/>
+        <viewAttribute id="MFRPN"/>
+        <viewAttribute id="MFRNR"/>
+        <viewAttribute id="EMNFR"/>
+        <viewAttribute id="FORDN"/>
+        <viewAttribute id="FORDP"/>
+        <viewAttribute id="PLIFZ"/>
+        <viewAttribute id="BERID"/>
+        <viewAttribute id="UZEIT"/>
+        <viewAttribute id="FKBER"/>
+        <viewAttribute id="GRANT_NBR"/>
+        <viewAttribute id="MEMORY"/>
+        <viewAttribute id="BANPR"/>
+        <viewAttribute id="RLWRT"/>
+        <viewAttribute id="BLCKD"/>
+        <viewAttribute id="REVNO"/>
+        <viewAttribute id="BLCKT"/>
+        <viewAttribute id="BESWK"/>
+        <viewAttribute id="EPROFILE"/>
+        <viewAttribute id="EPREFDOC"/>
+        <viewAttribute id="EPREFITM"/>
+        <viewAttribute id="GMMNG"/>
+        <viewAttribute id="WRTKZ"/>
+        <viewAttribute id="RESLO"/>
+        <viewAttribute id="KBLNR"/>
+        <viewAttribute id="KBLPOS"/>
+        <viewAttribute id="PRIO_URG"/>
+        <viewAttribute id="PRIO_REQ"/>
+        <viewAttribute id="MEMORYTYPE"/>
+        <viewAttribute id="ANZSN"/>
+        <viewAttribute id="MHDRZ"/>
+        <viewAttribute id="IPRKZ"/>
+        <viewAttribute id="NODISP"/>
+        <viewAttribute id="SRM_CONTRACT_ID"/>
+        <viewAttribute id="SRM_CONTRACT_ITM"/>
+        <viewAttribute id="BUDGET_PD"/>
+        <viewAttribute id="ZREJ_CODE"/>
+        <viewAttribute id="ZREJ_REMARKS"/>
+        <viewAttribute id="ZREVIEWER"/>
+        <viewAttribute id="ZREV_STATUS"/>
+        <viewAttribute id="ZREV_REMARKS"/>
+        <viewAttribute id="ZRESUB_STATUS"/>
+        <viewAttribute id="ZRESUB_REMARKS"/>
+        <viewAttribute id="ZRFQ_STATUS"/>
+        <viewAttribute id="ZRFQ_QUOT_NO"/>
+        <viewAttribute id="ZRFQ_QUOT_ITEM"/>
+        <viewAttribute id="ZRFQ_QUOT_PRICE"/>
+        <viewAttribute id="ZRFQ_QUOT_PRICE_CUR"/>
+        <viewAttribute id="ZRFQ_QUOT_PRCUNIT"/>
+        <viewAttribute id="ZRFQ_QUOT_PRCUOM"/>
+        <viewAttribute id="ZRFQ_REASON_CODE"/>
+        <viewAttribute id="ZWRNTY_READ"/>
+        <viewAttribute id="ZWRNTY_REMARKS"/>
+        <viewAttribute id="ZCONT_READ"/>
+        <viewAttribute id="STORENETWORKID"/>
+        <viewAttribute id="STORESUPPLIERID"/>
+        <viewAttribute id="FMFGUS_KEY"/>
+        <viewAttribute id="ADVCODE"/>
+        <viewAttribute id="STACODE"/>
+        <viewAttribute id="BANFN_CS"/>
+        <viewAttribute id="BNFPO_CS"/>
+        <viewAttribute id="ITEM_CS"/>
+        <viewAttribute id="BSMNG_SND"/>
+        <viewAttribute id="NO_MARD_DATA"/>
+        <viewAttribute id="ADMOI"/>
+        <viewAttribute id="ADPRI"/>
+        <viewAttribute id="LPRIO"/>
+        <viewAttribute id="ADACN"/>
+        <viewAttribute id="ADDNS"/>
+        <viewAttribute id="SERRU"/>
+        <viewAttribute id="DISUB_SOBKZ"/>
+        <viewAttribute id="DISUB_PSPNR"/>
+        <viewAttribute id="DISUB_KUNNR"/>
+        <viewAttribute id="DISUB_VBELN"/>
+        <viewAttribute id="DISUB_POSNR"/>
+        <viewAttribute id="DISUB_OWNER"/>
+        <viewAttribute id="FSH_VAS_REL"/>
+        <viewAttribute id="FSH_VAS_PRNT_ID"/>
+        <viewAttribute id="FSH_TRANSACTION"/>
+        <viewAttribute id="FSH_ITEM_GROUP"/>
+        <viewAttribute id="FSH_ITEM"/>
+        <viewAttribute id="IUID_RELEVANT"/>
+        <viewAttribute id="SGT_SCAT"/>
+        <viewAttribute id="SGT_RCAT"/>
+        <viewAttribute id="WRF_CHARSTC1"/>
+        <viewAttribute id="WRF_CHARSTC2"/>
+        <viewAttribute id="WRF_CHARSTC3"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSART" source="BSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTYP" source="BSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSAKZ" source="BSAKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STATU" source="STATU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ESTKZ" source="ESTKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGKZ" source="FRGKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGZU" source="FRGZU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGST" source="FRGST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AFNAM" source="AFNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDNR" source="BEDNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RESWK" source="RESWK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUMNG" source="BUMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BADAT" source="BADAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LPEIN" source="LPEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFDAT" source="LFDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGDT" source="FRGDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEBAZ" source="WEBAZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYP" source="PSTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNTTP" source="KNTTP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZVBR" source="KZVBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KFLAG" source="KFLAG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VRTKZ" source="VRTKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TWRKZ" source="TWRKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEPOS" source="WEPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEUNB" source="WEUNB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REPOS" source="REPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FLIEF" source="FLIEF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VRTYP" source="VRTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KONNR" source="KONNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTPNR" source="KTPNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUGBA" source="ZUGBA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="QUNUM" source="QUNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="QUPOS" source="QUPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BVDAT" source="BVDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BATOL" source="BATOL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BVDRK" source="BVDRK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEDAT" source="BEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSMNG" source="BSMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LBLNI" source="LBLNI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BWTAR" source="BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XOBLR" source="XOBLR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAKZ" source="EBAKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SOBKZ" source="SOBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ARSNR" source="ARSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ARSPS" source="ARSPS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FIXKZ" source="FIXKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VORAB" source="VORAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PACKNO" source="PACKNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KANBA" source="KANBA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPUEB" source="BPUEB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGGR" source="FRGGR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRGRL" source="FRGRL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AKTNR" source="AKTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHARG" source="CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMSOK" source="UMSOK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VERID" source="VERID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FIPOS" source="FIPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SATNR" source="SATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MNG02" source="MNG02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DAT01" source="DAT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTYP" source="ATTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRN2" source="ADRN2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMLIF" source="EMLIF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LBLKZ" source="LBLKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZBWS" source="KZBWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IDNLF" source="IDNLF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GSFRG" source="GSFRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZFME" source="KZFME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TECHS" source="TECHS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMNFR" source="EMNFR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FORDN" source="FORDN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FORDP" source="FORDP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BERID" source="BERID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UZEIT" source="UZEIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEMORY" source="MEMORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANPR" source="BANPR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RLWRT" source="RLWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLCKD" source="BLCKD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVNO" source="REVNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLCKT" source="BLCKT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BESWK" source="BESWK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EPROFILE" source="EPROFILE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EPREFDOC" source="EPREFDOC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EPREFITM" source="EPREFITM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GMMNG" source="GMMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRTKZ" source="WRTKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RESLO" source="RESLO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KBLNR" source="KBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KBLPOS" source="KBLPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_URG" source="PRIO_URG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRIO_REQ" source="PRIO_REQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEMORYTYPE" source="MEMORYTYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANZSN" source="ANZSN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NODISP" source="NODISP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SRM_CONTRACT_ID" source="SRM_CONTRACT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SRM_CONTRACT_ITM" source="SRM_CONTRACT_ITM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZREJ_CODE" source="ZREJ_CODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZREJ_REMARKS" source="ZREJ_REMARKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZREVIEWER" source="ZREVIEWER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZREV_STATUS" source="ZREV_STATUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZREV_REMARKS" source="ZREV_REMARKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRESUB_STATUS" source="ZRESUB_STATUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRESUB_REMARKS" source="ZRESUB_REMARKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_STATUS" source="ZRFQ_STATUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_NO" source="ZRFQ_QUOT_NO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_ITEM" source="ZRFQ_QUOT_ITEM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_PRICE" source="ZRFQ_QUOT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_PRICE_CUR" source="ZRFQ_QUOT_PRICE_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_PRCUNIT" source="ZRFQ_QUOT_PRCUNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_QUOT_PRCUOM" source="ZRFQ_QUOT_PRCUOM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZRFQ_REASON_CODE" source="ZRFQ_REASON_CODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZWRNTY_READ" source="ZWRNTY_READ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZWRNTY_REMARKS" source="ZWRNTY_REMARKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZCONT_READ" source="ZCONT_READ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STORENETWORKID" source="STORENETWORKID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STORESUPPLIERID" source="STORESUPPLIERID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FMFGUS_KEY" source="FMFGUS_KEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADVCODE" source="ADVCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STACODE" source="STACODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN_CS" source="BANFN_CS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO_CS" source="BNFPO_CS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ITEM_CS" source="ITEM_CS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSMNG_SND" source="BSMNG_SND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NO_MARD_DATA" source="NO_MARD_DATA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADMOI" source="ADMOI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADPRI" source="ADPRI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LPRIO" source="LPRIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADACN" source="ADACN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDNS" source="ADDNS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERRU" source="SERRU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_SOBKZ" source="DISUB_SOBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_PSPNR" source="DISUB_PSPNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_KUNNR" source="DISUB_KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_VBELN" source="DISUB_VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_POSNR" source="DISUB_POSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_OWNER" source="DISUB_OWNER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_VAS_REL" source="FSH_VAS_REL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_VAS_PRNT_ID" source="FSH_VAS_PRNT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_TRANSACTION" source="FSH_TRANSACTION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_ITEM_GROUP" source="FSH_ITEM_GROUP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_ITEM" source="FSH_ITEM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IUID_RELEVANT" source="IUID_RELEVANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCAT" source="SGT_SCAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_RCAT" source="SGT_RCAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC1" source="WRF_CHARSTC1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC2" source="WRF_CHARSTC2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC3" source="WRF_CHARSTC3"/>
+      </input>
+      <input node="#Projection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ZEBKN" source="EBKN_ZEBKN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_LOEKZ" source="EBKN_LOEKZ"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_ERDAT" source="EBKN_ERDAT"/>
@@ -839,10 +1030,10 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="EBKN_BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="EBKN_BNFPO"/>
       </input>
-    <joinAttribute name="BANFN"/>
-    <joinAttribute name="BNFPO"/>
-  </calculationView>
-</calculationViews>
+      <joinAttribute name="BANFN"/>
+      <joinAttribute name="BNFPO"/>
+    </calculationView>
+  </calculationViews>
   <logicalModel id="Join_1">
     <descriptions/>
     <attributes>
@@ -875,7 +1066,7 @@
         <keyMapping columnObjectName="Join_1" columnName="EBKN_KOSTL"/>
       </attribute>
       <attribute id="EBKN_PROJN" order="10" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Old: Project number : No longer used --&gt; PS_POSNR"/>
+        <descriptions defaultDescription="Old: Project number : No longer used --> PS_POSNR"/>
         <keyMapping columnObjectName="Join_1" columnName="EBKN_PROJN"/>
       </attribute>
       <attribute id="EBKN_VBELN" order="11" attributeHierarchyActive="false" displayAttribute="false">
@@ -1756,87 +1947,87 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="EBKN_MENGE" order="5" aggregationType="sum" measureType="simple">
+      <measure id="EBKN_MENGE" order="5" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Purchase requisition quantity"/>
         <measureMapping columnObjectName="Join_1" columnName="EBKN_MENGE"/>
       </measure>
-      <measure id="EBKN_VPROZ" order="6" aggregationType="sum" measureType="simple">
+      <measure id="EBKN_VPROZ" order="6" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Distribution percentage in the case of multiple acct assgt"/>
         <measureMapping columnObjectName="Join_1" columnName="EBKN_VPROZ"/>
       </measure>
-      <measure id="EBKN_NETWR" order="38" aggregationType="sum" measureType="simple">
+      <measure id="EBKN_NETWR" order="38" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Net Order Value in PO Currency"/>
         <measureMapping columnObjectName="Join_1" columnName="EBKN_NETWR"/>
       </measure>
-      <measure id="EBKN_DIFFOPTRATE" order="55" aggregationType="sum" measureType="simple">
+      <measure id="EBKN_DIFFOPTRATE" order="55" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Real Estate Option Rate"/>
         <measureMapping columnObjectName="Join_1" columnName="EBKN_DIFFOPTRATE"/>
       </measure>
-      <measure id="EBAN_MENGE" order="80" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_MENGE" order="80" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Purchase requisition quantity"/>
         <measureMapping columnObjectName="Join_1" columnName="MENGE"/>
       </measure>
-      <measure id="EBAN_BUMNG" order="82" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_BUMNG" order="82" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Shortage (stock undercoverage) quantity"/>
         <measureMapping columnObjectName="Join_1" columnName="BUMNG"/>
       </measure>
-      <measure id="EBAN_WEBAZ" order="87" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_WEBAZ" order="87" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Goods receipt processing time in days"/>
         <measureMapping columnObjectName="Join_1" columnName="WEBAZ"/>
       </measure>
-      <measure id="EBAN_PREIS" order="88" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_PREIS" order="88" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Price in Purchase Requisition"/>
         <measureMapping columnObjectName="Join_1" columnName="PREIS"/>
       </measure>
-      <measure id="EBAN_PEINH" order="89" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_PEINH" order="89" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Price unit"/>
         <measureMapping columnObjectName="Join_1" columnName="PEINH"/>
       </measure>
-      <measure id="EBAN_BATOL" order="112" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_BATOL" order="112" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Resubmission interval of purchase requisition"/>
         <measureMapping columnObjectName="Join_1" columnName="BATOL"/>
       </measure>
-      <measure id="EBAN_BVDRK" order="113" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_BVDRK" order="113" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Number of resubmissions"/>
         <measureMapping columnObjectName="Join_1" columnName="BVDRK"/>
       </measure>
-      <measure id="EBAN_BSMNG" order="117" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_BSMNG" order="117" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Quantity ordered against this purchase requisition"/>
         <measureMapping columnObjectName="Join_1" columnName="BSMNG"/>
       </measure>
-      <measure id="EBAN_MNG02" order="145" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_MNG02" order="145" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Committed Quantity"/>
         <measureMapping columnObjectName="Join_1" columnName="MNG02"/>
       </measure>
-      <measure id="EBAN_PLIFZ" order="166" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_PLIFZ" order="166" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Planned Delivery Time in Days"/>
         <measureMapping columnObjectName="Join_1" columnName="PLIFZ"/>
       </measure>
-      <measure id="EBAN_RLWRT" order="173" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_RLWRT" order="173" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Total value at time of release"/>
         <measureMapping columnObjectName="Join_1" columnName="RLWRT"/>
       </measure>
-      <measure id="EBAN_GMMNG" order="181" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_GMMNG" order="181" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="PO Quantity of Purchase Requisition in POs on Hold"/>
         <measureMapping columnObjectName="Join_1" columnName="GMMNG"/>
       </measure>
-      <measure id="EBAN_ANZSN" order="189" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_ANZSN" order="189" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Number of serial numbers"/>
         <measureMapping columnObjectName="Join_1" columnName="ANZSN"/>
       </measure>
-      <measure id="EBAN_MHDRZ" order="190" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_MHDRZ" order="190" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Minimum Remaining Shelf Life"/>
         <measureMapping columnObjectName="Join_1" columnName="MHDRZ"/>
       </measure>
-      <measure id="EBAN_ZRFQ_QUOT_PRICE" order="206" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_ZRFQ_QUOT_PRICE" order="206" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="RFQREQ - custom Quotation price"/>
         <measureMapping columnObjectName="Join_1" columnName="ZRFQ_QUOT_PRICE"/>
       </measure>
-      <measure id="EBAN_ZRFQ_QUOT_PRCUNIT" order="208" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_ZRFQ_QUOT_PRCUNIT" order="208" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="RFQREQ - custom Price unit field"/>
         <measureMapping columnObjectName="Join_1" columnName="ZRFQ_QUOT_PRCUNIT"/>
       </measure>
-      <measure id="EBAN_BSMNG_SND" order="222" aggregationType="sum" measureType="simple">
+      <measure id="EBAN_BSMNG_SND" order="222" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="PO Quantity Sender"/>
         <measureMapping columnObjectName="Join_1" columnName="BSMNG_SND"/>
       </measure>
@@ -1845,8 +2036,8 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-<layout>
-  <shapes>
+  <layout>
+    <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="99" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -1863,15 +2054,6 @@
         <upperLeftCorner x="99" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    
-    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-  </shapes>
-</layout>
+    </shapes>
+  </layout>
 </Calculation:scenario>

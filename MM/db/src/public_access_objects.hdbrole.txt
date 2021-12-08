@@ -24,6 +24,13 @@
                 ]
             },
             {
+                "name": "algoma.mm::ZHV_MM_CHANGE_LOG",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
                 "name": "algoma.mm::ZHV_MM_MBEW_HIS_01",
                 "type": "VIEW",
                 "privileges": [
@@ -66,6 +73,13 @@
                 ]
             },
             {
+                "name": "algoma.mm.pur::ZHV_BV_INFO_RECORD",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
                 "name": "algoma.mm.pur::ZHV_PUR_CHG_LOG",
                 "type": "VIEW",
                 "privileges": [
@@ -73,21 +87,7 @@
                 ]
             },
             {
-                "name": "algoma.mm.pur::ZHV_PUR_CHG_LOG_IR",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
                 "name": "algoma.mm.pur::ZHV_VENDOR_MAS",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::COPYOFZHV_PUR_ME5A_PO",
                 "type": "VIEW",
                 "privileges": [
                     "SELECT"
@@ -102,13 +102,6 @@
             },
             {
                 "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO2",
                 "type": "VIEW",
                 "privileges": [
                     "SELECT"
@@ -137,48 +130,6 @@
             },
             {
                 "name": "algoma.mm.pur.me5a::ZHV_PUR_MOST_RECENT_RFQ_DATA",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_QV_ME5A_LAST_PO_AND_MOST_RECENT_RFQ_DATA",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_QV_ME5A_LAST_PO_DATA",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_RV_LATEST_PO_FOR_MATERIALS",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_RV_ME5A_PO",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_RV_ME5A_PO_WITH_RFQ",
-                "type": "VIEW",
-                "privileges": [
-                    "SELECT"
-                ]
-            },
-            {
-                "name": "algoma.mm.pur.me5a::ZHV_RV_MOST_RECENT_RFQ_DATA",
                 "type": "VIEW",
                 "privileges": [
                     "SELECT"
@@ -326,6 +277,13 @@
             },
             {
                 "name": "algoma.mm.pur.po::ZHV_PUR_PO_VENDORS_BY_MANF",
+                "type": "VIEW",
+                "privileges": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "algoma.mm.pur.po::ZHV_PUR_PO_VER_HISTORY",
                 "type": "VIEW",
                 "privileges": [
                     "SELECT"

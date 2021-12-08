@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.im::ZHV_IM_STORE_DAILY_01" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-<origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.im::ZHV_IM_STORE_DAILY_01" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
   <descriptions defaultDescription="ZHV_IM_STORE_DAILY_01"/>
-  <metadata changedAt="2021-10-11 10:49:49.29" createdAt="2021-05-06 09:25:36.191"/>
+  <metadata activatedAt="2021-05-05 17:30:55.0" changedAt="2021-05-06 09:25:36.191" createdAt="2021-05-06 09:25:36.191"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="38"/>
@@ -11,10 +11,10 @@
       <resourceUri>algoma.mm.im::ZHV_BV_MAT_MOV_01</resourceUri>
     </DataSource>
   </dataSources>
-<calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projn_MAT_MOV" filterExpressionLanguage="COLUMN_ENGINE">
-    <descriptions/>
-    <viewAttributes>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projn_MAT_MOV" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="fx_transaction_count"/>
         <viewAttribute id="MBLNR"/>
         <viewAttribute id="MJAHR"/>
@@ -261,12 +261,258 @@
         <viewAttribute id="FSH_DEALLOC_QTY"/>
         <viewAttribute id="OINAVNW"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZHV_BV_MAT_MOV_01"/>
-    <filter>in(&quot;LGORT&quot;,'','W011','W028','W101','W102','W103','WQBI') AND
+      <calculatedViewAttributes/>
+      <input node="#ZHV_BV_MAT_MOV_01">
+        <mapping xsi:type="Calculation:AttributeMapping" target="fx_transaction_count" source="fx_transaction_count"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MBLNR" source="MBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MJAHR" source="MJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGART" source="VGART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLART" source="BLART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLAUM" source="BLAUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLDAT" source="BLDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CPUDT" source="CPUDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CPUTM" source="CPUTM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE" source="TCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BKTXT" source="BKTXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRBNR" source="FRBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEVER" source="WEVER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XABLN" source="XABLN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AWSYS" source="AWSYS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLA2D" source="BLA2D"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE2" source="TCODE2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BFWMS" source="BFWMS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXNUM" source="EXNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPE_BUDAT_UHR" source="SPE_BUDAT_UHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPE_BUDAT_ZONE" source="SPE_BUDAT_ZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LE_VBELN" source="LE_VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPE_LOGSYS" source="SPE_LOGSYS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPE_MDNUM_EWM" source="SPE_MDNUM_EWM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GTS_CUSREF_NO" source="GTS_CUSREF_NO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FLS_RSTO" source="FLS_RSTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSR_ACTIVE" source="MSR_ACTIVE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNUMV" source="KNUMV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XCOMPL" source="XCOMPL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZEILE" source="ZEILE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINE_ID" source="LINE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PARENT_ID" source="PARENT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINE_DEPTH" source="LINE_DEPTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAA_URZEI" source="MAA_URZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BWART" source="BWART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XAUTO" source="XAUTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHARG" source="CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INSMK" source="INSMK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUSCH" source="ZUSCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUSTD" source="ZUSTD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SOBKZ" source="SOBKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDAUF" source="KDAUF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDEIN" source="KDEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLPLA" source="PLPLA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHKZG" source="SHKZG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHKUM" source="SHKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BWTAR" source="BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERFME" source="ERFME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPRME" source="BPRME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFBJA" source="LFBJA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFBNR" source="LFBNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFPOS" source="LFPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SJAHR" source="SJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SMBLN" source="SMBLN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SMBLP" source="SMBLP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGTXT" source="SGTXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEMPF" source="WEMPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ABLAD" source="ABLAD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PARGB" source="PARGB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PARBU" source="PARBU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PROJN" source="PROJN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XSKST" source="XSKST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XSAUF" source="XSAUF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XSPRO" source="XSPRO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XSERG" source="XSERG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XRUEM" source="XRUEM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XRUEJ" source="XRUEJ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BELUM" source="BELUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUZUM" source="BUZUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RSNUM" source="RSNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RSPOS" source="RSPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZEAR" source="KZEAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZSTR" source="KZSTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMMAT" source="UMMAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMWRK" source="UMWRK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMLGO" source="UMLGO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMCHA" source="UMCHA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMZST" source="UMZST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMZUS" source="UMZUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMBAR" source="UMBAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMSOK" source="UMSOK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZBEW" source="KZBEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZVBR" source="KZVBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZZUG" source="KZZUG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEUNB" source="WEUNB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGTYP" source="LGTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGPLA" source="LGPLA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BESTQ" source="BESTQ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BWLVS" source="BWLVS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TBNUM" source="TBNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TBPOS" source="TBPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XBLVS" source="XBLVS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VSCHN" source="VSCHN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NSCHN" source="NSCHN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DYPLA" source="DYPLA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UBNUM" source="UBNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TBPRI" source="TBPRI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TANUM" source="TANUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WEANZ" source="WEANZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GRUND" source="GRUND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EVERS" source="EVERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EVERE" source="EVERE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR" source="PS_PSP_PNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NPLNR" source="NPLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFPL" source="AUFPL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="APLZL" source="APLZL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFPS" source="AUFPS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VPTNR" source="VPTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FIPOS" source="FIPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XWSBR" source="XWSBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMLIF" source="EMLIF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AKTNR" source="AKTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZEKKN" source="ZEKKN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VFDAT" source="VFDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ_CH" source="CUOBJ_CH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RSART" source="RSART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATBF" source="MATBF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMMAB" source="UMMAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUSTM" source="BUSTM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUSTW" source="BUSTW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGU" source="MENGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERTU" source="WERTU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VPRSV" source="VPRSV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DABRBZ" source="DABRBZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DABRZ" source="DABRZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XBEAU" source="XBEAU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LSMEH" source="LSMEH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZBWS" source="KZBWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="QINSPST" source="QINSPST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="URZEI" source="URZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_1AGIRUPD" source="J_1AGIRUPD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKMWS" source="VKMWS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HSDAT" source="HSDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BERKZ" source="BERKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAT_KDAUF" source="MAT_KDAUF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAT_KDPOS" source="MAT_KDPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MAT_PSPNR" source="MAT_PSPNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XWOFF" source="XWOFF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEMOT" source="BEMOT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LLIEF" source="LLIEF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XOBEW" source="XOBEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUSTD_T156M" source="ZUSTD_T156M"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPE_GTS_STOCK_TY" source="SPE_GTS_STOCK_TY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KBLNR" source="KBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KBLPOS" source="KBLPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XMACC" source="XMACC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGART_MKPF" source="VGART_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT_MKPF" source="BUDAT_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CPUDT_MKPF" source="CPUDT_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CPUTM_MKPF" source="CPUTM_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="USNAM_MKPF" source="USNAM_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR_MKPF" source="XBLNR_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE2_MKPF" source="TCODE2_MKPF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELN_IM" source="VBELN_IM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELP_IM" source="VBELP_IM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCAT" source="SGT_SCAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_UMSCAT" source="SGT_UMSCAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_RCAT" source="SGT_RCAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV2_ED_KZ_VER" source="_BEV2_ED_KZ_VER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV2_ED_USER" source="_BEV2_ED_USER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV2_ED_AEDAT" source="_BEV2_ED_AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV2_ED_AETIM" source="_BEV2_ED_AETIM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISUB_OWNER" source="DISUB_OWNER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SEASON_YEAR" source="FSH_SEASON_YEAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SEASON" source="FSH_SEASON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_COLLECTION" source="FSH_COLLECTION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_THEME" source="FSH_THEME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_UMSEA_YR" source="FSH_UMSEA_YR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_UMSEA" source="FSH_UMSEA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_UMCOLL" source="FSH_UMCOLL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_UMTHEME" source="FSH_UMTHEME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_CHINT" source="SGT_CHINT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMPL_MARK" source="COMPL_MARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FZGLS_MARK" source="FZGLS_MARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ETANP_MARK" source="ETANP_MARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POPUP_MARK" source="POPUP_MARK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OICONDCOD" source="OICONDCOD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONDI" source="CONDI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC1" source="WRF_CHARSTC1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC2" source="WRF_CHARSTC2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WRF_CHARSTC3" source="WRF_CHARSTC3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FRATH" source="FRATH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DMBTR" source="DMBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNBTR" source="BNBTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUALT" source="BUALT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DMBUM" source="DMBUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERFMG" source="ERFMG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BPMNG" source="BPMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PBAMG" source="PBAMG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PALAN" source="PALAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTMG" source="BSTMG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXBWR" source="EXBWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKWRT" source="VKWRT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXVKW" source="EXVKW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LBKUM" source="LBKUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALK3" source="SALK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKWRA" source="VKWRA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LSMNG" source="LSMNG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="J_1BEXBASE" source="J_1BEXBASE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_DEALLOC_QTY" source="FSH_DEALLOC_QTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OINAVNW" source="OINAVNW"/>
+      </input>
+      <filter>in(&quot;LGORT&quot;,'','W011','W028','W101','W102','W103','WQBI') AND&#xD;
 in(&quot;BWART&quot;,'101','102','201','202','261','262','301','311','541','542','543','544')</filter>
-  </calculationView>
-</calculationViews>
+    </calculationView>
+  </calculationViews>
   <logicalModel id="Projn_MAT_MOV">
     <descriptions/>
     <attributes>
@@ -1172,91 +1418,91 @@ in(&quot;BWART&quot;,'101','102','201','202','261','262','301','311','541','542'
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="fx_transaction_count" order="1" aggregationType="sum" measureType="simple">
+      <measure id="fx_transaction_count" order="1" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="fx_transaction_count"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="fx_transaction_count"/>
       </measure>
-      <measure id="FRATH" order="225" aggregationType="sum" measureType="simple">
+      <measure id="FRATH" order="225" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="FRATH"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="FRATH"/>
       </measure>
-      <measure id="DMBTR" order="226" aggregationType="sum" measureType="simple">
+      <measure id="DMBTR" order="226" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="DMBTR"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="DMBTR"/>
       </measure>
-      <measure id="BNBTR" order="227" aggregationType="sum" measureType="simple">
+      <measure id="BNBTR" order="227" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="BNBTR"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="BNBTR"/>
       </measure>
-      <measure id="BUALT" order="228" aggregationType="sum" measureType="simple">
+      <measure id="BUALT" order="228" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="BUALT"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="BUALT"/>
       </measure>
-      <measure id="DMBUM" order="229" aggregationType="sum" measureType="simple">
+      <measure id="DMBUM" order="229" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="DMBUM"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="DMBUM"/>
       </measure>
-      <measure id="MENGE" order="230" aggregationType="sum" measureType="simple">
+      <measure id="MENGE" order="230" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="MENGE"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="MENGE"/>
       </measure>
-      <measure id="ERFMG" order="231" aggregationType="sum" measureType="simple">
+      <measure id="ERFMG" order="231" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="ERFMG"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="ERFMG"/>
       </measure>
-      <measure id="BPMNG" order="232" aggregationType="sum" measureType="simple">
+      <measure id="BPMNG" order="232" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="BPMNG"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="BPMNG"/>
       </measure>
-      <measure id="PBAMG" order="233" aggregationType="sum" measureType="simple">
+      <measure id="PBAMG" order="233" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="PBAMG"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="PBAMG"/>
       </measure>
-      <measure id="PALAN" order="234" aggregationType="sum" measureType="simple">
+      <measure id="PALAN" order="234" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="PALAN"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="PALAN"/>
       </measure>
-      <measure id="BSTMG" order="235" aggregationType="sum" measureType="simple">
+      <measure id="BSTMG" order="235" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="BSTMG"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="BSTMG"/>
       </measure>
-      <measure id="EXBWR" order="236" aggregationType="sum" measureType="simple">
+      <measure id="EXBWR" order="236" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="EXBWR"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="EXBWR"/>
       </measure>
-      <measure id="VKWRT" order="237" aggregationType="sum" measureType="simple">
+      <measure id="VKWRT" order="237" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="VKWRT"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="VKWRT"/>
       </measure>
-      <measure id="EXVKW" order="238" aggregationType="sum" measureType="simple">
+      <measure id="EXVKW" order="238" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="EXVKW"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="EXVKW"/>
       </measure>
-      <measure id="LBKUM" order="239" aggregationType="sum" measureType="simple">
+      <measure id="LBKUM" order="239" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="LBKUM"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="LBKUM"/>
       </measure>
-      <measure id="SALK3" order="240" aggregationType="sum" measureType="simple">
+      <measure id="SALK3" order="240" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="SALK3"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="SALK3"/>
       </measure>
-      <measure id="VKWRA" order="241" aggregationType="sum" measureType="simple">
+      <measure id="VKWRA" order="241" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="VKWRA"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="VKWRA"/>
       </measure>
-      <measure id="LSMNG" order="242" aggregationType="sum" measureType="simple">
+      <measure id="LSMNG" order="242" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="LSMNG"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="LSMNG"/>
       </measure>
-      <measure id="J_1BEXBASE" order="243" aggregationType="sum" measureType="simple">
+      <measure id="J_1BEXBASE" order="243" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="J_1BEXBASE"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="J_1BEXBASE"/>
       </measure>
-      <measure id="FSH_DEALLOC_QTY" order="244" aggregationType="sum" measureType="simple">
+      <measure id="FSH_DEALLOC_QTY" order="244" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="FSH_DEALLOC_QTY"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="FSH_DEALLOC_QTY"/>
       </measure>
-      <measure id="OINAVNW" order="245" aggregationType="sum" measureType="simple">
+      <measure id="OINAVNW" order="245" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="OINAVNW"/>
         <measureMapping columnObjectName="Projn_MAT_MOV" columnName="OINAVNW"/>
       </measure>
@@ -1270,8 +1516,8 @@ in(&quot;BWART&quot;,'101','102','201','202','261','262','301','311','541','542'
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-<layout>
-  <shapes>
+  <layout>
+    <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="51" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -1281,5 +1527,5 @@ in(&quot;BWART&quot;,'101','102','201','202','261','262','301','311','541','542'
         <rectangleSize height="70" width="199"/>
       </shape>
     </shapes>
-</layout>
+  </layout>
 </Calculation:scenario>

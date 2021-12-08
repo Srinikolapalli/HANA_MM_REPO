@@ -2,10 +2,10 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.po::ZHV_BV_VENDOR_DATA" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
   <origin/>
   <descriptions defaultDescription="ZHV_BV_VENDOR_DATA"/>
-  <metadata changedAt="2021-05-28 13:33:53.457"/>
+  <metadata activatedAt="2021-04-20 17:14:23.0" changedAt="2021-05-14 09:09:16.679" createdAt="2021-05-14 09:09:16.679"/>
   <localVariables/>
   <variableMappings/>
-  <informationModelLayout relativeWidthScenario="36"/>
+  <informationModelLayout relativeWidthScenario="33"/>
   <dataSources>
     <DataSource id="LFA1">
       <resourceUri>algoma.mm::LFA1</resourceUri>
@@ -15,9 +15,6 @@
     </DataSource>
     <DataSource id="LFM1">
       <resourceUri>algoma.mm::LFM1</resourceUri>
-    </DataSource>
-    <DataSource id="ADRC">
-      <resourceUri>algoma.mm::ADRC</resourceUri>
     </DataSource>
   </dataSources>
   <calculationViews>
@@ -495,7 +492,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="ASSIGN_TEST" source="ASSIGN_TEST"/>
       </input>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_LFA1_LFB2" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+    <calculationView xsi:type="Calculation:JoinView" id="Join_LFA1_LFB2" joinOrder="OUTSIDE_IN" joinType="inner">
       <descriptions/>
       <viewAttributes>
         <viewAttribute id="LFA1_LIFNR"/>
@@ -1103,7 +1100,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
       </input>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_LFA1_LFB1_LFM1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+    <calculationView xsi:type="Calculation:JoinView" id="Join_LFA1_LFB1_LFM1" joinOrder="OUTSIDE_IN" joinType="inner">
       <descriptions/>
       <viewAttributes>
         <viewAttribute id="LFA1_LIFNR"/>
@@ -1701,1857 +1698,1129 @@
       </input>
       <joinAttribute name="LFA1_LIFNR"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-      <descriptions/>
-      <viewAttributes>
-        <viewAttribute id="ADDRNUMBER"/>
-        <viewAttribute id="DATE_FROM"/>
-        <viewAttribute id="DATE_TO"/>
-        <viewAttribute id="NAME1"/>
-        <viewAttribute id="CITY1"/>
-        <viewAttribute id="POST_CODE1"/>
-        <viewAttribute id="PO_BOX"/>
-        <viewAttribute id="STR_SUPPL1"/>
-        <viewAttribute id="COUNTRY"/>
-        <viewAttribute id="REGION"/>
-        <viewAttribute id="ADDR_GROUP"/>
-        <viewAttribute id="SORT1"/>
-        <viewAttribute id="TEL_NUMBER"/>
-        <viewAttribute id="FAX_NUMBER"/>
-        <viewAttribute id="MC_NAME1"/>
-        <viewAttribute id="MC_CITY1"/>
-      </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#ADRC">
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DATE_FROM" source="DATE_FROM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DATE_TO" source="DATE_TO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX" source="PO_BOX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADDR_GROUP" source="ADDR_GROUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SORT1" source="SORT1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TEL_NUMBER" source="TEL_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FAX_NUMBER" source="FAX_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MC_NAME1" source="MC_NAME1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MC_CITY1" source="MC_CITY1"/>
-      </input>
-    </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
-      <descriptions/>
-      <viewAttributes>
-        <viewAttribute id="LFA1_LIFNR"/>
-        <viewAttribute id="LFA1_LAND1"/>
-        <viewAttribute id="LFA1_NAME1"/>
-        <viewAttribute id="LFA1_NAME2"/>
-        <viewAttribute id="LFA1_NAME3"/>
-        <viewAttribute id="LFA1_NAME4"/>
-        <viewAttribute id="LFA1_ORT01"/>
-        <viewAttribute id="LFA1_ORT02"/>
-        <viewAttribute id="LFA1_PFACH"/>
-        <viewAttribute id="LFA1_PSTL2"/>
-        <viewAttribute id="LFA1_PSTLZ"/>
-        <viewAttribute id="LFA1_REGIO"/>
-        <viewAttribute id="LFA1_SORTL"/>
-        <viewAttribute id="LFA1_STRAS"/>
-        <viewAttribute id="LFA1_ADRNR"/>
-        <viewAttribute id="LFA1_MCOD1"/>
-        <viewAttribute id="LFA1_MCOD2"/>
-        <viewAttribute id="LFA1_MCOD3"/>
-        <viewAttribute id="LFA1_ANRED"/>
-        <viewAttribute id="LFA1_BAHNS"/>
-        <viewAttribute id="LFA1_BBBNR"/>
-        <viewAttribute id="LFA1_BBSNR"/>
-        <viewAttribute id="LFA1_BEGRU"/>
-        <viewAttribute id="LFA1_BRSCH"/>
-        <viewAttribute id="LFA1_BUBKZ"/>
-        <viewAttribute id="LFA1_DATLT"/>
-        <viewAttribute id="LFA1_DTAMS"/>
-        <viewAttribute id="LFA1_DTAWS"/>
-        <viewAttribute id="LFA1_ERDAT"/>
-        <viewAttribute id="LFA1_ERNAM"/>
-        <viewAttribute id="LFA1_ESRNR"/>
-        <viewAttribute id="LFA1_KONZS"/>
-        <viewAttribute id="LFA1_KTOKK"/>
-        <viewAttribute id="LFA1_KUNNR"/>
-        <viewAttribute id="LFA1_LNRZA"/>
-        <viewAttribute id="LFA1_LOEVM"/>
-        <viewAttribute id="LFA1_SPERR"/>
-        <viewAttribute id="LFA1_SPERM"/>
-        <viewAttribute id="LFA1_SPRAS"/>
-        <viewAttribute id="LFA1_STCD1"/>
-        <viewAttribute id="LFA1_STCD2"/>
-        <viewAttribute id="LFA1_STKZA"/>
-        <viewAttribute id="LFA1_STKZU"/>
-        <viewAttribute id="LFA1_TELBX"/>
-        <viewAttribute id="LFA1_TELF1"/>
-        <viewAttribute id="LFA1_TELF2"/>
-        <viewAttribute id="LFA1_TELFX"/>
-        <viewAttribute id="LFA1_TELTX"/>
-        <viewAttribute id="LFA1_TELX1"/>
-        <viewAttribute id="LFA1_XCPDK"/>
-        <viewAttribute id="LFA1_XZEMP"/>
-        <viewAttribute id="LFA1_VBUND"/>
-        <viewAttribute id="LFA1_FISKN"/>
-        <viewAttribute id="LFA1_STCEG"/>
-        <viewAttribute id="LFA1_STKZN"/>
-        <viewAttribute id="LFA1_SPERQ"/>
-        <viewAttribute id="LFA1_GBORT"/>
-        <viewAttribute id="LFA1_GBDAT"/>
-        <viewAttribute id="LFA1_SEXKZ"/>
-        <viewAttribute id="LFA1_KRAUS"/>
-        <viewAttribute id="LFA1_REVDB"/>
-        <viewAttribute id="LFA1_QSSYS"/>
-        <viewAttribute id="LFA1_KTOCK"/>
-        <viewAttribute id="LFA1_PFORT"/>
-        <viewAttribute id="LFA1_WERKS"/>
-        <viewAttribute id="LFA1_LTSNA"/>
-        <viewAttribute id="LFA1_WERKR"/>
-        <viewAttribute id="LFA1_PLKAL"/>
-        <viewAttribute id="LFA1_DUEFL"/>
-        <viewAttribute id="LFA1_TXJCD"/>
-        <viewAttribute id="LFA1_SPERZ"/>
-        <viewAttribute id="LFA1_SCACD"/>
-        <viewAttribute id="LFA1_SFRGR"/>
-        <viewAttribute id="LFA1_LZONE"/>
-        <viewAttribute id="LFA1_XLFZA"/>
-        <viewAttribute id="LFA1_DLGRP"/>
-        <viewAttribute id="LFA1_FITYP"/>
-        <viewAttribute id="LFA1_STCDT"/>
-        <viewAttribute id="LFA1_REGSS"/>
-        <viewAttribute id="LFA1_ACTSS"/>
-        <viewAttribute id="LFA1_STCD3"/>
-        <viewAttribute id="LFA1_STCD4"/>
-        <viewAttribute id="LFA1_STCD5"/>
-        <viewAttribute id="LFA1_IPISP"/>
-        <viewAttribute id="LFA1_TAXBS"/>
-        <viewAttribute id="LFA1_PROFS"/>
-        <viewAttribute id="LFA1_STGDL"/>
-        <viewAttribute id="LFA1_EMNFR"/>
-        <viewAttribute id="LFA1_LFURL"/>
-        <viewAttribute id="LFA1_J_1KFREPRE"/>
-        <viewAttribute id="LFA1_J_1KFTBUS"/>
-        <viewAttribute id="LFA1_J_1KFTIND"/>
-        <viewAttribute id="LFA1_CONFS"/>
-        <viewAttribute id="LFA1_UPDAT"/>
-        <viewAttribute id="LFA1_UPTIM"/>
-        <viewAttribute id="LFA1_NODEL"/>
-        <viewAttribute id="LFA1_QSSYSDAT"/>
-        <viewAttribute id="LFA1_PODKZB"/>
-        <viewAttribute id="LFA1_FISKU"/>
-        <viewAttribute id="LFA1_STENR"/>
-        <viewAttribute id="LFA1_CARRIER_CONF"/>
-        <viewAttribute id="LFA1_MIN_COMP"/>
-        <viewAttribute id="LFA1_TERM_LI"/>
-        <viewAttribute id="LFA1_CRC_NUM"/>
-        <viewAttribute id="LFA1_CVP_XBLCK"/>
-        <viewAttribute id="LFA1_RG"/>
-        <viewAttribute id="LFA1_EXP"/>
-        <viewAttribute id="LFA1_UF"/>
-        <viewAttribute id="LFA1_RGDATE"/>
-        <viewAttribute id="LFA1_RIC"/>
-        <viewAttribute id="LFA1_RNE"/>
-        <viewAttribute id="LFA1_RNEDATE"/>
-        <viewAttribute id="LFA1_CNAE"/>
-        <viewAttribute id="LFA1_LEGALNAT"/>
-        <viewAttribute id="LFA1_CRTN"/>
-        <viewAttribute id="LFA1_ICMSTAXPAY"/>
-        <viewAttribute id="LFA1_INDTYP"/>
-        <viewAttribute id="LFA1_TDT"/>
-        <viewAttribute id="LFA1_COMSIZE"/>
-        <viewAttribute id="LFA1_DECREGPC"/>
-        <viewAttribute id="LFA1_DUNSP4"/>
-        <viewAttribute id="LFA1_J_SC_CURRENCY"/>
-        <viewAttribute id="LFA1_ALC"/>
-        <viewAttribute id="LFA1_PMT_OFFICE"/>
-        <viewAttribute id="LFA1_PPA_RELEVANT"/>
-        <viewAttribute id="LFA1_PSOFG"/>
-        <viewAttribute id="LFA1_PSOIS"/>
-        <viewAttribute id="LFA1_PSON1"/>
-        <viewAttribute id="LFA1_PSON2"/>
-        <viewAttribute id="LFA1_PSON3"/>
-        <viewAttribute id="LFA1_PSOVN"/>
-        <viewAttribute id="LFA1_PSOTL"/>
-        <viewAttribute id="LFA1_PSOHS"/>
-        <viewAttribute id="LFA1_PSOST"/>
-        <viewAttribute id="LFA1_BORGR_DATUN"/>
-        <viewAttribute id="LFA1_BORGR_YEAUN"/>
-        <viewAttribute id="LFA1_TRANSPORT_CHAIN"/>
-        <viewAttribute id="LFA1_SCHEDULING_TYPE"/>
-        <viewAttribute id="LFA1_SUBMI_RELEVANT"/>
-        <viewAttribute id="LFA1_ZSTR_SUPPL3"/>
-        <viewAttribute id="LFA1_ZSTR_SUPPL1"/>
-        <viewAttribute id="LFA1_ZSTR_SUPPL2"/>
-        <viewAttribute id="LFA1_ZLOCATION"/>
-        <viewAttribute id="LFA1_ZTEL_NUMBER"/>
-        <viewAttribute id="LFA1_ZTEL_EXTENS"/>
-        <viewAttribute id="LFA1_ZMOB_NUMBER"/>
-        <viewAttribute id="LFA1_ZSMTP_ADDR"/>
-        <viewAttribute id="LFA1_ZFAX_NUMBER"/>
-        <viewAttribute id="LFA1_ZFAX_EXTENS"/>
-        <viewAttribute id="LFB1_BUKRS"/>
-        <viewAttribute id="LFB1_PERNR"/>
-        <viewAttribute id="LFB1_ERDAT"/>
-        <viewAttribute id="LFB1_ERNAM"/>
-        <viewAttribute id="LFB1_SPERR"/>
-        <viewAttribute id="LFB1_LOEVM"/>
-        <viewAttribute id="LFB1_ZUAWA"/>
-        <viewAttribute id="LFB1_AKONT"/>
-        <viewAttribute id="LFB1_BEGRU"/>
-        <viewAttribute id="LFB1_VZSKZ"/>
-        <viewAttribute id="LFB1_ZWELS"/>
-        <viewAttribute id="LFB1_XVERR"/>
-        <viewAttribute id="LFB1_ZAHLS"/>
-        <viewAttribute id="LFB1_ZTERM"/>
-        <viewAttribute id="LFB1_EIKTO"/>
-        <viewAttribute id="LFB1_ZSABE"/>
-        <viewAttribute id="LFB1_KVERM"/>
-        <viewAttribute id="LFB1_FDGRV"/>
-        <viewAttribute id="LFB1_BUSAB"/>
-        <viewAttribute id="LFB1_LNRZE"/>
-        <viewAttribute id="LFB1_LNRZB"/>
-        <viewAttribute id="LFB1_ZINDT"/>
-        <viewAttribute id="LFB1_ZINRT"/>
-        <viewAttribute id="LFB1_DATLZ"/>
-        <viewAttribute id="LFB1_XDEZV"/>
-        <viewAttribute id="LFB1_REPRF"/>
-        <viewAttribute id="LFB1_TOGRU"/>
-        <viewAttribute id="LFB1_HBKID"/>
-        <viewAttribute id="LFB1_XPORE"/>
-        <viewAttribute id="LFB1_QSZNR"/>
-        <viewAttribute id="LFB1_QSZDT"/>
-        <viewAttribute id="LFB1_QSSKZ"/>
-        <viewAttribute id="LFB1_BLNKZ"/>
-        <viewAttribute id="LFB1_MINDK"/>
-        <viewAttribute id="LFB1_ALTKN"/>
-        <viewAttribute id="LFB1_ZGRUP"/>
-        <viewAttribute id="LFB1_MGRUP"/>
-        <viewAttribute id="LFB1_UZAWE"/>
-        <viewAttribute id="LFB1_QSREC"/>
-        <viewAttribute id="LFB1_QSBGR"/>
-        <viewAttribute id="LFB1_QLAND"/>
-        <viewAttribute id="LFB1_XEDIP"/>
-        <viewAttribute id="LFB1_FRGRP"/>
-        <viewAttribute id="LFB1_TOGRR"/>
-        <viewAttribute id="LFB1_TLFXS"/>
-        <viewAttribute id="LFB1_INTAD"/>
-        <viewAttribute id="LFB1_XLFZB"/>
-        <viewAttribute id="LFB1_GUZTE"/>
-        <viewAttribute id="LFB1_GRICD"/>
-        <viewAttribute id="LFB1_GRIDT"/>
-        <viewAttribute id="LFB1_XAUSZ"/>
-        <viewAttribute id="LFB1_CERDT"/>
-        <viewAttribute id="LFB1_CONFS"/>
-        <viewAttribute id="LFB1_UPDAT"/>
-        <viewAttribute id="LFB1_UPTIM"/>
-        <viewAttribute id="LFB1_NODEL"/>
-        <viewAttribute id="LFB1_TLFNS"/>
-        <viewAttribute id="LFB1_AVSND"/>
-        <viewAttribute id="LFB1_AD_HASH"/>
-        <viewAttribute id="LFB1_CVP_XBLCK_B"/>
-        <viewAttribute id="LFB1_CIIUCODE"/>
-        <viewAttribute id="LFB1_ZBOKD"/>
-        <viewAttribute id="LFB1_ZQSSKZ"/>
-        <viewAttribute id="LFB1_ZQSZDT"/>
-        <viewAttribute id="LFB1_ZQSZNR"/>
-        <viewAttribute id="LFB1_ZMINDAT"/>
-        <viewAttribute id="LFB1_J_SC_SUBCONTYPE"/>
-        <viewAttribute id="LFB1_J_SC_COMPDATE"/>
-        <viewAttribute id="LFB1_J_SC_OFFSM"/>
-        <viewAttribute id="LFB1_J_SC_OFFSR"/>
-        <viewAttribute id="LFB1_GMVKZK"/>
-        <viewAttribute id="LFB1_PREPAY_RELEVANT"/>
-        <viewAttribute id="LFB1_ASSIGN_TEST"/>
-        <viewAttribute id="LFM1_EKORG"/>
-        <viewAttribute id="LFM1_ERDAT"/>
-        <viewAttribute id="LFM1_ERNAM"/>
-        <viewAttribute id="LFM1_SPERM"/>
-        <viewAttribute id="LFM1_LOEVM"/>
-        <viewAttribute id="LFM1_LFABC"/>
-        <viewAttribute id="LFM1_WAERS"/>
-        <viewAttribute id="LFM1_VERKF"/>
-        <viewAttribute id="LFM1_TELF1"/>
-        <viewAttribute id="LFM1_ZTERM"/>
-        <viewAttribute id="LFM1_INCO1"/>
-        <viewAttribute id="LFM1_INCO2"/>
-        <viewAttribute id="LFM1_WEBRE"/>
-        <viewAttribute id="LFM1_KZABS"/>
-        <viewAttribute id="LFM1_KALSK"/>
-        <viewAttribute id="LFM1_KZAUT"/>
-        <viewAttribute id="LFM1_EXPVZ"/>
-        <viewAttribute id="LFM1_ZOLLA"/>
-        <viewAttribute id="LFM1_MEPRF"/>
-        <viewAttribute id="LFM1_EKGRP"/>
-        <viewAttribute id="LFM1_XERSY"/>
-        <viewAttribute id="LFM1_MRPPP"/>
-        <viewAttribute id="LFM1_LFRHY"/>
-        <viewAttribute id="LFM1_LIBES"/>
-        <viewAttribute id="LFM1_LIPRE"/>
-        <viewAttribute id="LFM1_LISER"/>
-        <viewAttribute id="LFM1_INCOV"/>
-        <viewAttribute id="LFM1_INCO2_L"/>
-        <viewAttribute id="LFM1_INCO3_L"/>
-        <viewAttribute id="LFM1_PRFRE"/>
-        <viewAttribute id="LFM1_NRGEW"/>
-        <viewAttribute id="LFM1_BOIND"/>
-        <viewAttribute id="LFM1_BLIND"/>
-        <viewAttribute id="LFM1_KZRET"/>
-        <viewAttribute id="LFM1_SKRIT"/>
-        <viewAttribute id="LFM1_BSTAE"/>
-        <viewAttribute id="LFM1_RDPRF"/>
-        <viewAttribute id="LFM1_MEGRU"/>
-        <viewAttribute id="LFM1_BOPNR"/>
-        <viewAttribute id="LFM1_XERSR"/>
-        <viewAttribute id="LFM1_EIKTO"/>
-        <viewAttribute id="LFM1_ABUEB"/>
-        <viewAttribute id="LFM1_PAPRF"/>
-        <viewAttribute id="LFM1_AGREL"/>
-        <viewAttribute id="LFM1_XNBWY"/>
-        <viewAttribute id="LFM1_VSBED"/>
-        <viewAttribute id="LFM1_LEBRE"/>
-        <viewAttribute id="LFM1_BOLRE"/>
-        <viewAttribute id="LFM1_UMSAE"/>
-        <viewAttribute id="LFM1_VENDOR_RMA_REQ"/>
-        <viewAttribute id="LFM1_J_1NBOESL"/>
-        <viewAttribute id="LFM1_AUBEL"/>
-        <viewAttribute id="LFM1_VALID_PRO"/>
-        <viewAttribute id="LFM1_FSH_SC_CID"/>
-        <viewAttribute id="LFM1_FSH_VAS_DETC"/>
-        <viewAttribute id="LFM1_UPPRS"/>
-        <viewAttribute id="LFM1_ACTIVITY_PROFIL"/>
-        <viewAttribute id="LFM1_TRANSPORT_CHAIN"/>
-        <viewAttribute id="LFA1_J_SC_CAPITAL"/>
-        <viewAttribute id="LFA1_STAGING_TIME"/>
-        <viewAttribute id="LFB1_WEBTR"/>
-        <viewAttribute id="LFB1_KULTG"/>
-        <viewAttribute id="LFB1_BASIS_PNT"/>
-        <viewAttribute id="LFM1_MINBW"/>
-        <viewAttribute id="LFM1_PLIFZ"/>
-        <viewAttribute id="LFM1_VENSL"/>
-        <viewAttribute id="LFM1_HSCABS"/>
-        <viewAttribute id="LFM1_HSCPE"/>
-        <viewAttribute id="LFM1_HSCMIN"/>
-        <viewAttribute id="LFM1_HSCMAX"/>
-        <viewAttribute id="LFM1_STAGING_TIME"/>
-        <viewAttribute id="ADRC_DATE_FROM"/>
-        <viewAttribute id="ADRC_DATE_TO"/>
-        <viewAttribute id="ADRC_NAME1"/>
-        <viewAttribute id="ADRC_CITY1"/>
-        <viewAttribute id="ADRC_POST_CODE1"/>
-        <viewAttribute id="ADRC_PO_BOX"/>
-        <viewAttribute id="ADRC_STR_SUPPL1"/>
-        <viewAttribute id="ADRC_COUNTRY"/>
-        <viewAttribute id="ADRC_REGION"/>
-        <viewAttribute id="ADRC_ADDR_GROUP"/>
-        <viewAttribute id="ADRC_SORT1"/>
-        <viewAttribute id="ADRC_TEL_NUMBER"/>
-        <viewAttribute id="ADRC_FAX_NUMBER"/>
-        <viewAttribute id="ADRC_MC_NAME1"/>
-        <viewAttribute id="ADRC_MC_CITY1"/>
-      </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Join_LFA1_LFB1_LFM1">
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LIFNR" source="LFA1_LIFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LAND1" source="LFA1_LAND1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME1" source="LFA1_NAME1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME2" source="LFA1_NAME2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME3" source="LFA1_NAME3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NAME4" source="LFA1_NAME4"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ORT01" source="LFA1_ORT01"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ORT02" source="LFA1_ORT02"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PFACH" source="LFA1_PFACH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSTL2" source="LFA1_PSTL2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSTLZ" source="LFA1_PSTLZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_REGIO" source="LFA1_REGIO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SORTL" source="LFA1_SORTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STRAS" source="LFA1_STRAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ADRNR" source="LFA1_ADRNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MCOD1" source="LFA1_MCOD1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MCOD2" source="LFA1_MCOD2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MCOD3" source="LFA1_MCOD3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ANRED" source="LFA1_ANRED"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BAHNS" source="LFA1_BAHNS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BBBNR" source="LFA1_BBBNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BBSNR" source="LFA1_BBSNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BEGRU" source="LFA1_BEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BRSCH" source="LFA1_BRSCH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BUBKZ" source="LFA1_BUBKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DATLT" source="LFA1_DATLT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DTAMS" source="LFA1_DTAMS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DTAWS" source="LFA1_DTAWS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ERDAT" source="LFA1_ERDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ERNAM" source="LFA1_ERNAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ESRNR" source="LFA1_ESRNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KONZS" source="LFA1_KONZS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOKK" source="LFA1_KTOKK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KUNNR" source="LFA1_KUNNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LNRZA" source="LFA1_LNRZA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LOEVM" source="LFA1_LOEVM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERR" source="LFA1_SPERR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERM" source="LFA1_SPERM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPRAS" source="LFA1_SPRAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCD1" source="LFA1_STCD1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCD2" source="LFA1_STCD2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STKZA" source="LFA1_STKZA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STKZU" source="LFA1_STKZU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELBX" source="LFA1_TELBX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELF1" source="LFA1_TELF1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELF2" source="LFA1_TELF2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELFX" source="LFA1_TELFX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELTX" source="LFA1_TELTX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TELX1" source="LFA1_TELX1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_XCPDK" source="LFA1_XCPDK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_XZEMP" source="LFA1_XZEMP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_VBUND" source="LFA1_VBUND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_FISKN" source="LFA1_FISKN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCEG" source="LFA1_STCEG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STKZN" source="LFA1_STKZN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERQ" source="LFA1_SPERQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_GBORT" source="LFA1_GBORT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_GBDAT" source="LFA1_GBDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SEXKZ" source="LFA1_SEXKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KRAUS" source="LFA1_KRAUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_REVDB" source="LFA1_REVDB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_QSSYS" source="LFA1_QSSYS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_KTOCK" source="LFA1_KTOCK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PFORT" source="LFA1_PFORT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_WERKS" source="LFA1_WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LTSNA" source="LFA1_LTSNA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_WERKR" source="LFA1_WERKR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PLKAL" source="LFA1_PLKAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DUEFL" source="LFA1_DUEFL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TXJCD" source="LFA1_TXJCD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SPERZ" source="LFA1_SPERZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SCACD" source="LFA1_SCACD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SFRGR" source="LFA1_SFRGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LZONE" source="LFA1_LZONE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_XLFZA" source="LFA1_XLFZA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DLGRP" source="LFA1_DLGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_FITYP" source="LFA1_FITYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCDT" source="LFA1_STCDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_REGSS" source="LFA1_REGSS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ACTSS" source="LFA1_ACTSS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCD3" source="LFA1_STCD3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCD4" source="LFA1_STCD4"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STCD5" source="LFA1_STCD5"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_IPISP" source="LFA1_IPISP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TAXBS" source="LFA1_TAXBS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PROFS" source="LFA1_PROFS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STGDL" source="LFA1_STGDL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_EMNFR" source="LFA1_EMNFR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LFURL" source="LFA1_LFURL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_J_1KFREPRE" source="LFA1_J_1KFREPRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_J_1KFTBUS" source="LFA1_J_1KFTBUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_J_1KFTIND" source="LFA1_J_1KFTIND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CONFS" source="LFA1_CONFS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_UPDAT" source="LFA1_UPDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_UPTIM" source="LFA1_UPTIM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_NODEL" source="LFA1_NODEL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_QSSYSDAT" source="LFA1_QSSYSDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PODKZB" source="LFA1_PODKZB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_FISKU" source="LFA1_FISKU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STENR" source="LFA1_STENR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CARRIER_CONF" source="LFA1_CARRIER_CONF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MIN_COMP" source="LFA1_MIN_COMP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TERM_LI" source="LFA1_TERM_LI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CRC_NUM" source="LFA1_CRC_NUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CVP_XBLCK" source="LFA1_CVP_XBLCK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_RG" source="LFA1_RG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_EXP" source="LFA1_EXP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_UF" source="LFA1_UF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_RGDATE" source="LFA1_RGDATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_RIC" source="LFA1_RIC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_RNE" source="LFA1_RNE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_RNEDATE" source="LFA1_RNEDATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CNAE" source="LFA1_CNAE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_LEGALNAT" source="LFA1_LEGALNAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_CRTN" source="LFA1_CRTN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ICMSTAXPAY" source="LFA1_ICMSTAXPAY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_INDTYP" source="LFA1_INDTYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TDT" source="LFA1_TDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_COMSIZE" source="LFA1_COMSIZE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DECREGPC" source="LFA1_DECREGPC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_DUNSP4" source="LFA1_DUNSP4"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_J_SC_CURRENCY" source="LFA1_J_SC_CURRENCY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ALC" source="LFA1_ALC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PMT_OFFICE" source="LFA1_PMT_OFFICE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PPA_RELEVANT" source="LFA1_PPA_RELEVANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOFG" source="LFA1_PSOFG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOIS" source="LFA1_PSOIS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSON1" source="LFA1_PSON1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSON2" source="LFA1_PSON2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSON3" source="LFA1_PSON3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOVN" source="LFA1_PSOVN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOTL" source="LFA1_PSOTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOHS" source="LFA1_PSOHS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_PSOST" source="LFA1_PSOST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BORGR_DATUN" source="LFA1_BORGR_DATUN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_BORGR_YEAUN" source="LFA1_BORGR_YEAUN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_TRANSPORT_CHAIN" source="LFA1_TRANSPORT_CHAIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SCHEDULING_TYPE" source="LFA1_SCHEDULING_TYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_SUBMI_RELEVANT" source="LFA1_SUBMI_RELEVANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZSTR_SUPPL3" source="LFA1_ZSTR_SUPPL3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZSTR_SUPPL1" source="LFA1_ZSTR_SUPPL1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZSTR_SUPPL2" source="LFA1_ZSTR_SUPPL2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZLOCATION" source="LFA1_ZLOCATION"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZTEL_NUMBER" source="LFA1_ZTEL_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZTEL_EXTENS" source="LFA1_ZTEL_EXTENS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZMOB_NUMBER" source="LFA1_ZMOB_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZSMTP_ADDR" source="LFA1_ZSMTP_ADDR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZFAX_NUMBER" source="LFA1_ZFAX_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ZFAX_EXTENS" source="LFA1_ZFAX_EXTENS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_BUKRS" source="LFB1_BUKRS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_PERNR" source="LFB1_PERNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ERDAT" source="LFB1_ERDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ERNAM" source="LFB1_ERNAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_SPERR" source="LFB1_SPERR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_LOEVM" source="LFB1_LOEVM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZUAWA" source="LFB1_ZUAWA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_AKONT" source="LFB1_AKONT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_BEGRU" source="LFB1_BEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_VZSKZ" source="LFB1_VZSKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZWELS" source="LFB1_ZWELS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XVERR" source="LFB1_XVERR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZAHLS" source="LFB1_ZAHLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZTERM" source="LFB1_ZTERM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_EIKTO" source="LFB1_EIKTO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZSABE" source="LFB1_ZSABE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_KVERM" source="LFB1_KVERM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_FDGRV" source="LFB1_FDGRV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_BUSAB" source="LFB1_BUSAB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_LNRZE" source="LFB1_LNRZE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_LNRZB" source="LFB1_LNRZB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZINDT" source="LFB1_ZINDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZINRT" source="LFB1_ZINRT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_DATLZ" source="LFB1_DATLZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XDEZV" source="LFB1_XDEZV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_REPRF" source="LFB1_REPRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_TOGRU" source="LFB1_TOGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_HBKID" source="LFB1_HBKID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XPORE" source="LFB1_XPORE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QSZNR" source="LFB1_QSZNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QSZDT" source="LFB1_QSZDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QSSKZ" source="LFB1_QSSKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_BLNKZ" source="LFB1_BLNKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_MINDK" source="LFB1_MINDK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ALTKN" source="LFB1_ALTKN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZGRUP" source="LFB1_ZGRUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_MGRUP" source="LFB1_MGRUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_UZAWE" source="LFB1_UZAWE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QSREC" source="LFB1_QSREC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QSBGR" source="LFB1_QSBGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_QLAND" source="LFB1_QLAND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XEDIP" source="LFB1_XEDIP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_FRGRP" source="LFB1_FRGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_TOGRR" source="LFB1_TOGRR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_TLFXS" source="LFB1_TLFXS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_INTAD" source="LFB1_INTAD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XLFZB" source="LFB1_XLFZB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_GUZTE" source="LFB1_GUZTE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_GRICD" source="LFB1_GRICD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_GRIDT" source="LFB1_GRIDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_XAUSZ" source="LFB1_XAUSZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_CERDT" source="LFB1_CERDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_CONFS" source="LFB1_CONFS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_UPDAT" source="LFB1_UPDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_UPTIM" source="LFB1_UPTIM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_NODEL" source="LFB1_NODEL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_TLFNS" source="LFB1_TLFNS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_AVSND" source="LFB1_AVSND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_AD_HASH" source="LFB1_AD_HASH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_CVP_XBLCK_B" source="LFB1_CVP_XBLCK_B"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_CIIUCODE" source="LFB1_CIIUCODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZBOKD" source="LFB1_ZBOKD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZQSSKZ" source="LFB1_ZQSSKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZQSZDT" source="LFB1_ZQSZDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZQSZNR" source="LFB1_ZQSZNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ZMINDAT" source="LFB1_ZMINDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_J_SC_SUBCONTYPE" source="LFB1_J_SC_SUBCONTYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_J_SC_COMPDATE" source="LFB1_J_SC_COMPDATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_J_SC_OFFSM" source="LFB1_J_SC_OFFSM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_J_SC_OFFSR" source="LFB1_J_SC_OFFSR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_GMVKZK" source="LFB1_GMVKZK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_PREPAY_RELEVANT" source="LFB1_PREPAY_RELEVANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_ASSIGN_TEST" source="LFB1_ASSIGN_TEST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_EKORG" source="LFM1_EKORG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ERDAT" source="LFM1_ERDAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ERNAM" source="LFM1_ERNAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_SPERM" source="LFM1_SPERM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LOEVM" source="LFM1_LOEVM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LFABC" source="LFM1_LFABC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_WAERS" source="LFM1_WAERS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_VERKF" source="LFM1_VERKF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_TELF1" source="LFM1_TELF1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ZTERM" source="LFM1_ZTERM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_INCO1" source="LFM1_INCO1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_INCO2" source="LFM1_INCO2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_WEBRE" source="LFM1_WEBRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_KZABS" source="LFM1_KZABS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_KALSK" source="LFM1_KALSK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_KZAUT" source="LFM1_KZAUT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_EXPVZ" source="LFM1_EXPVZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ZOLLA" source="LFM1_ZOLLA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_MEPRF" source="LFM1_MEPRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_EKGRP" source="LFM1_EKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_XERSY" source="LFM1_XERSY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_MRPPP" source="LFM1_MRPPP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LFRHY" source="LFM1_LFRHY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LIBES" source="LFM1_LIBES"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LIPRE" source="LFM1_LIPRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LISER" source="LFM1_LISER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_INCOV" source="LFM1_INCOV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_INCO2_L" source="LFM1_INCO2_L"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_INCO3_L" source="LFM1_INCO3_L"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_PRFRE" source="LFM1_PRFRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_NRGEW" source="LFM1_NRGEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_BOIND" source="LFM1_BOIND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_BLIND" source="LFM1_BLIND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_KZRET" source="LFM1_KZRET"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_SKRIT" source="LFM1_SKRIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_BSTAE" source="LFM1_BSTAE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_RDPRF" source="LFM1_RDPRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_MEGRU" source="LFM1_MEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_BOPNR" source="LFM1_BOPNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_XERSR" source="LFM1_XERSR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_EIKTO" source="LFM1_EIKTO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ABUEB" source="LFM1_ABUEB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_PAPRF" source="LFM1_PAPRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_AGREL" source="LFM1_AGREL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_XNBWY" source="LFM1_XNBWY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_VSBED" source="LFM1_VSBED"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_LEBRE" source="LFM1_LEBRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_BOLRE" source="LFM1_BOLRE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_UMSAE" source="LFM1_UMSAE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_VENDOR_RMA_REQ" source="LFM1_VENDOR_RMA_REQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_J_1NBOESL" source="LFM1_J_1NBOESL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_AUBEL" source="LFM1_AUBEL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_VALID_PRO" source="LFM1_VALID_PRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_FSH_SC_CID" source="LFM1_FSH_SC_CID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_FSH_VAS_DETC" source="LFM1_FSH_VAS_DETC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_UPPRS" source="LFM1_UPPRS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_ACTIVITY_PROFIL" source="LFM1_ACTIVITY_PROFIL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_TRANSPORT_CHAIN" source="LFM1_TRANSPORT_CHAIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_J_SC_CAPITAL" source="LFA1_J_SC_CAPITAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_STAGING_TIME" source="LFA1_STAGING_TIME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_WEBTR" source="LFB1_WEBTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_KULTG" source="LFB1_KULTG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFB1_BASIS_PNT" source="LFB1_BASIS_PNT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_MINBW" source="LFM1_MINBW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_PLIFZ" source="LFM1_PLIFZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_VENSL" source="LFM1_VENSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_HSCABS" source="LFM1_HSCABS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_HSCPE" source="LFM1_HSCPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_HSCMIN" source="LFM1_HSCMIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_HSCMAX" source="LFM1_HSCMAX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFM1_STAGING_TIME" source="LFM1_STAGING_TIME"/>
-      </input>
-      <input node="#Projection_1">
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_DATE_FROM" source="DATE_FROM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_DATE_TO" source="DATE_TO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_NAME1" source="NAME1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_CITY1" source="CITY1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_POST_CODE1" source="POST_CODE1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_PO_BOX" source="PO_BOX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_STR_SUPPL1" source="STR_SUPPL1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_COUNTRY" source="COUNTRY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_REGION" source="REGION"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_ADDR_GROUP" source="ADDR_GROUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_SORT1" source="SORT1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_TEL_NUMBER" source="TEL_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_FAX_NUMBER" source="FAX_NUMBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_MC_NAME1" source="MC_NAME1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADRC_MC_CITY1" source="MC_CITY1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_ADRNR" source="ADDRNUMBER"/>
-      </input>
-      <joinAttribute name="LFA1_ADRNR"/>
-    </calculationView>
   </calculationViews>
-  <logicalModel id="Join_1">
+  <logicalModel id="Join_LFA1_LFB1_LFM1">
     <descriptions/>
     <attributes>
       <attribute id="LFA1_LIFNR" order="1" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LIFNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LIFNR"/>
       </attribute>
       <attribute id="LFA1_LAND1" order="2" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Country Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LAND1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LAND1"/>
       </attribute>
       <attribute id="LFA1_NAME1" order="3" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_NAME1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_NAME1"/>
       </attribute>
       <attribute id="LFA1_NAME2" order="4" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_NAME2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_NAME2"/>
       </attribute>
       <attribute id="LFA1_NAME3" order="5" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 3"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_NAME3"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_NAME3"/>
       </attribute>
       <attribute id="LFA1_NAME4" order="6" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 4"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_NAME4"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_NAME4"/>
       </attribute>
       <attribute id="LFA1_ORT01" order="7" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="City"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ORT01"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ORT01"/>
       </attribute>
       <attribute id="LFA1_ORT02" order="8" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="District"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ORT02"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ORT02"/>
       </attribute>
       <attribute id="LFA1_PFACH" order="9" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="PO Box"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PFACH"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PFACH"/>
       </attribute>
       <attribute id="LFA1_PSTL2" order="10" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="P.O. Box Postal Code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSTL2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSTL2"/>
       </attribute>
       <attribute id="LFA1_PSTLZ" order="11" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Postal Code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSTLZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSTLZ"/>
       </attribute>
       <attribute id="LFA1_REGIO" order="12" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Region (State, Province, County)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_REGIO"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_REGIO"/>
       </attribute>
       <attribute id="LFA1_SORTL" order="13" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Sort field"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SORTL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SORTL"/>
       </attribute>
       <attribute id="LFA1_STRAS" order="14" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street and House Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STRAS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STRAS"/>
       </attribute>
       <attribute id="LFA1_ADRNR" order="15" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Address"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ADRNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ADRNR"/>
       </attribute>
       <attribute id="LFA1_MCOD1" order="16" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Search term for matchcode search"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_MCOD1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_MCOD1"/>
       </attribute>
       <attribute id="LFA1_MCOD2" order="17" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Search term for matchcode search"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_MCOD2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_MCOD2"/>
       </attribute>
       <attribute id="LFA1_MCOD3" order="18" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Search term for matchcode search"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_MCOD3"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_MCOD3"/>
       </attribute>
       <attribute id="LFA1_ANRED" order="19" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Title"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ANRED"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ANRED"/>
       </attribute>
       <attribute id="LFA1_BAHNS" order="20" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Train station"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BAHNS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BAHNS"/>
       </attribute>
       <attribute id="LFA1_BBBNR" order="21" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="International location number (part 1)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BBBNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BBBNR"/>
       </attribute>
       <attribute id="LFA1_BBSNR" order="22" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="International location number (Part 2)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BBSNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BBSNR"/>
       </attribute>
       <attribute id="LFA1_BEGRU" order="23" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Authorization Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BEGRU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BEGRU"/>
       </attribute>
       <attribute id="LFA1_BRSCH" order="24" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Industry key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BRSCH"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BRSCH"/>
       </attribute>
       <attribute id="LFA1_BUBKZ" order="25" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Check digit for the international location number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BUBKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BUBKZ"/>
       </attribute>
       <attribute id="LFA1_DATLT" order="26" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Data communication line no."/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DATLT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DATLT"/>
       </attribute>
       <attribute id="LFA1_DTAMS" order="27" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Report key for data medium exchange"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DTAMS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DTAMS"/>
       </attribute>
       <attribute id="LFA1_DTAWS" order="28" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Instruction key for data medium exchange"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DTAWS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DTAWS"/>
       </attribute>
       <attribute id="LFA1_ERDAT" order="29" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date on which the Record Was Created"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ERDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ERDAT"/>
       </attribute>
       <attribute id="LFA1_ERNAM" order="30" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name of Person who Created the Object"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ERNAM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ERNAM"/>
       </attribute>
       <attribute id="LFA1_ESRNR" order="31" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="POR subscriber number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ESRNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ESRNR"/>
       </attribute>
       <attribute id="LFA1_KONZS" order="32" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Group key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_KONZS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_KONZS"/>
       </attribute>
       <attribute id="LFA1_KTOKK" order="33" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor account group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_KTOKK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_KTOKK"/>
       </attribute>
       <attribute id="LFA1_KUNNR" order="34" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Customer Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_KUNNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_KUNNR"/>
       </attribute>
       <attribute id="LFA1_LNRZA" order="35" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Account Number of the Alternative Payee"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LNRZA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LNRZA"/>
       </attribute>
       <attribute id="LFA1_LOEVM" order="36" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Central Deletion Flag for Master Record"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LOEVM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LOEVM"/>
       </attribute>
       <attribute id="LFA1_SPERR" order="37" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Central posting block"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SPERR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SPERR"/>
       </attribute>
       <attribute id="LFA1_SPERM" order="38" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Centrally imposed purchasing block"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SPERM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SPERM"/>
       </attribute>
       <attribute id="LFA1_SPRAS" order="39" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Language Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SPRAS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SPRAS"/>
       </attribute>
       <attribute id="LFA1_STCD1" order="40" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCD1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCD1"/>
       </attribute>
       <attribute id="LFA1_STCD2" order="41" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCD2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCD2"/>
       </attribute>
       <attribute id="LFA1_STKZA" order="42" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Business Partner Subject to Equalization Tax?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STKZA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STKZA"/>
       </attribute>
       <attribute id="LFA1_STKZU" order="43" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Liable for VAT"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STKZU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STKZU"/>
       </attribute>
       <attribute id="LFA1_TELBX" order="44" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Telebox number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELBX"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELBX"/>
       </attribute>
       <attribute id="LFA1_TELF1" order="45" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First telephone number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELF1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELF1"/>
       </attribute>
       <attribute id="LFA1_TELF2" order="46" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Second telephone number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELF2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELF2"/>
       </attribute>
       <attribute id="LFA1_TELFX" order="47" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Fax Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELFX"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELFX"/>
       </attribute>
       <attribute id="LFA1_TELTX" order="48" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Teletex number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELTX"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELTX"/>
       </attribute>
       <attribute id="LFA1_TELX1" order="49" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Telex number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TELX1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TELX1"/>
       </attribute>
       <attribute id="LFA1_XCPDK" order="50" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Is the account a one-time account?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_XCPDK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_XCPDK"/>
       </attribute>
       <attribute id="LFA1_XZEMP" order="51" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Alternative payee in document allowed ?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_XZEMP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_XZEMP"/>
       </attribute>
       <attribute id="LFA1_VBUND" order="52" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Company ID of trading partner"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_VBUND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_VBUND"/>
       </attribute>
       <attribute id="LFA1_FISKN" order="53" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Account number of the master record with fiscal address"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_FISKN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_FISKN"/>
       </attribute>
       <attribute id="LFA1_STCEG" order="54" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="VAT Registration Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCEG"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCEG"/>
       </attribute>
       <attribute id="LFA1_STKZN" order="55" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Natural Person"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STKZN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STKZN"/>
       </attribute>
       <attribute id="LFA1_SPERQ" order="56" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Function That Will Be Blocked"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SPERQ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SPERQ"/>
       </attribute>
       <attribute id="LFA1_GBORT" order="57" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Place of birth of the person subject to withholding tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_GBORT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_GBORT"/>
       </attribute>
       <attribute id="LFA1_GBDAT" order="58" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date of birth of the person subject to withholding tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_GBDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_GBDAT"/>
       </attribute>
       <attribute id="LFA1_SEXKZ" order="59" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Key for the Sex of the Person Subject to Withholding Tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SEXKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SEXKZ"/>
       </attribute>
       <attribute id="LFA1_KRAUS" order="60" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Credit information number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_KRAUS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_KRAUS"/>
       </attribute>
       <attribute id="LFA1_REVDB" order="61" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Last review (external)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_REVDB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_REVDB"/>
       </attribute>
       <attribute id="LFA1_QSSYS" order="62" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor's QM system"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_QSSYS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_QSSYS"/>
       </attribute>
       <attribute id="LFA1_KTOCK" order="63" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Reference Account Group for One-Time Account (Vendor)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_KTOCK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_KTOCK"/>
       </attribute>
       <attribute id="LFA1_PFORT" order="64" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="PO Box city"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PFORT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PFORT"/>
       </attribute>
       <attribute id="LFA1_WERKS" order="65" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Plant (Own or External)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_WERKS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_WERKS"/>
       </attribute>
       <attribute id="LFA1_LTSNA" order="66" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: vendor sub-range relevant"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LTSNA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LTSNA"/>
       </attribute>
       <attribute id="LFA1_WERKR" order="67" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: plant level relevant"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_WERKR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_WERKR"/>
       </attribute>
       <attribute id="LFA1_PLKAL" order="68" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Factory calendar key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PLKAL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PLKAL"/>
       </attribute>
       <attribute id="LFA1_DUEFL" order="69" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Status of Data Transfer into Subsequent Release"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DUEFL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DUEFL"/>
       </attribute>
       <attribute id="LFA1_TXJCD" order="70" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Jurisdiction"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TXJCD"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TXJCD"/>
       </attribute>
       <attribute id="LFA1_SPERZ" order="71" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Payment Block"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SPERZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SPERZ"/>
       </attribute>
       <attribute id="LFA1_SCACD" order="72" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Standard carrier access code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SCACD"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SCACD"/>
       </attribute>
       <attribute id="LFA1_SFRGR" order="73" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Forwarding agent freight group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SFRGR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SFRGR"/>
       </attribute>
       <attribute id="LFA1_LZONE" order="74" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Transportation zone to or from which the goods are delivered"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LZONE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LZONE"/>
       </attribute>
       <attribute id="LFA1_XLFZA" order="75" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Alternative payee using account number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_XLFZA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_XLFZA"/>
       </attribute>
       <attribute id="LFA1_DLGRP" order="76" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Service agent procedure group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DLGRP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DLGRP"/>
       </attribute>
       <attribute id="LFA1_FITYP" order="77" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_FITYP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_FITYP"/>
       </attribute>
       <attribute id="LFA1_STCDT" order="78" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number Type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCDT"/>
       </attribute>
       <attribute id="LFA1_REGSS" order="79" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Registered for Social Insurance"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_REGSS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_REGSS"/>
       </attribute>
       <attribute id="LFA1_ACTSS" order="80" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Activity Code for Social Insurance"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ACTSS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ACTSS"/>
       </attribute>
       <attribute id="LFA1_STCD3" order="81" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number 3"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCD3"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCD3"/>
       </attribute>
       <attribute id="LFA1_STCD4" order="82" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number 4"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCD4"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCD4"/>
       </attribute>
       <attribute id="LFA1_STCD5" order="83" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number 5"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STCD5"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STCD5"/>
       </attribute>
       <attribute id="LFA1_IPISP" order="84" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Split"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_IPISP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_IPISP"/>
       </attribute>
       <attribute id="LFA1_TAXBS" order="85" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Base in Percentage"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TAXBS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TAXBS"/>
       </attribute>
       <attribute id="LFA1_PROFS" order="86" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Profession"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PROFS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PROFS"/>
       </attribute>
       <attribute id="LFA1_STGDL" order="87" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Shipment: statistics group, transportation service agent"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STGDL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STGDL"/>
       </attribute>
       <attribute id="LFA1_EMNFR" order="88" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="External manufacturer code name or number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_EMNFR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_EMNFR"/>
       </attribute>
       <attribute id="LFA1_LFURL" order="89" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Uniform resource locator"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LFURL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LFURL"/>
       </attribute>
       <attribute id="LFA1_J_1KFREPRE" order="90" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name of Representative"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_J_1KFREPRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_J_1KFREPRE"/>
       </attribute>
       <attribute id="LFA1_J_1KFTBUS" order="91" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Type of Business"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_J_1KFTBUS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_J_1KFTBUS"/>
       </attribute>
       <attribute id="LFA1_J_1KFTIND" order="92" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Type of Industry"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_J_1KFTIND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_J_1KFTIND"/>
       </attribute>
       <attribute id="LFA1_CONFS" order="93" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Status of Change Authorization (Central)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CONFS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CONFS"/>
       </attribute>
       <attribute id="LFA1_UPDAT" order="94" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date on Which the Changes Were Confirmed"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_UPDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_UPDAT"/>
       </attribute>
       <attribute id="LFA1_UPTIM" order="95" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Time of Last Change Confirmation"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_UPTIM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_UPTIM"/>
       </attribute>
       <attribute id="LFA1_NODEL" order="96" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Central deletion block for master record"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_NODEL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_NODEL"/>
       </attribute>
       <attribute id="LFA1_QSSYSDAT" order="97" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Validity date of certification"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_QSSYSDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_QSSYSDAT"/>
       </attribute>
       <attribute id="LFA1_PODKZB" order="98" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor indicator relevant for proof of delivery"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PODKZB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PODKZB"/>
       </attribute>
       <attribute id="LFA1_FISKU" order="99" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Account Number of Master Record of Tax Office Responsible"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_FISKU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_FISKU"/>
       </attribute>
       <attribute id="LFA1_STENR" order="100" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Number at Responsible Tax Authority"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_STENR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STENR"/>
       </attribute>
       <attribute id="LFA1_CARRIER_CONF" order="101" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Carrier confirmation is expected"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CARRIER_CONF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CARRIER_CONF"/>
       </attribute>
       <attribute id="LFA1_MIN_COMP" order="102" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Micro company indicator"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_MIN_COMP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_MIN_COMP"/>
       </attribute>
       <attribute id="LFA1_TERM_LI" order="103" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Terms of Liability"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TERM_LI"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TERM_LI"/>
       </attribute>
       <attribute id="LFA1_CRC_NUM" order="104" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="CRC number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CRC_NUM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CRC_NUM"/>
       </attribute>
       <attribute id="LFA1_CVP_XBLCK" order="105" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Business Purpose Completed Flag"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CVP_XBLCK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CVP_XBLCK"/>
       </attribute>
       <attribute id="LFA1_RG" order="106" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="RG Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_RG"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_RG"/>
       </attribute>
       <attribute id="LFA1_EXP" order="107" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Issued by"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_EXP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_EXP"/>
       </attribute>
       <attribute id="LFA1_UF" order="108" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="State"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_UF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_UF"/>
       </attribute>
       <attribute id="LFA1_RGDATE" order="109" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="RG Issuing Date"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_RGDATE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_RGDATE"/>
       </attribute>
       <attribute id="LFA1_RIC" order="110" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="RIC Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_RIC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_RIC"/>
       </attribute>
       <attribute id="LFA1_RNE" order="111" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Foreign National Registration"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_RNE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_RNE"/>
       </attribute>
       <attribute id="LFA1_RNEDATE" order="112" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="RNE Issuing Date"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_RNEDATE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_RNEDATE"/>
       </attribute>
       <attribute id="LFA1_CNAE" order="113" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="LFA1_CNAE"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CNAE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CNAE"/>
       </attribute>
       <attribute id="LFA1_LEGALNAT" order="114" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Legal Nature"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_LEGALNAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_LEGALNAT"/>
       </attribute>
       <attribute id="LFA1_CRTN" order="115" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="CRT Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_CRTN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_CRTN"/>
       </attribute>
       <attribute id="LFA1_ICMSTAXPAY" order="116" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="ICMS Taxpayer"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ICMSTAXPAY"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ICMSTAXPAY"/>
       </attribute>
       <attribute id="LFA1_INDTYP" order="117" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Industry Main Type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_INDTYP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_INDTYP"/>
       </attribute>
       <attribute id="LFA1_TDT" order="118" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tax Declaration Type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TDT"/>
       </attribute>
       <attribute id="LFA1_COMSIZE" order="119" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Company Size"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_COMSIZE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_COMSIZE"/>
       </attribute>
       <attribute id="LFA1_DECREGPC" order="120" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Declaration Regimen for PIS/COFINS"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DECREGPC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DECREGPC"/>
       </attribute>
       <attribute id="LFA1_DUNSP4" order="121" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="DUNS+4 number (the last four digit)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_DUNSP4"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_DUNSP4"/>
       </attribute>
-      <attribute id="LFA1_J_SC_CURRENCY" order="122" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_J_SC_CURRENCY" order="123" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Currency"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_J_SC_CURRENCY"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_J_SC_CURRENCY"/>
       </attribute>
-      <attribute id="LFA1_ALC" order="123" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ALC" order="124" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Agency Location Code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ALC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ALC"/>
       </attribute>
-      <attribute id="LFA1_PMT_OFFICE" order="124" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PMT_OFFICE" order="125" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Payment Office"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PMT_OFFICE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PMT_OFFICE"/>
       </attribute>
-      <attribute id="LFA1_PPA_RELEVANT" order="125" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PPA_RELEVANT" order="126" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor is PPA relevant"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PPA_RELEVANT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PPA_RELEVANT"/>
       </attribute>
-      <attribute id="LFA1_PSOFG" order="126" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOFG" order="127" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Processor group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOFG"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOFG"/>
       </attribute>
-      <attribute id="LFA1_PSOIS" order="127" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOIS" order="128" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Subledger acct preprocessing procedure"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOIS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOIS"/>
       </attribute>
-      <attribute id="LFA1_PSON1" order="128" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSON1" order="129" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSON1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSON1"/>
       </attribute>
-      <attribute id="LFA1_PSON2" order="129" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSON2" order="130" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSON2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSON2"/>
       </attribute>
-      <attribute id="LFA1_PSON3" order="130" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSON3" order="131" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name 3"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSON3"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSON3"/>
       </attribute>
-      <attribute id="LFA1_PSOVN" order="131" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOVN" order="132" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First Name"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOVN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOVN"/>
       </attribute>
-      <attribute id="LFA1_PSOTL" order="132" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOTL" order="133" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Title"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOTL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOTL"/>
       </attribute>
-      <attribute id="LFA1_PSOHS" order="133" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOHS" order="134" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="House number: is no longer used from Release 4.6B"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOHS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOHS"/>
       </attribute>
-      <attribute id="LFA1_PSOST" order="134" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_PSOST" order="135" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street: No longer used from Release 4.6B"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_PSOST"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_PSOST"/>
       </attribute>
-      <attribute id="LFA1_BORGR_DATUN" order="135" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_BORGR_DATUN" order="136" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date Limit for External Document Identification"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BORGR_DATUN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BORGR_DATUN"/>
       </attribute>
-      <attribute id="LFA1_BORGR_YEAUN" order="136" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_BORGR_YEAUN" order="137" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Annual Repetition of Date Limit"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_BORGR_YEAUN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_BORGR_YEAUN"/>
       </attribute>
-      <attribute id="LFA1_TRANSPORT_CHAIN" order="137" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_TRANSPORT_CHAIN" order="138" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Transportation Chain"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_TRANSPORT_CHAIN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_TRANSPORT_CHAIN"/>
       </attribute>
-      <attribute id="LFA1_SCHEDULING_TYPE" order="138" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_SCHEDULING_TYPE" order="140" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Scheduling Procedure"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SCHEDULING_TYPE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SCHEDULING_TYPE"/>
       </attribute>
-      <attribute id="LFA1_SUBMI_RELEVANT" order="139" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_SUBMI_RELEVANT" order="141" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Cross Docking: Relevant for Collective Numbering"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_SUBMI_RELEVANT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_SUBMI_RELEVANT"/>
       </attribute>
-      <attribute id="LFA1_ZSTR_SUPPL3" order="140" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZSTR_SUPPL3" order="142" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street 4"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZSTR_SUPPL3"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZSTR_SUPPL3"/>
       </attribute>
-      <attribute id="LFA1_ZSTR_SUPPL1" order="141" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZSTR_SUPPL1" order="143" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZSTR_SUPPL1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZSTR_SUPPL1"/>
       </attribute>
-      <attribute id="LFA1_ZSTR_SUPPL2" order="142" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZSTR_SUPPL2" order="144" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street 3"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZSTR_SUPPL2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZSTR_SUPPL2"/>
       </attribute>
-      <attribute id="LFA1_ZLOCATION" order="143" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZLOCATION" order="145" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Street 5"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZLOCATION"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZLOCATION"/>
       </attribute>
-      <attribute id="LFA1_ZTEL_NUMBER" order="144" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZTEL_NUMBER" order="146" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First telephone no.: dialling code+number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZTEL_NUMBER"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZTEL_NUMBER"/>
       </attribute>
-      <attribute id="LFA1_ZTEL_EXTENS" order="145" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZTEL_EXTENS" order="147" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First Telephone No.: Extension"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZTEL_EXTENS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZTEL_EXTENS"/>
       </attribute>
-      <attribute id="LFA1_ZMOB_NUMBER" order="146" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZMOB_NUMBER" order="148" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First Cell Phone Number: Dialing Code + Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZMOB_NUMBER"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZMOB_NUMBER"/>
       </attribute>
-      <attribute id="LFA1_ZSMTP_ADDR" order="147" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZSMTP_ADDR" order="149" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="E-Mail Address"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZSMTP_ADDR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZSMTP_ADDR"/>
       </attribute>
-      <attribute id="LFA1_ZFAX_NUMBER" order="148" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZFAX_NUMBER" order="150" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First fax no.: dialling code+number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZFAX_NUMBER"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZFAX_NUMBER"/>
       </attribute>
-      <attribute id="LFA1_ZFAX_EXTENS" order="149" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFA1_ZFAX_EXTENS" order="151" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="First fax no.: extension"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFA1_ZFAX_EXTENS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_ZFAX_EXTENS"/>
       </attribute>
-      <attribute id="LFB1_BUKRS" order="150" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_BUKRS" order="152" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Company Code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_BUKRS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_BUKRS"/>
       </attribute>
-      <attribute id="LFB1_PERNR" order="151" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_PERNR" order="153" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Personnel Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_PERNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_PERNR"/>
       </attribute>
-      <attribute id="LFB1_ERDAT" order="152" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ERDAT" order="154" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date on which the Record Was Created"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ERDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ERDAT"/>
       </attribute>
-      <attribute id="LFB1_ERNAM" order="153" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ERNAM" order="155" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name of Person who Created the Object"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ERNAM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ERNAM"/>
       </attribute>
-      <attribute id="LFB1_SPERR" order="154" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_SPERR" order="156" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Posting block for company code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_SPERR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_SPERR"/>
       </attribute>
-      <attribute id="LFB1_LOEVM" order="155" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_LOEVM" order="157" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Deletion Flag for Master Record (Company Code Level)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_LOEVM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_LOEVM"/>
       </attribute>
-      <attribute id="LFB1_ZUAWA" order="156" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZUAWA" order="158" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Key for sorting according to assignment numbers"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZUAWA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZUAWA"/>
       </attribute>
-      <attribute id="LFB1_AKONT" order="157" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_AKONT" order="159" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Reconciliation Account in General Ledger"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_AKONT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_AKONT"/>
       </attribute>
-      <attribute id="LFB1_BEGRU" order="158" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_BEGRU" order="160" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Authorization Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_BEGRU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_BEGRU"/>
       </attribute>
-      <attribute id="LFB1_VZSKZ" order="159" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_VZSKZ" order="161" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Interest calculation indicator"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_VZSKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_VZSKZ"/>
       </attribute>
-      <attribute id="LFB1_ZWELS" order="160" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZWELS" order="162" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="List of Respected Payment Methods"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZWELS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZWELS"/>
       </attribute>
-      <attribute id="LFB1_XVERR" order="161" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XVERR" order="163" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Clearing between customer and vendor?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XVERR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XVERR"/>
       </attribute>
-      <attribute id="LFB1_ZAHLS" order="162" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZAHLS" order="164" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Block Key for Payment"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZAHLS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZAHLS"/>
       </attribute>
-      <attribute id="LFB1_ZTERM" order="163" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZTERM" order="165" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Terms of Payment Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZTERM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZTERM"/>
       </attribute>
-      <attribute id="LFB1_EIKTO" order="164" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_EIKTO" order="166" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Our account number with the vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_EIKTO"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_EIKTO"/>
       </attribute>
-      <attribute id="LFB1_ZSABE" order="165" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZSABE" order="167" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Clerk at vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZSABE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZSABE"/>
       </attribute>
-      <attribute id="LFB1_KVERM" order="166" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_KVERM" order="168" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Memo"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_KVERM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_KVERM"/>
       </attribute>
-      <attribute id="LFB1_FDGRV" order="167" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_FDGRV" order="169" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Planning group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_FDGRV"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_FDGRV"/>
       </attribute>
-      <attribute id="LFB1_BUSAB" order="168" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_BUSAB" order="170" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Accounting Clerk Abbreviation"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_BUSAB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_BUSAB"/>
       </attribute>
-      <attribute id="LFB1_LNRZE" order="169" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_LNRZE" order="171" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Head office account number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_LNRZE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_LNRZE"/>
       </attribute>
-      <attribute id="LFB1_LNRZB" order="170" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_LNRZB" order="172" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Account number of the alternative payee"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_LNRZB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_LNRZB"/>
       </attribute>
-      <attribute id="LFB1_ZINDT" order="171" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZINDT" order="173" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Key Date of Last Interest Calculation"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZINDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZINDT"/>
       </attribute>
-      <attribute id="LFB1_ZINRT" order="172" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZINRT" order="174" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Interest Calculation Frequency in Months"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZINRT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZINRT"/>
       </attribute>
-      <attribute id="LFB1_DATLZ" order="173" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_DATLZ" order="175" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date of the last interest calculation run"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_DATLZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_DATLZ"/>
       </attribute>
-      <attribute id="LFB1_XDEZV" order="174" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XDEZV" order="176" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Local processing?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XDEZV"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XDEZV"/>
       </attribute>
-      <attribute id="LFB1_REPRF" order="175" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_REPRF" order="179" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Check Flag for Double Invoices or Credit Memos"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_REPRF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_REPRF"/>
       </attribute>
-      <attribute id="LFB1_TOGRU" order="176" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_TOGRU" order="180" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tolerance group for the business partner/G/L account"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_TOGRU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_TOGRU"/>
       </attribute>
-      <attribute id="LFB1_HBKID" order="177" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_HBKID" order="181" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Short key for a house bank"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_HBKID"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_HBKID"/>
       </attribute>
-      <attribute id="LFB1_XPORE" order="178" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XPORE" order="182" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Pay all items separately ?"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XPORE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XPORE"/>
       </attribute>
-      <attribute id="LFB1_QSZNR" order="179" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QSZNR" order="183" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Certificate Number of the Withholding Tax Exemption"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QSZNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QSZNR"/>
       </attribute>
-      <attribute id="LFB1_QSZDT" order="180" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QSZDT" order="184" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Validity Date for Withholding Tax Exemption Certificate"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QSZDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QSZDT"/>
       </attribute>
-      <attribute id="LFB1_QSSKZ" order="181" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QSSKZ" order="185" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Withholding Tax Code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QSSKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QSSKZ"/>
       </attribute>
-      <attribute id="LFB1_BLNKZ" order="182" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_BLNKZ" order="186" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Subsidy Indicator for Determining the Reduction Rates"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_BLNKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_BLNKZ"/>
       </attribute>
-      <attribute id="LFB1_MINDK" order="183" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_MINDK" order="187" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Minority Indicators"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_MINDK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_MINDK"/>
       </attribute>
-      <attribute id="LFB1_ALTKN" order="184" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ALTKN" order="188" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Previous Master Record Number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ALTKN"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ALTKN"/>
       </attribute>
-      <attribute id="LFB1_ZGRUP" order="185" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZGRUP" order="189" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Key for Payment Grouping"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZGRUP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZGRUP"/>
       </attribute>
-      <attribute id="LFB1_MGRUP" order="186" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_MGRUP" order="190" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Key for dunning notice grouping"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_MGRUP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_MGRUP"/>
       </attribute>
-      <attribute id="LFB1_UZAWE" order="187" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_UZAWE" order="191" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Payment method supplement"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_UZAWE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_UZAWE"/>
       </attribute>
-      <attribute id="LFB1_QSREC" order="188" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QSREC" order="192" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor Recipient Type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QSREC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QSREC"/>
       </attribute>
-      <attribute id="LFB1_QSBGR" order="189" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QSBGR" order="193" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Authority for Exemption from Withholding Tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QSBGR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QSBGR"/>
       </attribute>
-      <attribute id="LFB1_QLAND" order="190" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_QLAND" order="194" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Withholding Tax Country Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_QLAND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_QLAND"/>
       </attribute>
-      <attribute id="LFB1_XEDIP" order="191" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XEDIP" order="195" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Send Payment Advices by EDI"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XEDIP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XEDIP"/>
       </attribute>
-      <attribute id="LFB1_FRGRP" order="192" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_FRGRP" order="196" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Release Approval Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_FRGRP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_FRGRP"/>
       </attribute>
-      <attribute id="LFB1_TOGRR" order="193" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_TOGRR" order="197" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Tolerance group; Invoice Verification"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_TOGRR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_TOGRR"/>
       </attribute>
-      <attribute id="LFB1_TLFXS" order="194" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_TLFXS" order="198" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Accounting clerk's fax number at the customer/vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_TLFXS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_TLFXS"/>
       </attribute>
-      <attribute id="LFB1_INTAD" order="195" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_INTAD" order="199" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Internet address of partner company clerk"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_INTAD"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_INTAD"/>
       </attribute>
-      <attribute id="LFB1_XLFZB" order="196" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XLFZB" order="200" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Alternative payee using account number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XLFZB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XLFZB"/>
       </attribute>
-      <attribute id="LFB1_GUZTE" order="197" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_GUZTE" order="201" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Payment Terms Key for Credit Memos"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_GUZTE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_GUZTE"/>
       </attribute>
-      <attribute id="LFB1_GRICD" order="198" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_GRICD" order="202" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Activity Code for Gross Income Tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_GRICD"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_GRICD"/>
       </attribute>
-      <attribute id="LFB1_GRIDT" order="199" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_GRIDT" order="203" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Distribution Type for Employment Tax"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_GRIDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_GRIDT"/>
       </attribute>
-      <attribute id="LFB1_XAUSZ" order="200" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_XAUSZ" order="204" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator for periodic account statements"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_XAUSZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_XAUSZ"/>
       </attribute>
-      <attribute id="LFB1_CERDT" order="201" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_CERDT" order="205" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Certification date"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_CERDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_CERDT"/>
       </attribute>
-      <attribute id="LFB1_CONFS" order="202" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_CONFS" order="206" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Status of Change Authorization (Company Code Level)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_CONFS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_CONFS"/>
       </attribute>
-      <attribute id="LFB1_UPDAT" order="203" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_UPDAT" order="207" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date on Which the Changes Were Confirmed"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_UPDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_UPDAT"/>
       </attribute>
-      <attribute id="LFB1_UPTIM" order="204" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_UPTIM" order="208" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Time of Last Change Confirmation"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_UPTIM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_UPTIM"/>
       </attribute>
-      <attribute id="LFB1_NODEL" order="205" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_NODEL" order="209" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Deletion bock for master record (company code level)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_NODEL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_NODEL"/>
       </attribute>
-      <attribute id="LFB1_TLFNS" order="206" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_TLFNS" order="210" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Accounting clerk's telephone number at business partner"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_TLFNS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_TLFNS"/>
       </attribute>
-      <attribute id="LFB1_AVSND" order="207" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_AVSND" order="211" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Send Payment Advice by XML"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_AVSND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_AVSND"/>
       </attribute>
-      <attribute id="LFB1_AD_HASH" order="208" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_AD_HASH" order="212" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="E-Mail Address for Avis: Hash Value"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_AD_HASH"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_AD_HASH"/>
       </attribute>
-      <attribute id="LFB1_CVP_XBLCK_B" order="209" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_CVP_XBLCK_B" order="213" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Business Purpose Completed Flag"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_CVP_XBLCK_B"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_CVP_XBLCK_B"/>
       </attribute>
-      <attribute id="LFB1_CIIUCODE" order="210" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_CIIUCODE" order="214" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Main economic activity"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_CIIUCODE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_CIIUCODE"/>
       </attribute>
-      <attribute id="LFB1_ZBOKD" order="211" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZBOKD" order="215" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="LEDGER MANAGEMENT EXPIRATION DATE"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZBOKD"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZBOKD"/>
       </attribute>
-      <attribute id="LFB1_ZQSSKZ" order="212" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZQSSKZ" order="216" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Future Withholding tax code"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZQSSKZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZQSSKZ"/>
       </attribute>
-      <attribute id="LFB1_ZQSZDT" order="213" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZQSZDT" order="217" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Validity date for withholding tax exemption certificate"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZQSZDT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZQSZDT"/>
       </attribute>
-      <attribute id="LFB1_ZQSZNR" order="214" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZQSZNR" order="218" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Certificate number of the withholding tax exemption"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZQSZNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZQSZNR"/>
       </attribute>
-      <attribute id="LFB1_ZMINDAT" order="215" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ZMINDAT" order="219" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Certification date for minimum wage"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ZMINDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ZMINDAT"/>
       </attribute>
-      <attribute id="LFB1_J_SC_SUBCONTYPE" order="216" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_J_SC_SUBCONTYPE" order="220" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Subcontractor Type"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_J_SC_SUBCONTYPE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_J_SC_SUBCONTYPE"/>
       </attribute>
-      <attribute id="LFB1_J_SC_COMPDATE" order="217" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_J_SC_COMPDATE" order="221" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Completion Date Of Inspection"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_J_SC_COMPDATE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_J_SC_COMPDATE"/>
       </attribute>
-      <attribute id="LFB1_J_SC_OFFSM" order="218" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_J_SC_OFFSM" order="222" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Offset Method"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_J_SC_OFFSM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_J_SC_OFFSM"/>
       </attribute>
-      <attribute id="LFB1_J_SC_OFFSR" order="219" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_J_SC_OFFSR" order="223" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Offset Percentage"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_J_SC_OFFSR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_J_SC_OFFSR"/>
       </attribute>
-      <attribute id="LFB1_GMVKZK" order="220" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_GMVKZK" order="225" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor is in execution"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_GMVKZK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_GMVKZK"/>
       </attribute>
-      <attribute id="LFB1_PREPAY_RELEVANT" order="221" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_PREPAY_RELEVANT" order="226" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Prepayment Relevance (Vendor Master)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_PREPAY_RELEVANT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_PREPAY_RELEVANT"/>
       </attribute>
-      <attribute id="LFB1_ASSIGN_TEST" order="222" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFB1_ASSIGN_TEST" order="227" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Assignment Test Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFB1_ASSIGN_TEST"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_ASSIGN_TEST"/>
       </attribute>
-      <attribute id="LFM1_EKORG" order="223" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_EKORG" order="228" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Purchasing Organization"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_EKORG"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_EKORG"/>
       </attribute>
-      <attribute id="LFM1_ERDAT" order="224" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ERDAT" order="229" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Date on Which Record Was Created"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ERDAT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ERDAT"/>
       </attribute>
-      <attribute id="LFM1_ERNAM" order="225" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ERNAM" order="230" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Name of Person Who Created the Object"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ERNAM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ERNAM"/>
       </attribute>
-      <attribute id="LFM1_SPERM" order="226" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_SPERM" order="231" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Purchasing block at purchasing organization level"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_SPERM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_SPERM"/>
       </attribute>
-      <attribute id="LFM1_LOEVM" order="227" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LOEVM" order="232" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Delete flag for vendor at purchasing level"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LOEVM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LOEVM"/>
       </attribute>
-      <attribute id="LFM1_LFABC" order="228" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LFABC" order="233" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="ABC indicator"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LFABC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LFABC"/>
       </attribute>
-      <attribute id="LFM1_WAERS" order="229" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_WAERS" order="234" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Purchase order currency"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_WAERS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_WAERS"/>
       </attribute>
-      <attribute id="LFM1_VERKF" order="230" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_VERKF" order="235" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Responsible Salesperson at Vendor's Office"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_VERKF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_VERKF"/>
       </attribute>
-      <attribute id="LFM1_TELF1" order="231" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_TELF1" order="236" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor's telephone number"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_TELF1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_TELF1"/>
       </attribute>
-      <attribute id="LFM1_ZTERM" order="232" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ZTERM" order="238" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Terms of Payment Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ZTERM"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ZTERM"/>
       </attribute>
-      <attribute id="LFM1_INCO1" order="233" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_INCO1" order="239" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Incoterms (Part 1)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_INCO1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_INCO1"/>
       </attribute>
-      <attribute id="LFM1_INCO2" order="234" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_INCO2" order="240" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Incoterms (Part 2)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_INCO2"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_INCO2"/>
       </attribute>
-      <attribute id="LFM1_WEBRE" order="235" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_WEBRE" order="241" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: GR-Based Invoice Verification"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_WEBRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_WEBRE"/>
       </attribute>
-      <attribute id="LFM1_KZABS" order="236" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_KZABS" order="242" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Order Acknowledgment Requirement"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_KZABS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_KZABS"/>
       </attribute>
-      <attribute id="LFM1_KALSK" order="237" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_KALSK" order="243" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Group for Calculation Schema (Vendor)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_KALSK"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_KALSK"/>
       </attribute>
-      <attribute id="LFM1_KZAUT" order="238" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_KZAUT" order="244" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Automatic Generation of Purchase Order Allowed"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_KZAUT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_KZAUT"/>
       </attribute>
-      <attribute id="LFM1_EXPVZ" order="239" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_EXPVZ" order="245" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Mode of Transport for Foreign Trade"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_EXPVZ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_EXPVZ"/>
       </attribute>
-      <attribute id="LFM1_ZOLLA" order="240" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ZOLLA" order="246" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Customs Office: Office of Exit/Entry for Foreign Trade"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ZOLLA"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ZOLLA"/>
       </attribute>
-      <attribute id="LFM1_MEPRF" order="241" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_MEPRF" order="247" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Price Determination (Pricing) Date Control"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_MEPRF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_MEPRF"/>
       </attribute>
-      <attribute id="LFM1_EKGRP" order="242" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_EKGRP" order="248" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Purchasing Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_EKGRP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_EKGRP"/>
       </attribute>
-      <attribute id="LFM1_XERSY" order="243" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_XERSY" order="249" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Evaluated Receipt Settlement (ERS)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_XERSY"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_XERSY"/>
       </attribute>
-      <attribute id="LFM1_MRPPP" order="244" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_MRPPP" order="251" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Planning calendar"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_MRPPP"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_MRPPP"/>
       </attribute>
-      <attribute id="LFM1_LFRHY" order="245" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LFRHY" order="252" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Planning cycle"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LFRHY"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LFRHY"/>
       </attribute>
-      <attribute id="LFM1_LIBES" order="246" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LIBES" order="253" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Order entry by vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LIBES"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LIBES"/>
       </attribute>
-      <attribute id="LFM1_LIPRE" order="247" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LIPRE" order="254" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Price marking, vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LIPRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LIPRE"/>
       </attribute>
-      <attribute id="LFM1_LISER" order="248" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LISER" order="255" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Rack-jobbing: vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LISER"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LISER"/>
       </attribute>
-      <attribute id="LFM1_INCOV" order="249" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_INCOV" order="256" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Incoterms Version"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_INCOV"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_INCOV"/>
       </attribute>
-      <attribute id="LFM1_INCO2_L" order="250" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_INCO2_L" order="257" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Incoterms Location 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_INCO2_L"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_INCO2_L"/>
       </attribute>
-      <attribute id="LFM1_INCO3_L" order="251" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_INCO3_L" order="258" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Incoterms Location 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_INCO3_L"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_INCO3_L"/>
       </attribute>
-      <attribute id="LFM1_PRFRE" order="252" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_PRFRE" order="259" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: &quot;relev. to price determination (vend. hierarchy)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_PRFRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_PRFRE"/>
       </attribute>
-      <attribute id="LFM1_NRGEW" order="253" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_NRGEW" order="260" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator whether discount in kind granted"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_NRGEW"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_NRGEW"/>
       </attribute>
-      <attribute id="LFM1_BOIND" order="254" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_BOIND" order="261" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: index compilation for subseq. settlement active"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_BOIND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_BOIND"/>
       </attribute>
-      <attribute id="LFM1_BLIND" order="255" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_BLIND" order="262" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Doc. index compilation active for purchase orders"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_BLIND"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_BLIND"/>
       </attribute>
-      <attribute id="LFM1_KZRET" order="256" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_KZRET" order="263" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicates whether vendor is returns vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_KZRET"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_KZRET"/>
       </attribute>
-      <attribute id="LFM1_SKRIT" order="257" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_SKRIT" order="264" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor sort criterion for materials"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_SKRIT"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_SKRIT"/>
       </attribute>
-      <attribute id="LFM1_BSTAE" order="258" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_BSTAE" order="265" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Confirmation Control Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_BSTAE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_BSTAE"/>
       </attribute>
-      <attribute id="LFM1_RDPRF" order="259" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_RDPRF" order="266" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Rounding Profile"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_RDPRF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_RDPRF"/>
       </attribute>
-      <attribute id="LFM1_MEGRU" order="260" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_MEGRU" order="267" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Unit of Measure Group"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_MEGRU"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_MEGRU"/>
       </attribute>
-      <attribute id="LFM1_BOPNR" order="261" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_BOPNR" order="269" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Restriction Profile for PO-Based Load Building"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_BOPNR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_BOPNR"/>
       </attribute>
-      <attribute id="LFM1_XERSR" order="262" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_XERSR" order="270" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Automatic evaluated receipt settlement for return items"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_XERSR"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_XERSR"/>
       </attribute>
-      <attribute id="LFM1_EIKTO" order="263" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_EIKTO" order="271" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Our account number with the vendor"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_EIKTO"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_EIKTO"/>
       </attribute>
-      <attribute id="LFM1_ABUEB" order="264" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ABUEB" order="272" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Release Creation Profile"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ABUEB"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ABUEB"/>
       </attribute>
-      <attribute id="LFM1_PAPRF" order="265" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_PAPRF" order="273" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Profile for transferring material data via IDoc PROACT"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_PAPRF"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_PAPRF"/>
       </attribute>
-      <attribute id="LFM1_AGREL" order="266" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_AGREL" order="274" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: Relevant for agency business"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_AGREL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_AGREL"/>
       </attribute>
-      <attribute id="LFM1_XNBWY" order="267" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_XNBWY" order="275" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Revaluation allowed"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_XNBWY"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_XNBWY"/>
       </attribute>
-      <attribute id="LFM1_VSBED" order="268" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_VSBED" order="276" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Shipping Conditions"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_VSBED"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_VSBED"/>
       </attribute>
-      <attribute id="LFM1_LEBRE" order="269" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_LEBRE" order="277" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator for Service-Based Invoice Verification"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_LEBRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_LEBRE"/>
       </attribute>
-      <attribute id="LFM1_BOLRE" order="270" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_BOLRE" order="278" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Indicator: vendor subject to subseq. settlement accounting"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_BOLRE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_BOLRE"/>
       </attribute>
-      <attribute id="LFM1_UMSAE" order="271" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_UMSAE" order="279" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Comparison/agreement of business volumes necessary"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_UMSAE"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_UMSAE"/>
       </attribute>
-      <attribute id="LFM1_VENDOR_RMA_REQ" order="272" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_VENDOR_RMA_REQ" order="280" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Vendor RMA Number Required"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_VENDOR_RMA_REQ"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_VENDOR_RMA_REQ"/>
       </attribute>
-      <attribute id="LFM1_J_1NBOESL" order="273" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_J_1NBOESL" order="281" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Exchange Key for NF Processing"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_J_1NBOESL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_J_1NBOESL"/>
       </attribute>
-      <attribute id="LFM1_AUBEL" order="274" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_AUBEL" order="282" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Automatic debit creation on goods issue"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_AUBEL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_AUBEL"/>
       </attribute>
-      <attribute id="LFM1_VALID_PRO" order="275" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_VALID_PRO" order="283" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Settlement profile for automatic evaluated receipt settlemnt"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_VALID_PRO"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_VALID_PRO"/>
       </attribute>
-      <attribute id="LFM1_FSH_SC_CID" order="276" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_FSH_SC_CID" order="288" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Customer/Vendor ID"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_FSH_SC_CID"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_FSH_SC_CID"/>
       </attribute>
-      <attribute id="LFM1_FSH_VAS_DETC" order="277" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_FSH_VAS_DETC" order="289" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="VAS Determination Mode"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_FSH_VAS_DETC"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_FSH_VAS_DETC"/>
       </attribute>
-      <attribute id="LFM1_UPPRS" order="278" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_UPPRS" order="290" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Pricing on Subitems (MPN/SUS)"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_UPPRS"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_UPPRS"/>
       </attribute>
-      <attribute id="LFM1_ACTIVITY_PROFIL" order="279" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_ACTIVITY_PROFIL" order="291" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Activity Profile for PO Controlling"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_ACTIVITY_PROFIL"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_ACTIVITY_PROFIL"/>
       </attribute>
-      <attribute id="LFM1_TRANSPORT_CHAIN" order="280" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="LFM1_TRANSPORT_CHAIN" order="292" attributeHierarchyActive="false" displayAttribute="false">
         <descriptions defaultDescription="Transportation Chain"/>
-        <keyMapping columnObjectName="Join_1" columnName="LFM1_TRANSPORT_CHAIN"/>
-      </attribute>
-      <attribute id="ADRC_DATE_FROM" order="294" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Valid-from date - in current Release only 00010101 possible"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_DATE_FROM"/>
-      </attribute>
-      <attribute id="ADRC_DATE_TO" order="295" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Valid-to date in current Release only 99991231 possible"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_DATE_TO"/>
-      </attribute>
-      <attribute id="ADRC_NAME1" order="296" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Name 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_NAME1"/>
-      </attribute>
-      <attribute id="ADRC_CITY1" order="297" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="City"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_CITY1"/>
-      </attribute>
-      <attribute id="ADRC_POST_CODE1" order="298" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="City postal code"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_POST_CODE1"/>
-      </attribute>
-      <attribute id="ADRC_PO_BOX" order="299" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="PO Box"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_PO_BOX"/>
-      </attribute>
-      <attribute id="ADRC_STR_SUPPL1" order="300" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Street 2"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_STR_SUPPL1"/>
-      </attribute>
-      <attribute id="ADRC_COUNTRY" order="301" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Country Key"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_COUNTRY"/>
-      </attribute>
-      <attribute id="ADRC_REGION" order="302" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Region (State, Province, County)"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_REGION"/>
-      </attribute>
-      <attribute id="ADRC_ADDR_GROUP" order="303" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Address Group (Key) (Business Address Services)"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_ADDR_GROUP"/>
-      </attribute>
-      <attribute id="ADRC_SORT1" order="304" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Search Term 1"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_SORT1"/>
-      </attribute>
-      <attribute id="ADRC_TEL_NUMBER" order="305" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="First telephone no.: dialling code+number"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_TEL_NUMBER"/>
-      </attribute>
-      <attribute id="ADRC_FAX_NUMBER" order="306" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="First fax no.: dialling code+number"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_FAX_NUMBER"/>
-      </attribute>
-      <attribute id="ADRC_MC_NAME1" order="307" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Name (Field NAME1) in Uppercase for Search Help"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_MC_NAME1"/>
-      </attribute>
-      <attribute id="ADRC_MC_CITY1" order="308" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="City name in Uppercase for Search Help"/>
-        <keyMapping columnObjectName="Join_1" columnName="ADRC_MC_CITY1"/>
+        <keyMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_TRANSPORT_CHAIN"/>
       </attribute>
     </attributes>
     <calculatedAttributes/>
@@ -3563,57 +2832,57 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="LFA1_J_SC_CAPITAL" order="281" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFA1_J_SC_CAPITAL" order="122" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Capital Amount"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFA1_J_SC_CAPITAL"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_J_SC_CAPITAL"/>
       </measure>
-      <measure id="LFA1_STAGING_TIME" order="282" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFA1_STAGING_TIME" order="139" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Staging Time in Days"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFA1_STAGING_TIME"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFA1_STAGING_TIME"/>
       </measure>
-      <measure id="LFB1_WEBTR" order="283" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFB1_WEBTR" order="177" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Bill of exchange limit (in local currency)"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFB1_WEBTR"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_WEBTR"/>
       </measure>
-      <measure id="LFB1_KULTG" order="284" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFB1_KULTG" order="178" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Probable time until check is paid"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFB1_KULTG"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_KULTG"/>
       </measure>
-      <measure id="LFB1_BASIS_PNT" order="285" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFB1_BASIS_PNT" order="224" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Average daily basis points for purchase cards"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFB1_BASIS_PNT"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFB1_BASIS_PNT"/>
       </measure>
-      <measure id="LFM1_MINBW" order="286" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_MINBW" order="237" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Minimum order value"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_MINBW"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_MINBW"/>
       </measure>
-      <measure id="LFM1_PLIFZ" order="287" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_PLIFZ" order="250" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Planned Delivery Time in Days"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_PLIFZ"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_PLIFZ"/>
       </measure>
-      <measure id="LFM1_VENSL" order="288" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_VENSL" order="268" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Vendor service level"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_VENSL"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_VENSL"/>
       </measure>
-      <measure id="LFM1_HSCABS" order="289" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_HSCABS" order="284" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Absolute handling surcharge"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_HSCABS"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_HSCABS"/>
       </measure>
-      <measure id="LFM1_HSCPE" order="290" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_HSCPE" order="285" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Percentage handling surcharge"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_HSCPE"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_HSCPE"/>
       </measure>
-      <measure id="LFM1_HSCMIN" order="291" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_HSCMIN" order="286" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Minimum handling surcharge"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_HSCMIN"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_HSCMIN"/>
       </measure>
-      <measure id="LFM1_HSCMAX" order="292" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="LFM1_HSCMAX" order="287" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Maximum handling surcharge"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_HSCMAX"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_HSCMAX"/>
       </measure>
       <measure id="LFM1_STAGING_TIME" order="293" aggregationType="sum" engineAggregation="sum" measureType="simple">
         <descriptions defaultDescription="Staging Time in Days"/>
-        <measureMapping columnObjectName="Join_1" columnName="LFM1_STAGING_TIME"/>
+        <measureMapping columnObjectName="Join_LFA1_LFB1_LFM1" columnName="LFM1_STAGING_TIME"/>
       </measure>
     </baseMeasures>
     <calculatedMeasures/>
@@ -3623,35 +2892,27 @@
   <layout>
     <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-        <upperLeftCorner x="99" y="87"/>
-        <rectangleSize height="0" width="0"/>
+        <upperLeftCorner x="176" y="87"/>
+        <rectangleSize/>
       </shape>
       <shape expanded="true" modelObjectName="Projn_LFA1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="22" y="453"/>
+        <upperLeftCorner x="22" y="357"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
       <shape expanded="true" modelObjectName="Projn_LFB1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="176" y="453"/>
+        <upperLeftCorner x="176" y="357"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
       <shape expanded="true" modelObjectName="Join_LFA1_LFB2" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="99" y="357"/>
+        <upperLeftCorner x="99" y="261"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
       <shape expanded="true" modelObjectName="Projn_LFM1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="253" y="357"/>
+        <upperLeftCorner x="253" y="261"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
       <shape expanded="true" modelObjectName="Join_LFA1_LFB1_LFM1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="176" y="261"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="99" y="165"/>
-        <rectangleSize height="0" width="0"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="22" y="261"/>
+        <upperLeftCorner x="176" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
     </shapes>

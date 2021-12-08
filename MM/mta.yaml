@@ -8,7 +8,7 @@ modules:
   requires:
   - name: hdi_db
     properties:
-      TARGET_CONTAINER: ~{hdi-container-name}  
+      TARGET_CONTAINER: ~{hdi-container-name}
   - name: cross-container-service-1
     group: SERVICE_REPLACEMENTS
     properties:
@@ -22,9 +22,6 @@ modules:
 resources:
 - name: hdi_db
   type: com.sap.xs.hdi-container
-  parameters:
-    config:
-      schema: mm
   properties:
     hdi-container-name: ${service-name}
 - name: cross-container-service-1

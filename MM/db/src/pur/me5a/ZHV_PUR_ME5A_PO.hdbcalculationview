@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-<origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.pur.me5a::ZHV_PUR_ME5A_PO" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+  <origin/>
   <descriptions defaultDescription="ZHV_RV_ME5A_PO"/>
-  <metadata changedAt="2021-03-26 13:34:53.869" createdAt="2021-03-26 13:34:52.204"/>
+  <metadata changedAt="2021-05-03 13:46:25.271" createdAt="2021-03-26 14:15:06.043"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="41"/>
@@ -16,7 +16,7 @@
     <DataSource id="ZSAC_COST_CNTR_FUND_CNTR_MAP">
       <resourceUri>algoma.mm::ZSAC_COST_CNTR_FUND_CNTR_MAP</resourceUri>
     </DataSource>
-    <DataSource id="algoma.mm::ZSAC_COST_CNTR_FUND_CNTR_MAP">
+    <DataSource id="Projection_4$$$$ZSAC_COST_CNTR_FUND_CNTR_MAP$$">
       <resourceUri>algoma.mm::ZSAC_COST_CNTR_FUND_CNTR_MAP</resourceUri>
     </DataSource>
     <DataSource id="ZHV_PUR_LATEST_PO_FOR_MATERIALS">
@@ -37,17 +37,17 @@
     <DataSource id="ZTBL_WORDAYS_CALENDAR">
       <resourceUri>algoma.mm::ZTBL_WORDAYS_CALENDAR</resourceUri>
     </DataSource>
-    <DataSource id="algoma.mm::ZTBL_WORDAYS_CALENDAR">
+    <DataSource id="CopyOfProjection_7$$$$ZTBL_WORDAYS_CALENDAR$$">
       <resourceUri>algoma.mm::ZTBL_WORDAYS_CALENDAR</resourceUri>
     </DataSource>
     <DataSource id="ZMM_PLANT_PUR_CO">
       <resourceUri>algoma.mm::ZMM_PLANT_PUR_CO</resourceUri>
     </DataSource>
   </dataSources>
-<calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <descriptions/>
-    <viewAttributes>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBAN_BANFN_Purch_Req"/>
         <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
         <viewAttribute id="EBAN_BSMNG_Order_quantity"/>
@@ -65,8 +65,8 @@
         <viewAttribute id="EBAN_ZREJ_CODE_Rejection_Code"/>
         <viewAttribute id="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EBAN">
+      <calculatedViewAttributes/>
+      <input node="#EBAN">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BSMNG_Order_quantity" source="BSMNG"/>
@@ -85,35 +85,35 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="ZRFQ_STATUS"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBKN_FISTL_Funds_center"/>
         <viewAttribute id="EBKN_BANFN_Purch_Req_"/>
         <viewAttribute id="EBKN_BNFPO_Requisn_item"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EBKN">
+      <calculatedViewAttributes/>
+      <input node="#EBKN">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL_Funds_center" source="FISTL"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BANFN_Purch_Req_" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BNFPO_Requisn_item" source="BNFPO"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBAN_FUNDCENTER_ID"/>
         <viewAttribute id="EBAN_FUNDCENTER_NAME"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZSAC_COST_CNTR_FUND_CNTR_MAP">
+      <calculatedViewAttributes/>
+      <input node="#ZSAC_COST_CNTR_FUND_CNTR_MAP">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_ID" source="ZFUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_NAME" source="ZFUNDCENTER_NAME"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="fullOuter">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="fullOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBAN_BANFN_Purch_Req"/>
         <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
         <viewAttribute id="EBAN_BSMNG_Order_quantity"/>
@@ -133,8 +133,8 @@
         <viewAttribute id="EBAN_FUNDCENTER_ID"/>
         <viewAttribute id="EBAN_FUNDCENTER_NAME"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_1">
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="EBAN_BANFN_Purch_Req"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BSMNG_Order_quantity" source="EBAN_BSMNG_Order_quantity"/>
@@ -152,50 +152,50 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZREJ_CODE_Rejection_Code" source="EBAN_ZREJ_CODE_Rejection_Code"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
       </input>
-      <input node="Projection_3">
+      <input node="#Projection_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_ID" source="EBAN_FUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_NAME" source="EBAN_FUNDCENTER_NAME"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FISTL_Funds_center" source="EBAN_FUNDCENTER_ID"/>
       </input>
-    <joinAttribute name="EBAN_FISTL_Funds_center"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBAN_FISTL_Funds_center"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBKN_FUNDCENTER_ID"/>
         <viewAttribute id="EBKN_FUNDCENTER_NAME"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="algoma.mm::ZSAC_COST_CNTR_FUND_CNTR_MAP">
+      <calculatedViewAttributes/>
+      <input node="#Projection_4$$$$ZSAC_COST_CNTR_FUND_CNTR_MAP$$">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_ID" source="ZFUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_NAME" source="ZFUNDCENTER_NAME"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinType="fullOuter">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" joinOrder="OUTSIDE_IN" joinType="fullOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBKN_FISTL_Funds_center"/>
         <viewAttribute id="EBKN_FUNDCENTER_ID"/>
         <viewAttribute id="EBKN_FUNDCENTER_NAME"/>
         <viewAttribute id="EBKN_BANFN_Purch_Req_"/>
         <viewAttribute id="EBKN_BNFPO_Requisn_item"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_2">
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL_Funds_center" source="EBKN_FISTL_Funds_center"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BANFN_Purch_Req_" source="EBKN_BANFN_Purch_Req_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_BNFPO_Requisn_item" source="EBKN_BNFPO_Requisn_item"/>
       </input>
-      <input node="Projection_4">
+      <input node="#Projection_4">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_ID" source="EBKN_FUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_NAME" source="EBKN_FUNDCENTER_NAME"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL_Funds_center" source="EBKN_FUNDCENTER_ID"/>
       </input>
-    <joinAttribute name="EBKN_FISTL_Funds_center"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="leftOuter">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBKN_FISTL_Funds_center"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBAN_BANFN_Purch_Req"/>
         <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
         <viewAttribute id="EBAN_BSMNG_Order_quantity"/>
@@ -218,8 +218,8 @@
         <viewAttribute id="EBKN_FUNDCENTER_ID"/>
         <viewAttribute id="EBKN_FUNDCENTER_NAME"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_2">
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="EBAN_BANFN_Purch_Req"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BSMNG_Order_quantity" source="EBAN_BSMNG_Order_quantity"/>
@@ -239,19 +239,19 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_ID" source="EBAN_FUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_NAME" source="EBAN_FUNDCENTER_NAME"/>
       </input>
-      <input node="Join_3">
+      <input node="#Join_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL_Funds_center" source="EBKN_FISTL_Funds_center"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_ID" source="EBKN_FUNDCENTER_ID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_NAME" source="EBKN_FUNDCENTER_NAME"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="EBKN_BANFN_Purch_Req_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBKN_BNFPO_Requisn_item"/>
       </input>
-    <joinAttribute name="EBAN_BANFN_Purch_Req"/>
-    <joinAttribute name="EBAN_BNFPO_Requisn_item"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBAN_BANFN_Purch_Req"/>
+      <joinAttribute name="EBAN_BNFPO_Requisn_item"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBAN_BANFN_Purch_Req"/>
         <viewAttribute id="EBAN_BNFPO_Requisn_item"/>
         <viewAttribute aggregationType="min" id="EBAN_BSMNG_Order_quantity"/>
@@ -274,25 +274,46 @@
         <viewAttribute id="EBKN_FUNDCENTER_ID"/>
         <viewAttribute id="EBKN_FUNDCENTER_NAME"/>
       </viewAttributes>
-    <calculatedViewAttributes>
+      <calculatedViewAttributes>
         <calculatedViewAttribute datatype="NVARCHAR" id="CAL_FUND_CNTR_CHECK" length="50" expressionLanguage="COLUMN_ENGINE">
           <formula>if(&quot;EBKN_FISTL_Funds_center&quot; = '' or isnull(&quot;EBKN_FISTL_Funds_center&quot;),&quot;EBAN_FISTL_Funds_center&quot;,&quot;EBKN_FISTL_Funds_center&quot;)</formula>
         </calculatedViewAttribute>
         <calculatedViewAttribute datatype="NVARCHAR" id="CAL_FUND_CNTR_NAME_CHECK" length="60" expressionLanguage="COLUMN_ENGINE">
-          <formula>if(&quot;EBAN_FUNDCENTER_NAME&quot; = '' or isnull(&quot;EBAN_FUNDCENTER_NAME&quot; ),&quot;EBKN_FUNDCENTER_NAME&quot;,&quot;EBAN_FUNDCENTER_NAME&quot;)
-
+          <formula>if(&quot;EBAN_FUNDCENTER_NAME&quot; = '' or isnull(&quot;EBAN_FUNDCENTER_NAME&quot; ),&quot;EBKN_FUNDCENTER_NAME&quot;,&quot;EBAN_FUNDCENTER_NAME&quot;)&#xD;
+&#xD;
 </formula>
         </calculatedViewAttribute>
         <calculatedViewAttribute datatype="DECIMAL" id="CAL_PARTIAL_ODR_FILL" length="37" scale="7" expressionLanguage="COLUMN_ENGINE">
           <formula>&quot;EBAN_MENGE_Quantity&quot; - &quot;EBAN_BSMNG_Order_quantity&quot;</formula>
         </calculatedViewAttribute>
       </calculatedViewAttributes>
-    <restrictedViewAttributes/>
-      <input node="Join_1"/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="EBAN_BANFN_Purch_Req"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BSMNG_Order_quantity" source="EBAN_BSMNG_Order_quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_EBAKZ_Closed" source="EBAN_EBAKZ_Closed"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_EKGRP_Purch_Group" source="EBAN_EKGRP_Purch_Group"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FISTL_Funds_center" source="EBAN_FISTL_Funds_center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FRGKZ_Release_ind_" source="EBAN_FRGKZ_Release_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_LOEKZ_Deletion_ind_" source="EBAN_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MATNR_Material" source="EBAN_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MEMORY_Incomplete" source="EBAN_MEMORY_Incomplete"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MENGE_Quantity" source="EBAN_MENGE_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MFRNR_Manufacturer" source="EBAN_MFRNR_Manufacturer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MFRPN_Mfr_Part_Number" source="EBAN_MFRPN_Mfr_Part_Number"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_TXZ01_Short_Text" source="EBAN_TXZ01_Short_Text"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZREJ_CODE_Rejection_Code" source="EBAN_ZREJ_CODE_Rejection_Code"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_ID" source="EBAN_FUNDCENTER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FUNDCENTER_NAME" source="EBAN_FUNDCENTER_NAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FISTL_Funds_center" source="EBKN_FISTL_Funds_center"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_ID" source="EBKN_FUNDCENTER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBKN_FUNDCENTER_NAME" source="EBKN_FUNDCENTER_NAME"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="PO_DATE_LAST_PO_VIEW"/>
         <viewAttribute id="VENDOR_NAME_LAST_PO_VIEW"/>
         <viewAttribute id="EKPO_MATNR_Material"/>
@@ -301,60 +322,68 @@
         <viewAttribute id="EKPO_MEINS_Order_Unit_Last_PO_View"/>
         <viewAttribute id="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZHV_PUR_LATEST_PO_FOR_MATERIALS">
+      <calculatedViewAttributes/>
+      <input node="#ZHV_PUR_LATEST_PO_FOR_MATERIALS">
         <mapping xsi:type="Calculation:AttributeMapping" target="PO_DATE_LAST_PO_VIEW" source="EKKO_AEDAT_PO_Date"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_NAME_LAST_PO_VIEW" source="LFA1_NAME1_Name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MATNR_Material" source="EKPO_MATNR_Material"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price_Last_PO_View" source="EKPO_NETPR_Net_Price"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor_Last_PO_View" source="EKKO_LIFNR_Vendor"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit_Last_PO_View" source="EKPO_MEINS_Order_Unit"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_Last_PO_View" source="EKKO_EBELN_Purchasing_Doc_"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_8">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_8">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EKPO_ELIKZ"/>
         <viewAttribute id="EBELN"/>
         <viewAttribute id="EBELP"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EKPO">
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/></input>
+      <calculatedViewAttributes/>
+      <input node="#EKPO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="ELIKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_9">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_9">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EBELN"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="EKKO"/>
+      <calculatedViewAttributes/>
+      <input node="#EKKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBELN" source="EBELN"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="EKPO_ELIKZ"/>
         <viewAttribute id="BANFN"/>
         <viewAttribute id="BNFPO"/>
-      <viewAttribute hidden="true" id="JOIN$EBELN$EBELN"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_8">
+        <viewAttribute hidden="true" id="JOIN$EBELN$EBELN"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_8">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BANFN" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="BNFPO" source="BNFPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBELN$EBELN" source="EBELN"/>
       </input>
-      <input node="Projection_9">
+      <input node="#Projection_9">
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBELN$EBELN" source="EBELN"/>
       </input>
-    <joinAttribute name="JOIN$EBELN$EBELN"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinType="leftOuter">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="JOIN$EBELN$EBELN"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
         <viewAttribute id="CAL_PARTIAL_ODR_FILL"/>
@@ -375,8 +404,8 @@
         <viewAttribute id="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Aggregation_1">
+      <calculatedViewAttributes/>
+      <input node="#Aggregation_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_PARTIAL_ODR_FILL" source="CAL_PARTIAL_ODR_FILL"/>
@@ -396,17 +425,17 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZREJ_CODE_Rejection_Code" source="EBAN_ZREJ_CODE_Rejection_Code"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
       </input>
-      <input node="Join_7">
+      <input node="#Join_7">
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="BANFN"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="BNFPO"/>
       </input>
-    <joinAttribute name="EBAN_BANFN_Purch_Req"/>
-    <joinAttribute name="EBAN_BNFPO_Requisn_item"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinType="leftOuter">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBAN_BANFN_Purch_Req"/>
+      <joinAttribute name="EBAN_BNFPO_Requisn_item"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_4" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="PO_DATE_LAST_PO_VIEW"/>
         <viewAttribute id="VENDOR_NAME_LAST_PO_VIEW"/>
         <viewAttribute id="EKPO_NETPR_Net_Price_Last_PO_View"/>
@@ -433,8 +462,8 @@
         <viewAttribute id="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_8">
+      <calculatedViewAttributes/>
+      <input node="#Join_8">
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZREJ_CODE_Rejection_Code" source="EBAN_ZREJ_CODE_Rejection_Code"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_TXZ01_Short_Text" source="EBAN_TXZ01_Short_Text"/>
@@ -455,7 +484,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
       </input>
-      <input node="Projection_5">
+      <input node="#Projection_5">
         <mapping xsi:type="Calculation:AttributeMapping" target="PO_DATE_LAST_PO_VIEW" source="PO_DATE_LAST_PO_VIEW"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_NAME_LAST_PO_VIEW" source="VENDOR_NAME_LAST_PO_VIEW"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price_Last_PO_View" source="EKPO_NETPR_Net_Price_Last_PO_View"/>
@@ -464,24 +493,26 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_Last_PO_View" source="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MATNR_Material" source="EKPO_MATNR_Material"/>
       </input>
-    <joinAttribute name="EBAN_MATNR_Material"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="LFA1_MNFR_Proj" filterExpressionLanguage="COLUMN_ENGINE">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBAN_MATNR_Material"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="LFA1_MNFR_Proj" filterExpressionLanguage="COLUMN_ENGINE">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="LFA1_MNFR_LIFNR_Vendor"/>
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="KTOKK"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="LFA1">
+      <calculatedViewAttributes/>
+      <input node="#LFA1">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_LIFNR_Vendor" source="LIFNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="MCOD1"/></input>
-    <filter>&quot;KTOKK&quot; = 'MNFR'</filter>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_11" joinType="leftOuter">
-    <descriptions/>
-    <viewAttributes>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="MCOD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      </input>
+      <filter>&quot;KTOKK&quot; = 'MNFR'</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_11" joinOrder="OUTSIDE_IN" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
         <viewAttribute id="CAL_PARTIAL_ODR_FILL"/>
@@ -507,10 +538,10 @@
         <viewAttribute id="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
-      <viewAttribute hidden="true" id="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_4">
+        <viewAttribute hidden="true" id="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_4">
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_PARTIAL_ODR_FILL" source="CAL_PARTIAL_ODR_FILL"/>
@@ -537,15 +568,15 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor" source="EBAN_MFRNR_Manufacturer"/>
       </input>
-      <input node="LFA1_MNFR_Proj">
+      <input node="#LFA1_MNFR_Proj">
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="LFA1_MNFR_MCOD1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor" source="LFA1_MNFR_LIFNR_Vendor"/>
       </input>
-    <joinAttribute name="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_2">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="JOIN$EBAN_MFRNR_Manufacturer$LFA1_MNFR_LIFNR_Vendor"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_2">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
         <viewAttribute aggregationType="min" id="CAL_PARTIAL_ODR_FILL"/>
@@ -572,29 +603,54 @@
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-    <restrictedViewAttributes/>
-      <input node="Join_11"/>
+      <calculatedViewAttributes/>
+      <input node="#Join_11">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_PARTIAL_ODR_FILL" source="CAL_PARTIAL_ODR_FILL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="EBAN_BANFN_Purch_Req"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BNFPO_Requisn_item" source="EBAN_BNFPO_Requisn_item"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BSMNG_Order_quantity" source="EBAN_BSMNG_Order_quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_EBAKZ_Closed" source="EBAN_EBAKZ_Closed"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_EKGRP_Purch_Group" source="EBAN_EKGRP_Purch_Group"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_FRGKZ_Release_ind_" source="EBAN_FRGKZ_Release_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_LOEKZ_Deletion_ind_" source="EBAN_LOEKZ_Deletion_ind_"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MATNR_Material" source="EBAN_MATNR_Material"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MEMORY_Incomplete" source="EBAN_MEMORY_Incomplete"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MENGE_Quantity" source="EBAN_MENGE_Quantity"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_MFRPN_Mfr_Part_Number" source="EBAN_MFRPN_Mfr_Part_Number"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_TXZ01_Short_Text" source="EBAN_TXZ01_Short_Text"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZREJ_CODE_Rejection_Code" source="EBAN_ZREJ_CODE_Rejection_Code"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_ZRFQ_STATUS_RFQREQ_Status" source="EBAN_ZRFQ_STATUS_RFQREQ_Status"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PO_DATE_LAST_PO_VIEW" source="PO_DATE_LAST_PO_VIEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_NAME_LAST_PO_VIEW" source="VENDOR_NAME_LAST_PO_VIEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_NETPR_Net_Price_Last_PO_View" source="EKPO_NETPR_Net_Price_Last_PO_View"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_LIFNR_Vendor_Last_PO_View" source="EKKO_LIFNR_Vendor_Last_PO_View"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_MEINS_Order_Unit_Last_PO_View" source="EKPO_MEINS_Order_Unit_Last_PO_View"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKKO_EBELN_Purchasing_Doc_Last_PO_View" source="EKKO_EBELN_Purchasing_Doc_Last_PO_View"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="LFA1_MNFR_MCOD1_Name"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
+      </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RELEASE_DATE"/>
         <viewAttribute id="PR_DOCUMENT_NUMBER"/>
       </viewAttributes>
-    <calculatedViewAttributes>
+      <calculatedViewAttributes>
         <calculatedViewAttribute datatype="VARCHAR" id="CAL_TODAY" length="8" expressionLanguage="SQL">
           <formula>to_varchar(now(),'YYYYMMDD')</formula>
         </calculatedViewAttribute>
       </calculatedViewAttributes>
-      <input node="ZHV_PUR_CHG_LOG">
+      <input node="#ZHV_PUR_CHG_LOG">
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="UDATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="PR_DOCUMENT_NUMBER" source="OBJECTID"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_5" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RELEASE_DATE"/>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -623,8 +679,8 @@
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Aggregation_2">
+      <calculatedViewAttributes/>
+      <input node="#Aggregation_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_PARTIAL_ODR_FILL" source="CAL_PARTIAL_ODR_FILL"/>
@@ -651,27 +707,28 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="LFA1_MNFR_MCOD1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
       </input>
-      <input node="Projection_6">
+      <input node="#Projection_6">
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_TODAY" source="CAL_TODAY"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EBAN_BANFN_Purch_Req" source="PR_DOCUMENT_NUMBER"/>
       </input>
-    <joinAttribute name="EBAN_BANFN_Purch_Req"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_7">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="EBAN_BANFN_Purch_Req"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_7">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="DATE"/>
         <viewAttribute id="Pr_Release_Start_Work_Days"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZTBL_WORDAYS_CALENDAR">
+      <calculatedViewAttributes/>
+      <input node="#ZTBL_WORDAYS_CALENDAR">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATE" source="DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="Pr_Release_Start_Work_Days" source="WORKDAYS"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RELEASE_DATE"/>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -701,8 +758,8 @@
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Join_5">
+      <calculatedViewAttributes/>
+      <input node="#Join_5">
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -731,26 +788,27 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="LFA1_MNFR_MCOD1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
       </input>
-      <input node="Projection_7">
+      <input node="#Projection_7">
         <mapping xsi:type="Calculation:AttributeMapping" target="Pr_Release_Start_Work_Days" source="Pr_Release_Start_Work_Days"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="DATE"/>
       </input>
-    <joinAttribute name="RELEASE_DATE"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_7">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="RELEASE_DATE"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_7">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="DATE"/>
         <viewAttribute id="Pr_Release_End_Work_Days"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="algoma.mm::ZTBL_WORDAYS_CALENDAR">
+      <calculatedViewAttributes/>
+      <input node="#CopyOfProjection_7$$$$ZTBL_WORDAYS_CALENDAR$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATE" source="DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="Pr_Release_End_Work_Days" source="WORKDAYS"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_12" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_12" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="RELEASE_DATE"/>
         <viewAttribute id="CAL_FUND_CNTR_CHECK"/>
         <viewAttribute id="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -781,12 +839,12 @@
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
       </viewAttributes>
-    <calculatedViewAttributes>
+      <calculatedViewAttributes>
         <calculatedViewAttribute datatype="INTEGER" id="CAL_PR_Rel_WorkDays" expressionLanguage="COLUMN_ENGINE">
           <formula>&quot;Pr_Release_End_Work_Days&quot; - &quot;Pr_Release_Start_Work_Days&quot;</formula>
         </calculatedViewAttribute>
       </calculatedViewAttributes>
-      <input node="Join_6">
+      <input node="#Join_6">
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -816,29 +874,29 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="LFA1_MNFR_MCOD1_Name" source="LFA1_MNFR_MCOD1_Name"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
       </input>
-      <input node="CopyOfProjection_7">
+      <input node="#CopyOfProjection_7">
         <mapping xsi:type="Calculation:AttributeMapping" target="Pr_Release_End_Work_Days" source="Pr_Release_End_Work_Days"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_TODAY" source="DATE"/>
       </input>
-    <joinAttribute name="CAL_TODAY"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_10">
-    <descriptions/>
-    <viewAttributes>
+      <joinAttribute name="CAL_TODAY"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_10">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
         <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
         <viewAttribute id="ZMM_PLANT_PUR_CO_ZMOB_Mobile_No"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="ZMM_PLANT_PUR_CO">
+      <calculatedViewAttributes/>
+      <input node="#ZMM_PLANT_PUR_CO">
         <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group" source="EKGRP"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" source="ZCONT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZMOB_Mobile_No" source="ZMOB"/>
       </input>
     </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="Join_9" joinType="inner">
-    <descriptions/>
-    <viewAttributes>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_9" joinOrder="OUTSIDE_IN" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
         <viewAttribute id="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
         <viewAttribute id="ZMM_PLANT_PUR_CO_ZMOB_Mobile_No"/>
         <viewAttribute id="RELEASE_DATE"/>
@@ -868,15 +926,15 @@
         <viewAttribute id="CAL_PR_Rel_WorkDays"/>
         <viewAttribute id="LFA1_MNFR_MCOD1_Name"/>
         <viewAttribute id="EKPO_ELIKZ"/>
-      <viewAttribute hidden="true" id="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-      <input node="Projection_10">
+        <viewAttribute hidden="true" id="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_10">
         <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_" source="ZMM_PLANT_PUR_CO_ZCONT_Per_Res_"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="ZMM_PLANT_PUR_CO_ZMOB_Mobile_No" source="ZMM_PLANT_PUR_CO_ZMOB_Mobile_No"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group" source="ZMM_PLANT_PUR_CO_EKGRP_Purch_Group"/>
       </input>
-      <input node="Join_12">
+      <input node="#Join_12">
         <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_CHECK" source="CAL_FUND_CNTR_CHECK"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CAL_FUND_CNTR_NAME_CHECK" source="CAL_FUND_CNTR_NAME_CHECK"/>
@@ -906,9 +964,9 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="EKPO_ELIKZ" source="EKPO_ELIKZ"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group" source="EBAN_EKGRP_Purch_Group"/>
       </input>
-    <joinAttribute name="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group"/>
-  </calculationView>
-</calculationViews>
+      <joinAttribute name="JOIN$ZMM_PLANT_PUR_CO_EKGRP_Purch_Group$EBAN_EKGRP_Purch_Group"/>
+    </calculationView>
+  </calculationViews>
   <logicalModel id="Join_9">
     <descriptions/>
     <attributes>
@@ -989,7 +1047,7 @@
         <keyMapping columnObjectName="Join_9" columnName="VENDOR_NAME_LAST_PO_VIEW"/>
       </attribute>
       <attribute id="EKKO_LIFNR_Vendor_Last_PO_View" order="24" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Vendor&apos;s account number"/>
+        <descriptions defaultDescription="Vendor's account number"/>
         <keyMapping columnObjectName="Join_9" columnName="EKKO_LIFNR_Vendor_Last_PO_View"/>
       </attribute>
       <attribute id="EKPO_MEINS_Order_Unit_Last_PO_View" order="25" attributeHierarchyActive="false" displayAttribute="false">
@@ -1043,8 +1101,8 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-<layout>
-  <shapes>
+  <layout>
+    <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="459" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -1065,14 +1123,6 @@
         <upperLeftCorner x="176" y="1107"/>
         <rectangleSize height="0" width="0"/>
       </shape>
-    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="484" y="1203"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1081,26 +1131,10 @@
         <upperLeftCorner x="330" y="1107"/>
         <rectangleSize height="0" width="0"/>
       </shape>
-    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="249" y="1011"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Aggregation_1" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="249" y="915"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1108,6 +1142,54 @@
       <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="166" y="819"/>
         <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="238" y="723"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="LFA1_MNFR_Proj" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="392" y="723"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_11" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="311" y="627"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Aggregation_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="311" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="465" y="549"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="385" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="539" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="460" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="CopyOfProjection_7" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="614" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_12" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="536" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_10" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="382" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_9" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="459" y="165"/>
+        <rectangleSize height="62" width="140"/>
       </shape>
       <shape expanded="true" modelObjectName="Projection_8" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="403" y="1011"/>
@@ -1121,123 +1203,10 @@
         <upperLeftCorner x="403" y="915"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    <shape modelObjectName="Projection_8" modelObjectNameSpace="Join_7" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_9" modelObjectNameSpace="Join_7" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
       <shape expanded="true" modelObjectName="Join_8" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="320" y="819"/>
         <rectangleSize height="0" width="0"/>
       </shape>
-    
-    <shape modelObjectName="Aggregation_1" modelObjectNameSpace="Join_8" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_7" modelObjectNameSpace="Join_8" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="238" y="723"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-    <shape modelObjectName="Join_8" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="LFA1_MNFR_Proj" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="392" y="723"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_11" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="311" y="627"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_11" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="LFA1_MNFR_Proj" modelObjectNameSpace="Join_11" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="Aggregation_2" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="311" y="549"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="465" y="549"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="385" y="453"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-    <shape modelObjectName="Aggregation_2" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_6" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="539" y="453"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="460" y="357"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-    <shape modelObjectName="Join_5" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Projection_7" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="CopyOfProjection_7" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="614" y="357"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_12" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="536" y="261"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-    <shape modelObjectName="Join_6" modelObjectNameSpace="Join_12" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="CopyOfProjection_7" modelObjectNameSpace="Join_12" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-      <shape expanded="true" modelObjectName="Projection_10" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="382" y="261"/>
-        <rectangleSize height="-1" width="-1"/>
-      </shape>
-      <shape expanded="true" modelObjectName="Join_9" modelObjectNameSpace="CalculationView">
-        <upperLeftCorner x="459" y="165"/>
-        <rectangleSize height="62" width="140"/>
-      </shape>
-    <shape modelObjectName="Projection_10" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="Join_12" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-  </shapes>
-</layout>
+    </shapes>
+  </layout>
 </Calculation:scenario>

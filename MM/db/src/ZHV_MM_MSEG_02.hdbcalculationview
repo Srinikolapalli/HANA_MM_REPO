@@ -2,7 +2,7 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm::ZHV_MM_MSEG_02" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
   <origin/>
   <descriptions defaultDescription="ZHV_MM_MSEG_01"/>
-  <metadata changedAt="2021-04-08 15:36:34.803"/>
+  <metadata activatedAt="2021-03-21 22:39:31.0" changedAt="2021-03-26 14:15:12.037" createdAt="2021-03-26 14:15:12.037"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="37"/>
@@ -932,7 +932,7 @@
         <keyMapping columnObjectName="Join_10" columnName="MSEG_WERKS"/>
       </attribute>
       <attribute id="WAERS" order="30" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Currency Key"/>
+        <descriptions defaultDescription="WAERS"/>
         <keyMapping columnObjectName="Join_10" columnName="WAERS"/>
       </attribute>
       <attribute id="MAKT_MAKTX" order="31" attributeHierarchyActive="false" displayAttribute="false">
@@ -940,35 +940,35 @@
         <keyMapping columnObjectName="Join_10" columnName="MAKT_MAKTX"/>
       </attribute>
       <attribute id="MTART" order="32" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Material Type"/>
+        <descriptions defaultDescription="MTART"/>
         <keyMapping columnObjectName="Join_10" columnName="MTART"/>
       </attribute>
       <attribute id="MATKL" order="33" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Material Group"/>
+        <descriptions defaultDescription="MATKL"/>
         <keyMapping columnObjectName="Join_10" columnName="MATKL"/>
       </attribute>
       <attribute id="MEINS" order="34" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Base Unit of Measure"/>
+        <descriptions defaultDescription="MEINS"/>
         <keyMapping columnObjectName="Join_10" columnName="MEINS"/>
       </attribute>
       <attribute id="ERSDA" order="35" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Material Created On"/>
+        <descriptions defaultDescription="ERSDA"/>
         <keyMapping columnObjectName="Join_10" columnName="ERSDA"/>
       </attribute>
       <attribute id="WERKS" order="36" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="MARC Plant"/>
+        <descriptions defaultDescription="WERKS"/>
         <keyMapping columnObjectName="Join_10" columnName="WERKS"/>
       </attribute>
       <attribute id="DISMM" order="37" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="MRP Type"/>
+        <descriptions defaultDescription="DISMM"/>
         <keyMapping columnObjectName="Join_10" columnName="DISMM"/>
       </attribute>
       <attribute id="DISPO" order="38" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="MRP Controller"/>
+        <descriptions defaultDescription="DISPO"/>
         <keyMapping columnObjectName="Join_10" columnName="DISPO"/>
       </attribute>
       <attribute id="EKGRP" order="39" attributeHierarchyActive="false" displayAttribute="false">
-        <descriptions defaultDescription="Purchasing Group"/>
+        <descriptions defaultDescription="EKGRP"/>
         <keyMapping columnObjectName="Join_10" columnName="EKGRP"/>
       </attribute>
       <attribute id="MRP_CONTROLLER" order="42" attributeHierarchyActive="false" displayAttribute="false">

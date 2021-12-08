@@ -2,7 +2,7 @@
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm.im::ZHV_IM_PHY_INV_MAT_01" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
   <origin/>
   <descriptions defaultDescription="ZMM_PHY_INV_MAT_01"/>
-  <metadata changedAt="2021-10-11 10:49:49.157"/>
+  <metadata changedAt="2021-05-04 14:09:51.398"/>
   <localVariables/>
   <variableMappings/>
   <informationModelLayout relativeWidthScenario="43"/>
