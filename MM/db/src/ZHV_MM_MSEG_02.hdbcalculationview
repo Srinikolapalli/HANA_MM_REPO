@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm::ZHV_MM_MSEG_02" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-  <origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm::ZHV_MM_MSEG_02" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
   <descriptions defaultDescription="ZHV_MM_MSEG_01"/>
   <metadata activatedAt="2021-03-21 22:39:31.0" changedAt="2021-03-26 14:15:12.037" createdAt="2021-03-26 14:15:12.037"/>
   <localVariables/>
@@ -26,10 +26,10 @@
       <resourceUri>algoma.mm::ZTBL_MRP_CONTROLLERS</resourceUri>
     </DataSource>
   </dataSources>
-  <calculationViews>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_1" filterExpressionLanguage="COLUMN_ENGINE">
-      <descriptions/>
-      <viewAttributes>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MANDT"/>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
@@ -45,8 +45,8 @@
         <viewAttribute id="MBEW_VMSAL"/>
         <viewAttribute id="MBEW_VMVER"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#MBEW">
+    <calculatedViewAttributes/>
+      <input node="MBEW">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MANDT" source="MANDT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="BWTAR"/>
@@ -62,11 +62,11 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="VMSAL"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="VMVER"/>
       </input>
-      <filter>&quot;MBEW_BWTAR&quot; = ''  and (&quot;MBEW_BKLAS&quot; = '3042' or &quot;MBEW_BKLAS&quot; = '3408'or &quot;MBEW_BKLAS&quot; = '3412'or &quot;MBEW_BKLAS&quot; = '3420'or &quot;MBEW_BKLAS&quot; = '3500'or &quot;MBEW_BKLAS&quot; = '3501'or &quot;MBEW_BKLAS&quot; = '3505'or &quot;MBEW_BKLAS&quot; = '3511'or &quot;MBEW_BKLAS&quot; = '3604'or &quot;MBEW_BKLAS&quot; = '3612')</filter>
-    </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_6">
-      <descriptions/>
-      <viewAttributes>
+    <filter>&quot;MBEW_BWTAR&quot; = ''  and (&quot;MBEW_BKLAS&quot; = '3042' or &quot;MBEW_BKLAS&quot; = '3408'or &quot;MBEW_BKLAS&quot; = '3412'or &quot;MBEW_BKLAS&quot; = '3420'or &quot;MBEW_BKLAS&quot; = '3500'or &quot;MBEW_BKLAS&quot; = '3501'or &quot;MBEW_BKLAS&quot; = '3505'or &quot;MBEW_BKLAS&quot; = '3511'or &quot;MBEW_BKLAS&quot; = '3604'or &quot;MBEW_BKLAS&quot; = '3612')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_6">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MSEG_MANDT"/>
         <viewAttribute id="MSEG_MBLNR"/>
         <viewAttribute id="MSEG_MJAHR"/>
@@ -87,8 +87,8 @@
         <viewAttribute id="MSEG_EXBWR"/>
         <viewAttribute id="WAERS"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#MSEG">
+    <calculatedViewAttributes/>
+      <input node="MSEG">
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MANDT" source="MANDT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MBLNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MJAHR"/>
@@ -106,13 +106,11 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_WERKS" source="WERKS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BUALT" source="BUALT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_DMBTR" source="DMBTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EXBWR" source="EXBWR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-      </input>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EXBWR" source="EXBWR"/></input>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinOrder="OUTSIDE_IN" joinType="leftOuter">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_6" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -144,7 +142,7 @@
         <viewAttribute id="MSEG_EXBWR"/>
         <viewAttribute id="WAERS"/>
       </viewAttributes>
-      <calculatedViewAttributes>
+    <calculatedViewAttributes>
         <calculatedViewAttribute datatype="DOUBLE" id="fx_Goods_Issue_Quantity" expressionLanguage="COLUMN_ENGINE">
           <formula>if(&quot;MSEG_BWART&quot; = '202'or &quot;MSEG_BWART&quot; = '262',&quot;MSEG_MENGE&quot; * -1,if(&quot;MSEG_BWART&quot; = '201' or &quot;MSEG_BWART&quot; = '261',&quot;MSEG_MENGE&quot;,0))</formula>
         </calculatedViewAttribute>
@@ -164,7 +162,7 @@
           <formula> if (&quot;MSEG_BWART&quot;='202' or &quot;MSEG_BWART&quot;='262', &quot;MSEG_DMBTR&quot;*-1, if (&quot;MSEG_BWART&quot;='201' or &quot;MSEG_BWART&quot;='261', &quot;MSEG_DMBTR&quot;, 0))</formula>
         </calculatedViewAttribute>
       </calculatedViewAttributes>
-      <input node="#CopyOfProjection_1">
+      <input node="CopyOfProjection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
@@ -179,7 +177,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
       </input>
-      <input node="#CopyOfProjection_6">
+      <input node="CopyOfProjection_6">
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MSEG_MBLNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MSEG_MJAHR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ZEILE" source="MSEG_ZEILE"/>
@@ -199,11 +197,11 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MSEG_MATNR"/>
       </input>
-      <joinAttribute name="MBEW_MATNR"/>
-    </calculationView>
-    <calculationView xsi:type="Calculation:AggregationView" id="fx_Goods_Receipt_Quantity">
-      <descriptions/>
-      <viewAttributes>
+    <joinAttribute name="MBEW_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="fx_Goods_Receipt_Quantity">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -241,63 +239,27 @@
         <viewAttribute aggregationType="sum" id="fx_Goods_Receipt_Amount_in_LC"/>
         <viewAttribute aggregationType="sum" id="fx_Goods_Issue_Amount_in_LC"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Join_6">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MSEG_MBLNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MSEG_MJAHR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ZEILE" source="MSEG_ZEILE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWART" source="MSEG_BWART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BUDAT_MKPF" source="MSEG_BUDAT_MKPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWTAR" source="MSEG_BWTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_CHARG" source="MSEG_CHARG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ERFME" source="MSEG_ERFME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ERFMG" source="MSEG_ERFMG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MENGE" source="MSEG_MENGE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MEINS" source="MSEG_MEINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_SOBKZ" source="MSEG_SOBKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_WERKS" source="MSEG_WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BUALT" source="MSEG_BUALT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_DMBTR" source="MSEG_DMBTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EXBWR" source="MSEG_EXBWR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Quantity" source="fx_Goods_Issue_Quantity"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Quantity" source="fx_Goods_Receipt_Quantity"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Current_date" source="fx_Current_date"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Out_To_Vendor_for_Subcontracting_Quantity" source="fx_Out_To_Vendor_for_Subcontracting_Quantity"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Amount_in_LC" source="fx_Goods_Receipt_Amount_in_LC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
-      </input>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+      <input node="Join_6"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_2">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_2">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MAKT_MANDT"/>
         <viewAttribute id="MAKT_MATNR"/>
         <viewAttribute id="MAKT_MAKTX"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#MAKT">
+    <calculatedViewAttributes/>
+      <input node="MAKT">
         <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MANDT" source="MANDT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MATNR" source="MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKTX"/>
       </input>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_7" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -336,8 +298,8 @@
         <viewAttribute id="fx_Goods_Receipt_Amount_in_LC"/>
         <viewAttribute id="fx_Goods_Issue_Amount_in_LC"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#fx_Goods_Receipt_Quantity">
+    <calculatedViewAttributes/>
+      <input node="fx_Goods_Receipt_Quantity">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
@@ -375,15 +337,15 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Amount_in_LC" source="fx_Goods_Receipt_Amount_in_LC"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
       </input>
-      <input node="#CopyOfProjection_2">
+      <input node="CopyOfProjection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MAKT_MATNR"/>
       </input>
-      <joinAttribute name="MBEW_MATNR"/>
-    </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_3">
-      <descriptions/>
-      <viewAttributes>
+    <joinAttribute name="MBEW_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_3">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MANDT"/>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="MTART"/>
@@ -391,19 +353,12 @@
         <viewAttribute id="MEINS"/>
         <viewAttribute id="ERSDA"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#MARA">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="MARA"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_8" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -446,8 +401,8 @@
         <viewAttribute id="fx_Goods_Receipt_Amount_in_LC"/>
         <viewAttribute id="fx_Goods_Issue_Amount_in_LC"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Join_7">
+    <calculatedViewAttributes/>
+      <input node="Join_7">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
@@ -486,18 +441,18 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Amount_in_LC" source="fx_Goods_Receipt_Amount_in_LC"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
       </input>
-      <input node="#CopyOfProjection_3">
+      <input node="CopyOfProjection_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
       </input>
-      <joinAttribute name="MBEW_MATNR"/>
-    </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_4">
-      <descriptions/>
-      <viewAttributes>
+    <joinAttribute name="MBEW_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_4">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MANDT"/>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="WERKS"/>
@@ -507,21 +462,12 @@
         <viewAttribute id="MABST"/>
         <viewAttribute id="MINBE"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#MARC">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISMM" source="DISMM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MABST" source="MABST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MINBE" source="MINBE"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="MARC"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_9" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_9" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -570,12 +516,12 @@
         <viewAttribute id="fx_Goods_Receipt_Amount_in_LC"/>
         <viewAttribute id="fx_Goods_Issue_Amount_in_LC"/>
       </viewAttributes>
-      <calculatedViewAttributes>
+    <calculatedViewAttributes>
         <calculatedViewAttribute datatype="DECIMAL" id="fx_Stock_Differential_Quantity" length="34" expressionLanguage="COLUMN_ENGINE">
           <formula>&quot;MBEW_LBKUM&quot;-&quot;MABST&quot;</formula>
         </calculatedViewAttribute>
       </calculatedViewAttributes>
-      <input node="#Join_8">
+      <input node="Join_8">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
@@ -618,7 +564,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Amount_in_LC" source="fx_Goods_Receipt_Amount_in_LC"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
       </input>
-      <input node="#CopyOfProjection_4">
+      <input node="CopyOfProjection_4">
         <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="DISMM" source="DISMM"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
@@ -627,25 +573,21 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="MINBE" source="MINBE"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MATNR"/>
       </input>
-      <joinAttribute name="MBEW_MATNR"/>
-    </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_5">
-      <descriptions/>
-      <viewAttributes>
+    <joinAttribute name="MBEW_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CopyOfProjection_5">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MRP_CONTROLLER_ID"/>
         <viewAttribute id="MRP_CONTROLLER"/>
         <viewAttribute id="MRP_CONTROLLER_DESCR"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#ZTBL_MRP_CONTROLLERS">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_ID" source="MRP_CONTROLLER_ID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER" source="MRP_CONTROLLER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_DESCR" source="MRP_CONTROLLER_DESCR"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="ZTBL_MRP_CONTROLLERS"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MBEW_MATNR"/>
         <viewAttribute id="MBEW_BWTAR"/>
         <viewAttribute id="MBEW_LBKUM"/>
@@ -695,61 +637,13 @@
         <viewAttribute id="fx_Goods_Issue_Amount_in_LC"/>
         <viewAttribute aggregationType="sum" id="fx_Stock_Differential_Quantity"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Join_9">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_SALK3" source="MBEW_SALK3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BKLAS" source="MBEW_BKLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTTY" source="MBEW_BWTTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFGJA" source="MBEW_LFGJA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LFMON" source="MBEW_LFMON"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_STPRS" source="MBEW_STPRS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VERPR" source="MBEW_VERPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMKUM" source="MBEW_VMKUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMSAL" source="MBEW_VMSAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_VMVER" source="MBEW_VMVER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MBLNR" source="MSEG_MBLNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MJAHR" source="MSEG_MJAHR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ZEILE" source="MSEG_ZEILE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWART" source="MSEG_BWART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BUDAT_MKPF" source="MSEG_BUDAT_MKPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BWTAR" source="MSEG_BWTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_CHARG" source="MSEG_CHARG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ERFME" source="MSEG_ERFME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_ERFMG" source="MSEG_ERFMG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MENGE" source="MSEG_MENGE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_MEINS" source="MSEG_MEINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_SOBKZ" source="MSEG_SOBKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_WERKS" source="MSEG_WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_BUALT" source="MSEG_BUALT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_DMBTR" source="MSEG_DMBTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSEG_EXBWR" source="MSEG_EXBWR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAKT_MAKTX" source="MAKT_MAKTX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISMM" source="DISMM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MABST" source="MABST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MINBE" source="MINBE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_GOODS_ISSUE_QTY" source="CAL_GOODS_ISSUE_QTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CAL_GOODS_RECEIPT_QTY" source="CAL_GOODS_RECEIPT_QTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Current_date" source="fx_Current_date"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Out_To_Vendor_for_Subcontracting_Quantity" source="fx_Out_To_Vendor_for_Subcontracting_Quantity"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Receipt_Amount_in_LC" source="fx_Goods_Receipt_Amount_in_LC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_Stock_Differential_Quantity" source="fx_Stock_Differential_Quantity"/>
-      </input>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+      <input node="Join_9"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_10" joinOrder="OUTSIDE_IN" joinType="leftOuter">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_10" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MRP_CONTROLLER"/>
         <viewAttribute id="MRP_CONTROLLER_DESCR"/>
         <viewAttribute id="MBEW_MATNR"/>
@@ -801,8 +695,8 @@
         <viewAttribute id="fx_Goods_Issue_Amount_in_LC"/>
         <viewAttribute id="fx_Stock_Differential_Quantity"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Aggregation_1">
+    <calculatedViewAttributes/>
+      <input node="Aggregation_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_MATNR" source="MBEW_MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_BWTAR" source="MBEW_BWTAR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_LBKUM" source="MBEW_LBKUM"/>
@@ -852,14 +746,14 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Goods_Issue_Amount_in_LC" source="fx_Goods_Issue_Amount_in_LC"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_Stock_Differential_Quantity" source="fx_Stock_Differential_Quantity"/>
       </input>
-      <input node="#CopyOfProjection_5">
+      <input node="CopyOfProjection_5">
         <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER" source="MRP_CONTROLLER"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MRP_CONTROLLER_DESCR" source="MRP_CONTROLLER_DESCR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="MRP_CONTROLLER_ID"/>
       </input>
-      <joinAttribute name="DISPO"/>
-    </calculationView>
-  </calculationViews>
+    <joinAttribute name="DISPO"/>
+  </calculationView>
+</calculationViews>
   <logicalModel id="Join_10">
     <descriptions/>
     <attributes>
@@ -989,87 +883,87 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="MBEW_LBKUM" order="3" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_LBKUM" order="3" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Total Valuated Stock"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_LBKUM"/>
       </measure>
-      <measure id="MBEW_SALK3" order="4" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_SALK3" order="4" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Value of Total Valuated Stock"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_SALK3"/>
       </measure>
-      <measure id="MBEW_STPRS" order="9" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_STPRS" order="9" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Standard price"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_STPRS"/>
       </measure>
-      <measure id="MBEW_VERPR" order="10" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_VERPR" order="10" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Moving Average Price/Periodic Unit Price"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_VERPR"/>
       </measure>
-      <measure id="MBEW_VMKUM" order="11" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_VMKUM" order="11" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Total valuated stock in previous period"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_VMKUM"/>
       </measure>
-      <measure id="MBEW_VMSAL" order="12" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_VMSAL" order="12" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Value of total valuated stock in previous period"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_VMSAL"/>
       </measure>
-      <measure id="MBEW_VMVER" order="13" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MBEW_VMVER" order="13" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Moving Average Price/Periodic Unit Price in Previous Period"/>
         <measureMapping columnObjectName="Join_10" columnName="MBEW_VMVER"/>
       </measure>
-      <measure id="MSEG_ERFMG" order="22" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MSEG_ERFMG" order="22" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Quantity in unit of entry"/>
         <measureMapping columnObjectName="Join_10" columnName="MSEG_ERFMG"/>
       </measure>
-      <measure id="MSEG_MENGE" order="23" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MSEG_MENGE" order="23" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Quantity"/>
         <measureMapping columnObjectName="Join_10" columnName="MSEG_MENGE"/>
       </measure>
-      <measure id="MSEG_BUALT" order="27" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MSEG_BUALT" order="27" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Amount Posted in Alternative Price Control"/>
         <measureMapping columnObjectName="Join_10" columnName="MSEG_BUALT"/>
       </measure>
-      <measure id="MSEG_DMBTR" order="28" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MSEG_DMBTR" order="28" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Amount in local currency"/>
         <measureMapping columnObjectName="Join_10" columnName="MSEG_DMBTR"/>
       </measure>
-      <measure id="MSEG_EXBWR" order="29" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MSEG_EXBWR" order="29" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Externally Entered Posting Amount in Local Currency"/>
         <measureMapping columnObjectName="Join_10" columnName="MSEG_EXBWR"/>
       </measure>
-      <measure id="MABST" order="40" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MABST" order="40" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Max Stock Level"/>
         <measureMapping columnObjectName="Join_10" columnName="MABST"/>
       </measure>
-      <measure id="MINBE" order="41" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="MINBE" order="41" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="Min Stock Level (Reorder Point)"/>
         <measureMapping columnObjectName="Join_10" columnName="MINBE"/>
       </measure>
-      <measure id="fx_Goods_Issue_Quantity" order="44" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Goods_Issue_Quantity" order="44" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_Goods_Issue_Quantity"/>
         <measureMapping columnObjectName="Join_10" columnName="CAL_GOODS_ISSUE_QTY"/>
       </measure>
-      <measure id="fx_Goods_Receipt_Quantity" order="45" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Goods_Receipt_Quantity" order="45" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_Goods_Receipt_Quantity"/>
         <measureMapping columnObjectName="Join_10" columnName="CAL_GOODS_RECEIPT_QTY"/>
       </measure>
-      <measure id="fx_Current_date" order="46" aggregationType="min" engineAggregation="min" measureType="simple">
+      <measure id="fx_Current_date" order="46" aggregationType="min" measureType="simple">
         <descriptions defaultDescription="fx_Current_date"/>
         <measureMapping columnObjectName="Join_10" columnName="fx_Current_date"/>
       </measure>
-      <measure id="fx_Out_To_Vendor_for_Subcontracting_Quantity" order="47" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Out_To_Vendor_for_Subcontracting_Quantity" order="47" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_Out_To_Vendor_for_Subcontracting_Quantity"/>
         <measureMapping columnObjectName="Join_10" columnName="fx_Out_To_Vendor_for_Subcontracting_Quantity"/>
       </measure>
-      <measure id="fx_Goods_Receipt_Amount_in_LC" order="48" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Goods_Receipt_Amount_in_LC" order="48" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_Goods_Receipt_Amount_in_LC"/>
         <measureMapping columnObjectName="Join_10" columnName="fx_Goods_Receipt_Amount_in_LC"/>
       </measure>
-      <measure id="fx_Goods_Issue_Amount_in_LC" order="49" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Goods_Issue_Amount_in_LC" order="49" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_Goods_Issue_Amount_in_LC"/>
         <measureMapping columnObjectName="Join_10" columnName="fx_Goods_Issue_Amount_in_LC"/>
       </measure>
-      <measure id="fx_Stock_Differential_Quantity" hidden="false" order="50" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_Stock_Differential_Quantity" order="50" aggregationType="sum" measureType="simple">
         <descriptions/>
         <measureMapping columnObjectName="Join_10" columnName="fx_Stock_Differential_Quantity"/>
       </measure>
@@ -1078,8 +972,8 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-  <layout>
-    <shapes>
+<layout>
+  <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="249" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -1096,6 +990,14 @@
         <upperLeftCorner x="99" y="705"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
+    <shape modelObjectName="CopyOfProjection_1" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="CopyOfProjection_6" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
       <shape expanded="true" modelObjectName="fx_Goods_Receipt_Quantity" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="99" y="627"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1108,6 +1010,14 @@
         <upperLeftCorner x="175" y="531"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
+    <shape modelObjectName="fx_Goods_Receipt_Quantity" modelObjectNameSpace="Join_7" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="CopyOfProjection_2" modelObjectNameSpace="Join_7" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
       <shape expanded="true" modelObjectName="CopyOfProjection_3" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="329" y="531"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1116,6 +1026,14 @@
         <upperLeftCorner x="250" y="435"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
+    <shape modelObjectName="Join_7" modelObjectNameSpace="Join_8" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="CopyOfProjection_3" modelObjectNameSpace="Join_8" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
       <shape expanded="true" modelObjectName="CopyOfProjection_4" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="96" y="435"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1124,6 +1042,14 @@
         <upperLeftCorner x="172" y="339"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
+    <shape modelObjectName="Join_8" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="CopyOfProjection_4" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
       <shape expanded="true" modelObjectName="CopyOfProjection_5" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="326" y="261"/>
         <rectangleSize height="-1" width="-1"/>
@@ -1136,6 +1062,15 @@
         <upperLeftCorner x="249" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    </shapes>
-  </layout>
+    
+    <shape modelObjectName="Aggregation_1" modelObjectNameSpace="Join_10" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="CopyOfProjection_5" modelObjectNameSpace="Join_10" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
 </Calculation:scenario>
