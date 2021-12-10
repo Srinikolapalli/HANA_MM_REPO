@@ -139,7 +139,11 @@
         <viewAttribute id="MBEW_HIS_SHIP_WEEK"/>
         <viewAttribute id="MARC_EKGRP"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_1" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
       <input node="Join_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MANDT" source="MBEW_HIS_MANDT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MBEW_HIS_MATNR" source="MBEW_HIS_MATNR"/>
