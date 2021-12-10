@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm::ZHV_MM_CHANGE_LOG" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-  <origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm::ZHV_MM_CHANGE_LOG" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
   <descriptions defaultDescription="ZHV_MM_CHANGE_LOG"/>
   <metadata changedAt="2021-06-22 09:00:07.802"/>
   <localVariables/>
@@ -17,10 +17,10 @@
       <resourceUri>algoma.mm::CDPOS</resourceUri>
     </DataSource>
   </dataSources>
-  <calculationViews>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-      <descriptions/>
-      <viewAttributes>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="ERSDA"/>
         <viewAttribute id="ERNAM"/>
@@ -580,571 +580,12 @@
         <viewAttribute id="FSH_SALLOC_QTY_S"/>
         <viewAttribute id="fx_count"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#ZHV_BV_MATERIAL_MASTER">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VPSTA" source="VPSTA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZEINR" source="ZEINR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZEIAR" source="ZEIAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZEIVR" source="ZEIVR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZEIFO" source="ZEIFO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AESZN" source="AESZN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BLATT" source="BLATT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BLANZ" source="BLANZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FERTH" source="FERTH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FORMT" source="FORMT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WRKST" source="WRKST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NORMT" source="NORMT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BEHVO" source="BEHVO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISST" source="DISST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EANNR" source="EANNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BWVOR" source="BWVOR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BWSCL" source="BWSCL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SAISO" source="SAISO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ENTAR" source="ENTAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AEKLK" source="AEKLK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZREV" source="KZREV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FUELG" source="FUELG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STFAK" source="STFAK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAGRV" source="MAGRV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LIQDT" source="LIQDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SAISJ" source="SAISJ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLGTP" source="PLGTP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MLGUT" source="MLGUT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SATNR" source="SATNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ATTYP" source="ATTYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZKUP" source="KZKUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZNFM" source="KZNFM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PMATA" source="PMATA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TAKLV" source="TAKLV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INHME" source="INHME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INHAL" source="INHAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VPREH" source="VPREH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ETIAG" source="ETIAG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INHBR" source="INHBR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CMETH" source="CMETH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBF" source="CUOBF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZUMW" source="KZUMW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KOSCH" source="KOSCH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPROF" source="SPROF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NRFHG" source="NRFHG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BMATN" source="BMATN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZWSM" source="KZWSM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SAITY" source="SAITY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IHIVI" source="IHIVI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ILOOS" source="ILOOS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZEFF" source="KZEFF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COMPL" source="COMPL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRZUS" source="PRZUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BFLME" source="BFLME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATFI" source="MATFI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CMREL" source="CMREL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BBTYP" source="BBTYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GTIN_VARIANT" source="GTIN_VARIANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GENNR" source="GENNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RMATP" source="RMATP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GDS_RELEVANT" source="GDS_RELEVANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WEORA" source="WEORA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP_DFLT" source="HUTYP_DFLT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PILFERABLE" source="PILFERABLE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WHSTC" source="WHSTC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WHMATGR" source="WHMATGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HNDLCODE" source="HNDLCODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HAZMAT" source="HAZMAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TARE_VAR" source="TARE_VAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXC" source="MAXC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXC_TOL" source="MAXC_TOL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXL" source="MAXL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXB" source="MAXB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXH" source="MAXH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXDIM_UOM" source="MAXDIM_UOM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HERKL" source="HERKL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MFRGR" source="MFRGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QQTIME" source="QQTIME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QQTIMEUOM" source="QQTIMEUOM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QGRP" source="QGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SERIAL" source="SERIAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PS_SMARTFORM" source="PS_SMARTFORM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LOGUNIT" source="LOGUNIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CWQREL" source="CWQREL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CWQPROC" source="CWQPROC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CWQTOLGR" source="CWQTOLGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADPROF" source="ADPROF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IPMIPPRODUCT" source="IPMIPPRODUCT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ALLOW_PMAT_IGNO" source="ALLOW_PMAT_IGNO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEDIUM" source="MEDIUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COMMODITY" source="COMMODITY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ANIMAL_ORIGIN" source="ANIMAL_ORIGIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TEXTILE_COMP_IND" source="TEXTILE_COMP_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_CSGR" source="SGT_CSGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_COVSA" source="SGT_COVSA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_STAT" source="SGT_STAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCOPE" source="SGT_SCOPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_REL" source="SGT_REL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_MG_AT1" source="FSH_MG_AT1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_MG_AT2" source="FSH_MG_AT2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_MG_AT3" source="FSH_MG_AT3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SEALV" source="FSH_SEALV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SEAIM" source="FSH_SEAIM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SC_MID" source="FSH_SC_MID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PSM_CODE" source="PSM_CODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PACKCODE" source="PACKCODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DG_PACK_STATUS" source="DG_PACK_STATUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MCOND" source="MCOND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RETDELC" source="RETDELC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LOGLEV_RETO" source="LOGLEV_RETO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NSNID" source="NSNID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OVLPN" source="OVLPN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ADSPC_SPC" source="ADSPC_SPC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VARID" source="VARID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MSBOOKPARTNO" source="MSBOOKPARTNO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VTYPE" source="VTYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VCHNR" source="VCHNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EVVAL" source="EVVAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DVERS" source="DVERS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DPCBT" source="DPCBT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XGRDT" source="XGRDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IMATN" source="IMATN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PICNUM" source="PICNUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTAT" source="BSTAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COLOR_ATINN" source="COLOR_ATINN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SIZE1_ATINN" source="SIZE1_ATINN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SIZE2_ATINN" source="SIZE2_ATINN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COLOR" source="COLOR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SIZE1" source="SIZE1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SIZE2" source="SIZE2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FREE_CHAR" source="FREE_CHAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CARE_CODE" source="CARE_CODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BRAND_ID" source="BRAND_ID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_CODE1" source="FIBER_CODE1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_PART1" source="FIBER_PART1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_CODE2" source="FIBER_CODE2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_PART2" source="FIBER_PART2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_CODE3" source="FIBER_CODE3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_PART3" source="FIBER_PART3"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_CODE4" source="FIBER_CODE4"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_PART4" source="FIBER_PART4"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_CODE5" source="FIBER_CODE5"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIBER_PART5" source="FIBER_PART5"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FASHGRD" source="FASHGRD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZPDI" source="ZPDI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ZMRKNR" source="ZMRKNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_LULEINH" source="_BEV1_LULEINH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_LULDEGRP" source="_BEV1_LULDEGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_NESTRUCCAT" source="_BEV1_NESTRUCCAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DSD_SL_TOLTYP" source="_DSD_SL_TOLTYP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DSD_SV_CNT_GRP" source="_DSD_SV_CNT_GRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DSD_VC_GROUP" source="_DSD_VC_GROUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_KADU" source="_SAPMP_KADU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_ABMEIN" source="_SAPMP_ABMEIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_KADP" source="_SAPMP_KADP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_BRAD" source="_SAPMP_BRAD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_SPBI" source="_SAPMP_SPBI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_TRAD" source="_SAPMP_TRAD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_KEDU" source="_SAPMP_KEDU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_SPTR" source="_SAPMP_SPTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_FBDK" source="_SAPMP_FBDK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_FBHK" source="_SAPMP_FBHK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_RILI" source="_SAPMP_RILI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_FBAK" source="_SAPMP_FBAK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_AHO" source="_SAPMP_AHO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_MIFRR" source="_SAPMP_MIFRR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_TILT_IND" source="_VSO_R_TILT_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_STACK_IND" source="_VSO_R_STACK_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_BOT_IND" source="_VSO_R_BOT_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_TOP_IND" source="_VSO_R_TOP_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_STACK_NO" source="_VSO_R_STACK_NO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_IND" source="_VSO_R_PAL_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_OVR_D" source="_VSO_R_PAL_OVR_D"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_OVR_W" source="_VSO_R_PAL_OVR_W"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_B_HT" source="_VSO_R_PAL_B_HT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_MIN_H" source="_VSO_R_PAL_MIN_H"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_TOL_B_HT" source="_VSO_R_TOL_B_HT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_NO_P_GVH" source="_VSO_R_NO_P_GVH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_QUAN_UNIT" source="_VSO_R_QUAN_UNIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_KZGVH_IND" source="_VSO_R_KZGVH_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAKTG" source="MAKTG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT_1" source="PSTAT_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_1" source="LVORM_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BWTTY" source="BWTTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XCHAR" source="XCHAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MMSTA" source="MMSTA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MMSTD" source="MMSTD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAABC" source="MAABC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZKRI" source="KZKRI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AUSME" source="AUSME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISPR" source="DISPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISMM" source="DISMM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZDIE" source="KZDIE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WEBAZ" source="WEBAZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PERKZ" source="PERKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AUSSS" source="AUSSS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISLS" source="DISLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BESKZ" source="BESKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SOBSL" source="SOBSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MINBE" source="MINBE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EISBE" source="EISBE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTMI" source="BSTMI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTMA" source="BSTMA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTFE" source="BSTFE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSTRF" source="BSTRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MABST" source="MABST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LOSFX" source="LOSFX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SBDKZ" source="SBDKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LAGPR" source="LAGPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ALTSL" source="ALTSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZAUS" source="KZAUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AUSDT" source="AUSDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NFMAT" source="NFMAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZBED" source="KZBED"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MISKZ" source="MISKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FHORI" source="FHORI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PFREI" source="PFREI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FFREI" source="FFREI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RGEKZ" source="RGEKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FEVOR" source="FEVOR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BEARZ" source="BEARZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RUEZT" source="RUEZT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TRANZ" source="TRANZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BASMG" source="BASMG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DZEIT" source="DZEIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXLZ" source="MAXLZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LZEIH" source="LZEIH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZPRO" source="KZPRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GPMKZ" source="GPMKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UEETO" source="UEETO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UEETK" source="UEETK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UNETO" source="UNETO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WZEIT" source="WZEIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ATPKZ" source="ATPKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VZUSL" source="VZUSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HERBL" source="HERBL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INSMK" source="INSMK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPROZ" source="SPROZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QUAZT" source="QUAZT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SSQSS" source="SSQSS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MPDAU" source="MPDAU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZPPV" source="KZPPV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZDKZ" source="KZDKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WSTGH" source="WSTGH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRFRQ" source="PRFRQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NKMPR" source="NKMPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UMLMC" source="UMLMC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LADGR" source="LADGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF_1" source="XCHPF_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="USEQU" source="USEQU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LGRAD" source="LGRAD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AUFTL" source="AUFTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLVAR" source="PLVAR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OTYPE" source="OTYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTVFP" source="MTVFP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZKFK" source="KZKFK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRVEZ" source="VRVEZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VBAMG" source="VBAMG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VBEAZ" source="VBEAZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LIZYK" source="LIZYK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BWSCL_1" source="BWSCL_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KAUTB" source="KAUTB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KORDB" source="KORDB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HERKL_1" source="HERKL_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HERKR" source="HERKR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EXPME" source="EXPME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MTVER" source="MTVER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TRAME" source="TRAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MRPPP" source="MRPPP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SAUFT" source="SAUFT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FXHOR" source="FXHOR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRMOD" source="VRMOD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VINT1" source="VINT1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VINT2" source="VINT2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VERKZ" source="VERKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLNNR" source="PLNNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="APLAL" source="APLAL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LOSGR" source="LOSGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK" source="SOBSK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FRTME" source="FRTME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LGPRO" source="LGPRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISGR" source="DISGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KAUSF" source="KAUSF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QZGTP" source="QZGTP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QMATV" source="QMATV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TAKZT" source="TAKZT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RWPRO" source="RWPRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COPAM" source="COPAM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ABCIN" source="ABCIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AWSLS" source="AWSLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SERNP" source="SERNP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STDPD" source="STDPD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SFEPR" source="SFEPR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="XMCNG" source="XMCNG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QSSYS" source="QSSYS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFRHY" source="LFRHY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRBMT" source="VRBMT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRBWK" source="VRBWK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRBDT" source="VRBDT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VRBFK" source="VRBFK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AUTRU" source="AUTRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PREFE" source="PREFE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRENC" source="PRENC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRENO" source="PRENO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PREND" source="PREND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRENE" source="PRENE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRENG" source="PRENG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ITARK" source="ITARK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SERVG" source="SERVG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZKUP_1" source="KZKUP_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STRGR" source="STRGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBV" source="CUOBV"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LGFSB" source="LGFSB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CCFIX" source="CCFIX"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EPRIO" source="EPRIO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="QMATA" source="QMATA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RESVP" source="RESVP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLNTY" source="PLNTY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UOMGR" source="UOMGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UMRSL" source="UMRSL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ABFAC" source="ABFAC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SFCPF" source="SFCPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SHFLG" source="SHFLG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SHZET" source="SHZET"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MDACH" source="MDACH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZECH" source="KZECH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MEGRU" source="MEGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MFRGR_1" source="MFRGR_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PROFIL" source="PROFIL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VERS_CSEG" source="VERS_CSEG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VERS_ACTIVE" source="VERS_ACTIVE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VKUMC" source="VKUMC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VKTRW" source="VKTRW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZAGL" source="KZAGL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FVIDK" source="FVIDK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FXPRU" source="FXPRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LOGGR" source="LOGGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FPRFM" source="FPRFM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GLGMG" source="GLGMG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VKGLG" source="VKGLG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INDUS" source="INDUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MOWNR" source="MOWNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MOGRU" source="MOGRU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CASNR" source="CASNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GPNUM" source="GPNUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="STEUC" source="STEUC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FABKZ" source="FABKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MATGR" source="MATGR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VSPVB" source="VSPVB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DPLFS" source="DPLFS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DPLPU" source="DPLPU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DPLHO" source="DPLHO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MINLS" source="MINLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAXLS" source="MAXLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FIXLS" source="FIXLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LTINC" source="LTINC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="COMPL_1" source="COMPL_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CONVT" source="CONVT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SHPRO" source="SHPRO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="AHDIS" source="AHDIS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DIBER" source="DIBER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZPSP" source="KZPSP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OCMPF" source="OCMPF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="APOKZ" source="APOKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MCRUE" source="MCRUE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFMON" source="LFMON"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFGJA" source="LFGJA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EISLO" source="EISLO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NCOST" source="NCOST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ROTATION_DATE" source="ROTATION_DATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UCHKZ" source="UCHKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UCMAT" source="UCMAT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BWESB" source="BWESB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_COVS" source="SGT_COVS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_STATC" source="SGT_STATC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_SCOPE_1" source="SGT_SCOPE_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_MRPSI" source="SGT_MRPSI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_PRCM" source="SGT_PRCM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_CHINT" source="SGT_CHINT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_STK_PRT" source="SGT_STK_PRT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_DEFSC" source="SGT_DEFSC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_MRP_ATP_STATUS" source="SGT_MRP_ATP_STATUS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SGT_MMSTD" source="SGT_MMSTD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_MG_ARUN_REQ" source="FSH_MG_ARUN_REQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SEAIM_1" source="FSH_SEAIM_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_VAR_GROUP" source="FSH_VAR_GROUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_KZECH" source="FSH_KZECH"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_CALENDAR_GROUP" source="FSH_CALENDAR_GROUP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPSKZ" source="PPSKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_STRATEGY" source="PPS_STRATEGY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_PLANNING_TYPE" source="PPS_PLANNING_TYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_HEUR_ID" source="PPS_HEUR_ID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_FIXPEG" source="PPS_FIXPEG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_PEG_STRATEGY" source="PPS_PEG_STRATEGY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_GRPRT" source="PPS_GRPRT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_GIPRT" source="PPS_GIPRT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_CONHAP" source="PPS_CONHAP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_HUNIT" source="PPS_HUNIT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_CONHAP_OUT" source="PPS_CONHAP_OUT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_HUNIT_OUT" source="PPS_HUNIT_OUT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_ATPCHECK" source="PPS_ATPCHECK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_PEG_FUT_AL" source="PPS_PEG_FUT_AL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PPS_PEG_PAST_AL" source="PPS_PEG_PAST_AL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="NF_FLAG" source="NF_FLAG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_TOLPRPL" source="_SAPMP_TOLPRPL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_SAPMP_TOLPRMI" source="_SAPMP_TOLPRMI"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PKGRP" source="_VSO_R_PKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_LANE_NUM" source="_VSO_R_LANE_NUM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_PAL_VEND" source="_VSO_R_PAL_VEND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_VSO_R_FORK_DIR" source="_VSO_R_FORK_DIR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IUID_RELEVANT" source="IUID_RELEVANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UID_IEA" source="UID_IEA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DPCBT_1" source="DPCBT_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CONS_PROCG" source="CONS_PROCG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="GI_PR_TIME" source="GI_PR_TIME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MULTIPLE_EKGRP" source="MULTIPLE_EKGRP"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="REF_SCHEMA" source="REF_SCHEMA"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MIN_TROC" source="MIN_TROC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MAX_TROC" source="MAX_TROC"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TARGET_STOCK" source="TARGET_STOCK"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT_2" source="PSTAT_2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_2" source="LVORM_2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFGJA_1" source="LFGJA_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LFMON_1" source="LFMON_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LABST" source="LABST"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UMLME" source="UMLME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="INSME" source="INSME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EINME" source="EINME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="SPEME" source="SPEME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="RETME" source="RETME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMLAB" source="VMLAB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMUML" source="VMUML"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMINS" source="VMINS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMEIN" source="VMEIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMSPE" source="VMSPE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VMRET" source="VMRET"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZILL" source="KZILL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZILQ" source="KZILQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZILE" source="KZILE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZILS" source="KZILS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZVLL" source="KZVLL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZVLQ" source="KZVLQ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZVLE" source="KZVLE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KZVLS" source="KZVLS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DISKZ" source="DISKZ"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LSOBS" source="LSOBS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LMINB" source="LMINB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LBSTF" source="LBSTF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="HERKL_2" source="HERKL_2"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EXPPG" source="EXPPG"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="EXVER" source="EXVER"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KLABS" source="KLABS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KINSM" source="KINSM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KEINM" source="KEINM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="KSPEM" source="KSPEM"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="DLINL" source="DLINL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTL" source="PRCTL"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA_1" source="ERSDA_1"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VKLAB" source="VKLAB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VKUML" source="VKUML"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="BSKRF" source="BSKRF"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MDRUE" source="MDRUE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="MDJIN" source="MDJIN"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FSH_SALLOC_QTY_S" source="FSH_SALLOC_QTY_S"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="fx_count" source="fx_count"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="ZHV_BV_MATERIAL_MASTER"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="OBJECTCLAS"/>
         <viewAttribute id="OBJECTID"/>
         <viewAttribute id="CHANGENR"/>
@@ -1160,27 +601,12 @@
         <viewAttribute id="VERSION"/>
         <viewAttribute id="_DATAAGING"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#CDHDR">
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="USERNAME" source="USERNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UDATE" source="UDATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UTIME" source="UTIME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE" source="TCODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLANCHNGNR" source="PLANCHNGNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHNGNO" source="ACT_CHNGNO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WAS_PLANND" source="WAS_PLANND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGE_IND" source="CHANGE_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="CDHDR"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="OBJECTCLAS"/>
         <viewAttribute id="OBJECTID"/>
         <viewAttribute id="CHANGENR"/>
@@ -1197,28 +623,12 @@
         <viewAttribute id="VALUE_OLD"/>
         <viewAttribute id="_DATAAGING"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#CDPOS">
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TABNAME" source="TABNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TABKEY" source="TABKEY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FNAME" source="FNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHNGIND" source="CHNGIND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_CASE" source="TEXT_CASE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_OLD" source="UNIT_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_NEW" source="UNIT_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_OLD" source="CUKY_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_NEW" source="CUKY_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_NEW" source="VALUE_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_OLD" source="VALUE_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="CDPOS"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="OBJECTCLAS"/>
         <viewAttribute id="OBJECTID"/>
         <viewAttribute id="CHANGENR"/>
@@ -1250,8 +660,8 @@
         <viewAttribute id="VALUE_OLD"/>
         <viewAttribute id="_DATAAGING_1"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Projection_2">
+    <calculatedViewAttributes/>
+      <input node="Projection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
@@ -1267,7 +677,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
       </input>
-      <input node="#Projection_3">
+      <input node="Projection_3">
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS_1" source="OBJECTCLAS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS_2" source="OBJECTCLAS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID_1" source="OBJECTID"/>
@@ -1288,13 +698,13 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
       </input>
-      <joinAttribute name="OBJECTCLAS"/>
-      <joinAttribute name="OBJECTID"/>
-      <joinAttribute name="CHANGENR"/>
-    </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+    <joinAttribute name="OBJECTCLAS"/>
+    <joinAttribute name="OBJECTID"/>
+    <joinAttribute name="CHANGENR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="fx_count"/>
         <viewAttribute id="MATNR"/>
         <viewAttribute id="ERSDA"/>
@@ -1352,8 +762,8 @@
         <viewAttribute id="DISPO"/>
         <viewAttribute id="EKGRP"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Projection_1">
+    <calculatedViewAttributes/>
+      <input node="Projection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_count" source="fx_count"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
@@ -1381,7 +791,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
       </input>
-      <input node="#Join_1">
+      <input node="Join_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
@@ -1414,9 +824,9 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING_1" source="_DATAAGING_1"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="OBJECTID"/>
       </input>
-      <joinAttribute name="MATNR"/>
-    </calculationView>
-  </calculationViews>
+    <joinAttribute name="MATNR"/>
+  </calculationView>
+</calculationViews>
   <logicalModel id="Join_2">
     <descriptions/>
     <attributes>
@@ -1642,7 +1052,7 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="fx_count" order="1" aggregationType="sum" engineAggregation="sum" measureType="simple">
+      <measure id="fx_count" order="1" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="fx_count"/>
         <measureMapping columnObjectName="Join_2" columnName="fx_count"/>
       </measure>
@@ -1651,8 +1061,8 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-  <layout>
-    <shapes>
+<layout>
+  <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
         <upperLeftCorner x="99" y="87"/>
         <rectangleSize height="0" width="0"/>
@@ -1673,10 +1083,27 @@
         <upperLeftCorner x="176" y="261"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
       <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="99" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    </shapes>
-  </layout>
+    
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
 </Calculation:scenario>
