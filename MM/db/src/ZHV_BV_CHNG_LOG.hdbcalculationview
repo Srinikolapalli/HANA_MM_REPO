@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="algoma.mm::ZHV_BV_CHNG_LOG" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
-  <origin/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="algoma.mm::ZHV_BV_CHNG_LOG" applyPrivilegeType="NONE" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation" xscCompatibilityMode="true">
+<origin/>
   <descriptions defaultDescription="ZHV_BV_CHNG_LOG"/>
   <metadata changedAt="2021-11-29 10:41:12.273" createdAt="2021-11-29 10:41:11.441"/>
   <localVariables/>
@@ -14,10 +14,10 @@
       <resourceUri>algoma.mm::CDPOS</resourceUri>
     </DataSource>
   </dataSources>
-  <calculationViews>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-      <descriptions/>
-      <viewAttributes>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MANDANT"/>
         <viewAttribute id="_DATAAGING"/>
         <viewAttribute id="MANDANT_1"/>
@@ -36,30 +36,15 @@
         <viewAttribute id="VERSION"/>
         <viewAttribute id="_DATAAGING_1"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#CDHDR">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
+    <calculatedViewAttributes/>
+      <input node="CDHDR">
         <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT_1" source="MANDANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="USERNAME" source="USERNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UDATE" source="UDATE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UTIME" source="UTIME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TCODE" source="TCODE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="PLANCHNGNR" source="PLANCHNGNR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHNGNO" source="ACT_CHNGNO"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="WAS_PLANND" source="WAS_PLANND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGE_IND" source="CHANGE_IND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING_1" source="_DATAAGING"/>
       </input>
     </calculationView>
-    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MANDANT"/>
         <viewAttribute id="OBJECTCLAS"/>
         <viewAttribute id="OBJECTID"/>
@@ -77,29 +62,12 @@
         <viewAttribute id="VALUE_OLD"/>
         <viewAttribute id="_DATAAGING"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#CDPOS">
-        <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS" source="OBJECTCLAS"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TABNAME" source="TABNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TABKEY" source="TABKEY"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="FNAME" source="FNAME"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CHNGIND" source="CHNGIND"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_CASE" source="TEXT_CASE"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_OLD" source="UNIT_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="UNIT_NEW" source="UNIT_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_OLD" source="CUKY_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="CUKY_NEW" source="CUKY_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_NEW" source="VALUE_NEW"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="VALUE_OLD" source="VALUE_OLD"/>
-        <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
-      </input>
+    <calculatedViewAttributes/>
+      <input node="CDPOS"/>
     </calculationView>
-    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinOrder="OUTSIDE_IN" joinType="inner">
-      <descriptions/>
-      <viewAttributes>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <descriptions/>
+    <viewAttributes>
         <viewAttribute id="MANDANT"/>
         <viewAttribute id="_DATAAGING"/>
         <viewAttribute id="MANDANT_1"/>
@@ -134,8 +102,8 @@
         <viewAttribute id="VALUE_OLD"/>
         <viewAttribute id="_DATAAGING_2"/>
       </viewAttributes>
-      <calculatedViewAttributes/>
-      <input node="#Projection_1">
+    <calculatedViewAttributes/>
+      <input node="Projection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT" source="MANDANT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING" source="_DATAAGING"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT_1" source="MANDANT_1"/>
@@ -154,7 +122,7 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="_DATAAGING_1" source="_DATAAGING_1"/>
       </input>
-      <input node="#Projection_2">
+      <input node="Projection_2">
         <mapping xsi:type="Calculation:AttributeMapping" target="MANDANT_2" source="MANDANT"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTCLAS_1" source="OBJECTCLAS"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID_1" source="OBJECTID"/>
@@ -176,12 +144,12 @@
         <mapping xsi:type="Calculation:AttributeMapping" target="OBJECTID" source="OBJECTID"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="CHANGENR" source="CHANGENR"/>
       </input>
-      <joinAttribute name="MANDANT"/>
-      <joinAttribute name="OBJECTCLAS"/>
-      <joinAttribute name="OBJECTID"/>
-      <joinAttribute name="CHANGENR"/>
-    </calculationView>
-  </calculationViews>
+    <joinAttribute name="MANDANT"/>
+    <joinAttribute name="OBJECTCLAS"/>
+    <joinAttribute name="OBJECTID"/>
+    <joinAttribute name="CHANGENR"/>
+  </calculationView>
+</calculationViews>
   <logicalModel id="Join_1">
     <descriptions/>
     <attributes>
@@ -308,12 +276,10 @@
     <restrictedMeasures/>
     <localDimensions/>
   </logicalModel>
-  <layout>
-    <shapes>
+<layout>
+  <shapes>
       <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-        <upperLeftCorner x="99" y="87"/>
-        <rectangleSize/>
-      </shape>
+        <upperLeftCorner x="99" y="87"/></shape>
       <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
         <upperLeftCorner x="22" y="261"/>
         <rectangleSize height="-1" width="-1"/>
@@ -326,6 +292,15 @@
         <upperLeftCorner x="99" y="165"/>
         <rectangleSize height="-1" width="-1"/>
       </shape>
-    </shapes>
-  </layout>
+    
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
 </Calculation:scenario>

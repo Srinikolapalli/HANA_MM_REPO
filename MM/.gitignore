@@ -2,3 +2,8 @@ mta_archives/
 
 # auto generated wildcard
 db/.env
+# auto generated wildcard
+MM/db/.env
+MM/db/src/ZHV_BV_CHNG_LOG.hdbcalculationview
+MM/db/src/ZHV_MM_01.hdbcalculationview
+MM/db/src/ZHV_PHY*.hdbcalculationview
