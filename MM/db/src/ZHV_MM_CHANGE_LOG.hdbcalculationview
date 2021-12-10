@@ -762,7 +762,15 @@
         <viewAttribute id="DISPO"/>
         <viewAttribute id="EKGRP"/>
       </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_2" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>'2'</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_1" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula></formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
       <input node="Projection_1">
         <mapping xsi:type="Calculation:AttributeMapping" target="fx_count" source="fx_count"/>
         <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
