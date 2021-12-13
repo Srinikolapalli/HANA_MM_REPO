@@ -259,7 +259,9 @@
     <baseMeasures/>
     <calculatedMeasures>
       <measure id="fx_count" hidden="false" order="28" aggregationType="sum" measureType="simple" aggregatable="true" calculatedMeasureType="counter" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
-        <descriptions defaultDescription="fx_count"/>
+        <descriptions defaultDescription="fx_count">
+          <comment text="test"/>
+        </descriptions>
         <exceptionAggregation exceptionAggregationType="countDistinct">
           <attribute attributeName="CHANGENR"/>
           <attribute attributeName="OBJECTCLAS"/>
